@@ -117,77 +117,101 @@ export const homeFeatures: Project[] = [
   {
     title: "Exterior home painting",
     category: "Exterior",
-    image: "/images/project-exterior.jpg",
-    alt: "Freshly painted Florida home exterior with clean stucco and crisp trim",
+    image: "/images/proj-exterior-modern.jpg",
+    alt: "Freshly painted modern Florida home with a gray-and-white exterior and crisp trim",
     summary:
-      "A fresh exterior does more than protect the home — it changes how it feels to pull up to it. Clean prep, weather-rated coatings, and sharp trim work built for the Florida sun.",
+      "A full exterior repaint with clean trim lines and durable, sun-ready coatings — modern curb appeal built for the Florida climate.",
   },
   {
-    title: "Whole-home interior",
+    title: "Interior color & accent walls",
     category: "Interior",
-    image: "/images/project-living-room.jpg",
-    alt: "Interior living space with freshly painted walls, trim, and warm tones",
+    image: "/images/proj-interior-blue.jpg",
+    alt: "Living space with a bold blue accent wall and a crisp white tray ceiling",
     summary:
-      "We paint the whole home — every room, wall, ceiling, and trim — with consistent quality and color flow throughout, so the entire space feels connected and cared for.",
+      "A deep, confident accent color against a crisp white tray ceiling — proof that the right color completely changes how a room feels.",
   },
   {
-    title: "Commercial space",
-    category: "Commercial",
-    image: "/images/project-commercial.jpg",
-    alt: "Commercial interior with freshly painted walls and clean finishes",
+    title: "Prep & detail work",
+    category: "Our craft",
+    image: "/images/proj-painter-at-work.jpg",
+    alt: "A painter on a ladder carefully cutting in along the ceiling of a room",
     summary:
-      "A well-kept space reflects the business inside it. We bring the same care and quality to offices and storefronts as we do to every home we work in.",
+      "The finish lives in the details — careful cutting-in, steady hands, and clean lines where the wall meets the ceiling.",
   },
 ];
 
 export const projects: Project[] = [
   {
-    title: "Exterior home painting",
+    title: "Modern home exterior",
     category: "Exterior",
-    image: "/images/project-exterior.jpg",
-    alt: "Freshly painted home exterior with updated trim and strong curb appeal",
+    image: "/images/proj-exterior-modern.jpg",
+    alt: "Freshly painted modern Florida home with a gray-and-white exterior and crisp white trim",
     summary:
-      "New color, sharp trim, and proper surface prep gave this home a cleaner, more confident look from the street.",
+      "A full exterior repaint with clean trim lines and durable, sun-ready coatings — modern curb appeal built for the Florida climate.",
   },
   {
-    title: "Kitchen refresh",
+    title: "Bold accent wall",
     category: "Interior",
-    image: "/images/project-kitchen.jpg",
-    alt: "Freshly painted kitchen with bright cabinetry and clean finishes",
+    image: "/images/proj-interior-blue.jpg",
+    alt: "Living space with a bold blue accent wall and a crisp white tray ceiling",
     summary:
-      "Careful prep and a brighter palette transformed this kitchen into a lighter, more enjoyable space to spend time in.",
+      "A deep, confident accent color with a crisp white tray ceiling — proof that the right color completely changes how a room feels.",
   },
   {
-    title: "Living room interior",
+    title: "Full exterior repaint",
+    category: "Exterior",
+    image: "/images/proj-exterior-drive.jpg",
+    alt: "Large single-story home with a paver circular driveway and palms, freshly painted",
+    summary:
+      "Clean, even coverage across a sprawling single-story exterior — sharp lines where the walls meet the trim and the roofline.",
+  },
+  {
+    title: "Bedroom refresh",
     category: "Interior",
-    image: "/images/project-living-room.jpg",
-    alt: "Neutral-toned living room with painted walls and trim",
+    image: "/images/proj-interior-bedroom.jpg",
+    alt: "Bedroom with freshly painted walls and a smooth neutral tray ceiling",
     summary:
-      "Warm, balanced tones and clean trim throughout — the kind of finish that makes a home feel pulled together.",
+      "Warm, balanced neutrals and a smooth tray-ceiling finish make this bedroom feel calm, finished, and pulled together.",
   },
   {
-    title: "Stairwell & detail work",
+    title: "Mediterranean exterior",
+    category: "Exterior",
+    image: "/images/proj-exterior-tile-roof.jpg",
+    alt: "Mediterranean-style Florida home with a tile roof and freshly painted stucco exterior",
+    summary:
+      "Refreshed stucco and trim on a Mediterranean-style home — color matched to the tile roof and finished to handle sun and humidity.",
+  },
+  {
+    title: "Detail & prep work",
+    category: "Our craft",
+    image: "/images/proj-painter-at-work.jpg",
+    alt: "A painter on a ladder carefully cutting in along the ceiling of a room",
+    summary:
+      "The finish lives in the details — careful cutting-in, steady hands, and clean lines where the wall meets the ceiling.",
+  },
+  {
+    title: "Fresh curb appeal",
+    category: "Exterior",
+    image: "/images/proj-exterior-white.jpg",
+    alt: "Freshly painted white single-story home with manicured landscaping",
+    summary:
+      "Bright, clean exterior paint and sharp trim that lift the whole property's curb appeal from the street.",
+  },
+  {
+    title: "Entry & living area",
     category: "Interior",
-    image: "/images/project-stair-hall.jpg",
-    alt: "Interior stair hall with carefully painted walls, trim, and architectural details",
+    image: "/images/proj-interior-entry.jpg",
+    alt: "Interior entry and living area with freshly painted walls and framed art",
     summary:
-      "Tight masking, clean lines, and consistent coverage in the spaces that demand the most attention to detail.",
+      "Smooth, even walls that let the furnishings and art stand out — a quiet, high-quality interior finish.",
   },
   {
-    title: "Commercial interior",
-    category: "Commercial",
-    image: "/images/project-commercial.jpg",
-    alt: "Commercial interior space with freshly painted surfaces",
+    title: "Exterior refresh",
+    category: "Exterior",
+    image: "/images/proj-exterior-palm.jpg",
+    alt: "Tan Florida home exterior with a two-car garage and palm tree, freshly painted",
     summary:
-      "A high-traffic commercial space repainted with durable finishes and a clean, professional look that holds up.",
-  },
-  {
-    title: "Feature wall",
-    category: "Detail",
-    image: "/images/project-wall.jpg",
-    alt: "Close-up of a freshly painted feature wall with smooth, even color",
-    summary:
-      "The quality of a paint job lives in the details — even coverage, smooth surfaces, and color that reads the way it should.",
+      "A warm, updated exterior with clean garage and trim detailing — a fresh look that holds up to the Gulf Coast sun.",
   },
 ];
 

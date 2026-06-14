@@ -1,5 +1,5 @@
 type PhotoProps = {
-  /** Path to the JPEG/PNG, e.g. "/images/project-exterior.jpg" */
+  /** Path to the JPEG/PNG, e.g. "/images/proj-exterior-modern.jpg" */
   src: string;
   alt: string;
   className?: string;

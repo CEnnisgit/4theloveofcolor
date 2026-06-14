@@ -190,8 +190,8 @@ function HomePage() {
         </div>
         <div className="hero-media">
           <Photo
-            src="/images/project-exterior.jpg"
-            alt="Freshly painted Florida home exterior with clean stucco and crisp white trim"
+            src="/images/proj-exterior-modern.jpg"
+            alt="Freshly painted modern Florida home with a gray-and-white exterior and crisp white trim"
             width={720}
             height={560}
             priority
@@ -567,8 +567,8 @@ function AboutPage() {
         </div>
         <Photo
           className="about-image"
-          src="/images/project-living-room.jpg"
-          alt="Interior living room showing painted walls, trim, and finished detail work"
+          src="/images/proj-interior-entry.jpg"
+          alt="Interior entry and living area with freshly painted walls and framed art"
           width={560}
           height={700}
         />

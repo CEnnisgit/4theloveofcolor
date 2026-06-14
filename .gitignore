@@ -22,3 +22,6 @@ vite.out.log
 
 # old Wix site scrape (reference junk, not part of the build)
 _old-wix-scrape/
+
+# raw photo dump from Google Drive (HEIC originals; only curated web copies live in public/images)
+_incoming-photos/
