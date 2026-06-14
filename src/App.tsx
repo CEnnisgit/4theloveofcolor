@@ -190,8 +190,8 @@ function HomePage() {
         </div>
         <div className="hero-media">
           <Photo
-            src="/images/proj-exterior-modern.jpg"
-            alt="Freshly painted modern Florida home with a gray-and-white exterior and crisp white trim"
+            src="/images/proj-exterior-white-2story.jpg"
+            alt="Freshly painted large two-story white Florida home with a three-car garage and paver driveway"
             width={720}
             height={560}
             priority

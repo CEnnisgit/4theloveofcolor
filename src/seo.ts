@@ -39,7 +39,7 @@ export function useSeo({ title, description, path = "/", image }: SeoProps) {
     const url = business.url + (path === "/" ? "" : path);
     const ogImage = image
       ? business.url + image
-      : business.url + "/images/proj-exterior-modern.jpg";
+      : business.url + "/images/proj-exterior-white-2story.jpg";
 
     document.title = title;
     setMeta("name", "description", description);

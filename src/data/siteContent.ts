@@ -115,12 +115,12 @@ export const services: Service[] = [
 
 export const homeFeatures: Project[] = [
   {
-    title: "Two-story exterior repaint",
+    title: "Exterior home painting",
     category: "Exterior",
-    image: "/images/proj-exterior-white-2story.jpg",
-    alt: "Large two-story white home with a three-car garage and tile roof, freshly painted",
+    image: "/images/proj-exterior-modern.jpg",
+    alt: "Single-story Florida home with soft gray stucco, white trim, and a barrel-tile roof, freshly painted",
     summary:
-      "A full two-story exterior in clean white with a crisp tile-roof line — bright, sharp, and built to shrug off the Florida sun.",
+      "Soft gray stucco with crisp white trim and a freshly coated three-car garage — a clean, modern exterior finished in warm evening light.",
   },
   {
     title: "Interior repaint",
