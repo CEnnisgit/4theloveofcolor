@@ -182,20 +182,20 @@ export const projects: Project[] = [
       "Warm stucco paired with stone accents and a freshly painted arched entry — color matched to the stone and trim for a cohesive look.",
   },
   {
-    title: "Living space",
+    title: "Interior finish",
     category: "Interior",
-    image: "/images/proj-interior-living.jpg",
-    alt: "Interior living space with freshly painted light-greige walls and a bright window",
+    image: "/images/proj-interior-room.jpg",
+    alt: "Freshly painted room with smooth warm-greige walls, soft window light, and clean trim",
     summary:
-      "Smooth, light walls that brighten the whole room and keep the focus on the space — clean lines along the trim and ceiling.",
+      "Smooth, even walls in a warm neutral with crisp baseboards and ceiling lines — a clean, move-in-ready interior finish.",
   },
   {
     title: "Arched entry home",
     category: "Exterior",
-    image: "/images/proj-exterior-columns.jpg",
-    alt: "Tan single-story home with arched windows and a columned entry, freshly painted",
+    image: "/images/proj-exterior-arched.jpg",
+    alt: "Tan single-story Florida home with a columned arched entry and palms, freshly painted",
     summary:
-      "Sun-worn stucco brought back to a warm, even tone — arched windows and a columned entry crisply trimmed in white.",
+      "Warm, even stucco and a crisply trimmed arched entry framed by mature palms — clean curb appeal that holds up to the Florida sun.",
   },
   {
     title: "Tan home refresh",
