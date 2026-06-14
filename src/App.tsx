@@ -567,8 +567,8 @@ function AboutPage() {
         </div>
         <Photo
           className="about-image"
-          src="/images/proj-interior-entry.jpg"
-          alt="Interior entry and living area with freshly painted walls and framed art"
+          src="/images/proj-exterior-mediterranean.jpg"
+          alt="Grand two-story white Mediterranean home freshly painted, framed by mature palms"
           width={560}
           height={700}
         />

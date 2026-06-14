@@ -115,28 +115,28 @@ export const services: Service[] = [
 
 export const homeFeatures: Project[] = [
   {
-    title: "Exterior home painting",
+    title: "Two-story exterior repaint",
     category: "Exterior",
-    image: "/images/proj-exterior-modern.jpg",
-    alt: "Freshly painted modern Florida home with a gray-and-white exterior and crisp trim",
+    image: "/images/proj-exterior-white-2story.jpg",
+    alt: "Large two-story white home with a three-car garage and tile roof, freshly painted",
     summary:
-      "A full exterior repaint with clean trim lines and durable, sun-ready coatings — modern curb appeal built for the Florida climate.",
+      "A full two-story exterior in clean white with a crisp tile-roof line — bright, sharp, and built to shrug off the Florida sun.",
   },
   {
-    title: "Interior color & accent walls",
+    title: "Interior repaint",
     category: "Interior",
-    image: "/images/proj-interior-blue.jpg",
-    alt: "Living space with a bold blue accent wall and a crisp white tray ceiling",
+    image: "/images/proj-interior-bedroom.jpg",
+    alt: "Bedroom with warm greige walls, white crown molding, and a tray ceiling",
     summary:
-      "A deep, confident accent color against a crisp white tray ceiling — proof that the right color completely changes how a room feels.",
+      "Warm, even walls set off by bright white crown molding and a smooth tray ceiling — a calm, finished bedroom.",
   },
   {
-    title: "Prep & detail work",
-    category: "Our craft",
-    image: "/images/proj-painter-at-work.jpg",
-    alt: "A painter on a ladder carefully cutting in along the ceiling of a room",
+    title: "Mediterranean estate",
+    category: "Exterior",
+    image: "/images/proj-exterior-mediterranean.jpg",
+    alt: "Grand two-story white Mediterranean home with a tile roof and mature palms",
     summary:
-      "The finish lives in the details — careful cutting-in, steady hands, and clean lines where the wall meets the ceiling.",
+      "A stately Mediterranean home refreshed in bright white against its tile roof — the kind of finish that makes a large property feel pristine.",
   },
 ];
 
@@ -145,73 +145,65 @@ export const projects: Project[] = [
     title: "Modern home exterior",
     category: "Exterior",
     image: "/images/proj-exterior-modern.jpg",
-    alt: "Freshly painted modern Florida home with a gray-and-white exterior and crisp white trim",
+    alt: "Single-story Florida home with soft gray stucco, white trim, and a barrel-tile roof, freshly painted with a paver driveway and palms",
     summary:
-      "A full exterior repaint with clean trim lines and durable, sun-ready coatings — modern curb appeal built for the Florida climate.",
+      "Soft gray stucco with crisp white window trim and a freshly coated three-car garage — a clean, modern exterior finished in warm evening light.",
   },
   {
-    title: "Bold accent wall",
-    category: "Interior",
-    image: "/images/proj-interior-blue.jpg",
-    alt: "Living space with a bold blue accent wall and a crisp white tray ceiling",
-    summary:
-      "A deep, confident accent color with a crisp white tray ceiling — proof that the right color completely changes how a room feels.",
-  },
-  {
-    title: "Full exterior repaint",
+    title: "Two-story home",
     category: "Exterior",
-    image: "/images/proj-exterior-drive.jpg",
-    alt: "Large single-story home with a paver circular driveway and palms, freshly painted",
+    image: "/images/proj-exterior-white-2story.jpg",
+    alt: "Large two-story white home with a three-car garage, tile roof, and paver driveway, freshly painted",
     summary:
-      "Clean, even coverage across a sprawling single-story exterior — sharp lines where the walls meet the trim and the roofline.",
+      "A big two-story repaint in clean white with a sharp tile-roof line — bright, crisp, and built to shrug off the Florida sun.",
   },
   {
     title: "Bedroom refresh",
     category: "Interior",
     image: "/images/proj-interior-bedroom.jpg",
-    alt: "Bedroom with freshly painted walls and a smooth neutral tray ceiling",
+    alt: "Bedroom with warm greige walls, white crown molding, a tray ceiling, and plantation shutters",
     summary:
-      "Warm, balanced neutrals and a smooth tray-ceiling finish make this bedroom feel calm, finished, and pulled together.",
+      "Warm, even greige walls set off by bright white crown molding and a smooth tray ceiling — a calm, finished bedroom.",
   },
   {
-    title: "Mediterranean exterior",
+    title: "Mediterranean estate",
     category: "Exterior",
-    image: "/images/proj-exterior-tile-roof.jpg",
-    alt: "Mediterranean-style Florida home with a tile roof and freshly painted stucco exterior",
+    image: "/images/proj-exterior-mediterranean.jpg",
+    alt: "Grand two-story white Mediterranean home with a tile roof, arched entry, and mature palms on a large lawn",
     summary:
-      "Refreshed stucco and trim on a Mediterranean-style home — color matched to the tile roof and finished to handle sun and humidity.",
+      "A stately Mediterranean estate refreshed in bright white against its tile roof — a finish that makes a large home feel pristine.",
   },
   {
-    title: "Detail & prep work",
-    category: "Our craft",
-    image: "/images/proj-painter-at-work.jpg",
-    alt: "A painter on a ladder carefully cutting in along the ceiling of a room",
-    summary:
-      "The finish lives in the details — careful cutting-in, steady hands, and clean lines where the wall meets the ceiling.",
-  },
-  {
-    title: "Fresh curb appeal",
+    title: "Stone-accent exterior",
     category: "Exterior",
-    image: "/images/proj-exterior-white.jpg",
-    alt: "Freshly painted white single-story home with manicured landscaping",
+    image: "/images/proj-exterior-stone.jpg",
+    alt: "Tan single-story home with stone accents and an arched entry, freshly painted, with a paver driveway",
     summary:
-      "Bright, clean exterior paint and sharp trim that lift the whole property's curb appeal from the street.",
+      "Warm stucco paired with stone accents and a freshly painted arched entry — color matched to the stone and trim for a cohesive look.",
   },
   {
-    title: "Entry & living area",
+    title: "Living space",
     category: "Interior",
-    image: "/images/proj-interior-entry.jpg",
-    alt: "Interior entry and living area with freshly painted walls and framed art",
+    image: "/images/proj-interior-living.jpg",
+    alt: "Interior living space with freshly painted light-greige walls and a bright window",
     summary:
-      "Smooth, even walls that let the furnishings and art stand out — a quiet, high-quality interior finish.",
+      "Smooth, light walls that brighten the whole room and keep the focus on the space — clean lines along the trim and ceiling.",
   },
   {
-    title: "Exterior refresh",
+    title: "Arched entry home",
+    category: "Exterior",
+    image: "/images/proj-exterior-columns.jpg",
+    alt: "Tan single-story home with arched windows and a columned entry, freshly painted",
+    summary:
+      "Sun-worn stucco brought back to a warm, even tone — arched windows and a columned entry crisply trimmed in white.",
+  },
+  {
+    title: "Tan home refresh",
     category: "Exterior",
     image: "/images/proj-exterior-palm.jpg",
-    alt: "Tan Florida home exterior with a two-car garage and palm tree, freshly painted",
+    alt: "Single-story tan Florida home with a tile roof, decorative gable, two-car garage, and tall palms",
     summary:
-      "A warm, updated exterior with clean garage and trim detailing — a fresh look that holds up to the Gulf Coast sun.",
+      "Warm greige walls with clean white trim and a freshly finished garage and gable detail — understated curb appeal that suits the street.",
   },
 ];
 
