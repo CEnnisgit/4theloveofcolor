@@ -10,19 +10,44 @@
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
+  <!--
+    City landing pages. These target "painters in <town>", which is how local
+    searches are actually phrased, so they rank above the generic service pages
+    for the highest-intent traffic.
+  -->
+  <url>
+    <loc>https://www.4theloveofcolorpainting.com/painters/lakewood-ranch</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.4theloveofcolorpainting.com/painters/sarasota</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.4theloveofcolorpainting.com/painters/bradenton</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.4theloveofcolorpainting.com/painters/venice</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
   <url>
     <loc>https://www.4theloveofcolorpainting.com/projects</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.4theloveofcolorpainting.com/about</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://www.4theloveofcolorpainting.com/contact</loc>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.4theloveofcolorpainting.com/about</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
   </url>
 </urlset>

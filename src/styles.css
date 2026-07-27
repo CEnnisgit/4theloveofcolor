@@ -661,6 +661,41 @@ h3 {
   font-weight: 800;
 }
 
+/* ---------------------------------------------------------------- city links */
+.city-links {
+  text-align: center;
+}
+
+.city-links ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.7rem;
+  margin: 1rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.city-links a {
+  display: inline-block;
+  padding: 0.6rem 1.1rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--paper);
+  color: var(--ink);
+  font-weight: 600;
+  font-size: 0.94rem;
+  text-decoration: none;
+  transition: background 160ms ease, color 160ms ease, border-color 160ms ease;
+}
+
+.city-links a:hover,
+.city-links a:focus-visible {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
 /* ---------------------------------------------------------------- service area */
 .neighborhood-block {
   margin-top: 2rem;
@@ -1117,7 +1152,7 @@ h3 {
 /* ---------------------------------------------------------------- footer */
 .footer {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-columns: 1.8fr 1fr 1fr 1fr;
   gap: 2rem;
   padding: 3rem 0 2.5rem;
   margin-top: 2rem;

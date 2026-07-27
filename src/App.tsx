@@ -1,5 +1,10 @@
 import { type ReactNode, useEffect, useState } from "react";
-import { NavLink, Route, Routes, useLocation } from "react-router-dom";
+import { NavLink, Route, Routes, useLocation, useParams } from "react-router-dom";
+import {
+  type CityPage as CityPageData,
+  cityPageBySlug,
+  cityPages,
+} from "./data/cityPages";
 import {
   aboutCopy,
   business,
@@ -96,6 +101,7 @@ function App() {
           <Route path="/projects" element={<ProjectsPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />
+          <Route path="/painters/:citySlug" element={<CityPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </main>
@@ -123,6 +129,14 @@ function SiteFooter() {
         {navItems.map((item) => (
           <NavLink key={item.path} to={item.path} end={item.path === "/"}>
             {item.label}
+          </NavLink>
+        ))}
+      </div>
+      <div className="footer-col">
+        <h3>Areas served</h3>
+        {cityPages.map((page) => (
+          <NavLink key={page.slug} to={`/painters/${page.slug}`}>
+            {page.city} painters
           </NavLink>
         ))}
       </div>
@@ -296,6 +310,8 @@ function HomePage() {
       <GuaranteesSection />
 
       <ServiceAreaSection />
+
+      <CityLinks />
 
       <ReviewsSection />
 
@@ -864,6 +880,140 @@ function PageShell({ eyebrow, title, intro, children }: PageShellProps) {
       </section>
       <section className="section page-body">{children}</section>
     </>
+  );
+}
+
+/**
+ * Per-city landing page at /painters/:citySlug.
+ *
+ * These exist to rank for "painters in <town>", which is how people actually
+ * search. That only works if each page is genuinely about its town, so all the
+ * substance comes from cityPages.ts rather than from a template with the name
+ * swapped in — see the note at the top of that file.
+ */
+function CityPage() {
+  const { citySlug } = useParams();
+  const page = citySlug ? cityPageBySlug(citySlug) : undefined;
+
+  // Unknown slug: render the 404 rather than an empty shell, so a mistyped or
+  // stale city URL doesn't return a thin page with a 200.
+  if (!page) {
+    return <NotFoundPage />;
+  }
+
+  return <CityPageBody page={page} />;
+}
+
+function CityPageBody({ page }: { page: CityPageData }) {
+  useSeo({
+    title: page.title,
+    description: page.metaDescription,
+    path: `/painters/${page.slug}`,
+  });
+
+  // Service + areaServed schema scoped to this city. The site-wide
+  // HousePainter entity is declared in index.html; this references it rather
+  // than redeclaring the business on every page.
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    serviceType: "House Painting",
+    provider: { "@id": `${business.url}/#business` },
+    areaServed: {
+      "@type": "City",
+      name: page.city,
+      containedInPlace: { "@type": "AdministrativeArea", name: page.county },
+    },
+    description: page.metaDescription,
+  };
+
+  return (
+    <>
+      <JsonLd data={serviceSchema} />
+      <section className="page-hero section">
+        <p className="eyebrow">
+          Painting in {page.city}, {business.region}
+        </p>
+        <h1>{page.h1}</h1>
+        {page.intro.map((paragraph, index) => (
+          <p key={paragraph} className={index === 0 ? "lead" : undefined}>
+            {paragraph}
+          </p>
+        ))}
+        <div className="hero-actions">
+          <NavLink className="button button-solid" to="/contact">
+            Get a Free Estimate
+          </NavLink>
+          <a className="button button-outline" href={contact.phoneHref}>
+            Call {contact.phone}
+          </a>
+        </div>
+      </section>
+
+      <section className="section" aria-labelledby="city-considerations-title">
+        <div className="section-heading">
+          <p className="eyebrow">What's different here</p>
+          <h2 id="city-considerations-title">
+            What painting in {page.city} actually involves.
+          </h2>
+        </div>
+        <div className="why-grid">
+          {page.considerations.map((item) => (
+            <article key={item.title} className="why-card">
+              <h3>{item.title}</h3>
+              <p>{item.text}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="section service-area" aria-labelledby="city-areas-title">
+        <div className="section-heading">
+          <p className="eyebrow">Where we work</p>
+          <h2 id="city-areas-title">Areas of {page.city} we cover.</h2>
+        </div>
+        <ul className="city-grid">
+          {page.areas.map((area) => (
+            <li key={area}>{area}</li>
+          ))}
+        </ul>
+      </section>
+
+      <GuaranteesSection />
+
+      <ReviewsSection />
+
+      <section className="section page-body">
+        <p className="lead">{page.closing}</p>
+      </section>
+
+      <CityLinks currentSlug={page.slug} />
+
+      <CtaBanner />
+    </>
+  );
+}
+
+/** Cross-links between city pages, so each one is reachable and none is orphaned. */
+function CityLinks({ currentSlug }: { currentSlug?: string }) {
+  const others = cityPages.filter((page) => page.slug !== currentSlug);
+  if (others.length === 0) return null;
+
+  return (
+    <section className="section city-links" aria-labelledby="city-links-title">
+      <p className="eyebrow" id="city-links-title">
+        Also serving
+      </p>
+      <ul>
+        {others.map((page) => (
+          <li key={page.slug}>
+            <NavLink to={`/painters/${page.slug}`}>
+              Painters in {page.city}, {business.region}
+            </NavLink>
+          </li>
+        ))}
+      </ul>
+    </section>
   );
 }
 
