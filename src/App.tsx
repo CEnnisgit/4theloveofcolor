@@ -599,28 +599,61 @@ function ContactPage() {
     e.preventDefault();
     setSubmitting(true);
     setError("");
+
+    // Build the Netlify payload from the form itself so every field — including
+    // the honeypot — is submitted, and the fields can never drift out of sync
+    // with the markup.
+    const params = new URLSearchParams({ "form-name": "estimate" });
+    new FormData(e.currentTarget as HTMLFormElement).forEach((value, key) => {
+      if (typeof value === "string") params.append(key, value);
+    });
+
     try {
-      const response = await fetch(`${import.meta.env.VITE_API_URL || ""}/api/leads`, {
+      // Primary delivery: Netlify Forms. This needs no backend and no paid
+      // service, so a lead can never be lost to a CRM that is down or not yet
+      // deployed. Netlify emails every submission to the address configured in
+      // the site's form-notification settings.
+      const response = await fetch("/", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          name,
-          email,
-          phone: phone || undefined,
-          project_type: projectType,
-          message,
-        }),
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: params.toString(),
       });
       if (!response.ok) {
-        const data = await response.json().catch(() => ({}));
-        throw new Error(data.message || data.error || "Something went wrong. Please try again.");
+        throw new Error("Something went wrong. Please try again, or call us at " + contact.phone + ".");
       }
       setSubmitted(true);
     } catch (err) {
-      setError(err instanceof Error ? err.message : "Something went wrong. Please try again.");
-    } finally {
+      setError(
+        err instanceof Error
+          ? err.message
+          : "Something went wrong. Please try again, or call us at " + contact.phone + ".",
+      );
       setSubmitting(false);
+      return;
     }
+
+    // Secondary: mirror the lead into the CRM when one is configured. Failure
+    // here is deliberately silent — the lead is already delivered above, so a
+    // CRM outage must never show the customer an error.
+    if (import.meta.env.VITE_API_URL) {
+      try {
+        await fetch(`${import.meta.env.VITE_API_URL}/api/leads`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            name,
+            email,
+            phone: phone || undefined,
+            project_type: projectType,
+            message,
+          }),
+        });
+      } catch {
+        // Intentionally ignored — see above.
+      }
+    }
+
+    setSubmitting(false);
   }
 
   return (
@@ -649,7 +682,13 @@ function ContactPage() {
             <p>Thank you! We received your inquiry and will be in touch soon.</p>
           </div>
         ) : (
-          <form className="contact-form" onSubmit={handleSubmit}>
+          <form className="contact-form" onSubmit={handleSubmit} name="estimate">
+            {/* Netlify honeypot — real people never see it, bots fill it in. */}
+            <p hidden>
+              <label>
+                Don't fill this out<input name="bot-field" tabIndex={-1} autoComplete="off" />
+              </label>
+            </p>
             <label>
               Name
               <input

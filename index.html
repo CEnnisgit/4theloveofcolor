@@ -91,6 +91,22 @@
     <script type="module" src="/src/main.tsx"></script>
   </head>
   <body>
+    <!--
+      Netlify Forms detection stub. Netlify scans the BUILT HTML for forms at
+      deploy time; a React-rendered form is invisible to that scan, so this
+      hidden copy registers the "estimate" form and its fields. The real,
+      visible form lives in App.tsx (ContactPage) and POSTs to it.
+      Field names here must stay in sync with that form.
+    -->
+    <form name="estimate" netlify netlify-honeypot="bot-field" hidden>
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <input type="tel" name="phone" />
+      <input type="text" name="project_type" />
+      <textarea name="message"></textarea>
+      <input type="text" name="bot-field" />
+    </form>
+
     <div id="root">
       <!-- No-JS / crawler fallback content -->
       <noscript>
