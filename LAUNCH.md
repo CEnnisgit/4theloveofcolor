@@ -88,7 +88,10 @@ should still read them and confirm he's happy standing behind the wording.
 
 ---
 
-## 4. Get a 941 phone number
+## 4. A 941 phone number — parked
+
+**Deferred by the owner (2026-07-27). Not a launch blocker; skip this section
+until someone asks for it.** Noted here only so the reasoning isn't lost.
 
 The site lists `(917) 584-0069` — a New York City area code on a Florida
 business. A homeowner comparing three local quotes reads that as "not local",
