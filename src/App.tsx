@@ -4,8 +4,11 @@ import {
   aboutCopy,
   business,
   contact,
+  credentials,
   faqs,
+  guarantees,
   homeFeatures,
+  lakewoodRanchNeighborhoods,
   navItems,
   processSteps,
   projects,
@@ -290,6 +293,8 @@ function HomePage() {
         </div>
       </section>
 
+      <GuaranteesSection />
+
       <ServiceAreaSection />
 
       <ReviewsSection />
@@ -298,6 +303,57 @@ function HomePage() {
 
       <CtaBanner />
     </>
+  );
+}
+
+/**
+ * The four named promises, plus any hard credentials the owner has confirmed.
+ *
+ * Homeowners here collect three or four quotes and compare them side by side,
+ * and the competitor who names their guarantees wins that comparison even when
+ * the underlying work is equivalent. Each promise restates a commitment made
+ * elsewhere on the site; the harder claims come from `credentials` and appear
+ * only once filled in.
+ */
+function GuaranteesSection() {
+  const confirmed = [
+    credentials.warranty,
+    credentials.liabilityCoverage &&
+      `${credentials.liabilityCoverage} — certificate available on request`,
+    credentials.licenseNumber && `License #${credentials.licenseNumber}`,
+    credentials.paintBrands.length > 0 &&
+      `${credentials.paintBrands.join(" & ")} coatings`,
+    credentials.quoteTurnaround,
+    credentials.handlesHoaApproval &&
+      "We prepare your HOA / ARC color-approval paperwork",
+    credentials.yearsInBusiness && `Painting the Suncoast ${credentials.yearsInBusiness.toLowerCase()}`,
+  ].filter((item): item is string => Boolean(item));
+
+  return (
+    <section className="section guarantee-section" aria-labelledby="guarantee-title">
+      <div className="section-heading">
+        <p className="eyebrow">Our promises</p>
+        <h2 id="guarantee-title">
+          What you can hold us to — in writing, on every job.
+        </h2>
+      </div>
+      <div className="guarantee-grid">
+        {guarantees.map((item, index) => (
+          <article key={item.title} className="guarantee-card">
+            <span className="guarantee-number">0{index + 1}</span>
+            <h3>{item.title}</h3>
+            <p>{item.text}</p>
+          </article>
+        ))}
+      </div>
+      {confirmed.length > 0 && (
+        <ul className="credential-list">
+          {confirmed.map((item) => (
+            <li key={item}>{item}</li>
+          ))}
+        </ul>
+      )}
+    </section>
   );
 }
 
@@ -415,6 +471,17 @@ function ServiceAreaSection() {
           <li key={city}>{city}</li>
         ))}
       </ul>
+      {/*
+        Homeowners in Lakewood Ranch search by village name far more than by
+        "Lakewood Ranch", and those searches are near-zero competition compared
+        with the city-level terms.
+      */}
+      <div className="neighborhood-block">
+        <p className="eyebrow">Lakewood Ranch villages we cover</p>
+        <p className="neighborhood-list">
+          {lakewoodRanchNeighborhoods.join(" · ")}
+        </p>
+      </div>
     </section>
   );
 }

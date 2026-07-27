@@ -266,6 +266,91 @@ export const whyUs = [
   },
 ];
 
+// ---------------------------------------------------------------------------
+// Named guarantees
+//
+// Competitors in this market win comparison shopping on packaging, not on
+// craft: they give their promises names and put them above the fold. Every
+// promise below is a restatement of something already committed to elsewhere on
+// this site (see processSteps and whyUs) — nothing new is being promised here.
+//
+// Anything that is a NEW factual or legal claim — warranty length, insurance
+// amounts, license numbers, specific paint brands, HOA paperwork handling —
+// belongs in `credentials` below, not here.
+// ---------------------------------------------------------------------------
+export const guarantees = [
+  {
+    title: "Written price, held",
+    text: "You get a clear written quote after the walkthrough, and that is the number you pay. Scope changes only ever happen with your say-so, in writing.",
+  },
+  {
+    title: "Clean at the end of every day",
+    text: "Floors and furniture protected, drips caught, site tidied before we leave — not just on the last day, but every day we're in your home.",
+  },
+  {
+    title: "Walkthrough before final payment",
+    text: "We walk the finished job together and fix anything you point out before you settle up. The job isn't done until you say it is.",
+  },
+  {
+    title: "Coatings picked for this climate",
+    text: "Sun, humidity, and salt air decide how long a finish lasts here. We specify weather-rated, low-VOC products chosen for the Gulf Coast, not whatever's cheapest.",
+  },
+];
+
+// ---------------------------------------------------------------------------
+// OWNER SIGN-OFF REQUIRED — these are factual and legal claims about the
+// business, so they ship switched off. Each renders on the site ONLY once it
+// holds a real value. Do not fill these in on a guess: an advertised warranty
+// is an enforceable promise, an insurance figure and a license number are
+// verifiable claims, and naming a paint brand implies a supplier relationship.
+//
+// Ask Edwin for each, then set the value here.
+// ---------------------------------------------------------------------------
+export const credentials: {
+  warranty: string | null;
+  liabilityCoverage: string | null;
+  licenseNumber: string | null;
+  paintBrands: string[];
+  quoteTurnaround: string | null;
+  handlesHoaApproval: boolean;
+  yearsInBusiness: string | null;
+} = {
+  // e.g. "2-year written workmanship warranty" — whatever Edwin actually stands behind.
+  warranty: null,
+  // e.g. "$1,000,000 general liability" — must match the certificate of insurance.
+  liabilityCoverage: null,
+  // Florida painting contractor registration/license number, if held.
+  licenseNumber: null,
+  // e.g. ["Sherwin-Williams", "Benjamin Moore"] — only brands actually used.
+  paintBrands: [],
+  // e.g. "Written quote within 24 hours" — only if the crew can truly hold it.
+  quoteTurnaround: null,
+  // True only if you genuinely prepare HOA / ARC color-approval paperwork for
+  // homeowners. This is a strong differentiator in Lakewood Ranch's gated
+  // communities and nobody local advertises it — but only claim it if you do it.
+  handlesHoaApproval: false,
+  // e.g. "Since 2015" — needs the real founding year.
+  yearsInBusiness: null,
+};
+
+// Lakewood Ranch is a collection of named villages, and homeowners search by
+// village far more than by "Lakewood Ranch". Naming them is a service-area
+// statement, not a claim of past work in each.
+export const lakewoodRanchNeighborhoods = [
+  "Country Club East",
+  "The Lake Club",
+  "Greenbrook",
+  "Summerfield",
+  "Riverwalk",
+  "Del Webb",
+  "Lorraine Lakes",
+  "Waterside",
+  "Esplanade",
+  "Central Park",
+  "Mallory Park",
+  "Indigo",
+];
+
 export const faqs: Faq[] = [
   {
     question: "What areas do you serve?",

@@ -346,7 +346,8 @@ h3 {
 .process-card p,
 .testimonial-card p,
 .about-copy p,
-.why-card p {
+.why-card p,
+.guarantee-card p {
   color: var(--muted);
   font-size: 1.02rem;
 }
@@ -475,6 +476,7 @@ h3 {
 .service-card,
 .why-card,
 .process-card,
+.guarantee-card,
 .testimonial-card,
 .contact-card,
 .contact-form,
@@ -502,6 +504,7 @@ h3 {
 .service-card,
 .why-card,
 .process-card,
+.guarantee-card,
 .service-card-large {
   padding: 1.7rem;
   border-radius: var(--radius-lg);
@@ -510,14 +513,16 @@ h3 {
 
 .service-card:hover,
 .why-card:hover,
-.process-card:hover {
+.process-card:hover,
+.guarantee-card:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow);
 }
 
 .service-card h3,
 .why-card h3,
-.process-card h3 {
+.process-card h3,
+.guarantee-card h3 {
   margin: 0.6rem 0 0.5rem;
   font-size: 1.3rem;
   font-family: "Cormorant Garamond", serif;
@@ -602,7 +607,74 @@ h3 {
   font-weight: 800;
 }
 
+/* ---------------------------------------------------------------- guarantees */
+/* Four promises read best as a 2x2 block — wide enough for a full sentence,
+   and the pairing makes them feel like a considered set rather than a list. */
+.guarantee-grid {
+  display: grid;
+  gap: 1.4rem;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.guarantee-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.1rem;
+  height: 2.1rem;
+  border-radius: 50%;
+  background: var(--accent-soft);
+  color: var(--accent-deep);
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+
+/* Hard credentials — license, insurance, warranty. Rendered only when the
+   owner has confirmed them, so this list may legitimately be absent. */
+.credential-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.7rem 1.6rem;
+  margin: 2rem 0 0;
+  padding: 1.2rem 1.4rem;
+  list-style: none;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: var(--accent-soft);
+}
+
+.credential-list li {
+  position: relative;
+  padding-left: 1.4rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--ink);
+}
+
+.credential-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: 800;
+}
+
 /* ---------------------------------------------------------------- service area */
+.neighborhood-block {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.neighborhood-list {
+  margin: 0.5rem auto 0;
+  max-width: 46rem;
+  color: var(--muted);
+  font-size: 0.98rem;
+  line-height: 1.9;
+}
+
 .city-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -1237,6 +1309,7 @@ h3 {
   .service-grid,
   .why-grid,
   .process-steps,
+  .guarantee-grid,
   .project-feature-grid,
   .testimonial-grid,
   .trust-strip,
@@ -1246,6 +1319,10 @@ h3 {
   .contact-layout,
   .footer {
     grid-template-columns: 1fr;
+  }
+
+  .credential-list {
+    justify-content: flex-start;
   }
 
   .brand-name {
