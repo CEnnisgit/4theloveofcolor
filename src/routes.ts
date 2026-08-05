@@ -21,6 +21,7 @@
  */
 
 import { cityPages } from "./data/cityPages";
+import { servicePages } from "./data/servicePages";
 
 export type RouteMeta = {
   /** URL path, no trailing slash except the root. */
@@ -73,6 +74,14 @@ export const staticRoutes: RouteMeta[] = [
   },
 ];
 
+/** Per-service pages, derived from the service data rather than restated here. */
+export const serviceRoutes: RouteMeta[] = servicePages.map((page) => ({
+  path: `/services/${page.slug}`,
+  title: page.title,
+  description: page.metaDescription,
+  ...(page.image ? { image: page.image } : {}),
+}));
+
 /** City landing pages, derived from the city data rather than restated here. */
 export const cityRoutes: RouteMeta[] = cityPages.map((page) => ({
   path: `/painters/${page.slug}`,
@@ -95,6 +104,7 @@ export const notFoundRoute: RouteMeta = {
 /** Every route the prerenderer should emit a file for. */
 export const allRoutes: RouteMeta[] = [
   ...staticRoutes,
+  ...serviceRoutes,
   ...cityRoutes,
   notFoundRoute,
 ];

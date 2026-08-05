@@ -1399,3 +1399,89 @@ h3 {
     padding: 1.8rem;
   }
 }
+
+/* ---------------------------------------------------------------- service detail pages */
+.breadcrumbs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  /* Matches the .section / .footer container rule above. */
+  width: min(var(--maxw), calc(100vw - 2.5rem));
+  margin-inline: auto;
+  padding-top: 1.6rem;
+  position: relative;
+  z-index: 1;
+  font-size: 0.86rem;
+  color: var(--muted);
+}
+
+.breadcrumbs a {
+  color: var(--muted);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: color 160ms ease, border-color 160ms ease;
+}
+
+.breadcrumbs a:hover,
+.breadcrumbs a:focus-visible {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+.breadcrumbs [aria-current="page"] {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+/* The numeral on each step of the "work, in order" list. */
+.process-step {
+  display: inline-block;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--accent);
+  line-height: 1;
+}
+
+.service-hero-media img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+}
+
+/* Card titles become links once a service has its own page. They should read
+   as headings first and links second, so the underline only appears on hover. */
+.service-card h2 a,
+.service-card h3 a,
+.service-card-large h2 a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: color 160ms ease, border-color 160ms ease;
+}
+
+.service-card h2 a:hover,
+.service-card h3 a:hover,
+.service-card-large h2 a:hover,
+.service-card h2 a:focus-visible,
+.service-card h3 a:focus-visible,
+.service-card-large h2 a:focus-visible {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+.service-more {
+  display: inline-block;
+  margin-top: 1rem;
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 0.92rem;
+  text-decoration: none;
+}
+
+.service-more:hover,
+.service-more:focus-visible {
+  text-decoration: underline;
+}

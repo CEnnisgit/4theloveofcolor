@@ -6,6 +6,11 @@ import {
   cityPages,
 } from "./data/cityPages";
 import {
+  type ServicePage as ServicePageData,
+  servicePageBySlug,
+  servicePages,
+} from "./data/servicePages";
+import {
   aboutCopy,
   business,
   contact,
@@ -92,6 +97,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/services" element={<ServicesPage />} />
+          <Route path="/services/:serviceSlug" element={<ServiceDetailPage />} />
           <Route path="/projects" element={<ProjectsPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />
@@ -170,6 +176,45 @@ function JsonLd({ data }: { data: unknown }) {
   );
 }
 
+/**
+ * The three proof points under the hero call-to-action.
+ *
+ * Only claims the site can actually back. The previous version hard-coded
+ * "★★★★★ Locally trusted" and "Licensed & insured": the first renders a
+ * five-star rating with no rating behind it, and the second is a verifiable
+ * legal claim that `credentials` deliberately ships switched off. Both are
+ * now derived, so turning the claim on means supplying the evidence.
+ *
+ * The star rating comes from the live Google reviews feed when it is
+ * configured, which is the one place on the site where a real rating exists.
+ */
+function HeroBadges() {
+  const { data } = useReviews();
+  const badges: string[] = [];
+
+  if (data?.configured && data.rating && data.total) {
+    badges.push(`★ ${data.rating.toFixed(1)} · ${data.total} Google reviews`);
+  }
+
+  badges.push("Free estimates");
+  badges.push("Family-owned");
+
+  if (credentials.liabilityCoverage || credentials.licenseNumber) {
+    badges.push("Licensed & insured");
+  }
+  if (credentials.warranty) {
+    badges.push(credentials.warranty);
+  }
+
+  return (
+    <ul className="hero-badges">
+      {badges.slice(0, 3).map((badge) => (
+        <li key={badge}>{badge}</li>
+      ))}
+    </ul>
+  );
+}
+
 function HomePage() {
   useSeo("/");
 
@@ -195,11 +240,7 @@ function HomePage() {
               Call {contact.phone}
             </a>
           </div>
-          <ul className="hero-badges">
-            <li>★★★★★ Locally trusted</li>
-            <li>Free estimates</li>
-            <li>Licensed &amp; insured</li>
-          </ul>
+          <HeroBadges />
         </div>
         <div className="hero-media">
           <Photo
@@ -231,7 +272,9 @@ function HomePage() {
         <div className="service-grid">
           {services.map((service) => (
             <article key={service.title} className="service-card">
-              <h3>{service.title}</h3>
+              <h3>
+                <NavLink to={`/services/${service.slug}`}>{service.title}</NavLink>
+              </h3>
               <p>{service.description}</p>
               <ul>
                 {service.bullets.map((bullet) => (
@@ -564,7 +607,9 @@ function ServicesPage() {
           <article key={service.title} className="service-card service-card-large">
             <div>
               <span className="service-index">0{index + 1}</span>
-              <h2>{service.title}</h2>
+              <h2>
+                <NavLink to={`/services/${service.slug}`}>{service.title}</NavLink>
+              </h2>
             </div>
             <p>{service.description}</p>
             <ul>
@@ -572,6 +617,9 @@ function ServicesPage() {
                 <li key={bullet}>{bullet}</li>
               ))}
             </ul>
+            <NavLink className="service-more" to={`/services/${service.slug}`}>
+              More on {service.title.toLowerCase()} →
+            </NavLink>
           </article>
         ))}
       </div>
@@ -832,6 +880,222 @@ function PageShell({ eyebrow, title, intro, children }: PageShellProps) {
       </section>
       <section className="section page-body">{children}</section>
     </>
+  );
+}
+
+/**
+ * Per-service page at /services/:serviceSlug.
+ *
+ * The /services hub introduces all four services; these pages are what a
+ * search like "cabinet refinishing Lakewood Ranch" should land on. One page
+ * cannot rank well for four different services at once, which is why the hub
+ * links out rather than trying to carry them all.
+ */
+function ServiceDetailPage() {
+  const { serviceSlug } = useParams();
+  const page = serviceSlug ? servicePageBySlug(serviceSlug) : undefined;
+
+  if (!page) {
+    return <NotFoundPage />;
+  }
+
+  return <ServiceDetailBody page={page} />;
+}
+
+function ServiceDetailBody({ page }: { page: ServicePageData }) {
+  useSeo(`/services/${page.slug}`);
+
+  // Service, scoped to this page and pointing at the site-wide HousePainter
+  // entity declared in index.html rather than redeclaring the business.
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": `${business.url}/services/${page.slug}/#service`,
+    name: page.name,
+    serviceType: page.serviceType,
+    url: `${business.url}/services/${page.slug}`,
+    description: page.metaDescription,
+    provider: { "@id": `${business.url}/#business` },
+    areaServed: cityPages.map((city) => ({
+      "@type": "City",
+      name: city.city,
+    })),
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: `${business.url}/` },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Services",
+        item: `${business.url}/services`,
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: page.name,
+        item: `${business.url}/services/${page.slug}`,
+      },
+    ],
+  };
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: page.faqs.map((f) => ({
+      "@type": "Question",
+      name: f.question,
+      acceptedAnswer: { "@type": "Answer", text: f.answer },
+    })),
+  };
+
+  return (
+    <>
+      <JsonLd data={serviceSchema} />
+      <JsonLd data={breadcrumbSchema} />
+      <JsonLd data={faqSchema} />
+
+      <nav className="breadcrumbs" aria-label="Breadcrumb">
+        <NavLink to="/">Home</NavLink>
+        <span aria-hidden="true">/</span>
+        <NavLink to="/services">Services</NavLink>
+        <span aria-hidden="true">/</span>
+        <span aria-current="page">{page.name}</span>
+      </nav>
+
+      <section className="page-hero section">
+        <p className="eyebrow">{page.name}</p>
+        <h1>{page.h1}</h1>
+        {page.intro.map((paragraph, index) => (
+          <p key={paragraph} className={index === 0 ? "lead" : undefined}>
+            {paragraph}
+          </p>
+        ))}
+        <div className="hero-actions">
+          <NavLink className="button button-solid" to="/contact">
+            Get a Free Estimate
+          </NavLink>
+          <a className="button button-outline" href={contact.phoneHref}>
+            Call {contact.phone}
+          </a>
+        </div>
+      </section>
+
+      {page.image && (
+        <section className="section service-hero-media">
+          <Photo src={page.image} alt={page.imageAlt} width={1100} height={700} />
+        </section>
+      )}
+
+      <section className="section" aria-labelledby="service-includes-title">
+        <div className="section-heading">
+          <p className="eyebrow">What's covered</p>
+          <h2 id="service-includes-title">What this work includes.</h2>
+        </div>
+        <ul className="city-grid">
+          {page.includes.map((item) => (
+            <li key={item}>{item}</li>
+          ))}
+        </ul>
+      </section>
+
+      <section className="section" aria-labelledby="service-process-title">
+        <div className="section-heading">
+          <p className="eyebrow">How it's done</p>
+          <h2 id="service-process-title">The work, in order.</h2>
+        </div>
+        <div className="why-grid">
+          {page.process.map((step, index) => (
+            <article key={step.title} className="process-card">
+              <span className="process-step">{String(index + 1).padStart(2, "0")}</span>
+              <h3>{step.title}</h3>
+              <p>{step.text}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="section" aria-labelledby="service-problems-title">
+        <div className="section-heading">
+          <p className="eyebrow">Common problems</p>
+          <h2 id="service-problems-title">What people call us about.</h2>
+        </div>
+        <div className="why-grid">
+          {page.problems.map((problem) => (
+            <article key={problem.title} className="why-card">
+              <h3>{problem.title}</h3>
+              <p>{problem.text}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="section" aria-labelledby="service-timeline-title">
+        <div className="section-heading">
+          <p className="eyebrow">What to expect</p>
+          <h2 id="service-timeline-title">Timing, and living with the work.</h2>
+        </div>
+        <div className="why-grid">
+          <article className="why-card">
+            <h3>How long it takes</h3>
+            <p>{page.timeline}</p>
+          </article>
+          <article className="why-card">
+            <h3>While we're working</h3>
+            <p>{page.occupied}</p>
+          </article>
+        </div>
+      </section>
+
+      <section className="section faq-section" aria-labelledby="service-faq-title">
+        <div className="section-heading">
+          <p className="eyebrow">FAQ</p>
+          <h2 id="service-faq-title">{page.name} questions.</h2>
+        </div>
+        <div className="faq-list">
+          {page.faqs.map((f) => (
+            <details key={f.question} className="faq-item">
+              <summary>{f.question}</summary>
+              <p>{f.answer}</p>
+            </details>
+          ))}
+        </div>
+      </section>
+
+      <GuaranteesSection />
+
+      <section className="section page-body">
+        <p className="lead">{page.closing}</p>
+      </section>
+
+      <ServiceLinks currentSlug={page.slug} />
+
+      <CtaBanner />
+    </>
+  );
+}
+
+/** Cross-links between service pages, so none is orphaned. */
+function ServiceLinks({ currentSlug }: { currentSlug?: string }) {
+  const others = servicePages.filter((page) => page.slug !== currentSlug);
+  if (others.length === 0) return null;
+
+  return (
+    <section className="section city-links" aria-labelledby="service-links-title">
+      <p className="eyebrow" id="service-links-title">
+        Other services
+      </p>
+      <ul>
+        {others.map((page) => (
+          <li key={page.slug}>
+            <NavLink to={`/services/${page.slug}`}>{page.name}</NavLink>
+          </li>
+        ))}
+      </ul>
+    </section>
   );
 }
 

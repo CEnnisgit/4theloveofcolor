@@ -116,6 +116,22 @@ The four named guarantees in `guarantees` are already live. Each one restates a
 commitment made elsewhere on the site, so none is a new promise — but Edwin
 should still read them and confirm he's happy standing behind the wording.
 
+Two claims that *were* hard-coded have been removed until credentials back
+them (2026-08-05): the "Licensed & insured" badge under the hero, and the
+FAQ answer "we're fully insured". The FAQ question is now generated from
+`credentials` — fill in `liabilityCoverage` or `licenseNumber` and it comes
+back automatically, with the real figures in it. It matters more than usual
+here because that answer renders into FAQPage structured data, so an
+unverified version was asserting something unconfirmed to Google in
+machine-readable form.
+
+**Open question for Edwin:** the three testimonials in `testimonials`
+(siteContent.ts) each display a five-star rating. If those quotes are real
+customer feedback, they can stay. If they were written as placeholder copy,
+they need to go — fabricated reviews are the one thing in this space that
+carries a real penalty. Switching on the live Google reviews (§2 above)
+replaces them with genuine ones and makes the question moot.
+
 ---
 
 ## 4. A 941 phone number — parked
@@ -171,10 +187,27 @@ than photo quality.
    content, and a copy-paste with the name changed will rank worse than no
    page at all.
 3. **Service × city pages** — e.g. cabinet refinishing in Lakewood Ranch.
-   Same rule applies.
-4. **A cabinet refinishing page.** Highest-margin work in residential
-   painting ($3–8k tickets, low material cost) and currently one mention on
-   the whole site.
+   Same rule applies, and it is a higher bar than it looks: such a page has
+   to say something true of *that service in that city* that neither parent
+   page already says.
+4. ~~A cabinet refinishing page.~~ Done — `/services/cabinet-refinishing`,
+   along with per-service pages for interior, exterior and commercial work.
+   See `src/data/servicePages.ts`.
+
+---
+
+## 8. Photograph a cabinet job
+
+`/services/cabinet-refinishing` is the highest-margin service on the site and
+it is the one page with **no photograph**, because every image in
+`public/images/` is an exterior or a room. The page deliberately renders
+without a hero image rather than borrowing an unrelated interior shot, which
+would imply work we cannot evidence.
+
+One refinished kitchen, photographed before and after from the same spot, is
+the single most valuable photo the business could take right now. Set
+`image` and `imageAlt` on the `cabinet-refinishing` entry in
+`src/data/servicePages.ts` once it exists.
 
 ---
 

@@ -7,6 +7,12 @@ export type Service = {
   title: string;
   description: string;
   bullets: string[];
+  /**
+   * Slug of the matching page in servicePages.ts. Cards link through to it,
+   * which is what stops the detail pages from being orphans — a page with no
+   * internal links pointing at it is one Google has little reason to index.
+   */
+  slug: string;
 };
 
 export type Project = {
@@ -83,6 +89,7 @@ export const heroStats: Stat[] = [
 export const services: Service[] = [
   {
     title: "Interior painting",
+    slug: "interior-painting",
     description:
       "Refresh the rooms you actually live in — walls, ceilings, trim, and doors finished with clean lines and a smooth, even coat that holds up to Florida humidity.",
     bullets: [
@@ -93,6 +100,7 @@ export const services: Service[] = [
   },
   {
     title: "Exterior painting",
+    slug: "exterior-painting",
     description:
       "Boost curb appeal and protect your home from sun, salt air, and humidity with durable, weather-rated coatings and prep built to last on the Gulf Coast.",
     bullets: [
@@ -102,13 +110,25 @@ export const services: Service[] = [
     ],
   },
   {
-    title: "Cabinets & specialty finishes",
+    title: "Cabinet refinishing",
+    slug: "cabinet-refinishing",
     description:
-      "Give kitchens, built-ins, and feature walls a custom, furniture-grade finish — the kind of detailed work a quick repaint can never match.",
+      "Keep the kitchen you have and change how it looks — degreased, deglossed, properly primed and sprayed to a finish that survives daily use.",
     bullets: [
-      "Kitchen cabinet refinishing and built-ins",
-      "Accent walls, creative color, and decorative finishes",
-      "Upgraded finish quality for the spaces people notice most",
+      "Kitchen cabinets, islands, and built-ins",
+      "Bathroom vanities and laundry cabinetry",
+      "Sprayed doors and drawer fronts, not brushed in place",
+    ],
+  },
+  {
+    title: "Commercial painting",
+    slug: "commercial-painting",
+    description:
+      "Offices, storefronts, HOA common areas, and rental turnovers — scoped in writing and scheduled around your trading hours, tenants, or handover date.",
+    bullets: [
+      "Offices, retail units, and hospitality interiors",
+      "HOA communities, common areas, and property management",
+      "Out-of-hours and phased schedules to keep you open",
     ],
   },
 ];
@@ -351,7 +371,7 @@ export const lakewoodRanchNeighborhoods = [
   "Indigo",
 ];
 
-export const faqs: Faq[] = [
+const baseFaqs: Faq[] = [
   {
     question: "What areas do you serve?",
     answer:
@@ -377,11 +397,43 @@ export const faqs: Faq[] = [
     answer:
       "It depends on the size and condition of the space, but most interior rooms and standard exteriors are completed within a few days. We'll give you a realistic timeline with your written estimate.",
   },
-  {
+];
+
+/**
+ * The licensing / insurance question, which customers ask constantly and which
+ * "licensed painters near me" style searches are looking for.
+ *
+ * It is built from `credentials` rather than written as prose, so the site can
+ * only ever make this claim once the claim is backed by a real value. This
+ * matters more than the usual copy decision for two reasons: it is a
+ * verifiable legal claim, and it renders into FAQPage structured data — an
+ * unverified "yes, we're fully insured" would be asserting something false to
+ * Google in machine-readable form, not just to a reader.
+ *
+ * Set `liabilityCoverage` and/or `licenseNumber` in `credentials` and the
+ * question appears, with the real figures in it. Until then it is absent.
+ */
+function licensingFaq(): Faq | null {
+  const claims: string[] = [];
+
+  if (credentials.liabilityCoverage) {
+    claims.push(`we carry ${credentials.liabilityCoverage}`);
+  }
+  if (credentials.licenseNumber) {
+    claims.push(`we hold Florida registration ${credentials.licenseNumber}`);
+  }
+  if (claims.length === 0) return null;
+
+  return {
     question: "Are you licensed and insured?",
-    answer:
-      "Yes — we're fully insured and treat every property with care. You're covered from the first day of prep to the final walkthrough.",
-  },
+    answer: `Yes — ${claims.join(", and ")}. We're happy to send documentation before work starts.`,
+  };
+}
+
+/** The FAQ list as rendered: base questions, plus any that credentials support. */
+export const faqs: Faq[] = [
+  ...baseFaqs,
+  ...(licensingFaq() ? [licensingFaq() as Faq] : []),
 ];
 
 export const aboutCopy = {
