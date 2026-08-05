@@ -1,13 +1,6 @@
 import { useEffect } from "react";
 import { business } from "./data/siteContent";
-
-type SeoProps = {
-  title: string;
-  description: string;
-  /** Path only, e.g. "/services". Defaults to "/". */
-  path?: string;
-  image?: string;
-};
+import { routeByPath } from "./routes";
 
 function setMeta(attr: "name" | "property", key: string, content: string) {
   let el = document.head.querySelector<HTMLMetaElement>(`meta[${attr}="${key}"]`);
@@ -30,30 +23,42 @@ function setLink(rel: string, href: string) {
 }
 
 /**
- * Per-route SEO: sets <title>, meta description, canonical URL, and
- * Open Graph / Twitter tags on navigation. Works in an SPA because Google
- * renders client-side JS; the static fallbacks live in index.html.
+ * Keeps the document head correct during *client-side* navigation.
+ *
+ * This is the second half of the SEO story, not the first. The head tags that
+ * matter for indexing are written into each route's static HTML at build time
+ * by `scripts/prerender.mjs`, because that is what Google reads before it
+ * renders any JavaScript. This hook only handles what happens after a visitor
+ * clicks a link and no new document is fetched — so the tab title and the
+ * canonical stay honest for anyone (or anything) inspecting the live DOM.
+ *
+ * Metadata comes from `routes.ts` so the two paths can never disagree.
  */
-export function useSeo({ title, description, path = "/", image }: SeoProps) {
-  useEffect(() => {
-    const url = business.url + (path === "/" ? "" : path);
-    const ogImage = image
-      ? business.url + image
-      : business.url + "/images/proj-exterior-white-2story.jpg";
+export function useSeo(path: string) {
+  const route = routeByPath(path);
 
-    document.title = title;
-    setMeta("name", "description", description);
+  useEffect(() => {
+    if (!route) return;
+
+    const url = business.url + (route.path === "/" ? "" : route.path);
+    const ogImage =
+      business.url + (route.image ?? "/images/proj-exterior-white-2story.jpg");
+
+    document.title = route.title;
+    setMeta("name", "description", route.description);
     setLink("canonical", url);
 
-    setMeta("property", "og:title", title);
-    setMeta("property", "og:description", description);
+    setMeta("name", "robots", route.noIndex ? "noindex, follow" : "index, follow");
+
+    setMeta("property", "og:title", route.title);
+    setMeta("property", "og:description", route.description);
     setMeta("property", "og:url", url);
     setMeta("property", "og:image", ogImage);
     setMeta("property", "og:type", "website");
 
     setMeta("name", "twitter:card", "summary_large_image");
-    setMeta("name", "twitter:title", title);
-    setMeta("name", "twitter:description", description);
+    setMeta("name", "twitter:title", route.title);
+    setMeta("name", "twitter:description", route.description);
     setMeta("name", "twitter:image", ogImage);
-  }, [title, description, path, image]);
+  }, [route]);
 }

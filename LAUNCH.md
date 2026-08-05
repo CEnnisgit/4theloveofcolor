@@ -14,6 +14,12 @@ repo is doing anything.
 1. **Connect Netlify** — netlify.com → *Add new site* → *Import from GitHub* →
    `CEnnisgit/4theloveofcolor`. Build settings come from `netlify.toml`; don't
    override them.
+
+   The build now prerenders a static HTML file per route, so there is no SPA
+   catch-all redirect any more. Unmatched URLs serve `404.html` with a real
+   404. If you ever re-add a `/* /index.html 200` rule, every mistyped URL
+   goes back to returning 200 on a "page not found" screen, and the
+   `/about-us` redirect below stops firing.
 2. **Turn on form notifications** — *Site settings → Forms → Form
    notifications → Add notification → Email notification*, sent to
    `4theloveofcolorpainting@gmail.com`.
@@ -28,6 +34,32 @@ repo is doing anything.
    domain in Netlify; every canonical URL in the code uses the `www.` form.
 5. **Keep Wix running** until DNS has propagated and the new site resolves.
    Cancel the subscription only after that.
+
+### The Wix URLs Google already has
+
+The current Wix site publishes eight URLs in its sitemap. Four carry across
+unchanged, one is redirected in `public/_redirects`, and three have no
+equivalent here yet:
+
+| Wix URL | After cutover |
+| --- | --- |
+| `/` | same |
+| `/services` | same |
+| `/projects` | same |
+| `/contact` | same |
+| `/about-us` | **301 → `/about`** (in `public/_redirects`) |
+| `/privacy-policy` | 404 — no page yet |
+| `/terms-and-conditions` | 404 — no page yet |
+| `/accessibility-statement` | 404 — no page yet |
+
+The three 404s are a loose end rather than a blocker. A privacy policy is the
+one worth writing rather than redirecting: the contact form collects a name,
+email, phone number and message, so the site genuinely needs one.
+
+After DNS moves, submit the sitemap in Google Search Console
+(`https://www.4theloveofcolorpainting.com/sitemap.xml`) and use *URL
+Inspection* on one city page to confirm Google sees its own canonical rather
+than the home page's.
 
 ---
 
@@ -51,8 +83,6 @@ Once both are set, `netlify/functions/reviews.mjs` serves the live rating,
 review count, and up to five reviews, cached 12h at the CDN. With either
 variable missing the site falls back to the curated testimonials — so a
 missing key degrades quietly rather than showing an empty section.
-
-Detail: `GOOGLE_REVIEWS_SETUP.md` in the `4theloveofcolorpainting-api` repo.
 
 ---
 
@@ -150,11 +180,23 @@ than photo quality.
 
 ## Reference
 
-- **Frontend** — this repo. React 18 + TS + Vite, deploys to Netlify.
-- **CRM API** — `../4theloveofcolorpainting-api`. Express + SQLite, targets
-  Railway. **Not deployed, and not needed.** The site works fully without it.
-  If it is deployed later, set `VITE_API_URL` in Netlify and leads will mirror
-  into it automatically — the contact form already handles this, and swallows
-  CRM failures so an outage can never show a customer an error.
-- **iOS app** — `../4theloveofcolorpainting-ios`. SwiftUI CRM client. Depends
-  on the API above, so it needs that deployed first.
+- **Frontend** — this repo. React 18 + TS + Vite, prerendered to static HTML,
+  deploys to Netlify. This is the whole product.
+- **Leads** — Netlify Forms only, delivered by email. No backend, no monthly
+  cost, nothing that can be down when a lead arrives.
+- **CRM** — dropped (2026-08-05). The `4theloveofcolorpainting-api` and
+  `4theloveofcolorpainting-ios` repos still exist on disk but nothing in this
+  site references them, and the admin dashboard has been removed from the
+  build. Reviving that path is a deliberate decision, not a config change.
+
+## Build
+
+`npm run build` runs four steps: typecheck, client bundle, server bundle, then
+`scripts/prerender.mjs`, which writes one HTML file per route from the table in
+`src/routes.ts` plus `sitemap.xml` and `404.html`.
+
+**Adding an indexable page means adding it to `src/routes.ts`.** A route that
+is missing from that table still works when clicked, but it is never
+prerendered — so it ships the shell's markup, is absent from the sitemap, and
+Google sees it as a copy of whatever the shell contains. That is the failure
+this build step exists to prevent.

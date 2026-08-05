@@ -3,39 +3,26 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>House Painters in Lakewood Ranch &amp; Sarasota, FL | 4 The Love of Color Painting</title>
-    <meta
-      name="description"
-      content="Family-owned interior &amp; exterior painters serving Lakewood Ranch, Sarasota, Bradenton & the Suncoast. Free estimates, eco-friendly paint, finish quality you can see. Call (917) 584-0069."
-    />
-    <link rel="canonical" href="https://www.4theloveofcolorpainting.com/" />
+
+    <!--
+      Per-route head tags — <title>, description, canonical, robots, Open Graph
+      and Twitter — are injected at the marker below by scripts/prerender.mjs,
+      which writes one static HTML file per route from the table in
+      src/routes.ts.
+
+      Do not hard-code them in this template. A single shared canonical here is
+      what previously told Google that every page on the site was a duplicate
+      of the home page.
+    -->
+    <!--seo-->
+
     <link rel="icon" type="image/png" href="/images/logo.png" />
     <meta name="theme-color" content="#b95b33" />
+    <meta property="og:site_name" content="4 The Love of Color Painting" />
 
     <!-- Local SEO geo signals -->
     <meta name="geo.region" content="US-FL" />
     <meta name="geo.placename" content="Lakewood Ranch, Sarasota" />
-    <meta name="keywords" content="painters Lakewood Ranch, Sarasota painters, house painting Bradenton, interior painting, exterior painting, cabinet refinishing, commercial painting Suncoast Florida" />
-
-    <!-- Open Graph -->
-    <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="4 The Love of Color Painting" />
-    <meta property="og:title" content="House Painters in Lakewood Ranch & Sarasota, FL | 4 The Love of Color Painting" />
-    <meta
-      property="og:description"
-      content="Family-owned interior & exterior painters serving Lakewood Ranch, Sarasota & the Suncoast. Free estimates and finish quality you can see."
-    />
-    <meta property="og:url" content="https://www.4theloveofcolorpainting.com/" />
-    <meta property="og:image" content="https://www.4theloveofcolorpainting.com/images/proj-exterior-white-2story.jpg" />
-
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="4 The Love of Color Painting — Lakewood Ranch & Sarasota, FL" />
-    <meta
-      name="twitter:description"
-      content="Family-owned interior & exterior painters serving Lakewood Ranch, Sarasota & the Suncoast."
-    />
-    <meta name="twitter:image" content="https://www.4theloveofcolorpainting.com/images/proj-exterior-white-2story.jpg" />
 
     <!-- LocalBusiness structured data (local SEO) -->
     <script type="application/ld+json">
@@ -49,7 +36,6 @@
       "url": "https://www.4theloveofcolorpainting.com/",
       "telephone": "+19175840069",
       "email": "4theloveofcolorpainting@gmail.com",
-      "priceRange": "$$",
       "description": "Family-owned interior and exterior painting company serving Lakewood Ranch, Sarasota, Bradenton and the surrounding Suncoast of Florida.",
       "address": {
         "@type": "PostalAddress",
@@ -107,16 +93,12 @@
       <input type="text" name="bot-field" />
     </form>
 
-    <div id="root">
-      <!-- No-JS / crawler fallback content -->
-      <noscript>
-        <h1>4 The Love of Color Painting — Lakewood Ranch &amp; Sarasota, FL</h1>
-        <p>
-          Family-owned interior and exterior house painters serving Lakewood Ranch,
-          Sarasota, Bradenton, and the surrounding Suncoast. Free estimates.
-          Call <a href="tel:+19175840069">(917) 584-0069</a>.
-        </p>
-      </noscript>
-    </div>
+    <!--
+      Prerendered route markup is written into this container at build time.
+      No <noscript> fallback is needed any more: the static file already holds
+      the full page, so a visitor or crawler without JavaScript sees the real
+      content rather than a stub.
+    -->
+    <div id="root"></div>
   </body>
 </html>

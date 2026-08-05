@@ -3,11 +3,9 @@
   publish = "dist"
   functions = "netlify/functions"
 
-# SPA fallback — every route serves index.html (admin + marketing pages)
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
+# No SPA fallback. The build prerenders a static HTML file per route, so
+# Netlify serves those directly and unmatched paths fall through to 404.html
+# with a real 404 status. Redirects for retired URLs live in public/_redirects.
 
 # Hashed JS/CSS bundles never change content — cache hard.
 [[headers]]

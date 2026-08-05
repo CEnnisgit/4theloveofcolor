@@ -20,17 +20,12 @@ export type ReviewsData = {
 /**
  * Where to read reviews from.
  *
- * With no CRM backend deployed we use the Netlify Function, which needs only
- * two environment variables in the Netlify dashboard. The function path is
- * requested directly rather than through an /api/* redirect, because the SPA
- * catch-all in `_redirects` is evaluated before `netlify.toml` and would
- * otherwise swallow it.
- *
- * If VITE_API_URL is set, the CRM API is deployed and owns this endpoint.
+ * A Netlify Function, which needs only two environment variables in the
+ * Netlify dashboard. The function path is requested directly rather than
+ * through an /api/* redirect, because the SPA catch-all in `_redirects` is
+ * evaluated before `netlify.toml` and would otherwise swallow it.
  */
-const REVIEWS_ENDPOINT = import.meta.env.VITE_API_URL
-  ? `${import.meta.env.VITE_API_URL}/api/reviews`
-  : "/.netlify/functions/reviews";
+const REVIEWS_ENDPOINT = "/.netlify/functions/reviews";
 
 /**
  * Fetches live Google reviews through a server-side proxy that keeps the

@@ -1,1 +1,22 @@
-/* /index.html 200
+# Redirects, highest precedence first.
+#
+# There is deliberately NO "/* /index.html 200" catch-all any more. The build
+# prerenders a real HTML file for every route, so Netlify serves those files
+# directly and anything genuinely unknown falls through to 404.html with a
+# real 404 status. The old catch-all returned 200 for every made-up URL, which
+# is a soft 404 — Google treats those as a site-quality problem — and it also
+# meant the retired Wix URLs below would have served a "page not found" screen
+# with a success status instead of redirecting.
+
+# --- Wix URLs that must survive the cutover -------------------------------
+# These are the URLs Google has indexed for the current Wix site (from its
+# pages-sitemap.xml). Anything not carried across loses whatever ranking and
+# inbound links it has accumulated. /services, /projects and /contact keep
+# their slugs and need no rule; only the About page moved.
+
+/about-us    /about    301!
+
+# Not yet resolved: /privacy-policy, /terms-and-conditions and
+# /accessibility-statement exist on Wix with no equivalent here, so they will
+# 404 at cutover. A privacy policy is worth writing rather than redirecting,
+# since the contact form collects personal data. Tracked in LAUNCH.md.

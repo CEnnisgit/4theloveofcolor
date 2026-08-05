@@ -26,7 +26,6 @@ import { useSeo } from "./seo";
 import { Photo } from "./Photo";
 import { useScrollReveal } from "./useScrollReveal";
 import { useReviews } from "./useReviews";
-import AdminApp from "./admin/AdminApp";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -37,14 +36,9 @@ function ScrollToTop() {
 }
 
 function App() {
-  const { pathname } = useLocation();
   const [menuOpen, setMenuOpen] = useState(false);
   const closeMenu = () => setMenuOpen(false);
   useScrollReveal();
-
-  if (pathname.startsWith("/admin")) {
-    return <AdminApp />;
-  }
 
   return (
     <div className="site-shell">
@@ -153,29 +147,31 @@ function SiteFooter() {
   );
 }
 
-/** Renders a JSON-LD script block into the document. */
+/**
+ * Renders a JSON-LD block inline, as part of the markup.
+ *
+ * Deliberately not a `useEffect` that appends to `document.head`: an effect
+ * never runs during prerendering, so schema added that way is missing from the
+ * HTML Google is served. Rendered inline it is present in the static file and
+ * survives hydration. Position in the document does not matter — Google reads
+ * JSON-LD from anywhere on the page.
+ *
+ * `<` is escaped so a stray "</script>" inside any string value cannot close
+ * the block early.
+ */
 function JsonLd({ data }: { data: unknown }) {
-  useEffect(() => {
-    const script = document.createElement("script");
-    script.type = "application/ld+json";
-    script.text = JSON.stringify(data);
-    script.dataset.dynamic = "true";
-    document.head.appendChild(script);
-    return () => {
-      document.head.removeChild(script);
-    };
-  }, [data]);
-  return null;
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{
+        __html: JSON.stringify(data).replace(/</g, "\\u003c"),
+      }}
+    />
+  );
 }
 
 function HomePage() {
-  useSeo({
-    title:
-      "House Painters in Lakewood Ranch & Sarasota, FL | 4 The Love of Color Painting",
-    description:
-      "Family-owned interior & exterior painters serving Lakewood Ranch, Sarasota, Bradenton & the Suncoast. Free estimates, eco-friendly paint, finish quality you can see.",
-    path: "/",
-  });
+  useSeo("/");
 
   return (
     <>
@@ -555,12 +551,7 @@ function CtaBanner() {
 }
 
 function ServicesPage() {
-  useSeo({
-    title: "Painting Services — Interior, Exterior & Cabinets | Lakewood Ranch & Sarasota, FL",
-    description:
-      "Interior painting, exterior painting, cabinet refinishing, and commercial painting across Lakewood Ranch, Sarasota & Bradenton. Free estimates from a family-owned crew.",
-    path: "/services",
-  });
+  useSeo("/services");
 
   return (
     <PageShell
@@ -592,12 +583,7 @@ function ServicesPage() {
 }
 
 function ProjectsPage() {
-  useSeo({
-    title: "Painting Projects & Gallery | 4 The Love of Color Painting, Sarasota FL",
-    description:
-      "See interior, exterior, commercial, and detail painting projects from 4 The Love of Color Painting across the Lakewood Ranch and Sarasota area.",
-    path: "/projects",
-  });
+  useSeo("/projects");
 
   return (
     <PageShell
@@ -623,12 +609,7 @@ function ProjectsPage() {
 }
 
 function AboutPage() {
-  useSeo({
-    title: "About Us — Family-Owned Painters in Lakewood Ranch, FL | 4 The Love of Color",
-    description:
-      "Founded by Edwin Ennis and run with his sons, 4 The Love of Color Painting brings family craftsmanship and eco-friendly materials to homes across the Sarasota Suncoast.",
-    path: "/about",
-  });
+  useSeo("/about");
 
   return (
     <PageShell
@@ -662,12 +643,7 @@ function AboutPage() {
 }
 
 function ContactPage() {
-  useSeo({
-    title: "Contact & Free Estimates | 4 The Love of Color Painting, Lakewood Ranch FL",
-    description:
-      "Request a free painting estimate in Lakewood Ranch, Sarasota or Bradenton. Call (917) 584-0069 or send a message — family-owned, fast, and friendly.",
-    path: "/contact",
-  });
+  useSeo("/contact");
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -692,10 +668,12 @@ function ContactPage() {
     });
 
     try {
-      // Primary delivery: Netlify Forms. This needs no backend and no paid
-      // service, so a lead can never be lost to a CRM that is down or not yet
-      // deployed. Netlify emails every submission to the address configured in
-      // the site's form-notification settings.
+      // Delivery is Netlify Forms and nothing else: no backend, no monthly
+      // cost, and no service that can be down when a lead arrives. Netlify
+      // emails every submission to the address configured under
+      // Site settings -> Forms -> Form notifications. If that notification is
+      // not configured, submissions collect silently in the Netlify dashboard
+      // and nobody is told — see LAUNCH.md.
       const response = await fetch("/", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -713,27 +691,6 @@ function ContactPage() {
       );
       setSubmitting(false);
       return;
-    }
-
-    // Secondary: mirror the lead into the CRM when one is configured. Failure
-    // here is deliberately silent — the lead is already delivered above, so a
-    // CRM outage must never show the customer an error.
-    if (import.meta.env.VITE_API_URL) {
-      try {
-        await fetch(`${import.meta.env.VITE_API_URL}/api/leads`, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            name,
-            email,
-            phone: phone || undefined,
-            project_type: projectType,
-            message,
-          }),
-        });
-      } catch {
-        // Intentionally ignored — see above.
-      }
     }
 
     setSubmitting(false);
@@ -837,12 +794,7 @@ function ContactPage() {
 }
 
 function NotFoundPage() {
-  useSeo({
-    title: "Page Not Found | 4 The Love of Color Painting",
-    description:
-      "That page couldn't be found. Explore our painting services or get a free estimate in Lakewood Ranch & Sarasota, FL.",
-    path: "/404",
-  });
+  useSeo("/404");
 
   return (
     <section className="section notfound">
@@ -905,11 +857,7 @@ function CityPage() {
 }
 
 function CityPageBody({ page }: { page: CityPageData }) {
-  useSeo({
-    title: page.title,
-    description: page.metaDescription,
-    path: `/painters/${page.slug}`,
-  });
+  useSeo(`/painters/${page.slug}`);
 
   // Service + areaServed schema scoped to this city. The site-wide
   // HousePainter entity is declared in index.html; this references it rather
