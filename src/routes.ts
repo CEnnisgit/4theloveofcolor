@@ -21,6 +21,7 @@
  */
 
 import { cityPages } from "./data/cityPages";
+import { guidePages } from "./data/guidePages";
 import { servicePages } from "./data/servicePages";
 
 export type RouteMeta = {
@@ -72,11 +73,25 @@ export const staticRoutes: RouteMeta[] = [
     description:
       "Request a free painting estimate in Lakewood Ranch, Sarasota or Bradenton. Call (917) 584-0069 or send a message — family-owned, fast, and friendly.",
   },
+  {
+    path: "/guides",
+    title: "Painting Guides — Cost, Estimates & Florida Finishes | 4 The Love of Color",
+    description:
+      "Straight answers on what painting costs in Lakewood Ranch and Sarasota, how to compare estimates, and what Florida sun and salt air do to a finish.",
+  },
 ];
 
 /** Per-service pages, derived from the service data rather than restated here. */
 export const serviceRoutes: RouteMeta[] = servicePages.map((page) => ({
   path: `/services/${page.slug}`,
+  title: page.title,
+  description: page.metaDescription,
+  ...(page.image ? { image: page.image } : {}),
+}));
+
+/** Guides, derived from the guide data rather than restated here. */
+export const guideRoutes: RouteMeta[] = guidePages.map((page) => ({
+  path: `/guides/${page.slug}`,
   title: page.title,
   description: page.metaDescription,
   ...(page.image ? { image: page.image } : {}),
@@ -106,6 +121,7 @@ export const allRoutes: RouteMeta[] = [
   ...staticRoutes,
   ...serviceRoutes,
   ...cityRoutes,
+  ...guideRoutes,
   notFoundRoute,
 ];
 

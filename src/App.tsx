@@ -11,6 +11,11 @@ import {
   servicePages,
 } from "./data/servicePages";
 import {
+  type GuidePage as GuidePageData,
+  guidePageBySlug,
+  guidePages,
+} from "./data/guidePages";
+import {
   aboutCopy,
   business,
   contact,
@@ -101,6 +106,8 @@ function App() {
           <Route path="/projects" element={<ProjectsPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />
+          <Route path="/guides" element={<GuidesPage />} />
+          <Route path="/guides/:guideSlug" element={<GuideDetailPage />} />
           <Route path="/painters/:citySlug" element={<CityPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
@@ -883,6 +890,177 @@ function PageShell({ eyebrow, title, intro, children }: PageShellProps) {
   );
 }
 
+/** Guides hub. Keeps every guide one click from the nav and out of orphan status. */
+function GuidesPage() {
+  useSeo("/guides");
+
+  return (
+    <PageShell
+      eyebrow="Guides"
+      title="Straight answers to the questions people ask before they call a painter."
+      intro="What things cost and why, how to read an estimate, and what Florida weather does to a finish — written from the work rather than from a keyword list."
+    >
+      <div className="service-grid">
+        {guidePages.map((guide) => (
+          <article key={guide.slug} className="service-card service-card-large">
+            <h2>
+              <NavLink to={`/guides/${guide.slug}`}>{guide.h1}</NavLink>
+            </h2>
+            <p>{guide.metaDescription}</p>
+            <NavLink className="service-more" to={`/guides/${guide.slug}`}>
+              Read the guide →
+            </NavLink>
+          </article>
+        ))}
+      </div>
+      <CtaBanner />
+    </PageShell>
+  );
+}
+
+/**
+ * Guide page at /guides/:guideSlug.
+ *
+ * Targets the research-stage searches — cost, comparison, timing — that come
+ * before anyone is ready to call a painter.
+ */
+function GuideDetailPage() {
+  const { guideSlug } = useParams();
+  const page = guideSlug ? guidePageBySlug(guideSlug) : undefined;
+
+  if (!page) {
+    return <NotFoundPage />;
+  }
+
+  return <GuideDetailBody page={page} />;
+}
+
+function GuideDetailBody({ page }: { page: GuidePageData }) {
+  useSeo(`/guides/${page.slug}`);
+
+  const url = `${business.url}/guides/${page.slug}`;
+
+  // Article, authored and published by the business itself. `dateModified`
+  // comes from the content, not from the build — regenerating the site is not
+  // a content change, and bumping the date to look fresh is exactly what
+  // Google's spam guidance warns about.
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "@id": `${url}/#article`,
+    headline: page.h1,
+    description: page.metaDescription,
+    datePublished: page.published,
+    dateModified: page.updated,
+    mainEntityOfPage: { "@type": "WebPage", "@id": url },
+    author: { "@id": `${business.url}/#business` },
+    publisher: { "@id": `${business.url}/#business` },
+    ...(page.image ? { image: [business.url + page.image] } : {}),
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: `${business.url}/` },
+      { "@type": "ListItem", position: 2, name: "Guides", item: `${business.url}/guides` },
+      { "@type": "ListItem", position: 3, name: page.name, item: url },
+    ],
+  };
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: page.faqs.map((f) => ({
+      "@type": "Question",
+      name: f.question,
+      acceptedAnswer: { "@type": "Answer", text: f.answer },
+    })),
+  };
+
+  return (
+    <>
+      <JsonLd data={articleSchema} />
+      <JsonLd data={breadcrumbSchema} />
+      <JsonLd data={faqSchema} />
+
+      <nav className="breadcrumbs" aria-label="Breadcrumb">
+        <NavLink to="/">Home</NavLink>
+        <span aria-hidden="true">/</span>
+        <NavLink to="/guides">Guides</NavLink>
+        <span aria-hidden="true">/</span>
+        <span aria-current="page">{page.name}</span>
+      </nav>
+
+      <section className="page-hero section">
+        <p className="eyebrow">Guide</p>
+        <h1>{page.h1}</h1>
+        {page.intro.map((paragraph, index) => (
+          <p key={paragraph} className={index === 0 ? "lead" : undefined}>
+            {paragraph}
+          </p>
+        ))}
+      </section>
+
+      {page.image && (
+        <section className="section service-hero-media">
+          <Photo src={page.image} alt={page.imageAlt} width={1100} height={700} />
+        </section>
+      )}
+
+      {page.sections.map((section) => (
+        <section
+          key={section.heading}
+          className="section"
+          aria-label={section.heading}
+        >
+          <div className="section-heading">
+            <h2>{section.heading}</h2>
+          </div>
+          {section.body.map((paragraph) => (
+            <p key={paragraph} className="guide-paragraph">
+              {paragraph}
+            </p>
+          ))}
+          {section.points && (
+            <div className="why-grid">
+              {section.points.map((point) => (
+                <article key={point.title} className="why-card">
+                  <h3>{point.title}</h3>
+                  <p>{point.text}</p>
+                </article>
+              ))}
+            </div>
+          )}
+        </section>
+      ))}
+
+      <section className="section faq-section" aria-labelledby="guide-faq-title">
+        <div className="section-heading">
+          <p className="eyebrow">FAQ</p>
+          <h2 id="guide-faq-title">Common questions about cost.</h2>
+        </div>
+        <div className="faq-list">
+          {page.faqs.map((f) => (
+            <details key={f.question} className="faq-item">
+              <summary>{f.question}</summary>
+              <p>{f.answer}</p>
+            </details>
+          ))}
+        </div>
+      </section>
+
+      <section className="section page-body">
+        <p className="lead">{page.closing}</p>
+      </section>
+
+      <ServiceLinks />
+
+      <CtaBanner />
+    </>
+  );
+}
+
 /**
  * Per-service page at /services/:serviceSlug.
  *
@@ -1069,6 +1247,13 @@ function ServiceDetailBody({ page }: { page: ServicePageData }) {
 
       <section className="section page-body">
         <p className="lead">{page.closing}</p>
+        <p className="guide-crosslink">
+          Working out what this should cost?{" "}
+          <NavLink to="/guides/house-painting-cost-lakewood-ranch-sarasota">
+            What drives the price of a repaint here
+          </NavLink>{" "}
+          covers what moves the number and how to compare three quotes.
+        </p>
       </section>
 
       <ServiceLinks currentSlug={page.slug} />
