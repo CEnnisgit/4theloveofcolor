@@ -21,6 +21,7 @@
  */
 
 import { cityPages } from "./data/cityPages";
+import { cityServicePages } from "./data/cityServicePages";
 import { guidePages } from "./data/guidePages";
 import { servicePages } from "./data/servicePages";
 
@@ -89,6 +90,16 @@ export const serviceRoutes: RouteMeta[] = servicePages.map((page) => ({
   ...(page.image ? { image: page.image } : {}),
 }));
 
+/**
+ * Service × city pages, nested under their city so the URL states the
+ * hierarchy: /painters/sarasota/exterior-painting.
+ */
+export const cityServiceRoutes: RouteMeta[] = cityServicePages.map((page) => ({
+  path: `/painters/${page.citySlug}/${page.serviceSlug}`,
+  title: page.title,
+  description: page.metaDescription,
+}));
+
 /** Guides, derived from the guide data rather than restated here. */
 export const guideRoutes: RouteMeta[] = guidePages.map((page) => ({
   path: `/guides/${page.slug}`,
@@ -121,6 +132,7 @@ export const allRoutes: RouteMeta[] = [
   ...staticRoutes,
   ...serviceRoutes,
   ...cityRoutes,
+  ...cityServiceRoutes,
   ...guideRoutes,
   notFoundRoute,
 ];

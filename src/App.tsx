@@ -16,6 +16,12 @@ import {
   guidePages,
 } from "./data/guidePages";
 import {
+  type CityServicePage as CityServicePageData,
+  cityServiceBySlugs,
+  cityServicesForCity,
+  cityServicesForService,
+} from "./data/cityServicePages";
+import {
   aboutCopy,
   business,
   contact,
@@ -108,6 +114,10 @@ function App() {
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/guides" element={<GuidesPage />} />
           <Route path="/guides/:guideSlug" element={<GuideDetailPage />} />
+          <Route
+            path="/painters/:citySlug/:serviceSlug"
+            element={<CityServicePage />}
+          />
           <Route path="/painters/:citySlug" element={<CityPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
@@ -277,17 +287,20 @@ function HomePage() {
           <h2 id="services-title">Painting that improves how your home and business live.</h2>
         </div>
         <div className="service-grid">
+          {/*
+            Deliberately the short form: heading and description only, with the
+            bullets left to /services and the per-service pages. The home page
+            and /services previously rendered identical cards and an identical
+            FAQ, which measured at 36% text overlap — two of our own URLs
+            competing for the same query. The home page introduces; the service
+            pages carry the detail.
+          */}
           {services.map((service) => (
             <article key={service.title} className="service-card">
               <h3>
                 <NavLink to={`/services/${service.slug}`}>{service.title}</NavLink>
               </h3>
               <p>{service.description}</p>
-              <ul>
-                {service.bullets.map((bullet) => (
-                  <li key={bullet}>{bullet}</li>
-                ))}
-              </ul>
             </article>
           ))}
         </div>
@@ -361,7 +374,12 @@ function HomePage() {
 
       <ReviewsSection />
 
-      <FaqSection />
+      {/*
+        The FAQ lives on /services, not here. It was rendering on both pages,
+        which duplicated the copy and — worse — emitted the same FAQPage
+        structured data under two different URLs. One question set, one page
+        that owns it.
+      */}
 
       <CtaBanner />
     </>
@@ -890,6 +908,153 @@ function PageShell({ eyebrow, title, intro, children }: PageShellProps) {
   );
 }
 
+/**
+ * Service × city page at /painters/:citySlug/:serviceSlug.
+ *
+ * Only the combinations listed in cityServicePages.ts exist. An unlisted pair
+ * — /painters/venice/commercial-painting, say — renders the 404 rather than a
+ * generated page, which is the mechanism that keeps this from becoming a
+ * sixteen-page doorway grid. See the note at the top of that file.
+ */
+function CityServicePage() {
+  const { citySlug, serviceSlug } = useParams();
+  const page =
+    citySlug && serviceSlug ? cityServiceBySlugs(citySlug, serviceSlug) : undefined;
+  const city = citySlug ? cityPageBySlug(citySlug) : undefined;
+  const service = serviceSlug ? servicePageBySlug(serviceSlug) : undefined;
+
+  if (!page || !city || !service) {
+    return <NotFoundPage />;
+  }
+
+  return <CityServiceBody page={page} city={city} service={service} />;
+}
+
+function CityServiceBody({
+  page,
+  city,
+  service,
+}: {
+  page: CityServicePageData;
+  city: CityPageData;
+  service: ServicePageData;
+}) {
+  useSeo(`/painters/${page.citySlug}/${page.serviceSlug}`);
+
+  const url = `${business.url}/painters/${page.citySlug}/${page.serviceSlug}`;
+
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": `${url}/#service`,
+    name: `${service.name} in ${city.city}`,
+    serviceType: service.serviceType,
+    url,
+    description: page.metaDescription,
+    provider: { "@id": `${business.url}/#business` },
+    areaServed: {
+      "@type": "City",
+      name: city.city,
+      containedInPlace: { "@type": "AdministrativeArea", name: city.county },
+    },
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: `${business.url}/` },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: `${city.city} painters`,
+        item: `${business.url}/painters/${page.citySlug}`,
+      },
+      { "@type": "ListItem", position: 3, name: service.name, item: url },
+    ],
+  };
+
+  return (
+    <>
+      <JsonLd data={serviceSchema} />
+      <JsonLd data={breadcrumbSchema} />
+
+      <nav className="breadcrumbs" aria-label="Breadcrumb">
+        <NavLink to="/">Home</NavLink>
+        <span aria-hidden="true">/</span>
+        <NavLink to={`/painters/${page.citySlug}`}>{city.city}</NavLink>
+        <span aria-hidden="true">/</span>
+        <span aria-current="page">{service.name}</span>
+      </nav>
+
+      <section className="page-hero section">
+        <p className="eyebrow">
+          {service.name} · {city.city}, {business.region}
+        </p>
+        <h1>{page.h1}</h1>
+        {page.intro.map((paragraph, index) => (
+          <p key={paragraph} className={index === 0 ? "lead" : undefined}>
+            {paragraph}
+          </p>
+        ))}
+        <div className="hero-actions">
+          <NavLink className="button button-solid" to="/contact">
+            Get a Free Estimate
+          </NavLink>
+          <a className="button button-outline" href={contact.phoneHref}>
+            Call {contact.phone}
+          </a>
+        </div>
+      </section>
+
+      <section className="section" aria-labelledby="cityservice-points-title">
+        <div className="section-heading">
+          <p className="eyebrow">What's different here</p>
+          <h2 id="cityservice-points-title">
+            {service.name} in {city.city}, specifically.
+          </h2>
+        </div>
+        <div className="why-grid">
+          {page.points.map((point) => (
+            <article key={point.title} className="why-card">
+              <h3>{point.title}</h3>
+              <p>{point.text}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="section service-area" aria-labelledby="cityservice-areas-title">
+        <div className="section-heading">
+          <p className="eyebrow">Where we work</p>
+          <h2 id="cityservice-areas-title">Areas of {city.city} we cover.</h2>
+        </div>
+        <ul className="city-grid">
+          {city.areas.map((area) => (
+            <li key={area}>{area}</li>
+          ))}
+        </ul>
+      </section>
+
+      <ReviewsSection />
+
+      <section className="section page-body">
+        <p className="lead">{page.closing}</p>
+        <p className="guide-crosslink">
+          More detail on how we approach this work:{" "}
+          <NavLink to={`/services/${page.serviceSlug}`}>
+            {service.name.toLowerCase()}, step by step
+          </NavLink>
+          . Or see everything we do in{" "}
+          <NavLink to={`/painters/${page.citySlug}`}>{city.city}</NavLink>.
+        </p>
+      </section>
+
+      <CtaBanner />
+    </>
+  );
+}
+
 /** Guides hub. Keeps every guide one click from the nav and out of orphan status. */
 function GuidesPage() {
   useSeo("/guides");
@@ -1256,6 +1421,8 @@ function ServiceDetailBody({ page }: { page: ServicePageData }) {
         </p>
       </section>
 
+      <ServiceCityLinks serviceSlug={page.slug} />
+
       <ServiceLinks currentSlug={page.slug} />
 
       <CtaBanner />
@@ -1384,10 +1551,81 @@ function CityPageBody({ page }: { page: CityPageData }) {
         <p className="lead">{page.closing}</p>
       </section>
 
+      <CityServiceLinks citySlug={page.slug} cityName={page.city} />
+
       <CityLinks currentSlug={page.slug} />
 
       <CtaBanner />
     </>
+  );
+}
+
+/**
+ * Links from a city page down to the service × city pages that exist for it.
+ *
+ * Renders nothing when there are none, which is the normal case for most
+ * cities — only a handful of combinations have enough genuinely local
+ * substance to justify a page. See cityServicePages.ts.
+ */
+function CityServiceLinks({
+  citySlug,
+  cityName,
+}: {
+  citySlug: string;
+  cityName: string;
+}) {
+  const pages = cityServicesForCity(citySlug);
+  if (pages.length === 0) return null;
+
+  return (
+    <section className="section city-links" aria-labelledby="city-service-links-title">
+      <p className="eyebrow" id="city-service-links-title">
+        In {cityName}, specifically
+      </p>
+      <ul>
+        {pages.map((page) => {
+          const service = servicePageBySlug(page.serviceSlug);
+          if (!service) return null;
+          return (
+            <li key={`${page.citySlug}-${page.serviceSlug}`}>
+              <NavLink to={`/painters/${page.citySlug}/${page.serviceSlug}`}>
+                {service.name} in {cityName}
+              </NavLink>
+            </li>
+          );
+        })}
+      </ul>
+    </section>
+  );
+}
+
+/**
+ * Links from a service page across to the cities where that service has its
+ * own page. Same "render nothing if empty" rule.
+ */
+function ServiceCityLinks({ serviceSlug }: { serviceSlug: string }) {
+  const pages = cityServicesForService(serviceSlug);
+  if (pages.length === 0) return null;
+
+  return (
+    <section className="section city-links" aria-labelledby="service-city-links-title">
+      <p className="eyebrow" id="service-city-links-title">
+        By area
+      </p>
+      <ul>
+        {pages.map((page) => {
+          const city = cityPageBySlug(page.citySlug);
+          if (!city) return null;
+          return (
+            <li key={`${page.citySlug}-${page.serviceSlug}`}>
+              <NavLink to={`/painters/${page.citySlug}/${page.serviceSlug}`}>
+                {city.city}
+              </NavLink>
+            </li>
+          );
+        })}
+      </ul>
+    </section>
   );
 }
 
