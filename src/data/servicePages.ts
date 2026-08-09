@@ -62,8 +62,8 @@ export const servicePages: ServicePage[] = [
       "Cabinet refinishing for Lakewood Ranch, Sarasota and Bradenton kitchens — degreasing, deglossing, bonding primer and a sprayed finish that survives daily use. Free written estimates.",
     h1: "Kitchen cabinet refinishing in Lakewood Ranch & Sarasota.",
     intro: [
-      "Refinishing the cabinets you already have costs a fraction of replacing them, and in most Florida kitchens the boxes are in far better shape than the finish suggests. If the carcasses are solid and the layout works, what you are unhappy with is almost always colour and wear — and that is a finishing problem, not a carpentry one.",
-      "It is also the job where the gap between a good result and a bad one is widest. Cabinets get touched, wiped, splashed and knocked more than any other painted surface in a house. A finish that was not properly bonded will chip at the door edges within months, and there is no way to fix that other than stripping it back and starting again.",
+      "Refinishing the cabinets you already have costs a fraction of replacing them, and in most kitchens around here the boxes are in much better shape than the finish makes them look. If they're solid and the layout works for you, what you don't like is usually the color and the wear — and that's something we can fix.",
+      "It's also the job where doing it right matters most. Cabinets get touched, wiped and knocked more than anything else in the house, so a finish that wasn't prepped properly starts chipping at the door edges within months. There's no patching that — it has to come back off and start over.",
     ],
     includes: [
       "Doors, drawer fronts, face frames and cabinet boxes",
@@ -74,46 +74,46 @@ export const servicePages: ServicePage[] = [
     ],
     process: [
       {
-        title: "Everything comes off and gets labelled",
-        text: "Doors, drawer fronts and hardware are removed and numbered so every piece returns to the opening it was hung in. Doors that get shuffled between openings never sit quite right afterwards, and on a frameless kitchen the misalignment is obvious.",
+        title: "Everything comes off and gets numbered",
+        text: "We take off the doors, drawer fronts and hardware and number every piece so it goes back exactly where it came from. Doors that get swapped around never hang quite right afterwards.",
       },
       {
-        title: "Degreasing, then deglossing",
-        text: "Kitchen cabinets carry an invisible film of cooking grease, heaviest around the range and above the hood. Paint does not stick to grease. Surfaces are cleaned with a degreaser first, then scuff-sanded to break the sheen so the primer has something mechanical to key into.",
+        title: "Cleaning off the grease",
+        text: "Every kitchen has a film of cooking grease on the cabinets, worst around the stove — you usually can't see it, but paint won't stick to it. We degrease everything, then sand off the shine so the primer has something to grab.",
       },
       {
-        title: "Bonding primer, chosen for the substrate",
-        text: "Factory-finished thermofoil, laminate, oak with open grain and previously painted wood each need a different primer. This is the single decision that determines whether the finish lasts — and the step most often skipped, because it is invisible in the finished job.",
+        title: "The right primer for your cabinets",
+        text: "Thermofoil, laminate, oak and already-painted wood each need a different primer. This is the one decision that makes or breaks how long the finish lasts, and it's the step that gets skipped most often because you can't see it once the job's done.",
       },
       {
-        title: "Filling, sanding and grain management",
-        text: "Dings and old hardware holes get filled. On open-grain oak, the grain telegraphs through paint unless it is filled and sanded flat first — some people want that texture, most are surprised by it, so it is worth deciding deliberately rather than discovering it at the end.",
+        title: "Filling and sanding",
+        text: "Dings and old handle holes get filled. If you have oak, the grain will show through the paint unless we fill and sand it flat first — some folks like that texture and some don't expect it, so it's worth deciding together up front.",
       },
       {
-        title: "Sprayed finish coats, sanded between",
-        text: "Doors are sprayed off-site or in a controlled area rather than brushed in place. Brush marks on a cabinet door read as a repaint from across the room; a sprayed and levelled finish reads as new. Coats are sanded lightly between passes.",
+        title: "Sprayed, not brushed",
+        text: "We spray the doors and drawer fronts rather than brushing them in place, and sand lightly between coats. You can spot a brushed cabinet door from across the room — sprayed, it looks new.",
       },
       {
-        title: "Cure time before rehanging",
-        text: "Cabinet coatings reach handling strength quickly but keep hardening for days or weeks. Doors are rehung once they can be handled safely, and we tell you when they can take normal use — stacking dishes against a finish that has not cured is how the first chips happen.",
+        title: "Letting it harden before we hang them",
+        text: "Cabinet finishes can be handled fairly quickly but keep hardening for a while after that. We'll hang the doors once they're safe to handle and tell you when you can go back to normal — stacking dishes against a finish that hasn't hardened is how the first chips happen.",
       },
     ],
     problems: [
       {
         title: "Peeling at the door edges and around handles",
-        text: "Almost always a bonding failure: the previous finish went over grease or a glossy factory surface without proper cleaning and priming. Touching up will not hold. Those areas need taking back to a sound surface and rebuilding.",
+        text: "Almost always means the last coat went on over grease or a shiny factory finish without proper cleaning and priming. Touching it up won't hold — those spots need taking back and building up again.",
       },
       {
         title: "Yellowed or ambered white cabinets",
-        text: "Some older white finishes shift yellow with age and UV, worst on the sides that catch daylight. It is a property of the old coating, not dirt, and no amount of cleaning reverses it. Refinishing does.",
+        text: "Some older white finishes turn yellow over the years, worst where the daylight hits. It's the old finish itself, not dirt, so cleaning won't touch it. Refinishing will.",
       },
       {
         title: "Sticky or tacky surfaces long after painting",
-        text: "Usually a finish that never cured properly, often a wall paint used on cabinetry. Wall paint stays soft by design so it can flex; cabinets need a coating that hardens.",
+        text: "Usually wall paint that got used on cabinets. Wall paint is made to stay a little soft so it can flex — cabinets need something that actually hardens.",
       },
       {
         title: "Doors that stick or no longer close flush",
-        text: "Frequently paint build-up on the hinge side or in the door rebate from a previous repaint done without removing the doors. Worth correcting during refinishing while everything is off.",
+        text: "Usually paint built up around the hinges from a previous job done without taking the doors off. Easy to put right while everything is off anyway.",
       },
     ],
     timeline:
@@ -124,7 +124,7 @@ export const servicePages: ServicePage[] = [
       {
         question: "Is refinishing cheaper than replacing cabinets?",
         answer:
-          "Substantially, in most kitchens — you are paying for labour and materials rather than new casework, countertop removal and installation. It only stops making sense when the boxes themselves are failing, the layout needs changing, or water damage has gone into the carcass. We will say so at the walkthrough if that is what we find.",
+          "Substantially, in most kitchens — you are paying for labor and materials rather than new casework, countertop removal and installation. It only stops making sense when the boxes themselves are failing, the layout needs changing, or water damage has gone into the carcass. We will say so at the walkthrough if that is what we find.",
       },
       {
         question: "Can you refinish thermofoil or laminate cabinets?",
@@ -167,62 +167,62 @@ export const servicePages: ServicePage[] = [
       "Interior painters for Lakewood Ranch, Sarasota and Bradenton homes — walls, ceilings, trim and doors, with low-odour products and careful protection in occupied homes.",
     h1: "Interior house painting in Lakewood Ranch & Sarasota.",
     intro: [
-      "Interior painting is judged up close, in daylight, by someone who lives there. Cut lines where the wall meets the ceiling, the edge along the baseboard, whether the sheen is even across a long wall — those are what people notice a week later, and they come almost entirely from preparation and technique rather than from the paint.",
-      "In this market there is also a specific and very common job: the first repaint of a production-built home. Builders spray a thin flat coat that marks if you look at it hard and cannot be washed. Replacing that with a properly applied washable finish is the single biggest improvement most newer homes here can get.",
+      "Interior painting gets looked at up close, in daylight, by the people who live there. The line where the wall meets the ceiling, the edge along the baseboard, whether a long wall looks even — that's what you notice a week later, and it comes from the prep and the hand doing it more than from the paint.",
+      "There's one job we do more than any other around here: the first repaint of a newer home. Builders spray one thin coat of flat paint that marks easily and can't be wiped clean. Swapping that for a proper washable finish is the biggest improvement most newer houses can get.",
     ],
     includes: [
       "Walls, ceilings, trim, baseboards, doors and door frames",
       "Whole-home repaints and single rooms",
-      "Accent walls and colour changes",
-      "Crown moulding, wainscoting and feature joinery",
+      "Accent walls and color changes",
+      "Crown molding, wainscoting and feature joinery",
       "Condo and apartment interiors, including HOA-scheduled buildings",
     ],
     process: [
       {
-        title: "Protect first",
-        text: "Furniture moved to the centre and covered, floors protected wall to wall, fixtures and hardware masked. Everything that follows creates dust or overspray, so this happens before anything else — not around it.",
+        title: "Cover everything first",
+        text: "Furniture into the middle of the room and covered, floors protected wall to wall, fixtures and hardware masked off. Everything after this makes dust, so it gets done first rather than worked around.",
       },
       {
-        title: "Repair what the paint will otherwise magnify",
-        text: "Nail pops, screw holes, hairline settlement cracks and dented corners get filled and sanded flush. Fresh paint does not hide a defect, it lights it — a flaw you stopped noticing on a tired wall becomes obvious on a new one.",
+        title: "Fix what fresh paint would show up",
+        text: "Nail pops, screw holes, little cracks and knocked corners get filled and sanded flat. New paint doesn't hide a flaw, it shows it off — something you'd stopped noticing on a tired wall jumps out on a fresh one.",
       },
       {
-        title: "Caulk the joints that have opened",
-        text: "Trim, baseboards and crown pull away from walls as a house moves. Those gaps are where an interior looks unfinished. Caulking them is what makes the difference between a room that has been painted and one that has been finished.",
+        title: "Caulk the gaps that have opened up",
+        text: "Trim, baseboards and crown pull away from the wall a little as a house settles. Those gaps are what make a room look unfinished, and filling them is the difference between painted and properly done.",
       },
       {
-        title: "Spot-prime stains and repairs",
-        text: "Water marks, smoke, tannin bleed from wood and every patch of filler need priming before colour, or they flash through as dull patches or ghost back as stains no number of finish coats will bury.",
+        title: "Prime the patches and any stains",
+        text: "Water marks and every spot of filler get primed before color goes on. Skip it and they show through as dull patches, and no amount of extra coats will cover them.",
       },
       {
-        title: "Cut and coat",
-        text: "Edges cut by hand, walls rolled for consistent texture, and enough coats for genuine coverage — dark-to-light changes and strong colours frequently need more than two regardless of what the tin claims.",
+        title: "Cut in and roll",
+        text: "Edges cut in by hand, walls rolled so the texture stays even, and as many coats as it actually takes. Going from a dark color to a light one usually needs more than two, whatever the can says.",
       },
       {
-        title: "Put the room back",
-        text: "Hardware refitted, furniture returned, floors cleared, site tidied. Every day, not just at the end.",
+        title: "Put the room back together",
+        text: "Hardware back on, furniture back where it was, floors clear and everything tidied up — at the end of every day, not just the last one.",
       },
     ],
     problems: [
       {
         title: "Builder-grade flat that will not wash",
-        text: "Standard on newer homes here. Scuffs and handprints cannot be cleaned off without burnishing a shiny patch into the wall. The fix is a washable finish, not more of the same.",
+        text: "Standard on newer homes here. Scuffs and handprints won't wipe off, and rubbing at them leaves a shiny patch instead. The fix is a washable finish, not more of the same.",
       },
       {
         title: "Recurring bathroom and laundry marks",
-        text: "Persistent spotting in wet rooms points at ventilation as much as at paint. The right sheen and product help; if the room is not clearing moisture, they only slow the return.",
+        text: "Spotting that keeps coming back in a bathroom or laundry is usually as much about airflow as paint. The right finish helps, but if the room isn't clearing the moisture it'll come back eventually.",
       },
       {
         title: "Ceiling stains that come back",
-        text: "A stain that returns through fresh paint has an active source or was never sealed with a stain-blocking primer. Painting it again without addressing that is money spent twice.",
+        text: "A stain that comes back through fresh paint either still has a leak behind it or was never sealed with a stain-blocking primer. Painting it again without sorting that out is paying twice.",
       },
       {
         title: "Patches that flash in daylight",
-        text: "Repairs that were filled but not primed absorb differently from the wall around them, so they show as dull marks in raking light. It is a preparation gap, not a paint fault.",
+        text: "Patches that got filled but never primed soak up paint differently from the wall around them, so they show as dull spots when the light comes across. That's a prep problem, not the paint.",
       },
     ],
     timeline:
-      "Single rooms are usually a day or two. Whole-home interiors typically run one to two weeks depending on square footage, ceiling height, how much trim there is, and the amount of repair work. Colour changes across a wide gap — dark to white especially — add coats and therefore days.",
+      "Single rooms are usually a day or two. Whole-home interiors typically run one to two weeks depending on square footage, ceiling height, how much trim there is, and the amount of repair work. Color changes across a wide gap — dark to white especially — add coats and therefore days.",
     occupied:
       "Most of our interior work happens in homes people are living in. We work room by room where that suits you, keep low-VOC and low-odour products as the default so rooms stay usable, and protect and restore each space rather than treating the whole house as a site. Pets and working-from-home schedules are worth mentioning at the walkthrough so the sequence can be planned around them.",
     faqs: [
@@ -239,7 +239,7 @@ export const servicePages: ServicePage[] = [
       {
         question: "How many coats will my walls need?",
         answer:
-          "Two is typical over a sound existing colour. Significant colour changes, strong or deep colours, and any wall with heavy repair work regularly need more. We scope for what the wall needs rather than a fixed number, and the estimate says which.",
+          "Two is typical over a sound existing color. Significant color changes, strong or deep colors, and any wall with heavy repair work regularly need more. We scope for what the wall needs rather than a fixed number, and the estimate says which.",
       },
       {
         question: "What sheen should I use where?",
@@ -260,94 +260,90 @@ export const servicePages: ServicePage[] = [
     title:
       "Exterior House Painting in Lakewood Ranch & Sarasota, FL | 4 The Love of Color Painting",
     metaDescription:
-      "Exterior painters for Lakewood Ranch, Sarasota and Bradenton — stucco crack repair, pressure washing, sealing and weather-rated coatings built for Florida sun and salt air.",
+      "Exterior painters for Lakewood Ranch, Sarasota and Bradenton — pressure washing, stucco crack repair, sealing and coatings built for Florida sun and salt air. Free estimates.",
     h1: "Exterior house painting in Lakewood Ranch & Sarasota.",
     intro: [
-      "An exterior repaint in Florida is protection first and appearance second. Sun, driving summer rain, humidity and — closer to the coast — salt are all working on the building envelope continuously, and the coating is most of what stands between them and the substrate.",
-      "That is why exterior work is overwhelmingly about preparation. Washing, crack repair, sealing and priming are the parts that decide whether the finish lasts, and they are also the parts that are invisible the day the job finishes. A cheap exterior quote is almost always a quote with those steps thinned out.",
+      "Out here an exterior repaint is protection first and looks second. Sun, summer rain, humidity and salt air are working on your walls year round, and the paint is most of what stands between them and the block underneath.",
+      "That means the prep matters more than anything. Washing, filling cracks, sealing and priming are what decide whether a finish lasts — and they're the parts you can't see once the job is done.",
     ],
     includes: [
-      "Stucco, block, siding, and hardboard",
-      "Trim, fascia, soffits, garage doors and front doors",
-      "Driveway-facing elevations, gables and decorative detail",
-      "Lanais, pool cages, railings and exterior structures",
+      "Stucco, block and siding",
+      "Trim, soffits, garage doors and front doors",
+      "Gables, arches and decorative detail",
+      "Lanais, pool cages and railings",
       "HOA communities and multi-property exteriors",
     ],
     process: [
       {
-        title: "Wash and let it dry",
-        text: "Chalked coating, dirt, mildew and salt film all prevent adhesion. The surface is washed down and then given time to dry properly — painting a stucco wall that is still holding water traps moisture behind the new coat, which is a blistering failure waiting to happen.",
+        title: "Wash it down and let it dry",
+        text: "Dirt, mildew and chalky old paint all stop new paint sticking. We wash the house and give it time to dry — putting paint on a damp wall is how you end up with blisters.",
       },
       {
-        title: "Repair the stucco",
-        text: "Hairline cracking is normal as block settles and expands. Painting over it means the crack telegraphs straight back through within a season. Cracks are opened where needed, patched, and bridged with an appropriate elastomeric or flexible product so the wall can move without splitting the finish.",
+        title: "Fill the cracks",
+        text: "Little cracks in stucco are normal down here, since the block moves with the heat. We fill and seal them before any color goes on so they don't come back through your new paint.",
       },
       {
-        title: "Deal with the wood before it spreads",
-        text: "Soffit and fascia take on water at the joints, especially on older homes. Soft or rotten wood is identified at the walkthrough and flagged to you, because paint over soft wood is money thrown away and the rot continues underneath it.",
+        title: "Seal around the windows and doors",
+        text: "Old caulk pulls away over time, and that's where water gets in. We cut out what's failed and reseal it. It's as much about keeping the house dry as it is about how it looks.",
       },
       {
-        title: "Caulk and seal the openings",
-        text: "Window and door perimeters, penetrations and control joints are where water gets in. Failed caulk is resealed with the right sealant for the joint — this is as much waterproofing as it is painting.",
+        title: "Prime where it's needed",
+        text: "Bare stucco, patched spots and any stains get primed first. Not the whole house out of habit — just where the wall actually needs it.",
       },
       {
-        title: "Prime what needs priming",
-        text: "Bare stucco, exposed wood, patched areas, chalky substrates and any stain or rust bleed get primed. Not the whole house as a matter of routine — where the surface actually calls for it.",
-      },
-      {
-        title: "Coat, with the elevations in mind",
-        text: "Weather-rated products applied at proper coverage. West and south elevations take the hardest UV load and are the first to fade, so deep colours in particular need coatings rated for it or one wall ends up visibly lighter than the rest.",
+        title: "Paint, with the sun in mind",
+        text: "West and south walls take the worst of the afternoon sun and fade first, so we use coatings rated for it. That's especially true with deeper colors, where one wall going light stands out.",
       },
     ],
     problems: [
       {
-        title: "Peeling and blistering off stucco",
-        text: "Usually moisture behind the coating or paint applied over a chalked, unwashed surface. Recoating without finding the cause repeats the failure on the same schedule.",
+        title: "Paint peeling or blistering off stucco",
+        text: "Usually moisture behind the paint, or a coat that went on over a dirty wall. Repainting without sorting out the cause just buys you a couple of years.",
       },
       {
-        title: "Cracks reappearing after a repaint",
-        text: "The crack was covered rather than bridged. Stucco moves; a rigid film over a live crack splits again along the same line.",
+        title: "Cracks showing up again",
+        text: "The crack got painted over instead of filled. Stucco moves, so a crack that wasn't properly sealed opens right back up along the same line.",
       },
       {
-        title: "Chalking that comes off on your hand",
-        text: "The binder in the old coating has broken down under UV. Nothing will bond to it until it is washed off properly — this is the most common reason a repaint fails early here.",
+        title: "Chalk that comes off on your hand",
+        text: "The old paint has broken down in the sun. Nothing new will stick to it until it's washed off properly, and it's the most common reason a repaint fails early around here.",
       },
       {
-        title: "Rust bleed and staining near fixings",
-        text: "Common closer to the water, where salt accelerates corrosion at fasteners and railings. Needs treating and spot-priming with a stain-blocking primer, or it bleeds through the new finish within months.",
+        title: "Rust stains running down the wall",
+        text: "More common closer to the water, where salt gets at screws and railings. It needs treating and priming, or it bleeds straight back through the new paint.",
       },
     ],
     timeline:
-      "Most single-family exteriors run several days to a couple of weeks depending on size, storeys, surface condition and how much repair the walls need. Weather sets the real pace — summer afternoon storms and high humidity both extend drying windows, and we would rather lose an afternoon than coat a damp wall.",
+      "Most houses run a few days to a couple of weeks, depending on size, how many stories, and what shape the walls are in. Weather sets the real pace — we'd rather lose an afternoon to a storm than put paint on a wet wall.",
     occupied:
-      "Exterior work barely touches daily life. We need access around the building, driveways clear where we are working, and irrigation off on the elevations in progress so sprinklers do not spray a curing coat. Windows and doors on an active elevation stay closed for the day. Otherwise the house runs normally.",
+      "Exterior work hardly affects you at all. We need to get around the house, the driveway clear where we're working, and the sprinklers off on whichever side we're on. Keep the windows shut on that side for the day and otherwise carry on as normal.",
     faqs: [
       {
         question: "How often should a Florida house be repainted?",
         answer:
-          "It varies more than people expect. Sun exposure, how close you are to the water, the substrate, the colour and — most of all — how well the last repaint was prepared. A well-prepared stucco exterior lasts considerably longer than a poorly prepared one on the same street. Rather than quote a number, we would rather look at yours: chalking, hairline cracking and fading on the west elevation are the signals worth checking.",
+          "It varies more than people expect — sun exposure, how close you are to the water, the color, and mostly how well the last paint job was prepped. Two houses on the same street can be years apart. We'd rather look at yours than give you a number: chalking, cracks in the stucco and fading on the west side are the things to watch for.",
       },
       {
         question: "Do you pressure wash before painting?",
         answer:
-          "Always, and then we let it dry. Washing is not a cosmetic step — it removes the chalk, mildew and salt film that stop paint bonding. Painting over an unwashed exterior is the single most common reason a repaint fails early.",
+          "Always, and then we let it dry properly. Washing isn't just to make it look nice — it takes off the chalk, mildew and salt that stop paint from sticking. Skipping it is the most common reason a repaint doesn't last.",
       },
       {
-        question: "Can you paint in the summer rainy season?",
+        question: "Can you paint during the summer rainy season?",
         answer:
-          "Yes, with planning. Work gets scheduled around the afternoon storm pattern and we watch drying windows rather than pushing coats on before the surface is ready. It means occasional lost afternoons, which is a better trade than a coating applied over damp stucco.",
+          "Yes, we just plan around it. We work with the afternoon storms rather than against them and keep an eye on drying time. It costs the odd afternoon, which beats putting paint on a damp wall.",
       },
       {
-        question: "Our community has to approve the colour first. Can you help?",
+        question: "Our community has to approve the color first. Can you help?",
         answer:
-          "We can talk you through what your community's palette allows and help you choose within it — most villages around Lakewood Ranch restrict exterior colours and require review before work starts. Whether we prepare and submit the approval paperwork on your behalf is worth asking us directly.",
+          "Happy to. Most villages around Lakewood Ranch have an approved palette and want the color signed off before work starts, and we can walk you through what yours allows and help you pick something you actually like inside it. Just ask us about the paperwork side and we'll tell you where we can help.",
       },
     ],
     image: "/images/proj-exterior-white-2story.jpg",
     imageAlt:
       "Large two-story white Florida home with a three-car garage, tile roof and paver driveway, freshly repainted",
     closing:
-      "Exterior quotes are hard to compare because the preparation is where they differ and it is the part nobody itemises. Ask us what we would do to your walls before any colour goes on — the answer is the quote.",
+      "Exterior quotes are hard to compare because the preparation is where they differ and it is the part nobody itemizes. Ask us what we would do to your walls before any color goes on — the answer is the quote.",
   },
   {
     slug: "commercial-painting",
@@ -406,7 +402,7 @@ export const servicePages: ServicePage[] = [
       },
       {
         title: "Community buildings with mismatched previous work",
-        text: "Common areas repainted piecemeal over years end up with visible variation in colour and sheen. Worth resolving as one scope rather than adding another patch to it.",
+        text: "Common areas repainted piecemeal over years end up with visible variation in color and sheen. Worth resolving as one scope rather than adding another patch to it.",
       },
       {
         title: "Scope creep on occupied sites",

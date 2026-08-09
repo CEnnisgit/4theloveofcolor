@@ -148,6 +148,12 @@ function SiteFooter() {
             {item.label}
           </NavLink>
         ))}
+        {/*
+          Guides is listed here but not in the header menu. The footer link is
+          what keeps the hub from being an orphan — a page with no internal
+          links pointing at it is one Google has little reason to index.
+        */}
+        <NavLink to="/guides">Guides</NavLink>
       </div>
       <div className="footer-col">
         <h3>Areas served</h3>
@@ -1169,7 +1175,15 @@ function GuideDetailBody({ page }: { page: GuidePageData }) {
 
       {page.image && (
         <section className="section service-hero-media">
-          <Photo src={page.image} alt={page.imageAlt} width={1100} height={700} />
+          {/* priority: this is the LCP element on these pages, so it must not
+              lazy-load. */}
+          <Photo
+            src={page.image}
+            alt={page.imageAlt}
+            width={1100}
+            height={700}
+            priority
+          />
         </section>
       )}
 
@@ -1329,7 +1343,15 @@ function ServiceDetailBody({ page }: { page: ServicePageData }) {
 
       {page.image && (
         <section className="section service-hero-media">
-          <Photo src={page.image} alt={page.imageAlt} width={1100} height={700} />
+          {/* priority: this is the LCP element on these pages, so it must not
+              lazy-load. */}
+          <Photo
+            src={page.image}
+            alt={page.imageAlt}
+            width={1100}
+            height={700}
+            priority
+          />
         </section>
       )}
 

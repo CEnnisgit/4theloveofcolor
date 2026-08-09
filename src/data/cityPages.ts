@@ -48,15 +48,15 @@ export const cityPages: CityPage[] = [
     considerations: [
       {
         title: "Stucco is its own craft",
-        text: "Hairline cracking in stucco is normal here as block settles and expands. Painting over it without patching and bridging means the crack telegraphs straight back through the new coat within a season. We patch, seal, and prime before colour goes on.",
+        text: "Hairline cracking in stucco is normal here as block settles and expands. Painting over it without patching and bridging means the crack telegraphs straight back through the new coat within a season. We patch, seal, and prime before color goes on.",
       },
       {
-        title: "Community colour palettes",
-        text: "Most villages restrict exterior colours to an approved range and require review before work starts. We'll help you understand what your community allows and pick something that still feels like yours inside those limits.",
+        title: "Community color palettes",
+        text: "Most villages restrict exterior colors to an approved range and require review before work starts. We'll help you understand what your community allows and pick something that still feels like yours inside those limits.",
       },
       {
         title: "West-facing elevations fade first",
-        text: "Afternoon sun on a west or south wall is brutal on pigment. Deeper colours in particular need coatings rated for it, or one wall ends up visibly lighter than the rest of the house in a few years.",
+        text: "Afternoon sun on a west or south wall is brutal on pigment. Deeper colors in particular need coatings rated for it, or one wall ends up visibly lighter than the rest of the house in a few years.",
       },
       {
         title: "Newer homes, builder-grade paint",
@@ -98,8 +98,8 @@ export const cityPages: CityPage[] = [
         text: "Closer to the bay and out toward the keys, salt accelerates everything — chalking, rust bleed from fasteners, coating failure at exposed edges. Surfaces need washing down properly and coatings chosen for marine exposure, not just sun.",
       },
       {
-        title: "Historic and midcentury detail",
-        text: "Wide fascia, exposed beams, jalousie frames, and original wood trim reward careful hand-work and punish spray-and-go. These are the jobs where prep and cut lines are most of the value.",
+        title: "Midcentury detail takes a brush",
+        text: "Wide overhangs, exposed beams and original window frames are what make these houses worth looking at. They want careful hand-work rather than a quick spray, and that's where most of the value in the job sits.",
       },
       {
         title: "Pre-1978 homes and lead paint",
@@ -134,25 +134,25 @@ export const cityPages: CityPage[] = [
       "Family-owned painters in Bradenton, FL. Exterior repaints, older-home restoration, interiors, cabinets. Honest written estimates — call (917) 584-0069.",
     h1: "House painters in Bradenton, Florida.",
     intro: [
-      "Bradenton has the oldest housing stock we regularly work on, and that makes it the most restoration-heavy market we serve. Plenty of these homes are on their fourth or fifth repaint, and what's underneath matters more than what goes on top.",
-      "That means a lot of our Bradenton work is repair before paint: failed caulk joints, soffit and fascia rot, chalked-out older coats, and previous paint jobs applied over surfaces that were never properly prepared. Painting over those problems buys a year or two at most.",
+      "Bradenton has the oldest houses we regularly work on, and that changes the job. Plenty of them are on their fourth or fifth repaint, so what's already on the wall matters more than what goes on top of it.",
+      "A lot of our Bradenton work is repair before paint — old caulk that's given up, chalked-out paint, and previous jobs that went on without much prep. Painting straight over that buys you a year or two at best.",
     ],
     considerations: [
       {
-        title: "Failing older coats",
-        text: "Chalking, alligatoring, and peeling all mean the existing coat has lost adhesion. It has to come off or be stabilised, not buried — a new coat over a failing one fails with it.",
+        title: "Old paint that's letting go",
+        text: "Chalking, cracking and peeling all mean the paint that's there has lost its grip. It has to come off or be sealed down properly — a new coat over a failing one fails right along with it.",
       },
       {
-        title: "Wood rot at soffit and fascia",
-        text: "Older Bradenton homes with wood trim and eaves take on water at the joints. We find it during the walkthrough and tell you about it, because paint over soft wood is money thrown away.",
+        title: "Block and older siding",
+        text: "Mid-century block and older siding want different primers and different crack treatment. Getting that wrong is the usual reason a repaint here doesn't last.",
       },
       {
-        title: "Concrete block and hardboard siding",
-        text: "Mid-century block and older hardboard each want different primers and different crack treatment. Getting that wrong is the most common reason a Bradenton exterior repaint fails early.",
+        title: "Salt out toward the water",
+        text: "Head west toward Cortez, Palma Sola and Anna Maria and the salt picks up. Everything weathers faster out there, and the same house a few miles inland is an easier job.",
       },
       {
-        title: "Honest scoping on older homes",
-        text: "Older houses turn up surprises. We'd rather flag what we find and let you decide than quote a low number and come back asking for more halfway through.",
+        title: "Straight answers on older homes",
+        text: "Older houses turn up surprises. We'd rather tell you what we find and let you decide than quote a low number and come back asking for more halfway through.",
       },
     ],
     areas: [
@@ -166,7 +166,7 @@ export const cityPages: CityPage[] = [
       "Anna Maria Island",
     ],
     closing:
-      "We're a family business and most of our work comes from people who tell their neighbours about us. That only happens if the job holds up, so we scope it to hold up.",
+      "We're a family business and most of our work comes from people who tell their neighbors about us. That only happens if the job holds up, so we scope it to hold up.",
   },
   {
     slug: "venice",
@@ -178,7 +178,7 @@ export const cityPages: CityPage[] = [
     h1: "House painters in Venice, Florida.",
     intro: [
       "Venice sits close enough to the Gulf that salt exposure drives most exterior decisions, and its housing runs from mid-century island homes to newer communities inland along the river.",
-      "The island in particular has a defined architectural character the city has protected for decades, which makes colour choices there more consequential than in a newer inland community. Getting a Venice exterior right is as much about restraint as anything.",
+      "The island in particular has a defined architectural character the city has protected for decades, which makes color choices there more consequential than in a newer inland community. Getting a Venice exterior right is as much about restraint as anything.",
     ],
     considerations: [
       {

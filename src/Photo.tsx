@@ -26,7 +26,7 @@ export function Photo({ src, alt, className, width, height, priority }: PhotoPro
         width={width}
         height={height}
         loading={priority ? "eager" : "lazy"}
-        // Lowercase on purpose. React 18's server renderer does not recognise
+        // Lowercase on purpose. React 18's server renderer does not recognize
         // the camelCase `fetchPriority` prop and drops it, which would strip
         // the LCP hint from the prerendered HTML — exactly the markup that
         // needs it — and then mismatch on hydration. The lowercase form is

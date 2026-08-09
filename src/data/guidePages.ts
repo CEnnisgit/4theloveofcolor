@@ -45,7 +45,7 @@ export type GuidePage = {
   faqs: { question: string; answer: string }[];
   /**
    * Real dates, for Article schema. `updated` changes only when the content
-   * genuinely changes — bumping it to look fresh is exactly the behaviour
+   * genuinely changes — bumping it to look fresh is exactly the behavior
    * Google's spam guidance calls out, and it fools nobody.
    */
   published: string;
@@ -65,43 +65,43 @@ export const guidePages: GuidePage[] = [
       "What actually drives the price of an interior or exterior repaint in Lakewood Ranch, Sarasota and Bradenton — and how to compare three painting quotes that look different for good reasons.",
     h1: "What house painting actually costs in Lakewood Ranch & Sarasota.",
     intro: [
-      "Nobody can give you an accurate price for painting your house over the internet, and you should be wary of anyone who tries. Two houses on the same street with the same square footage can differ by a factor of two, entirely because of what is happening to the surfaces underneath the old coat.",
-      "What we can do is tell you exactly what moves the number, so that when you have three quotes on the table you can see why they differ instead of guessing. In this market the cheapest quote is very often the one that has left out the preparation — and preparation is the part that decides whether you are repainting again in four years or in twelve.",
+      "We get asked this all the time, and the honest answer is that nobody can price your house properly over the internet. Two houses on the same street, same square footage, can come in miles apart — it all depends on what shape the walls are in underneath.",
+      "What we can do is walk you through what moves the number. That way, when you've got a few quotes side by side, you can see why they're different instead of guessing. It's the same explanation we'd give you standing in your driveway.",
     ],
     sections: [
       {
         heading: "What actually drives the price",
         body: [
-          "Painters price from surface area, condition and access. Floor area barely matters — a single-storey home with tall ceilings and a lot of trim can carry more paintable surface than a larger two-storey with plain walls.",
+          "Painters price from surface area, condition and access. Floor area barely matters — a single-story home with tall ceilings and a lot of trim can carry more paintable surface than a larger two-story with plain walls.",
         ],
         points: [
           {
             title: "Surface area, not floor area",
-            text: "Wall and ceiling area is what gets coated. High ceilings, vaulted spaces, deep soffits and heavily trimmed rooms all add surface that never shows up in a square-footage figure.",
+            text: "Wall and ceiling area is what actually gets painted. High ceilings, vaulted rooms and lots of trim all add surface that never shows up in a square-footage number.",
           },
           {
             title: "Condition of what's already there",
-            text: "The single biggest variable, and the one you cannot see from a photograph. A sound exterior needs washing and coating. A chalked, cracked, previously badly prepared one needs stabilising first, and that is most of the labour.",
+            text: "The single biggest variable, and the one you cannot see from a photograph. A sound exterior needs washing and coating. A chalked, cracked, previously badly prepared one needs stabilizing first, and that is most of the labor.",
           },
           {
-            title: "Storeys and access",
-            text: "Second-storey work means ladders, staging or lifts, and slower, safer working. Landscaping tight against the wall, pool cages, screened lanais and narrow side returns all cost time.",
+            title: "Stories and access",
+            text: "Second-story work means ladders, staging or lifts, and slower, safer working. Landscaping tight against the wall, pool cages, screened lanais and narrow side returns all cost time.",
           },
           {
             title: "Repairs found during prep",
-            text: "Stucco cracking, wood rot at soffit and fascia, failed caulk joints, drywall damage. Honest quotes separate these out or flag them as provisional, because nobody can price rot they have not yet opened up.",
+            text: "Cracked stucco, caulk joints that have given up, drywall damage. A straight quote either separates these out or flags them as an estimate, because nobody can price a repair they haven't opened up yet.",
           },
           {
-            title: "How far the colour is moving",
-            text: "Dark to light is the expensive direction. A deep colour going white can need extra coats regardless of what the product claims, and that is real material and real labour.",
+            title: "How far the color is moving",
+            text: "Dark to light is the expensive direction. A deep color going white can need extra coats regardless of what the product claims, and that is real material and real labor.",
           },
           {
             title: "Number of coats, honestly stated",
-            text: "Two coats over sound existing colour is typical. Anything less is a refresh, not a repaint, and it should be described that way on the quote.",
+            text: "Two coats over sound existing color is typical. Anything less is a refresh, not a repaint, and it should be described that way on the quote.",
           },
           {
             title: "Trim, doors and detail",
-            text: "Trim work is slow, hand-worked and priced per foot of edge rather than per wall. Crown moulding, wainscoting, shutters, and a house full of six-panel doors all move the number more than people expect.",
+            text: "Trim work is slow, hand-worked and priced per foot of edge rather than per wall. Crown molding, wainscoting, shutters, and a house full of six-panel doors all move the number more than people expect.",
           },
           {
             title: "Occupied or empty",
@@ -114,11 +114,11 @@ export const guidePages: GuidePage[] = [
         ],
       },
       {
-        heading: "Why the cheap quote is cheap",
+        heading: "What makes one quote different from another",
         body: [
-          "When three quotes come back and one is dramatically lower, it is almost never because that company found a way to buy paint cheaper. Materials are a modest share of a repaint. Labour is the rest, and labour is preparation.",
-          "The steps that get quietly removed to reach a lower number are the invisible ones: washing and letting the surface dry, opening and bridging stucco cracks rather than coating over them, replacing rotten wood instead of painting it, spot-priming stains and repairs, and applying a genuine second coat. None of those are visible on handover day. All of them are visible in year three.",
-          "This is the honest reason to be careful with a low quote — not that the company is dishonest, but that you are very likely comparing two different scopes of work and being shown only the totals.",
+          "If three quotes come back and one is a lot lower, it usually isn't because that company buys paint cheaper. Paint is a smaller part of the bill than most people expect. Most of it is time, and most of the time is prep.",
+          "So when the numbers are far apart, it's normally because the quotes cover different amounts of work — washing the walls and letting them dry, filling and sealing cracks, priming patches and stains, and putting on a genuine second coat. Those are the parts you can't see once the job is done.",
+          "That's not us saying the cheaper painter is cutting corners. It's that you're probably looking at two different jobs with only the totals shown, and it's worth knowing which one you're buying.",
         ],
       },
       {
@@ -129,11 +129,11 @@ export const guidePages: GuidePage[] = [
         points: [
           {
             title: "What surfaces are included",
-            text: "Walls only, or walls plus trim, doors, ceilings, soffits, fascia, garage door, front door? Exclusions are where quotes diverge most.",
+            text: "Walls only, or walls plus trim, doors, ceilings, soffits, garage door and front door? What's left out is where quotes differ most.",
           },
           {
             title: "What preparation is specified",
-            text: "Washing, scraping, sanding, crack repair, caulking, priming — named individually, not summarised as \"prep as required\".",
+            text: "Washing, scraping, sanding, crack repair, caulking, priming — named individually, not summarized as \"prep as required\".",
           },
           {
             title: "How many coats, of what",
@@ -141,7 +141,7 @@ export const guidePages: GuidePage[] = [
           },
           {
             title: "How repairs are handled",
-            text: "Whether rot and stucco repair are included, excluded, or priced provisionally — and what happens if more is found once work starts.",
+            text: "Whether stucco and surface repairs are included, left out, or estimated — and what happens if more turns up once work starts.",
           },
           {
             title: "Who moves and protects what",
@@ -154,30 +154,30 @@ export const guidePages: GuidePage[] = [
         ],
       },
       {
-        heading: "Things that should make you pause",
+        heading: "Questions worth asking",
         body: [
-          "None of these are automatically disqualifying, but each one is worth a direct question before you sign anything.",
+          "None of these are trick questions, and any painter worth hiring will be happy to answer them. Ask us the same ones.",
         ],
         points: [
           {
-            title: "A price with no walkthrough",
-            text: "A number quoted from a phone call or a photo is a guess. It will be revised on site, and the revision only ever goes one way.",
+            title: "Have you actually seen the house?",
+            text: "A price given over the phone or from a photo is a guess, and guesses get revised once someone is standing in front of the wall. Ask for a walkthrough before a number.",
           },
           {
-            title: "A large deposit up front",
-            text: "Some deposit is normal on a larger job. A demand for most of the money before work starts is not.",
+            title: "What's the deposit, and what does it cover?",
+            text: "A deposit is normal — paint and materials get bought before the first day, and on a bigger job that is real money up front. Ours scales with the size of the job. The fair question is what it covers and what the rest of the schedule looks like, not whether there is one at all.",
           },
           {
-            title: "Pressure to decide today",
-            text: "A discount that expires this afternoon is a sales tactic, not a price. Painting is not a perishable good.",
+            title: "Is the price good for more than today?",
+            text: "A discount that disappears this afternoon is a sales tactic. Take the time you need — a repaint is not a perishable good.",
           },
           {
-            title: "No written scope",
-            text: "If what is being done is not written down, there is nothing to hold anyone to — including you, if a disagreement comes up later.",
+            title: "Can I see it in writing?",
+            text: "A written scope protects both of us. It is what we point at if there is ever a disagreement about what was included, and it means nobody is relying on remembering a driveway conversation.",
           },
           {
-            title: "Cash-only, no paperwork",
-            text: "Worth understanding who exactly is responsible if something is damaged, and what recourse exists if the finish fails.",
+            title: "Who's responsible if something gets damaged?",
+            text: "Worth knowing before anyone starts, whoever you hire. Ask what happens if a fixture, a floor, or a plant gets caught.",
           },
         ],
       },
@@ -185,8 +185,8 @@ export const guidePages: GuidePage[] = [
         heading: "When repainting is cheaper than waiting",
         body: [
           "Exterior paint in Florida is doing a protective job, not a decorative one. Once a coating has genuinely failed — chalking heavily, peeling, cracks open to the substrate — water starts reaching the material behind it.",
-          "At that point the cost of waiting is no longer the cost of paint. It is stucco repair, wood replacement, and in the worst cases moisture that has travelled somewhere expensive. A repaint scheduled while the coating is merely tired is straightforwardly cheaper than one scheduled after it has failed.",
-          "The signals worth checking once a year: chalk that comes off on your hand, hairline cracking on stucco elevations, caulk that has pulled away from window and door perimeters, soft wood at soffit and fascia, and noticeably faded colour on the west and south walls.",
+          "At that point what you're paying for isn't paint any more. It's stucco repair, and in the worst cases water that has got somewhere expensive. Repainting while the finish is just looking tired costs less than repainting after it has actually failed.",
+          "Worth a look once a year: chalk that comes off on your hand, cracks opening up in the stucco, caulk pulling away around the windows and doors, and color that's noticeably faded on the west and south walls.",
         ],
       },
     ],
@@ -199,7 +199,7 @@ export const guidePages: GuidePage[] = [
       {
         question: "Is a written estimate free?",
         answer:
-          "Ours is, and there is no obligation attached to it. We walk the property with you, talk through surfaces and colours, and send a written scope and price.",
+          "Ours is, and there is no obligation attached to it. We walk the property with you, talk through surfaces and colors, and send a written scope and price.",
       },
       {
         question: "Does painting the interior and exterior together cost less?",

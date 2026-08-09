@@ -50,16 +50,16 @@ export const cityServicePages: CityServicePage[] = [
     title:
       "Exterior House Painters in Lakewood Ranch, FL | 4 The Love of Color Painting",
     metaDescription:
-      "Exterior repaints for Lakewood Ranch homes — stucco crack bridging, HOA colour approval, and coatings chosen for west-facing elevations. Free written estimates.",
+      "Exterior repaints for Lakewood Ranch homes — stucco crack bridging, HOA color approval, and coatings chosen for west-facing elevations. Free written estimates.",
     h1: "Exterior painting in Lakewood Ranch.",
     intro: [
-      "Lakewood Ranch exteriors are unusually consistent to work on and unusually constrained to decide on. Almost everything here is block-and-stucco built from the 1990s onward, so the preparation is predictable in a way that older markets never are. The colour, on the other hand, is rarely entirely yours to choose.",
+      "Lakewood Ranch exteriors are unusually consistent to work on and unusually constrained to decide on. Almost everything here is block-and-stucco built from the 1990s onward, so the preparation is predictable in a way that older markets never are. The color, on the other hand, is rarely entirely yours to choose.",
       "The other thing that defines this market right now is timing. The earliest villages are well past the life of their original builder-applied coat, and builder exteriors were not specified to last forever. A large share of the exterior work here is a first proper repaint on a house whose original finish has quietly reached the end.",
     ],
     points: [
       {
-        title: "Colour approval comes before scheduling",
-        text: "Most villages require the colour to be reviewed and approved before work starts, and an approval turnaround does not care about your painting schedule. Getting the submission in early is the difference between painting when you wanted to and painting six weeks later.",
+        title: "Color approval comes before scheduling",
+        text: "Most villages require the color to be reviewed and approved before work starts, and an approval turnaround does not care about your painting schedule. Getting the submission in early is the difference between painting when you wanted to and painting six weeks later.",
       },
       {
         title: "Approved palettes are narrower than they look",
@@ -70,16 +70,16 @@ export const cityServicePages: CityServicePage[] = [
         text: "Block settles, stucco moves, and hairline cracking on a fifteen-year-old Lakewood Ranch elevation is expected rather than alarming. It has to be opened, patched and bridged — coating straight over it puts the crack back through the new finish inside a season.",
       },
       {
-        title: "Neighbouring houses set the reference",
-        text: "In a village where the houses share an architectural language, your exterior is read against the two either side of it. Colours that would be unremarkable on an isolated lot can look wrong in a row, which is worth knowing before the approval goes in rather than after.",
+        title: "Neighboring houses set the reference",
+        text: "In a village where the houses share an architectural language, your exterior is read against the two either side of it. Colors that would be unremarkable on an isolated lot can look wrong in a row, which is worth knowing before the approval goes in rather than after.",
       },
       {
         title: "West elevations age first, visibly",
-        text: "Afternoon sun on a west or south wall is the harshest exposure a Florida house gets. On a deep colour that means one elevation fading ahead of the rest, so the coating has to be rated for it or the house ends up two-tone in a few years.",
+        text: "Afternoon sun on a west or south wall is the harshest exposure a Florida house gets. On a deep color that means one elevation fading ahead of the rest, so the coating has to be rated for it or the house ends up two-tone in a few years.",
       },
     ],
     closing:
-      "If your village needs colour approval, tell us at the walkthrough — it changes the order things happen in, and it is much easier to plan around at the start than to discover halfway through.",
+      "If your village needs color approval, tell us at the walkthrough — it changes the order things happen in, and it is much easier to plan around at the start than to discover halfway through.",
   },
   {
     citySlug: "sarasota",
@@ -99,19 +99,15 @@ export const cityServicePages: CityServicePage[] = [
       },
       {
         title: "Pre-1978 homes need a decision before sanding",
-        text: "Older Sarasota housing can carry lead-based paint under later coats. That changes how surfaces are prepared, contained and cleaned up. It is worth establishing before anyone puts a sander to a 1950s fascia, not after.",
+        text: "Older Sarasota houses can have lead-based paint hiding under later coats. That changes how we prep and clean up, and it's worth knowing before anyone puts a sander to it rather than after.",
       },
       {
-        title: "Midcentury detail is hand-work, not spray-work",
-        text: "Wide fascia, exposed beams, jalousie frames and original wood trim are exactly the elements that make these houses worth looking at. They reward cutting in by hand and punish a fast spray-and-go, and they are where most of the labour on a Sarasota School exterior actually goes.",
+        title: "Midcentury detail takes a brush",
+        text: "Wide overhangs, exposed beams and original window frames are what give these houses their character. They want cutting in by hand rather than a fast spray, and that's where most of the time on one of these goes.",
       },
       {
-        title: "Older wood is a scope question, not a detail",
-        text: "On houses of this age the honest question is how much wood survives prep. Fascia, soffit and window frames that have been painted over while soft need replacing rather than coating, and that has to be flagged before it becomes a mid-job conversation.",
-      },
-      {
-        title: "Access on keys and downtown is its own constraint",
-        text: "Narrow lots, mature landscaping tight to the wall, and condo or key buildings with rules about lifts, work hours and parking. Sorting access before day one is what stops a Sarasota exterior stalling at forty per cent.",
+        title: "Access is half the job on the keys",
+        text: "Narrow lots, landscaping grown up tight against the wall, and buildings with rules about lifts, work hours and parking. Getting that sorted before day one is what keeps a job from stalling halfway.",
       },
     ],
     closing:
@@ -122,36 +118,32 @@ export const cityServicePages: CityServicePage[] = [
     serviceSlug: "exterior-painting",
     title: "Exterior House Painters in Bradenton, FL | 4 The Love of Color Painting",
     metaDescription:
-      "Exterior repaints for Bradenton homes — failing older coats, soffit and fascia rot, block and hardboard siding. Honest scoping on older houses, free written estimates.",
+      "Exterior repaints for Bradenton homes — old paint that's failing, block and older siding, tired caulk joints. Straight answers on older houses, free written estimates.",
     h1: "Exterior painting in Bradenton.",
     intro: [
-      "Bradenton has the oldest housing we regularly work on, and that makes exterior painting here a restoration job more often than a decorating one. Plenty of these houses are on their fourth or fifth repaint, and each of those coats made a decision — some of them good.",
-      "So the first question on a Bradenton exterior is not what colour. It is what is actually underneath, and whether it is sound enough to build on. Getting that wrong is why exterior repaints in this part of the market fail early.",
+      "Bradenton has the oldest houses we regularly work on, so an exterior here is usually more of a restoration than a fresh coat. Plenty of them are on their fourth or fifth repaint, and every one of those made a decision about the wall.",
+      "That's why the first question on a Bradenton exterior isn't what color. It's what's already on there, and whether it's sound enough to paint over. Getting that wrong is why repaints around here fail early.",
     ],
     points: [
       {
-        title: "The existing coat is the substrate",
-        text: "Chalking, alligatoring and peeling all mean the previous finish has let go. A new coat bonded to a failing one fails with it, on its schedule rather than yours. That paint has to come off or be stabilised first, and how much of it does is the biggest single variable in a Bradenton quote.",
+        title: "The old paint is what you're painting onto",
+        text: "Chalking, cracking and peeling all mean the last coat has let go. Paint on top of that fails right along with it. How much has to come off first is the biggest single thing that moves a Bradenton quote.",
       },
       {
-        title: "Block and hardboard want different things",
-        text: "Mid-century concrete block and older hardboard siding sit side by side in these neighbourhoods and need different primers, different crack treatment and different expectations about longevity. Treating a street as one substrate is a common and expensive mistake here.",
+        title: "Block and older siding want different things",
+        text: "Mid-century block and older siding sit right next to each other in these neighborhoods, and they need different primers and different crack treatment. Treating a whole street the same way is an expensive mistake.",
       },
       {
-        title: "Wood rot is the norm, not the exception",
-        text: "Older Bradenton homes with wood soffit, fascia and eaves take water at the joints for decades. We find it at the walkthrough and tell you, because paint over soft wood is money thrown away and the rot keeps going underneath it.",
+        title: "Old caulk hiding under old caulk",
+        text: "Repaint after repaint tends to caulk over what was already there. Eventually those joints stop sealing anything, and they have to be cut out and done properly. It's invisible work, and it's most of what keeps water out of the wall.",
       },
       {
-        title: "Layers of old caulk hide the joints",
-        text: "Successive repaints tend to caulk over previous caulk rather than remove it. Those joints eventually stop sealing anything and have to be cut out and redone — invisible work that is most of what keeps water out of the wall.",
-      },
-      {
-        title: "Coastal exposure at the west end",
-        text: "Out toward Cortez, Palma Sola and Anna Maria the salt load rises sharply and everything above accelerates. The same house five miles inland is a materially easier job.",
+        title: "Salt out toward the water",
+        text: "Head west toward Cortez, Palma Sola and Anna Maria and the salt picks up sharply. Everything above happens faster out there, and the same house a few miles inland is an easier job.",
       },
     ],
     closing:
-      "On a house this age we would rather scope it honestly and tell you what we find than quote a low number and renegotiate it from your driveway.",
+      "On a house this age we'd rather look properly, tell you what we find, and let you decide — instead of quoting a low number and renegotiating it in your driveway.",
   },
 
   // ---------------------------------------------------------------- cabinets
@@ -161,11 +153,11 @@ export const cityServicePages: CityServicePage[] = [
     title:
       "Kitchen Cabinet Refinishing in Lakewood Ranch, FL | 4 The Love of Color Painting",
     metaDescription:
-      "Cabinet refinishing for Lakewood Ranch kitchens — builder-grade boxes in good shape with dated finishes, sprayed to a durable modern colour. Free written estimates.",
+      "Cabinet refinishing for Lakewood Ranch kitchens — builder-grade boxes in good shape with dated finishes, sprayed to a durable modern color. Free written estimates.",
     h1: "Cabinet refinishing in Lakewood Ranch.",
     intro: [
       "Lakewood Ranch kitchens are close to the ideal case for refinishing rather than replacing. The homes are new enough that the boxes are structurally sound and the layouts still work, and old enough that the finish is squarely of its build year — honey oak, orange-toned cherry, or a builder maple that has darkened.",
-      "What people here are usually unhappy with is the colour and the wear, not the cabinetry. That is a finishing problem, and replacing a functioning kitchen to solve it is an expensive way round.",
+      "What people here are usually unhappy with is the color and the wear, not the cabinetry. That is a finishing problem, and replacing a functioning kitchen to solve it is an expensive way round.",
     ],
     points: [
       {
@@ -178,11 +170,11 @@ export const cityServicePages: CityServicePage[] = [
       },
       {
         title: "Islands take the real punishment",
-        text: "The island is where people sit, lean, and knock things. It wears differently from the perimeter run, and it is worth deciding early whether it gets the same colour or is deliberately treated as a separate piece.",
+        text: "The island is where people sit, lean, and knock things. It wears differently from the perimeter run, and it is worth deciding early whether it gets the same color or is deliberately treated as a separate piece.",
       },
       {
         title: "No approval needed — this one is entirely yours",
-        text: "Unlike an exterior in the same community, nobody reviews your kitchen colour. For a lot of homeowners here this is the first decision about their house that no committee gets an opinion on.",
+        text: "Unlike an exterior in the same community, nobody reviews your kitchen color. For a lot of homeowners here this is the first decision about their house that no committee gets an opinion on.",
       },
       {
         title: "Twenty-year-old hinges are worth replacing now",
@@ -237,7 +229,7 @@ export const cityServicePages: CityServicePage[] = [
     title:
       "Interior House Painters in Lakewood Ranch, FL | 4 The Love of Color Painting",
     metaDescription:
-      "Interior painting for Lakewood Ranch homes — replacing builder-grade flat with a washable finish, tall ceilings, tray detail and open-plan colour. Free estimates.",
+      "Interior painting for Lakewood Ranch homes — replacing builder-grade flat with a washable finish, tall ceilings, tray detail and open-plan color. Free estimates.",
     h1: "Interior painting in Lakewood Ranch.",
     intro: [
       "The defining interior job in Lakewood Ranch is the first repaint of a production-built home. Builders spray a single thin coat of flat paint across the whole house: it looks fine on handover day, marks if you look at it hard, and cannot be cleaned without burnishing a shiny patch into the wall.",
@@ -249,12 +241,12 @@ export const cityServicePages: CityServicePage[] = [
         text: "Scuffs, handprints and furniture marks do not come off builder-grade flat. Wiping it burnishes the surface and leaves a shinier patch than the mark you were removing. No product fixes this from the outside.",
       },
       {
-        title: "Open plan means one colour across a lot of wall",
-        text: "These floorplans run a single colour through kitchen, dining and living space with few breaks. That makes consistency between batches, coats and touch-ups far more visible than it would be in a house of separate rooms.",
+        title: "Open plan means one color across a lot of wall",
+        text: "These floorplans run a single color through kitchen, dining and living space with few breaks. That makes consistency between batches, coats and touch-ups far more visible than it would be in a house of separate rooms.",
       },
       {
         title: "Tall and tray ceilings add real surface",
-        text: "Two-storey entries, vaulted great rooms and tray detail carry a lot of paintable area and need staging to reach safely. It is why square footage alone is a poor predictor of what an interior here costs.",
+        text: "Two-story entries, vaulted great rooms and tray detail carry a lot of paintable area and need staging to reach safely. It is why square footage alone is a poor predictor of what an interior here costs.",
       },
       {
         title: "There is more trim than the floorplan suggests",

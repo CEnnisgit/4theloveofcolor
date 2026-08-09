@@ -60,11 +60,23 @@ export const contact = {
   instagramHref: business.instagramHref,
 };
 
+/**
+ * The main menu. Deliberately short.
+ *
+ * Guides is NOT here. It stays indexable and in the sitemap, and it is linked
+ * from the footer and contextually from each service page — but it does not
+ * take up a slot in the menu, because most visitors are here to get a quote
+ * rather than to read.
+ *
+ * Worth being clear about what this is and isn't: leaving a page out of the
+ * menu is normal. Showing Google something a visitor cannot reach is cloaking,
+ * and it carries a real penalty. Everything on this site is reachable and
+ * identical for both.
+ */
 export const navItems = [
   { label: "Home", path: "/" },
   { label: "Services", path: "/services" },
   { label: "Projects", path: "/projects" },
-  { label: "Guides", path: "/guides" },
   { label: "About", path: "/about" },
   { label: "Contact", path: "/contact" },
 ];
