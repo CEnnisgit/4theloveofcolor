@@ -37,9 +37,8 @@ repo is doing anything.
 
 ### The Wix URLs Google already has
 
-The current Wix site publishes eight URLs in its sitemap. Four carry across
-unchanged, one is redirected in `public/_redirects`, and three have no
-equivalent here yet:
+The current Wix site publishes eight URLs in its sitemap. Six carry across,
+two do not:
 
 | Wix URL | After cutover |
 | --- | --- |
@@ -47,14 +46,14 @@ equivalent here yet:
 | `/services` | same |
 | `/projects` | same |
 | `/contact` | same |
-| `/about-us` | **301 → `/about`** (in `public/_redirects`) |
-| `/privacy-policy` | 404 — no page yet |
-| `/terms-and-conditions` | 404 — no page yet |
-| `/accessibility-statement` | 404 — no page yet |
+| `/about-us` | **301 → `/about`** |
+| `/privacy-policy` | **301 → `/privacy`** |
+| `/terms-and-conditions` | 404 |
+| `/accessibility-statement` | 404 |
 
-The three 404s are a loose end rather than a blocker. A privacy policy is the
-one worth writing rather than redirecting: the contact form collects a name,
-email, phone number and message, so the site genuinely needs one.
+Both redirects live in `public/_redirects`. The two remaining 404s were Wix's
+auto-generated boilerplate rather than anything written for this business, and
+a 404 is honest where a redirect to an unrelated page is not.
 
 After DNS moves, submit the sitemap in Google Search Console
 (`https://www.4theloveofcolorpainting.com/sitemap.xml`) and use *URL
