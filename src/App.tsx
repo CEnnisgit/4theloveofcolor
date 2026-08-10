@@ -271,6 +271,7 @@ function HomePage() {
             alt="Freshly painted large two-story white Florida home with a three-car garage and paver driveway"
             width={720}
             height={560}
+            sizes="(max-width: 900px) 100vw, 720px"
             priority
           />
           <div className="floating-panel">
@@ -1182,6 +1183,7 @@ function GuideDetailBody({ page }: { page: GuidePageData }) {
             alt={page.imageAlt}
             width={1100}
             height={700}
+            sizes="(max-width: 1180px) 100vw, 1100px"
             priority
           />
         </section>
@@ -1350,6 +1352,7 @@ function ServiceDetailBody({ page }: { page: ServicePageData }) {
             alt={page.imageAlt}
             width={1100}
             height={700}
+            sizes="(max-width: 1180px) 100vw, 1100px"
             priority
           />
         </section>
