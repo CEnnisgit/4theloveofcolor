@@ -222,11 +222,23 @@ the single most valuable photo the business could take right now. Set
   site references them, and the admin dashboard has been removed from the
   build. Reviving that path is a deliberate decision, not a config change.
 
-## Build
+## Build and check
 
 `npm run build` runs four steps: typecheck, client bundle, server bundle, then
 `scripts/prerender.mjs`, which writes one HTML file per route from the table in
 `src/routes.ts` plus `sitemap.xml` and `404.html`.
+
+| Command | What it does |
+| --- | --- |
+| `npm run build` | Typecheck, bundle, prerender every route |
+| `npm run serve` | Serve `dist/` exactly as Netlify will, on :4173 |
+| `npm run audit` | SEO gate over the build — exits non-zero on failure |
+| `npm run responsive-images` | Regenerate image size variants after adding photos |
+
+**Run `npm run audit` before any deploy.** It checks canonicals, unique titles,
+one H1 per page, alt text, valid JSON-LD, sitemap accuracy, orphan pages and
+broken internal links. It cannot check Google Business Profile, reviews or
+whether the domain points here — those are sections 1-5 above.
 
 **Adding an indexable page means adding it to `src/routes.ts`.** A route that
 is missing from that table still works when clicked, but it is never

@@ -57,9 +57,9 @@ export const servicePages: ServicePage[] = [
     name: "Cabinet refinishing",
     serviceType: "Kitchen cabinet refinishing",
     title:
-      "Kitchen Cabinet Refinishing in Lakewood Ranch & Sarasota, FL | 4 The Love of Color Painting",
+      "Cabinet Refinishing, Lakewood Ranch FL | 4 The Love of Color",
     metaDescription:
-      "Cabinet refinishing for Lakewood Ranch, Sarasota and Bradenton kitchens — degreasing, deglossing, bonding primer and a sprayed finish that survives daily use. Free written estimates.",
+      "Cabinet refinishing for Lakewood Ranch and Sarasota kitchens — properly cleaned, primed and sprayed to a finish that survives daily use.",
     h1: "Kitchen cabinet refinishing in Lakewood Ranch & Sarasota.",
     intro: [
       "Refinishing the cabinets you already have costs a fraction of replacing them, and in most kitchens around here the boxes are in much better shape than the finish makes them look. If they're solid and the layout works for you, what you don't like is usually the color and the wear — and that's something we can fix.",
@@ -162,9 +162,9 @@ export const servicePages: ServicePage[] = [
     name: "Interior painting",
     serviceType: "Interior residential painting",
     title:
-      "Interior House Painting in Lakewood Ranch & Sarasota, FL | 4 The Love of Color Painting",
+      "Interior House Painters, Lakewood Ranch | 4 The Love of Color",
     metaDescription:
-      "Interior painters for Lakewood Ranch, Sarasota and Bradenton homes — walls, ceilings, trim and doors, with low-odour products and careful protection in occupied homes.",
+      "Interior painters for Lakewood Ranch and Sarasota homes — walls, ceilings, trim and doors, with low-odor paint and careful protection.",
     h1: "Interior house painting in Lakewood Ranch & Sarasota.",
     intro: [
       "Interior painting gets looked at up close, in daylight, by the people who live there. The line where the wall meets the ceiling, the edge along the baseboard, whether a long wall looks even — that's what you notice a week later, and it comes from the prep and the hand doing it more than from the paint.",
@@ -224,12 +224,12 @@ export const servicePages: ServicePage[] = [
     timeline:
       "Single rooms are usually a day or two. Whole-home interiors typically run one to two weeks depending on square footage, ceiling height, how much trim there is, and the amount of repair work. Color changes across a wide gap — dark to white especially — add coats and therefore days.",
     occupied:
-      "Most of our interior work happens in homes people are living in. We work room by room where that suits you, keep low-VOC and low-odour products as the default so rooms stay usable, and protect and restore each space rather than treating the whole house as a site. Pets and working-from-home schedules are worth mentioning at the walkthrough so the sequence can be planned around them.",
+      "Most of our interior work happens in homes people are living in. We work room by room where that suits you, keep low-VOC and low-odor products as the default so rooms stay usable, and protect and restore each space rather than treating the whole house as a site. Pets and working-from-home schedules are worth mentioning at the walkthrough so the sequence can be planned around them.",
     faqs: [
       {
         question: "Do we need to move out while you paint?",
         answer:
-          "Almost never. We work in sections so you keep the use of the house, and low-odour products mean rooms are usable again quickly. Whole-home repaints in empty properties move faster, but living in the house does not stop the job.",
+          "Almost never. We work in sections so you keep the use of the house, and low-odor products mean rooms are usable again quickly. Whole-home repaints in empty properties move faster, but living in the house does not stop the job.",
       },
       {
         question: "Do you move furniture?",
@@ -258,9 +258,9 @@ export const servicePages: ServicePage[] = [
     name: "Exterior painting",
     serviceType: "Exterior residential painting",
     title:
-      "Exterior House Painting in Lakewood Ranch & Sarasota, FL | 4 The Love of Color Painting",
+      "Exterior House Painters, Lakewood Ranch | 4 The Love of Color",
     metaDescription:
-      "Exterior painters for Lakewood Ranch, Sarasota and Bradenton — pressure washing, stucco crack repair, sealing and coatings built for Florida sun and salt air. Free estimates.",
+      "Exterior painters for Lakewood Ranch, Sarasota and Bradenton. Pressure washing, stucco crack repair and coatings built for Florida sun.",
     h1: "Exterior house painting in Lakewood Ranch & Sarasota.",
     intro: [
       "Out here an exterior repaint is protection first and looks second. Sun, summer rain, humidity and salt air are working on your walls year round, and the paint is most of what stands between them and the block underneath.",
@@ -350,9 +350,9 @@ export const servicePages: ServicePage[] = [
     name: "Commercial painting",
     serviceType: "Commercial painting",
     title:
-      "Commercial Painting in Lakewood Ranch, Sarasota & Bradenton, FL | 4 The Love of Color Painting",
+      "Commercial Painters, Sarasota & Bradenton | 4 The Love of Color",
     metaDescription:
-      "Commercial painters for Suncoast offices, storefronts, HOA communities and rental turnovers — scheduled around trading hours and tenancies, with clear written scopes.",
+      "Commercial painters for Suncoast offices, storefronts, HOA communities and rental turnovers, scheduled around your hours.",
     h1: "Commercial painting across the Suncoast.",
     intro: [
       "Commercial painting is judged on disruption as much as on finish. The surfaces are often simpler than a house; the constraint is that the work has to happen around trading hours, tenants, residents or a handover date that will not move.",

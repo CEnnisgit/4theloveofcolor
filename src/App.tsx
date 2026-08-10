@@ -15,6 +15,7 @@ import {
   guidePageBySlug,
   guidePages,
 } from "./data/guidePages";
+import { privacyLastUpdated, privacySections } from "./data/privacyPolicy";
 import {
   type CityServicePage as CityServicePageData,
   cityServiceBySlugs,
@@ -112,6 +113,7 @@ function App() {
           <Route path="/projects" element={<ProjectsPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />
+          <Route path="/privacy" element={<PrivacyPage />} />
           <Route path="/guides" element={<GuidesPage />} />
           <Route path="/guides/:guideSlug" element={<GuideDetailPage />} />
           <Route
@@ -154,6 +156,7 @@ function SiteFooter() {
           links pointing at it is one Google has little reason to index.
         */}
         <NavLink to="/guides">Guides</NavLink>
+        <NavLink to="/privacy">Privacy</NavLink>
       </div>
       <div className="footer-col">
         <h3>Areas served</h3>
@@ -244,7 +247,14 @@ function HomePage() {
   return (
     <>
       <section className="hero section" aria-labelledby="hero-title">
-        <img className="hero-logo-bg" src="/images/logo.png" alt="" aria-hidden="true" />
+        <img
+          className="hero-logo-bg"
+          src="/images/logo.png"
+          alt=""
+          aria-hidden="true"
+          width={640}
+          height={640}
+        />
         <div className="hero-copy">
           <p className="eyebrow">Painters in Lakewood Ranch &amp; Sarasota, FL</p>
           <h1 id="hero-title">
@@ -1059,6 +1069,51 @@ function CityServiceBody({
 
       <CtaBanner />
     </>
+  );
+}
+
+/**
+ * Privacy policy at /privacy.
+ *
+ * Content lives in data/privacyPolicy.ts and describes what this site actually
+ * does rather than a generic template — see the note at the top of that file.
+ */
+function PrivacyPage() {
+  useSeo("/privacy");
+
+  return (
+    <PageShell
+      eyebrow="Privacy"
+      title="What we do with your information."
+      intro="The short version: we use what you send us to get back to you about your project, and nothing else."
+    >
+      <p className="guide-crosslink">Last updated {privacyLastUpdated}.</p>
+      {privacySections.map((section) => (
+        <section key={section.heading} className="policy-section">
+          <h2>{section.heading}</h2>
+          {section.body.map((paragraph) => (
+            <p key={paragraph} className="guide-paragraph">
+              {paragraph}
+            </p>
+          ))}
+          {section.list && (
+            <ul className="policy-list">
+              {section.list.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+          )}
+        </section>
+      ))}
+      <section className="policy-section">
+        <h2>Getting in touch</h2>
+        <p className="guide-paragraph">
+          Questions about any of this, or want your details removed? Email{" "}
+          <a href={contact.emailHref}>{contact.email}</a> or call{" "}
+          <a href={contact.phoneHref}>{contact.phone}</a>.
+        </p>
+      </section>
+    </PageShell>
   );
 }
 

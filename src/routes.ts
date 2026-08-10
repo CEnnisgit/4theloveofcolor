@@ -44,41 +44,47 @@ export const staticRoutes: RouteMeta[] = [
   {
     path: "/",
     title:
-      "House Painters in Lakewood Ranch & Sarasota, FL | 4 The Love of Color Painting",
+      "Painters in Lakewood Ranch & Sarasota, FL | 4 The Love of Color",
     description:
-      "Family-owned interior & exterior painters serving Lakewood Ranch, Sarasota, Bradenton & the Suncoast. Free estimates, eco-friendly paint, finish quality you can see.",
+      "Family-owned interior & exterior painters for Lakewood Ranch, Sarasota and Bradenton. Free estimates and finish quality you can see.",
   },
   {
     path: "/services",
     title:
-      "Painting Services — Interior, Exterior & Cabinets | Lakewood Ranch & Sarasota, FL",
+      "Interior, Exterior & Cabinet Painting | 4 The Love of Color",
     description:
-      "Interior painting, exterior painting, cabinet refinishing, and commercial painting across Lakewood Ranch, Sarasota & Bradenton. Free estimates from a family-owned crew.",
+      "Interior, exterior, cabinet and commercial painting across Lakewood Ranch, Sarasota and Bradenton. Free estimates, family-owned.",
   },
   {
     path: "/projects",
-    title: "Painting Projects & Gallery | 4 The Love of Color Painting, Sarasota FL",
+    title: "Painting Projects & Gallery | 4 The Love of Color",
     description:
       "See interior, exterior, commercial, and detail painting projects from 4 The Love of Color Painting across the Lakewood Ranch and Sarasota area.",
   },
   {
     path: "/about",
     title:
-      "About Us — Family-Owned Painters in Lakewood Ranch, FL | 4 The Love of Color",
+      "About Our Family Painting Business | 4 The Love of Color",
     description:
-      "Founded by Edwin Ennis and run with his sons, 4 The Love of Color Painting brings family craftsmanship and eco-friendly materials to homes across the Sarasota Suncoast.",
+      "Founded by Edwin Ennis and run with his sons — family craftsmanship and eco-friendly materials for homes across Lakewood Ranch and Sarasota.",
   },
   {
     path: "/contact",
-    title: "Contact & Free Estimates | 4 The Love of Color Painting, Lakewood Ranch FL",
+    title: "Free Painting Estimates, Lakewood Ranch | 4 The Love of Color",
     description:
       "Request a free painting estimate in Lakewood Ranch, Sarasota or Bradenton. Call (917) 584-0069 or send a message — family-owned, fast, and friendly.",
   },
   {
     path: "/guides",
-    title: "Painting Guides — Cost, Estimates & Florida Finishes | 4 The Love of Color",
+    title: "Painting Guides & Cost Advice | 4 The Love of Color",
     description:
       "Straight answers on what painting costs in Lakewood Ranch and Sarasota, how to compare estimates, and what Florida sun and salt air do to a finish.",
+  },
+  {
+    path: "/privacy",
+    title: "Privacy Policy | 4 The Love of Color Painting",
+    description:
+      "What we collect through this website, what we do with it, and who else is involved. No analytics, no trackers, no selling your details.",
   },
 ];
 

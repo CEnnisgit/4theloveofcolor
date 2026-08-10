@@ -60,9 +60,9 @@ export const guidePages: GuidePage[] = [
     slug: "house-painting-cost-lakewood-ranch-sarasota",
     name: "What house painting costs here",
     title:
-      "What House Painting Costs in Lakewood Ranch & Sarasota, FL | 4 The Love of Color Painting",
+      "What House Painting Costs in Lakewood Ranch | 4 The Love of Color",
     metaDescription:
-      "What actually drives the price of an interior or exterior repaint in Lakewood Ranch, Sarasota and Bradenton — and how to compare three painting quotes that look different for good reasons.",
+      "What actually drives the price of a repaint in Lakewood Ranch and Sarasota, and how to compare three quotes that look very different.",
     h1: "What house painting actually costs in Lakewood Ranch & Sarasota.",
     intro: [
       "We get asked this all the time, and the honest answer is that nobody can price your house properly over the internet. Two houses on the same street, same square footage, can come in miles apart — it all depends on what shape the walls are in underneath.",

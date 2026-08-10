@@ -37,9 +37,9 @@ export const cityPages: CityPage[] = [
     slug: "lakewood-ranch",
     city: "Lakewood Ranch",
     county: "Manatee County",
-    title: "House Painters in Lakewood Ranch, FL | 4 The Love of Color Painting",
+    title: "House Painters in Lakewood Ranch, FL | 4 The Love of Color",
     metaDescription:
-      "Family-owned interior & exterior painters in Lakewood Ranch, FL. Stucco repaints, HOA-conscious color work, cabinet refinishing. Free written estimates — call (917) 584-0069.",
+      "Family-owned painters in Lakewood Ranch, FL. Stucco repaints, HOA color work and cabinet refinishing. Free written estimates.",
     h1: "House painters in Lakewood Ranch, Florida.",
     intro: [
       "Lakewood Ranch is where we're based, and it's the community we know best. It is also unlike most places we work: nearly everything here was built from the 1990s onward as part of a master-planned village, which means block-and-stucco construction, tile roofs, and a fairly consistent set of surfaces to prepare.",
@@ -84,9 +84,9 @@ export const cityPages: CityPage[] = [
     slug: "sarasota",
     city: "Sarasota",
     county: "Sarasota County",
-    title: "House Painters in Sarasota, FL | 4 The Love of Color Painting",
+    title: "House Painters in Sarasota, FL | 4 The Love of Color",
     metaDescription:
-      "Interior & exterior painters in Sarasota, FL. Midcentury and historic homes, downtown condos, coastal exteriors, cabinet refinishing. Free estimates — call (917) 584-0069.",
+      "Interior & exterior painters in Sarasota, FL. Midcentury homes, downtown condos, coastal exteriors and cabinet refinishing. Free estimates.",
     h1: "House painters in Sarasota, Florida.",
     intro: [
       "Sarasota is the most architecturally varied market we work in, and it changes how a job gets scoped. A 1950s Sarasota School home with wide eaves and original wood detail needs a completely different approach from a downtown condo interior or a newer build out east.",
@@ -129,7 +129,7 @@ export const cityPages: CityPage[] = [
     slug: "bradenton",
     city: "Bradenton",
     county: "Manatee County",
-    title: "House Painters in Bradenton, FL | 4 The Love of Color Painting",
+    title: "House Painters in Bradenton, FL | 4 The Love of Color",
     metaDescription:
       "Family-owned painters in Bradenton, FL. Exterior repaints, older-home restoration, interiors, cabinets. Honest written estimates — call (917) 584-0069.",
     h1: "House painters in Bradenton, Florida.",
@@ -172,9 +172,9 @@ export const cityPages: CityPage[] = [
     slug: "venice",
     city: "Venice",
     county: "Sarasota County",
-    title: "House Painters in Venice, FL | 4 The Love of Color Painting",
+    title: "House Painters in Venice, FL | 4 The Love of Color",
     metaDescription:
-      "Interior & exterior painters serving Venice, FL. Coastal exteriors, low-odour interior work, cabinet refinishing. Free written estimates — call (917) 584-0069.",
+      "Interior & exterior painters serving Venice, FL. Coastal exteriors, low-odor interior work and cabinet refinishing. Free estimates.",
     h1: "House painters in Venice, Florida.",
     intro: [
       "Venice sits close enough to the Gulf that salt exposure drives most exterior decisions, and its housing runs from mid-century island homes to newer communities inland along the river.",
@@ -190,8 +190,8 @@ export const cityPages: CityPage[] = [
         text: "Venice has guarded a consistent look on the island for a long time. We'll help you land on something that suits the house and the street rather than fighting both.",
       },
       {
-        title: "Low-odour interiors",
-        text: "A lot of our Venice interior work happens in occupied homes. Low-VOC, low-odour products mean you can keep living in the house while we work in it.",
+        title: "Low-odor interiors",
+        text: "A lot of our Venice interior work happens in occupied homes. Low-VOC, low-odor products mean you can keep living in the house while we work in it.",
       },
       {
         title: "Seasonal scheduling",

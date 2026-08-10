@@ -14,9 +14,10 @@
 # inbound links it has accumulated. /services, /projects and /contact keep
 # their slugs and need no rule; only the About page moved.
 
-/about-us    /about    301!
+/about-us          /about      301!
+/privacy-policy    /privacy    301!
 
-# Not yet resolved: /privacy-policy, /terms-and-conditions and
-# /accessibility-statement exist on Wix with no equivalent here, so they will
-# 404 at cutover. A privacy policy is worth writing rather than redirecting,
-# since the contact form collects personal data. Tracked in LAUNCH.md.
+# /terms-and-conditions and /accessibility-statement existed on Wix and have no
+# equivalent here, so they 404 at cutover. Both were Wix's auto-generated
+# boilerplate rather than anything written for this business, and a 404 is
+# honest where a redirect to an unrelated page is not.

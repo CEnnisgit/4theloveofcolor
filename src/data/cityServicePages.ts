@@ -48,9 +48,9 @@ export const cityServicePages: CityServicePage[] = [
     citySlug: "lakewood-ranch",
     serviceSlug: "exterior-painting",
     title:
-      "Exterior House Painters in Lakewood Ranch, FL | 4 The Love of Color Painting",
+      "Exterior Painters in Lakewood Ranch, FL | 4 The Love of Color",
     metaDescription:
-      "Exterior repaints for Lakewood Ranch homes — stucco crack bridging, HOA color approval, and coatings chosen for west-facing elevations. Free written estimates.",
+      "Exterior repaints for Lakewood Ranch homes — stucco crack repair, HOA color approval and coatings picked for west-facing walls.",
     h1: "Exterior painting in Lakewood Ranch.",
     intro: [
       "Lakewood Ranch exteriors are unusually consistent to work on and unusually constrained to decide on. Almost everything here is block-and-stucco built from the 1990s onward, so the preparation is predictable in a way that older markets never are. The color, on the other hand, is rarely entirely yours to choose.",
@@ -84,7 +84,7 @@ export const cityServicePages: CityServicePage[] = [
   {
     citySlug: "sarasota",
     serviceSlug: "exterior-painting",
-    title: "Exterior House Painters in Sarasota, FL | 4 The Love of Color Painting",
+    title: "Exterior Painters in Sarasota, FL | 4 The Love of Color",
     metaDescription:
       "Exterior painting for Sarasota homes — salt-exposed coastal elevations, midcentury detail work, and careful handling of pre-1978 paint. Free written estimates.",
     h1: "Exterior painting in Sarasota.",
@@ -116,9 +116,9 @@ export const cityServicePages: CityServicePage[] = [
   {
     citySlug: "bradenton",
     serviceSlug: "exterior-painting",
-    title: "Exterior House Painters in Bradenton, FL | 4 The Love of Color Painting",
+    title: "Exterior Painters in Bradenton, FL | 4 The Love of Color",
     metaDescription:
-      "Exterior repaints for Bradenton homes — old paint that's failing, block and older siding, tired caulk joints. Straight answers on older houses, free written estimates.",
+      "Exterior repaints for Bradenton homes — failing old paint, block and older siding, tired caulk joints. Straight answers on older houses.",
     h1: "Exterior painting in Bradenton.",
     intro: [
       "Bradenton has the oldest houses we regularly work on, so an exterior here is usually more of a restoration than a fresh coat. Plenty of them are on their fourth or fifth repaint, and every one of those made a decision about the wall.",
@@ -151,7 +151,7 @@ export const cityServicePages: CityServicePage[] = [
     citySlug: "lakewood-ranch",
     serviceSlug: "cabinet-refinishing",
     title:
-      "Kitchen Cabinet Refinishing in Lakewood Ranch, FL | 4 The Love of Color Painting",
+      "Cabinet Refinishing in Lakewood Ranch | 4 The Love of Color",
     metaDescription:
       "Cabinet refinishing for Lakewood Ranch kitchens — builder-grade boxes in good shape with dated finishes, sprayed to a durable modern color. Free written estimates.",
     h1: "Cabinet refinishing in Lakewood Ranch.",
@@ -188,7 +188,7 @@ export const cityServicePages: CityServicePage[] = [
     citySlug: "sarasota",
     serviceSlug: "cabinet-refinishing",
     title:
-      "Kitchen Cabinet Refinishing in Sarasota, FL | 4 The Love of Color Painting",
+      "Cabinet Refinishing in Sarasota, FL | 4 The Love of Color",
     metaDescription:
       "Cabinet refinishing for Sarasota kitchens and condos — midcentury woodwork, small high-impact condo kitchens, and building access handled. Free written estimates.",
     h1: "Cabinet refinishing in Sarasota.",
@@ -227,9 +227,9 @@ export const cityServicePages: CityServicePage[] = [
     citySlug: "lakewood-ranch",
     serviceSlug: "interior-painting",
     title:
-      "Interior House Painters in Lakewood Ranch, FL | 4 The Love of Color Painting",
+      "Interior Painters in Lakewood Ranch, FL | 4 The Love of Color",
     metaDescription:
-      "Interior painting for Lakewood Ranch homes — replacing builder-grade flat with a washable finish, tall ceilings, tray detail and open-plan color. Free estimates.",
+      "Interior painting for Lakewood Ranch homes — swapping builder-grade flat for a washable finish, tall ceilings and open-plan color.",
     h1: "Interior painting in Lakewood Ranch.",
     intro: [
       "The defining interior job in Lakewood Ranch is the first repaint of a production-built home. Builders spray a single thin coat of flat paint across the whole house: it looks fine on handover day, marks if you look at it hard, and cannot be cleaned without burnishing a shiny patch into the wall.",

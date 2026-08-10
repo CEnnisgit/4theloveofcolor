@@ -8,7 +8,9 @@
     "build": "tsc -b && vite build && vite build --ssr src/entry-server.tsx --outDir dist-ssr && node scripts/prerender.mjs",
     "preview": "vite preview",
     "serve": "node scripts/serve.mjs",
-    "optimize-images": "node scripts/optimize-images.mjs"
+    "optimize-images": "node scripts/optimize-images.mjs",
+    "audit": "node scripts/seo-audit.mjs",
+    "responsive-images": "node scripts/responsive-images.mjs"
   },
   "dependencies": {
     "react": "^18.3.1",
