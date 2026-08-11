@@ -503,40 +503,31 @@ export default function HomePage() {
         </section>
 
         {/* BEAT 6: Our Process */}
-        <section className="bg-[#fffaf3] py-16 lg:py-32 px-4 lg:px-8 border-y border-[#211711]/5">
-          <div className="max-w-7xl mx-auto text-center max-w-3xl mb-12 sm:mb-20 space-y-4 sm:space-y-6">
-            <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#c2592e]">
-              Our Process
-            </p>
-            <h2 className="font-serif text-2xl sm:text-4xl lg:text-5xl font-bold text-[#211711] leading-[1.1] tracking-tight">
-              From first call to final walkthrough.
-            </h2>
-          </div>
-
-          <motion.div 
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.8 }}
-            className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8"
-          >
-            {processSteps.map((step, idx) => (
-              <div
-                key={step.title}
-                className="bg-[#faf3e9] p-6 sm:p-10 rounded-[2rem] sm:rounded-[2.5rem] border border-[#211711]/5 relative space-y-4 sm:space-y-6 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-500"
-              >
-                <span className="inline-block text-4xl sm:text-5xl font-serif font-bold text-[#d9a460]">
-                  0{idx + 1}
-                </span>
-                <h3 className="font-serif text-xl sm:text-2xl font-bold text-[#211711]">
-                  {step.title}
-                </h3>
-                <p className="text-sm sm:text-base text-[#6a594c] leading-relaxed">
-                  {step.text}
+        <section className="bg-[#fffaf3] py-16 lg:py-24 px-4 lg:px-8 border-y border-[#211711]/5">
+          <div className="max-w-7xl mx-auto">
+            <div className="grid lg:grid-cols-12 gap-12 items-start">
+              <div className="lg:col-span-5 space-y-3 lg:sticky lg:top-24">
+                <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#c2592e]">Our Process</p>
+                <h2 className="font-serif text-3xl md:text-5xl font-bold text-[#211711] leading-tight">
+                  From first call to final walkthrough.
+                </h2>
+                <p className="text-base text-[#6a594c] leading-relaxed">
+                  We eliminate the guesswork. Here is exactly what happens when you work with 4 The Love of Color.
                 </p>
               </div>
-            ))}
-          </motion.div>
+
+              <div className="lg:col-span-7 space-y-8 relative pl-6 border-l-2 border-[#211711]/20 ml-2">
+                {processSteps.map((step, idx) => (
+                  <div key={step.title} className="relative space-y-2 pb-6 border-b border-[#211711]/10 last:border-b-0">
+                    <div className="absolute -left-[31px] top-1 w-4 h-4 rounded-full bg-[#211711] border-2 border-[#fffaf3]" />
+                    <span className="text-xs font-bold uppercase tracking-widest text-[#c2592e]">Phase 0{idx + 1}</span>
+                    <h3 className="font-serif text-2xl font-bold text-[#211711]">{step.title}</h3>
+                    <p className="text-base text-[#6a594c] leading-relaxed">{step.text}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
         </section>
 
         {/* BEAT 7: Service Area (Local SEO Optimization) */}
