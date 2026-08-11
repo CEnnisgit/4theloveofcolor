@@ -247,7 +247,7 @@ export default function HomePage() {
                       onMouseEnter={() => setHoveredService(service)}
                       onClick={() => setHoveredService(service)}
                     >
-                      <h3 className="font-serif text-xl sm:text-2xl font-bold text-white mb-1">
+                      <h3 className="font-serif text-2xl sm:text-3xl lg:text-3xl font-bold text-white mb-2 sm:mb-3 transition-colors">
                         {service.title}
                       </h3>
                       
