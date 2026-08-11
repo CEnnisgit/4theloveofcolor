@@ -9,7 +9,7 @@ export function ProcessSection() {
     <section className="bg-warm-bg pt-10 pb-16 lg:pt-14 lg:pb-24 px-4 lg:px-8 border-y border-ink/5">
       <div className="max-w-7xl mx-auto">
         <div className="w-full flex justify-start mb-8">
-          <div className="w-56 sm:w-64 h-10 flex items-center justify-center rounded-[var(--radius)] bg-ink text-white text-xs sm:text-sm font-bold uppercase tracking-[0.2em] text-center">
+          <div className="w-52 sm:w-60 h-9 flex items-center justify-center rounded-[var(--radius)] bg-ink text-white text-[11px] sm:text-[13px] font-bold uppercase tracking-[0.2em] text-center">
             Our Process
           </div>
         </div>

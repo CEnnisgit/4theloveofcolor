@@ -71,7 +71,7 @@ export function ServicesSection() {
         className="max-w-7xl mx-auto px-4 lg:px-8 relative z-10"
       >
         <div className="w-full flex justify-start mb-6">
-          <div className="w-56 sm:w-64 h-10 flex items-center justify-center rounded-[var(--radius)] bg-terracotta text-white text-xs sm:text-sm font-bold uppercase tracking-[0.2em] text-center">
+          <div className="w-52 sm:w-60 h-9 flex items-center justify-center rounded-[var(--radius)] bg-terracotta text-white text-[11px] sm:text-[13px] font-bold uppercase tracking-[0.2em] text-center">
             Our Services
           </div>
         </div>

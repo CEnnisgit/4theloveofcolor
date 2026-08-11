@@ -22,8 +22,8 @@ export function SelectedWorkSection() {
         className="max-w-7xl mx-auto"
       >
         <div className="w-full flex justify-start mb-6">
-          <div className="w-56 sm:w-64 h-10 flex items-center justify-center rounded-[var(--radius)] bg-ink text-white text-xs sm:text-sm font-bold uppercase tracking-[0.2em] text-center">
-            Our Project Portfolio
+          <div className="w-52 sm:w-60 h-9 flex items-center justify-center rounded-[var(--radius)] bg-ink text-white text-[11px] sm:text-[13px] font-bold uppercase tracking-[0.2em] text-center">
+            Our Projects
           </div>
         </div>
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-6">

@@ -6,7 +6,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 export function EmpathyGuaranteesSection() {
   return (
     <section className="px-4 lg:px-8 pt-10 pb-16 lg:pt-14 lg:pb-24 max-w-7xl mx-auto flex flex-col items-start">
-      <div className="w-56 sm:w-64 h-10 mb-8 lg:mb-10 flex items-center justify-center rounded-[var(--radius)] bg-ink text-white text-xs sm:text-sm font-bold uppercase tracking-[0.2em] text-center">
+      <div className="w-52 sm:w-60 h-9 mb-8 lg:mb-10 flex items-center justify-center rounded-[var(--radius)] bg-ink text-white text-[11px] sm:text-[13px] font-bold uppercase tracking-[0.2em] text-center">
         The Family Difference
       </div>
       <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start w-full">
