@@ -75,6 +75,16 @@ export default function HomePage() {
         <CallToActionSection />
       </main>
 
+      {/* Retro Macintosh Rainbow Divider */}
+      <div className="w-full flex h-2 sm:h-3 z-30">
+        <div className="flex-1 bg-[#61bb46]" /> {/* Green */}
+        <div className="flex-1 bg-[#fdb827]" /> {/* Yellow */}
+        <div className="flex-1 bg-[#f5821f]" /> {/* Orange */}
+        <div className="flex-1 bg-[#e03a3e]" /> {/* Red */}
+        <div className="flex-1 bg-[#963d97]" /> {/* Purple */}
+        <div className="flex-1 bg-[#009dcf]" /> {/* Blue */}
+      </div>
+
       {/* Footer */}
       <footer className="bg-ink text-gray-300 border-t border-white/10 px-4 lg:px-8 py-12 lg:py-20">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 lg:gap-12">
