@@ -13,7 +13,7 @@ import {
 
 export function SelectedWorkSection() {
   return (
-    <section className="bg-warm-bg py-12 lg:py-16 px-4 lg:px-8 border-y border-ink/5">
+    <section className="bg-warm-bg pt-10 pb-12 lg:pt-14 lg:pb-16 px-4 lg:px-8 border-y border-ink/5">
       <motion.div 
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -21,11 +21,13 @@ export function SelectedWorkSection() {
         transition={{ duration: 0.8 }}
         className="max-w-7xl mx-auto"
       >
+        <div className="w-full flex justify-start mb-6">
+          <div className="w-48 sm:w-56 h-8 flex items-center justify-center rounded-[var(--radius)] bg-ink text-white text-[10px] sm:text-xs font-bold uppercase tracking-[0.2em] text-center">
+            Our Project Portfolio
+          </div>
+        </div>
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-6">
           <div className="max-w-2xl space-y-3">
-            <div className="w-fit inline-block px-3.5 py-1.5 rounded-full bg-ink text-white text-[10px] sm:text-xs font-bold uppercase tracking-[0.2em] mb-2">
-              Our Project Portfolio
-            </div>
             <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-ink leading-[1.1] tracking-tight">
               Homes we&apos;ve painted across the Suncoast.
             </h2>

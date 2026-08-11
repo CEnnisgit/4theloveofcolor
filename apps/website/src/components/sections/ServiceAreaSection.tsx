@@ -4,13 +4,17 @@ import { serviceCities, lakewoodRanchNeighborhoods } from "@/lib/data/content";
 
 export function ServiceAreaSection() {
   return (
-    <section className="bg-ink text-white py-20 lg:py-32 border-y border-white/5">
+    <section className="bg-ink text-white pt-16 pb-20 lg:pt-20 lg:pb-32 border-y border-white/5">
       <div className="max-w-7xl mx-auto px-4 lg:px-8">
+        <div className="w-full flex justify-start mb-8">
+          <div className="w-48 sm:w-56 h-8 flex items-center justify-center rounded-[var(--radius)] bg-terracotta text-white text-[10px] sm:text-xs font-bold uppercase tracking-[0.2em] text-center">
+            Service Area
+          </div>
+        </div>
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
           
           {/* Left Side: Typography */}
           <div className="space-y-6 lg:sticky lg:top-24">
-            <div className="w-fit inline-block px-3.5 py-1.5 rounded-full bg-terracotta text-white text-[10px] sm:text-xs font-bold uppercase tracking-[0.2em] mb-2">Service Area</div>
             <h2 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.1]">
               Proudly serving Lakewood Ranch & Sarasota.
             </h2>

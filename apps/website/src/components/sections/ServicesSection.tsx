@@ -50,7 +50,7 @@ export function ServicesSection() {
   }, []);
 
   return (
-    <section className="bg-ink pt-16 lg:pt-20 pb-0 border-b border-white/5 relative overflow-hidden">
+    <section className="bg-ink pt-12 lg:pt-16 pb-0 border-b border-white/5 relative overflow-hidden">
       {/* Retro Macintosh Rainbow Divider */}
       <div className="absolute top-0 left-0 w-full flex h-2 sm:h-3 z-30">
         <div className="flex-1 bg-[#61bb46]" /> {/* Green */}
@@ -70,11 +70,12 @@ export function ServicesSection() {
         transition={{ duration: 0.8 }}
         className="max-w-7xl mx-auto px-4 lg:px-8 relative z-10"
       >
-        <div className="mb-8 lg:mb-12">
-          <div className="w-fit inline-block px-3.5 py-1.5 rounded-full bg-terracotta text-white text-[10px] sm:text-xs font-bold uppercase tracking-[0.2em] mb-4">
+        <div className="w-full flex justify-start mb-6">
+          <div className="w-48 sm:w-56 h-8 flex items-center justify-center rounded-[var(--radius)] bg-terracotta text-white text-[10px] sm:text-xs font-bold uppercase tracking-[0.2em] text-center">
             What We Do
           </div>
-          
+        </div>
+        <div className="mb-8 lg:mb-12">
           <h2 className="font-serif text-2xl sm:text-4xl lg:text-5xl font-bold text-white leading-[1.1] tracking-tight max-w-2xl">
             Painting that improves how your home and business live.
           </h2>

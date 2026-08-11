@@ -6,11 +6,15 @@ import { processSteps } from "@/lib/data/content";
 
 export function ProcessSection() {
   return (
-    <section className="bg-warm-bg py-16 lg:py-24 px-4 lg:px-8 border-y border-ink/5">
+    <section className="bg-warm-bg pt-10 pb-16 lg:pt-14 lg:pb-24 px-4 lg:px-8 border-y border-ink/5">
       <div className="max-w-7xl mx-auto">
+        <div className="w-full flex justify-start mb-8">
+          <div className="w-48 sm:w-56 h-8 flex items-center justify-center rounded-[var(--radius)] bg-ink text-white text-[10px] sm:text-xs font-bold uppercase tracking-[0.2em] text-center">
+            Our Process
+          </div>
+        </div>
         <div className="grid lg:grid-cols-12 gap-12 items-start">
           <div className="lg:col-span-6 space-y-4 lg:sticky lg:top-24">
-            <div className="w-fit inline-block px-3.5 py-1.5 rounded-full bg-ink text-white text-[10px] sm:text-xs font-bold uppercase tracking-[0.2em] mb-2">Our Process</div>
             <h2 className="font-serif text-3xl md:text-5xl font-bold text-ink leading-tight">
               From first call to final walkthrough.
             </h2>

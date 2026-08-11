@@ -24,7 +24,7 @@ export function HeroSection() {
         transition={{ duration: 0.8, ease: "easeOut" }}
         className="lg:col-span-7 space-y-5 sm:space-y-7"
       >
-        <div className="w-fit inline-block px-3.5 py-1.5 rounded-full bg-[var(--color-terracotta)]/10 text-terracotta text-[10px] sm:text-xs font-bold uppercase tracking-[0.18em]">
+        <div className="w-fit inline-block px-3.5 py-1.5 rounded-[var(--radius)] bg-[var(--color-terracotta)]/10 text-terracotta text-[10px] sm:text-xs font-bold uppercase tracking-[0.18em]">
           <span>Painters in Lakewood Ranch & Sarasota</span>
         </div>
         

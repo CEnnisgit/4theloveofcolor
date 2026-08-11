@@ -4,10 +4,14 @@ import { testimonials } from "@/lib/data/content";
 
 export function TestimonialsSection() {
   return (
-    <section className="pt-16 pb-0 px-4 lg:px-8 bg-warm-bg border-t border-ink/10">
+    <section className="pt-10 pb-0 px-4 lg:px-8 bg-warm-bg border-t border-ink/10">
       <div className="max-w-7xl mx-auto">
+        <div className="w-full flex justify-start mb-6">
+          <div className="w-48 sm:w-56 h-8 flex items-center justify-center rounded-[var(--radius)] bg-ink text-white text-[10px] sm:text-xs font-bold uppercase tracking-[0.2em] text-center">
+            What Clients Say
+          </div>
+        </div>
         <div className="text-center max-w-3xl mx-auto mb-8 space-y-2">
-          <div className="w-fit inline-block px-3.5 py-1.5 rounded-full bg-ink text-white text-[10px] sm:text-xs font-bold uppercase tracking-[0.2em] mx-auto mb-2">What Clients Say</div>
           <h2 className="font-serif text-3xl sm:text-4xl font-bold text-ink leading-tight">
             Real care, on every job.
           </h2>

@@ -5,13 +5,13 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 
 export function EmpathyGuaranteesSection() {
   return (
-    <section className="px-4 lg:px-8 py-16 lg:py-24 max-w-7xl mx-auto">
-      <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+    <section className="px-4 lg:px-8 pt-10 pb-16 lg:pt-14 lg:pb-24 max-w-7xl mx-auto flex flex-col items-start">
+      <div className="w-48 sm:w-56 h-8 mb-8 lg:mb-10 flex items-center justify-center rounded-[var(--radius)] bg-ink text-white text-[10px] sm:text-xs font-bold uppercase tracking-[0.2em] text-center">
+        The Family Difference
+      </div>
+      <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start w-full">
         <div className="lg:col-span-5 space-y-6">
           <div className="space-y-3">
-            <div className="w-fit inline-block px-3.5 py-1.5 rounded-full bg-ink text-white text-[10px] sm:text-xs font-bold uppercase tracking-[0.2em]">
-              The Family Difference
-            </div>
             <h2 className="font-serif text-2xl md:text-4xl font-bold text-ink leading-tight">
               Built for Florida homes & discerning owners.
             </h2>

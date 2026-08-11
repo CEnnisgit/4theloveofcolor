@@ -12,6 +12,7 @@
   --color-warm-card: #fffaf3;
   --color-ink: #211711;
   --color-ink-muted: #6a594c;
+  --radius: 0.125rem;
 }
 
 @layer base {
