@@ -6,7 +6,7 @@ import { processSteps } from "@/lib/data/content";
 
 export function ProcessSection() {
   return (
-    <section className="bg-warm-bg pt-10 pb-16 lg:pt-14 lg:pb-24 px-4 lg:px-8 relative">
+    <section className="bg-warm-bg pt-10 pb-10 lg:pt-14 lg:pb-16 px-4 lg:px-8 relative">
       {/* Dark Divider */}
       <div className="absolute top-0 left-0 w-full h-0.5 bg-ink/30"></div>
       <div className="max-w-7xl mx-auto">
@@ -45,7 +45,7 @@ export function ProcessSection() {
                 className="flex group"
               >
                 {/* Content Box */}
-                <div className="flex-grow py-8 md:py-12 border-b border-ink/10 group-last:border-b-0">
+                <div className="flex-grow py-5 md:py-6 border-b border-ink/10 group-last:border-b-0">
                   <div className="flex items-baseline gap-3 mb-3">
                     <span className="font-serif text-2xl md:text-3xl font-black text-ink/30">
                       0{idx + 1}
