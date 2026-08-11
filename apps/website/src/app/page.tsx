@@ -76,7 +76,7 @@ export default function HomePage() {
 
           <a
             href={contact.phoneHref}
-            className="hidden md:inline-flex items-center justify-center px-6 py-3 rounded-full bg-[#c2592e] text-white text-sm font-bold tracking-wide shadow-lg hover:bg-[#8e3d1c] hover:-translate-y-0.5 transition-all"
+            className="hidden md:inline-flex items-center justify-center px-6 py-3 rounded-sm bg-[#c2592e] text-white text-sm font-bold tracking-wide shadow-lg hover:bg-[#8e3d1c] hover:-translate-y-0.5 transition-all"
           >
             Call {contact.phone}
           </a>
@@ -121,27 +121,27 @@ export default function HomePage() {
             <div className="flex flex-row w-full gap-3 pt-1 sm:pt-3">
               <Link
                 href="/contact"
-                className="flex-1 inline-flex items-center justify-center px-3 sm:px-8 py-3.5 sm:py-4 rounded-full bg-[#c2592e] text-white text-xs sm:text-base font-bold shadow-xl shadow-[#c2592e]/20 hover:bg-[#8e3d1c] hover:-translate-y-1 transition-all text-center leading-tight"
+                className="flex-1 inline-flex items-center justify-center px-3 sm:px-8 py-3.5 sm:py-4 rounded-sm bg-[#c2592e] text-white text-xs sm:text-base font-bold shadow-xl shadow-[#c2592e]/20 hover:bg-[#8e3d1c] hover:-translate-y-1 transition-all text-center leading-tight"
               >
                 Get a Free Estimate
               </Link>
               <a
                 href={contact.phoneHref}
-                className="flex-1 inline-flex items-center justify-center px-3 sm:px-8 py-3.5 sm:py-4 rounded-full bg-white border border-[#211711]/15 text-[#211711] text-xs sm:text-base font-bold shadow-sm hover:border-[#c2592e] hover:text-[#c2592e] transition-all text-center leading-tight"
+                className="flex-1 inline-flex items-center justify-center px-3 sm:px-8 py-3.5 sm:py-4 rounded-sm bg-white border border-[#211711]/15 text-[#211711] text-xs sm:text-base font-bold shadow-sm hover:border-[#c2592e] hover:text-[#c2592e] transition-all text-center leading-tight"
               >
                 Call {contact.phone}
               </a>
             </div>
 
             {/* Proof Badges Strip */}
-            <div className="pt-4 sm:pt-6 flex flex-row flex-wrap items-center gap-3 sm:gap-4 text-xs sm:text-sm font-medium text-[#6a594c] tracking-wide w-full">
+            <div className="pt-4 sm:pt-6 flex flex-row flex-wrap items-center gap-3 sm:gap-4 text-[10px] sm:text-xs font-medium text-[#6a594c] tracking-wide w-full">
               <div className="flex items-center gap-1.5 justify-center whitespace-nowrap">
-                <span className="text-[#d9a460] text-sm sm:text-base">★</span>
+                <span className="text-[#d9a460] text-xs sm:text-sm">★</span>
                 <span className="text-[#211711] font-bold">5.0 Google Reviews</span>
               </div>
-              <div className="w-1 h-1 rounded-full bg-[#211711]/20" />
+              <div className="w-1 h-1 rounded-sm bg-[#211711]/20" />
               <span className="whitespace-nowrap">No Subcontractors</span>
-              <div className="w-1 h-1 rounded-full bg-[#211711]/20" />
+              <div className="w-1 h-1 rounded-sm bg-[#211711]/20" />
               <span className="whitespace-nowrap">Free Estimates</span>
             </div>
           </motion.div>
@@ -152,23 +152,29 @@ export default function HomePage() {
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
             className="lg:col-span-5 relative mt-2 sm:mt-6 lg:mt-0"
           >
-            <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl border border-[#211711]/10 bg-white">
-              <Image
-                src="/images/proj-exterior-white-2story.jpg"
-                alt="Freshly painted two-story white home in Florida"
-                width={640}
-                height={520}
-                priority
-                className="w-full h-[260px] sm:h-[450px] object-cover hover:scale-105 transition-transform duration-700"
-              />
-              <div className="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 p-3.5 sm:p-5 rounded-xl sm:rounded-2xl backdrop-blur-xl bg-white/90 border border-white/50 shadow-lg">
-                <p className="text-[9px] sm:text-xs uppercase tracking-[0.2em] font-bold text-[#c2592e]">
-                  Primary Service Area
-                </p>
-                <p className="text-xs sm:text-base font-bold text-[#211711] mt-0.5">
-                  {contact.serviceArea}
-                </p>
+            <div className="relative w-full h-[320px] sm:h-[500px] group">
+              {/* Primary Anchor (Exterior Portrait) */}
+              <div className="absolute top-0 right-0 w-[85%] h-[85%] rounded-sm overflow-hidden shadow-2xl border border-[#211711]/5">
+                <Image
+                  src="/images/proj-exterior-white-2story.jpg"
+                  alt="Freshly painted two-story white home exterior in Florida"
+                  fill
+                  priority
+                  className="object-cover hover:scale-105 transition-transform duration-700"
+                />
               </div>
+              
+              {/* Secondary Overlap (Landscape Detail) */}
+              <div className="absolute bottom-0 left-0 w-[65%] h-[45%] rounded-sm overflow-hidden shadow-xl border-4 border-[#fffaf3]">
+                <Image
+                  src="/images/proj-exterior-modern.jpg"
+                  alt="Modern exterior painting detail"
+                  fill
+                  className="object-cover hover:scale-105 transition-transform duration-700"
+                />
+              </div>
+
+              {/* No context box here. Let the photography breathe. */}
             </div>
           </motion.div>
         </section>
@@ -259,7 +265,7 @@ export default function HomePage() {
                           </div>
 
                           {/* Mobile Image (Visible only on small screens inside the expanded area) */}
-                          <div className="block lg:hidden mb-6 relative aspect-[16/10] rounded-xl sm:rounded-2xl overflow-hidden shadow-lg border border-white/10">
+                          <div className="block lg:hidden mb-6 relative aspect-[16/10] rounded-sm overflow-hidden shadow-lg border border-white/10">
                             <Image
                               src={service.image}
                               alt={service.title}
@@ -281,7 +287,7 @@ export default function HomePage() {
               
               {/* Desktop Image (Hidden on mobile) */}
               <div className="hidden lg:block lg:col-span-7 sticky top-32">
-                <div className="relative aspect-[4/3] lg:aspect-[16/10] rounded-[2.5rem] overflow-hidden shadow-2xl border border-white/10">
+                <div className="relative aspect-[4/3] lg:aspect-[16/10] rounded-sm overflow-hidden shadow-2xl border border-white/10">
                   {macroServices.map((service) => (
                     <Image
                       key={service.slug}
