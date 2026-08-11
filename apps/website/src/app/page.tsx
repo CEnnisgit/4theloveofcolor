@@ -16,8 +16,21 @@ import {
   whyUs,
 } from "@/lib/data/content";
 
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+
+const serviceBadges: Record<string, string[]> = {
+  "interior-painting": ["Walls & Ceilings", "Crown & Trim", "Low-VOC / Zero-Odor", "Precision Masking"],
+  "exterior-painting": ["Stucco & Trim", "UV-Resistant", "High-Pressure Wash", "5-Year Guarantee"],
+  "cabinet-refinishing": ["HVLP Spray Finish", "Degrease & Degloss", "Factory-Smooth", "Durable Polyurethane"],
+  "commercial-painting": ["Offices & Retail", "HOA Common Areas", "Flexible Hours", "Written Scope"],
+};
+
 export default function HomePage() {
-  const [activeTab, setActiveTab] = useState(0);
+  const [activeTab, setActiveTab] = useState(macroServices[0].slug);
 
   return (
     <div className="min-h-screen flex flex-col selection:bg-[#c2592e] selection:text-white">
@@ -172,150 +185,214 @@ export default function HomePage() {
           </div>
         </section>
 
-
-
         {/* ========================================================= */}
-        {/* OPTION 2: INTERACTIVE TABS SHOWCASE */}
+        {/* OPTION 2: UPGRADED INTERACTIVE TABS & ACCORDION (SHADCN) */}
         {/* ========================================================= */}
         <section className="px-4 lg:px-8 py-24 max-w-7xl mx-auto border-b-8 border-dashed border-blue-500/20">
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
             <div className="inline-block bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-xs font-bold tracking-widest">
-              PROTOTYPE: OPTION 2 (MOST COMPACT)
+              PROTOTYPE: OPTION 2 (SHADCN TABS + BADGES)
             </div>
             <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#c2592e]">
-              Interactive Tabs Showcase
+              Interactive Showcase
             </p>
             <h2 className="font-serif text-4xl sm:text-5xl font-bold text-[#211711] leading-[1.1] tracking-tight">
               Painting that improves how your home and business live.
             </h2>
           </div>
 
-          <div className="grid lg:grid-cols-12 gap-12 items-center bg-[#fffaf3] p-8 sm:p-12 rounded-[3rem] border border-[#211711]/5 shadow-xl">
-            {/* Left Menu Column */}
-            <div className="lg:col-span-5 space-y-4">
-              {macroServices.map((service, idx) => {
-                const isActive = activeTab === idx;
-                return (
-                  <button
-                    key={service.slug}
-                    onClick={() => setActiveTab(idx)}
-                    onMouseEnter={() => setActiveTab(idx)}
-                    className={`w-full text-left p-6 rounded-2xl transition-all duration-300 flex items-center justify-between border ${
-                      isActive
-                        ? "bg-white shadow-lg border-[#c2592e]/20 translate-x-2"
-                        : "bg-transparent border-transparent hover:bg-white/50"
-                    }`}
-                  >
-                    <div>
-                      <span className={`text-xs font-bold uppercase tracking-[0.2em] ${isActive ? "text-[#c2592e]" : "text-[#6a594c]"}`}>
-                        0{idx + 1}
-                      </span>
-                      <h3 className={`font-serif text-2xl font-bold mt-1 ${isActive ? "text-[#211711]" : "text-[#6a594c]"}`}>
-                        {service.title}
-                      </h3>
-                    </div>
-                    <span className={`text-xl transition-transform ${isActive ? "text-[#c2592e] translate-x-1" : "text-[#6a594c]/40"}`}>
-                      →
-                    </span>
-                  </button>
-                );
-              })}
-            </div>
+          {/* Desktop Version: Shadcn Tabs */}
+          <div className="hidden md:block">
+            <Tabs defaultValue={macroServices[0].slug} value={activeTab} onValueChange={setActiveTab} className="w-full">
+              <div className="grid lg:grid-cols-12 gap-8 items-start">
+                <TabsList className="lg:col-span-4 w-full">
+                  {macroServices.map((service, idx) => (
+                    <TabsTrigger
+                      key={service.slug}
+                      value={service.slug}
+                      onMouseEnter={() => setActiveTab(service.slug)}
+                    >
+                      <div className="flex items-center justify-between w-full">
+                        <div>
+                          <span className="text-xs font-bold uppercase tracking-widest text-[#d9a460] block mb-0.5">
+                            0{idx + 1}
+                          </span>
+                          <span>{service.title}</span>
+                        </div>
+                        <span className="text-xl opacity-0 group-data-[state=active]:opacity-100 transition-opacity text-[#c2592e]">
+                          →
+                        </span>
+                      </div>
+                    </TabsTrigger>
+                  ))}
+                </TabsList>
 
-            {/* Right Showcase Display */}
-            <div className="lg:col-span-7 space-y-6">
-              <div className="relative aspect-[16/10] rounded-3xl overflow-hidden shadow-2xl">
-                <Image
-                  src={macroServices[activeTab].image}
-                  alt={macroServices[activeTab].title}
-                  fill
-                  className="object-cover transition-all duration-700"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                <div className="absolute bottom-6 left-6 right-6 text-white space-y-2">
-                  <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#d9a460]">
-                    Featured Service
-                  </span>
-                  <h4 className="font-serif text-3xl font-bold">
-                    {macroServices[activeTab].title}
-                  </h4>
+                <div className="lg:col-span-8">
+                  {macroServices.map((service) => (
+                    <TabsContent key={service.slug} value={service.slug} className="mt-0">
+                      <Card className="border-0 shadow-2xl overflow-hidden bg-white rounded-[3rem]">
+                        <div className="relative aspect-[16/9] w-full overflow-hidden">
+                          <Image
+                            src={service.image}
+                            alt={service.title}
+                            fill
+                            className="object-cover"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                          <div className="absolute bottom-6 left-8 right-8 text-white space-y-2">
+                            <Badge variant="secondary" className="mb-2">
+                              Macro Category
+                            </Badge>
+                            <h3 className="font-serif text-4xl font-bold text-white">
+                              {service.title}
+                            </h3>
+                          </div>
+                        </div>
+
+                        <CardContent className="p-8 sm:p-10 space-y-6">
+                          <CardDescription className="text-lg sm:text-xl text-[#6a594c] leading-relaxed">
+                            {service.description}
+                          </CardDescription>
+
+                          <div className="flex flex-wrap gap-2 pt-2">
+                            {serviceBadges[service.slug]?.map((tag) => (
+                              <Badge key={tag} variant="outline">
+                                {tag}
+                              </Badge>
+                            ))}
+                          </div>
+
+                          <div className="pt-4 border-t border-[#211711]/10 flex items-center justify-between">
+                            <Link
+                              href="/services"
+                              className="inline-flex items-center gap-3 text-base font-bold text-[#c2592e] uppercase tracking-wide hover:text-[#8e3d1c] transition-colors"
+                            >
+                              Explore {service.title} Subpages <span className="text-xl">→</span>
+                            </Link>
+                          </div>
+                        </CardContent>
+                      </Card>
+                    </TabsContent>
+                  ))}
                 </div>
               </div>
+            </Tabs>
+          </div>
 
-              <div className="space-y-4 p-2">
-                <p className="text-lg text-[#6a594c] leading-relaxed font-medium">
-                  {macroServices[activeTab].description}
-                </p>
-                <Link
-                  href="/services"
-                  className="inline-flex items-center gap-2 text-sm font-bold text-[#c2592e] uppercase tracking-wide hover:text-[#8e3d1c] transition-colors"
-                >
-                  Explore {macroServices[activeTab].title} details →
-                </Link>
-              </div>
-            </div>
+          {/* Mobile Fallback: Shadcn Accordion */}
+          <div className="block md:hidden">
+            <Accordion type="single" collapsible defaultValue={macroServices[0].slug}>
+              {macroServices.map((service, idx) => (
+                <AccordionItem key={service.slug} value={service.slug}>
+                  <AccordionTrigger>
+                    <span className="flex items-center gap-3">
+                      <span className="text-xs font-bold text-[#d9a460]">0{idx + 1}</span>
+                      <span>{service.title}</span>
+                    </span>
+                  </AccordionTrigger>
+                  <AccordionContent>
+                    <div className="relative aspect-[16/10] rounded-2xl overflow-hidden mb-4">
+                      <Image src={service.image} alt={service.title} fill className="object-cover" />
+                    </div>
+                    <p className="text-base text-[#6a594c] leading-relaxed mb-4">
+                      {service.description}
+                    </p>
+                    <div className="flex flex-wrap gap-1.5 mb-6">
+                      {serviceBadges[service.slug]?.map((tag) => (
+                        <Badge key={tag} variant="outline" className="text-[10px]">
+                          {tag}
+                        </Badge>
+                      ))}
+                    </div>
+                    <Link
+                      href="/services"
+                      className="inline-flex items-center text-sm font-bold text-[#c2592e] uppercase tracking-wide"
+                    >
+                      View details →
+                    </Link>
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
           </div>
         </section>
 
         {/* ========================================================= */}
-        {/* OPTION 3: HORIZONTAL CAROUSEL / SLIDER */}
+        {/* OPTION 3: UPGRADED HORIZONTAL CAROUSEL (SHADCN + EMBLA) */}
         {/* ========================================================= */}
         <section className="px-4 lg:px-8 py-24 max-w-7xl mx-auto">
-          <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-            <div className="inline-block bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs font-bold tracking-widest">
-              PROTOTYPE: OPTION 3
+          <Carousel opts={{ align: "start", loop: true }} className="w-full">
+            <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+              <div className="max-w-2xl space-y-4">
+                <div className="inline-block bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs font-bold tracking-widest">
+                  PROTOTYPE: OPTION 3 (SHADCN CAROUSEL)
+                </div>
+                <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#c2592e]">
+                  Motion Slider
+                </p>
+                <h2 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-[#211711] leading-[1.1] tracking-tight">
+                  Painting that improves how your home and business live.
+                </h2>
+              </div>
+              {/* Carousel Navigation Buttons - Inside <Carousel> */}
+              <div className="flex items-center gap-3">
+                <CarouselPrevious className="static translate-y-0" />
+                <CarouselNext className="static translate-y-0" />
+              </div>
             </div>
-            <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#c2592e]">
-              Horizontal Carousel Slider
-            </p>
-            <h2 className="font-serif text-4xl sm:text-5xl font-bold text-[#211711] leading-[1.1] tracking-tight">
-              Painting that improves how your home and business live.
-            </h2>
-            <p className="text-sm text-[#6a594c] font-medium">
-              Swipe or scroll horizontally to view all services →
-            </p>
-          </div>
 
-          <div className="flex gap-6 overflow-x-auto pb-8 snap-x snap-mandatory scrollbar-thin scrollbar-thumb-[#c2592e]/20">
-            {macroServices.map((service, idx) => (
-              <Link
-                key={service.slug}
-                href="/services"
-                className="min-w-[320px] sm:min-w-[380px] max-w-[400px] flex-shrink-0 snap-start group bg-[#fffaf3] p-6 rounded-[2.5rem] border border-[#211711]/5 hover:shadow-2xl transition-all duration-500 flex flex-col justify-between"
-              >
-                <div className="space-y-6">
-                  <div className="relative aspect-[16/10] rounded-2xl overflow-hidden shadow-md">
-                    <Image
-                      src={service.image}
-                      alt={service.title}
-                      fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-700"
-                    />
-                  </div>
-                  <div>
-                    <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#d9a460]">
-                      0{idx + 1}
-                    </span>
-                    <h3 className="font-serif text-2xl font-bold text-[#211711] mt-1 mb-3 group-hover:text-[#c2592e] transition-colors">
-                      {service.title}
-                    </h3>
-                    <p className="text-base text-[#6a594c] leading-relaxed font-medium">
-                      {service.description}
-                    </p>
-                  </div>
-                </div>
+            <CarouselContent>
+              {macroServices.map((service, idx) => (
+                <CarouselItem key={service.slug} className="md:basis-1/2 lg:basis-1/3">
+                  <Link href="/services" className="group block h-full">
+                    <Card className="h-full flex flex-col justify-between hover:shadow-2xl transition-all duration-500 hover:-translate-y-1">
+                      <div>
+                        <div className="relative aspect-[16/10] w-full rounded-t-[2.5rem] overflow-hidden">
+                          <Image
+                            src={service.image}
+                            alt={service.title}
+                            fill
+                            className="object-cover group-hover:scale-105 transition-transform duration-700"
+                          />
+                          <Badge variant="secondary" className="absolute top-4 left-4 bg-white/90 text-[#211711]">
+                            0{idx + 1} Service
+                          </Badge>
+                        </div>
 
-                <div className="pt-6 mt-6 border-t border-[#211711]/10 flex items-center justify-between">
-                  <span className="text-xs font-bold uppercase tracking-wider text-[#c2592e]">
-                    Learn More
-                  </span>
-                  <span className="text-lg text-[#211711] group-hover:translate-x-2 transition-transform">
-                    →
-                  </span>
-                </div>
-              </Link>
-            ))}
-          </div>
+                        <CardHeader>
+                          <CardTitle className="group-hover:text-[#c2592e] transition-colors">
+                            {service.title}
+                          </CardTitle>
+                          <CardDescription className="mt-2 line-clamp-3">
+                            {service.description}
+                          </CardDescription>
+                        </CardHeader>
+                      </div>
+
+                      <CardContent className="pt-0">
+                        <div className="flex flex-wrap gap-1.5 mb-6">
+                          {serviceBadges[service.slug]?.slice(0, 2).map((tag) => (
+                            <Badge key={tag} variant="outline" className="text-[10px]">
+                              {tag}
+                            </Badge>
+                          ))}
+                        </div>
+
+                        <div className="pt-4 border-t border-[#211711]/10 flex items-center justify-between">
+                          <span className="text-xs font-bold uppercase tracking-wider text-[#c2592e]">
+                            Explore Service
+                          </span>
+                          <span className="text-lg text-[#211711] group-hover:translate-x-2 transition-transform">
+                            →
+                          </span>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </Link>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+          </Carousel>
         </section>
 
         {/* BEAT 4: Visual Proof / Showcase */}
@@ -635,7 +712,7 @@ export default function HomePage() {
             <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#d9a460]">
               Get In Touch
             </p>
-            <div className="space-y-3 text-sm font-medium">
+            <div className="space-y-[#3 border-white] text-sm font-medium">
               <p>
                 <a href={contact.phoneHref} className="hover:text-white transition-colors">
                   {contact.phone}
