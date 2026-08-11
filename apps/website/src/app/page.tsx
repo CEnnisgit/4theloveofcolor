@@ -22,6 +22,7 @@ import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import { Home, Building2, Store } from "lucide-react";
 
 const serviceBadges: Record<string, string[]> = {
   "interior-painting": ["Walls & Ceilings", "Crown & Trim", "Low-VOC / Zero-Odor", "Precision Masking"],
@@ -206,7 +207,7 @@ export default function HomePage() {
         {/* ========================================================= */}
         {/* OPTION 2: PREMIUM INTERACTIVE LIST (DARK MODE) */}
         {/* ========================================================= */}
-        <section className="bg-[#211711] py-16 lg:py-20 border-b border-white/5 relative overflow-hidden">
+        <section className="bg-[#211711] pt-16 lg:pt-20 pb-0 border-b border-white/5 relative overflow-hidden">
           {/* Retro Macintosh Rainbow Divider */}
           <div className="absolute top-0 left-0 w-full flex h-2 sm:h-3 z-30">
             <div className="flex-1 bg-[#61bb46]" /> {/* Green */}
@@ -302,8 +303,20 @@ export default function HomePage() {
               </div>
             </div>
           </motion.div>
-        </section>
 
+          {/* Elegant Static Bar (Property Types) */}
+          <div className="w-full border-t border-white/10 mt-16 lg:mt-24 py-6 sm:py-8 bg-[#211711] flex justify-center">
+            <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-12 text-white/40 uppercase tracking-[0.2em] sm:tracking-[0.3em] text-[10px] sm:text-xs font-bold px-4 text-center">
+              <span className="hover:text-white transition-colors duration-500 cursor-default">Luxury Homes</span>
+              <span className="text-[#c2592e] opacity-50 hidden sm:inline">✦</span>
+              <span className="text-[#c2592e] opacity-50 sm:hidden">•</span>
+              <span className="hover:text-white transition-colors duration-500 cursor-default">HOA Communities</span>
+              <span className="text-[#c2592e] opacity-50 hidden sm:inline">✦</span>
+              <span className="text-[#c2592e] opacity-50 sm:hidden">•</span>
+              <span className="hover:text-white transition-colors duration-500 cursor-default">Commercial Facilities</span>
+            </div>
+          </div>
+        </section>
 
         {/* BEAT 4: Visual Proof / Showcase */}
         <section className="bg-[#fffaf3] py-16 lg:py-32 px-4 lg:px-8 border-y border-[#211711]/5">
