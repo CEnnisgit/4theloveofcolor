@@ -85,7 +85,7 @@ export default function HomePage() {
 
       <main className="flex-1">
         {/* BEAT 1: Hero Section */}
-        <section className="relative px-6 lg:px-8 pt-4 sm:pt-8 lg:pt-12 pb-2 lg:pb-6 max-w-7xl mx-auto grid lg:grid-cols-12 gap-8 lg:gap-16 items-center">
+        <section className="relative px-6 lg:px-8 pt-12 lg:pt-16 pb-12 lg:pb-16 max-w-7xl mx-auto grid lg:grid-cols-12 gap-8 lg:gap-16 items-center">
           <div className="absolute top-0 right-0 lg:top-8 lg:right-auto lg:-left-48 -z-10 opacity-[0.07] pointer-events-none">
             <Image
               src="/images/logo.png"
@@ -174,22 +174,22 @@ export default function HomePage() {
         </section>
 
         {/* BEAT 2: Trust Strip (Editorial Hairline Border Bar) */}
-        <section className="pt-2 pb-8 sm:pb-12 mb-12 lg:mb-20">
+        <section className="border-y border-[#211711]/10 py-8 sm:py-10 mb-16 lg:mb-24">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.6 }}
-            className="max-w-7xl mx-auto flex flex-wrap justify-center gap-x-8 gap-y-4 sm:gap-x-12 md:gap-x-16 px-4"
+            className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 px-6 lg:px-8 w-full"
           >
             {[
               { title: "Family-Owned" },
               { title: "Careful Prep" },
-              { title: "Eco-Friendly" },
-              { title: "Clean Crews" },
+              { title: "Eco-Friendly Paint" },
+              { title: "Clean On-Time Crews" },
             ].map((item) => (
               <div key={item.title} className="flex flex-col items-center justify-center text-center">
-                <span className="font-serif text-lg sm:text-xl md:text-2xl font-bold text-[#211711] underline decoration-[#211711]/30 underline-offset-[6px] decoration-1">
+                <span className="font-serif text-base sm:text-lg md:text-xl font-bold text-[#211711]">
                   {item.title}
                 </span>
               </div>
