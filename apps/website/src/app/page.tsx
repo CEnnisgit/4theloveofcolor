@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -32,7 +32,42 @@ const serviceBadges: Record<string, string[]> = {
 };
 
 export default function HomePage() {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [hoveredService, setHoveredService] = useState(macroServices[0]);
+  
+  const wheelContainerRef = useRef<HTMLDivElement>(null);
+  const scrollTimeout = useRef<NodeJS.Timeout | null>(null);
+
+  useEffect(() => {
+    const container = wheelContainerRef.current;
+    if (!container) return;
+
+    const handleWheel = (e: WheelEvent) => {
+      e.preventDefault(); // Stop page from scrolling
+
+      if (scrollTimeout.current) return; // Throttle wheel events so it doesn't blast through instantly
+
+      scrollTimeout.current = setTimeout(() => {
+        scrollTimeout.current = null;
+      }, 400); // 400ms cooldown between scrolls
+
+      setHoveredService((current) => {
+        const currentIndex = macroServices.findIndex(s => s.slug === current.slug);
+        if (e.deltaY > 0) {
+          // scroll down -> next item
+          const nextIndex = Math.min(currentIndex + 1, macroServices.length - 1);
+          return macroServices[nextIndex];
+        } else {
+          // scroll up -> prev item
+          const prevIndex = Math.max(currentIndex - 1, 0);
+          return macroServices[prevIndex];
+        }
+      });
+    };
+
+    container.addEventListener("wheel", handleWheel, { passive: false });
+    return () => container.removeEventListener("wheel", handleWheel);
+  }, []);
 
   return (
     <div className="min-h-screen flex flex-col selection:bg-[#c2592e] selection:text-white overflow-x-hidden">
@@ -238,7 +273,7 @@ export default function HomePage() {
             </div>
 
             <div className="grid lg:grid-cols-12 gap-8 lg:gap-16 items-start">
-              <div className="lg:col-span-5 flex flex-col space-y-4">
+              <div ref={wheelContainerRef} className="lg:col-span-5 flex flex-col space-y-4">
                 {macroServices.map((service, idx) => {
                   const isActive = hoveredService.slug === service.slug;
                   return (
