@@ -200,7 +200,16 @@ export default function HomePage() {
         {/* ========================================================= */}
         {/* OPTION 2: PREMIUM INTERACTIVE LIST (DARK MODE) */}
         {/* ========================================================= */}
-        <section className="bg-[#211711] py-16 lg:py-20 border-y border-white/5 relative overflow-hidden">
+        <section className="bg-[#211711] py-16 lg:py-20 border-b border-white/5 relative overflow-hidden">
+          {/* Retro Macintosh Rainbow Divider */}
+          <div className="absolute top-0 left-0 w-full flex h-2 sm:h-3 z-30">
+            <div className="flex-1 bg-[#61bb46]" /> {/* Green */}
+            <div className="flex-1 bg-[#fdb827]" /> {/* Yellow */}
+            <div className="flex-1 bg-[#f5821f]" /> {/* Orange */}
+            <div className="flex-1 bg-[#e03a3e]" /> {/* Red */}
+            <div className="flex-1 bg-[#963d97]" /> {/* Purple */}
+            <div className="flex-1 bg-[#009dcf]" /> {/* Blue */}
+          </div>
           <div className="absolute top-0 right-0 w-1/2 h-full bg-[#c2592e]/5 blur-[120px] pointer-events-none" />
           <div className="absolute bottom-0 left-0 w-1/3 h-2/3 bg-[#d9a460]/5 blur-[120px] pointer-events-none" />
           
@@ -212,9 +221,10 @@ export default function HomePage() {
             className="max-w-7xl mx-auto px-4 lg:px-8 relative z-10"
           >
             <div className="mb-8 lg:mb-12">
-              <p className="text-[10px] sm:text-sm font-bold uppercase tracking-[0.2em] text-[#d9a460] mb-3 sm:mb-4">
+              <p className="text-[10px] sm:text-sm font-bold uppercase tracking-[0.2em] text-[#d9a460] mb-3">
                 Our Services
               </p>
+              
               <h2 className="font-serif text-2xl sm:text-4xl lg:text-5xl font-bold text-white leading-[1.1] tracking-tight max-w-2xl">
                 Painting that improves how your home and business live.
               </h2>
