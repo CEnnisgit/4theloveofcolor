@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { serviceCities, lakewoodRanchNeighborhoods } from "@/lib/data/content";
 
 export function ServiceAreaSection() {

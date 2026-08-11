@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { testimonials } from "@/lib/data/content";
 
 export function TestimonialsSection() {
@@ -23,7 +22,7 @@ export function TestimonialsSection() {
               <div className="space-y-6 mb-12">
                 <div className="text-gold text-sm tracking-widest">★★★★★</div>
                 <p className="text-lg text-ink leading-relaxed font-medium">
-                  "{item.quote}"
+                  &quot;{item.quote}&quot;
                 </p>
               </div>
               <div className="pt-6 border-t border-ink/10">
