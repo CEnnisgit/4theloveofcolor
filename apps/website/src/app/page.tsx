@@ -3,7 +3,14 @@
 import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 import {
   business,
   contact,
@@ -21,7 +28,6 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { Home, Building2, Store } from "lucide-react";
 
 const serviceBadges: Record<string, string[]> = {
@@ -354,7 +360,7 @@ export default function HomePage() {
         </section>
 
         {/* BEAT 4: Visual Proof / Showcase */}
-        <section className="bg-[#fffaf3] py-16 lg:py-32 px-4 lg:px-8 border-y border-[#211711]/5">
+        <section className="bg-[#fffaf3] py-12 lg:py-16 px-4 lg:px-8 border-y border-[#211711]/5">
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -362,52 +368,68 @@ export default function HomePage() {
             transition={{ duration: 0.8 }}
             className="max-w-7xl mx-auto"
           >
-            <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 lg:mb-16 gap-6">
-              <div className="max-w-2xl space-y-4">
+            <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-6">
+              <div className="max-w-2xl space-y-3">
                 <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#c2592e]">
-                  Selected Work
+                  Our Project Portfolio
                 </p>
-                <h2 className="font-serif text-2xl sm:text-3xl lg:text-5xl font-bold text-[#211711] leading-[1.1] tracking-tight">
-                  Homes and spaces painted with care, skill, and a family's pride.
+                <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-[#211711] leading-[1.1] tracking-tight">
+                  Homes we've painted across the Suncoast.
                 </h2>
               </div>
               <Link
                 href="/projects"
-                className="inline-flex items-center text-sm font-bold text-[#c2592e] uppercase tracking-wide hover:text-[#8e3d1c] transition-colors whitespace-nowrap mb-2"
+                className="inline-flex items-center justify-center px-6 py-3 bg-[#211711] text-white text-sm font-bold uppercase tracking-widest hover:bg-[#c2592e] transition-colors rounded-sm shadow-md whitespace-nowrap mb-1"
               >
                 View all projects →
               </Link>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
-              {homeFeatures.map((project, idx) => (
-                <div
-                  key={project.title}
-                  className={`group rounded-[2rem] sm:rounded-[2.5rem] overflow-hidden bg-[#faf3e9] border border-[#211711]/5 shadow-lg ${
-                    idx === 0 ? "md:col-span-2 md:row-span-2" : ""
-                  }`}
-                >
-                  <div className={`relative overflow-hidden ${idx === 0 ? "aspect-[4/3] sm:aspect-[16/9]" : "aspect-[4/3]"}`}>
-                    <Image
-                      src={project.image}
-                      alt={project.alt}
-                      fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-700"
-                    />
-                  </div>
-                  <div className="p-6 sm:p-10 space-y-3">
-                    <span className="text-[10px] sm:text-xs font-bold uppercase tracking-[0.2em] text-[#d9a460]">
-                      {project.category}
-                    </span>
-                    <h3 className="font-serif text-lg sm:text-xl font-bold text-[#211711]">
-                      {project.title}
-                    </h3>
-                    <p className="text-base sm:text-lg text-[#6a594c] leading-relaxed">
-                      {project.summary}
-                    </p>
-                  </div>
+            <div className="mt-8">
+              <Carousel className="w-full relative group" opts={{ loop: true }}>
+                <CarouselContent>
+                  {/* Slide 1 */}
+                  <CarouselItem>
+                    <div className="relative aspect-[16/10] md:aspect-[21/9] w-full bg-[#211711] overflow-hidden group rounded-sm shadow-xl border border-[#211711]/5">
+                      <Image src="/images/proj-exterior-modern.jpg" alt="Lakewood Ranch Modern Exterior" fill className="object-cover opacity-90 group-hover:scale-105 transition-transform duration-1000 ease-out" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none" />
+                      <div className="absolute bottom-6 md:bottom-12 left-6 md:left-12 text-white max-w-2xl">
+                        <p className="text-[10px] md:text-xs uppercase tracking-[0.2em] font-bold text-[#d9a460] mb-2 md:mb-3">Exterior Painting</p>
+                        <h4 className="font-serif text-2xl md:text-5xl font-bold mb-2">Lakewood Ranch Modern</h4>
+                        <p className="text-white/80 text-sm md:text-base hidden sm:block pr-24">A complete elastomeric coating system applied by our family crew to protect this luxury estate against the harsh Florida sun.</p>
+                      </div>
+                    </div>
+                  </CarouselItem>
+                  {/* Slide 2 */}
+                  <CarouselItem>
+                    <div className="relative aspect-[16/10] md:aspect-[21/9] w-full bg-[#211711] overflow-hidden group rounded-sm shadow-xl border border-[#211711]/5">
+                      <Image src="/images/proj-interior-bedroom.jpg" alt="Interior Details" fill className="object-cover opacity-90 group-hover:scale-105 transition-transform duration-1000 ease-out" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none" />
+                      <div className="absolute bottom-6 md:bottom-12 left-6 md:left-12 text-white max-w-2xl">
+                        <p className="text-[10px] md:text-xs uppercase tracking-[0.2em] font-bold text-[#d9a460] mb-2 md:mb-3">Interior Detailing</p>
+                        <h4 className="font-serif text-2xl md:text-5xl font-bold mb-2">Crown Molding & Detail</h4>
+                        <p className="text-white/80 text-sm md:text-base hidden sm:block pr-24">Flawless lines and ultra-smooth finishes. We treat every interior repaint like it's our own home.</p>
+                      </div>
+                    </div>
+                  </CarouselItem>
+                  {/* Slide 3 */}
+                  <CarouselItem>
+                    <div className="relative aspect-[16/10] md:aspect-[21/9] w-full bg-[#211711] overflow-hidden group rounded-sm shadow-xl border border-[#211711]/5">
+                      <Image src="/images/proj-exterior-white-2story.jpg" alt="HOA Community Phase" fill className="object-cover opacity-90 group-hover:scale-105 transition-transform duration-1000 ease-out" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none" />
+                      <div className="absolute bottom-6 md:bottom-12 left-6 md:left-12 text-white max-w-2xl">
+                        <p className="text-[10px] md:text-xs uppercase tracking-[0.2em] font-bold text-[#d9a460] mb-2 md:mb-3">HOA Scale</p>
+                        <h4 className="font-serif text-2xl md:text-5xl font-bold mb-2">Community Transformation</h4>
+                        <p className="text-white/80 text-sm md:text-base hidden sm:block pr-24">Executing large-scale multi-family painting projects with a spotless worksite and zero disruption to the residents.</p>
+                      </div>
+                    </div>
+                  </CarouselItem>
+                </CarouselContent>
+                <div className="absolute bottom-6 right-6 md:bottom-12 md:right-12 flex items-center gap-2 md:gap-4 z-10">
+                  <CarouselPrevious className="static transform-none bg-black/40 text-white hover:bg-[#c2592e] hover:text-white border-none rounded-sm shadow-sm transition-colors backdrop-blur-md w-10 h-10 md:w-12 md:h-12" />
+                  <CarouselNext className="static transform-none bg-black/40 text-white hover:bg-[#c2592e] hover:text-white border-none rounded-sm shadow-sm transition-colors backdrop-blur-md w-10 h-10 md:w-12 md:h-12" />
                 </div>
-              ))}
+              </Carousel>
             </div>
           </motion.div>
         </section>
