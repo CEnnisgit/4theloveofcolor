@@ -69,11 +69,6 @@ export default function ServicesPage() {
             </Breadcrumb>
           </div>
 
-          {/* Pill Tag */}
-          <div className="w-52 sm:w-60 h-9 mb-6 flex items-center justify-center rounded-[var(--radius)] bg-ink text-white text-[11px] sm:text-[13px] font-bold uppercase tracking-[0.2em] text-center">
-            Our Services
-          </div>
-
           <h1 className="font-serif text-3xl sm:text-5xl font-bold text-ink leading-tight mb-4">
             Macro &amp; Specialized Painting Services
           </h1>
