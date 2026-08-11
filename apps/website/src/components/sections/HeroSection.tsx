@@ -43,13 +43,13 @@ export function HeroSection() {
         <div className="flex flex-row w-full gap-3 pt-1 sm:pt-3">
           <Link
             href="/contact"
-            className="flex-1 inline-flex items-center justify-center px-3 sm:px-8 py-3.5 sm:py-4 rounded-sm bg-terracotta text-white text-xs sm:text-base font-bold shadow-xl shadow-[var(--color-terracotta)]/20 hover:bg-[var(--color-terracotta-dark)] hover:-translate-y-1 transition-all text-center leading-tight"
+            className="flex-1 inline-flex items-center justify-center px-3 sm:px-8 py-3.5 sm:py-4 rounded-[var(--radius)] bg-terracotta text-white text-xs sm:text-base font-bold shadow-xl shadow-[var(--color-terracotta)]/20 hover:bg-[var(--color-terracotta-dark)] hover:-translate-y-1 transition-all text-center leading-tight"
           >
             Get a Free Estimate
           </Link>
           <a
             href={contact.phoneHref}
-            className="flex-1 inline-flex items-center justify-center px-3 sm:px-8 py-3.5 sm:py-4 rounded-sm bg-white border border-ink/15 text-ink text-xs sm:text-base font-bold shadow-sm hover:border-[var(--color-terracotta)] hover:text-terracotta transition-all text-center leading-tight"
+            className="flex-1 inline-flex items-center justify-center px-3 sm:px-8 py-3.5 sm:py-4 rounded-[var(--radius)] bg-transparent border-2 border-ink text-ink text-xs sm:text-base font-bold hover:bg-ink hover:text-white hover:-translate-y-1 transition-all text-center leading-tight"
           >
             Call {contact.phone}
           </a>
