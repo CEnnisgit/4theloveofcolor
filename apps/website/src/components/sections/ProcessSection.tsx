@@ -6,7 +6,7 @@ import { processSteps } from "@/lib/data/content";
 
 export function ProcessSection() {
   return (
-    <section className="bg-warm-card py-16 lg:py-24 px-4 lg:px-8 border-y border-ink/5">
+    <section className="bg-warm-bg py-16 lg:py-24 px-4 lg:px-8 border-y border-ink/5">
       <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-12 gap-12 items-start">
           <div className="lg:col-span-6 space-y-4 lg:sticky lg:top-24">
