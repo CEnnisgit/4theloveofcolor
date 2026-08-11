@@ -21,7 +21,7 @@ export function TestimonialsSection() {
           {testimonials.map((item, idx) => (
             <div
               key={idx}
-              className="bg-white p-6 border border-ink/10 flex flex-col justify-between"
+              className="bg-transparent p-6 border border-ink/10 flex flex-col justify-between"
             >
               <div className="space-y-3 mb-6">
                 <div className="text-gold text-sm tracking-widest">★★★★★</div>
