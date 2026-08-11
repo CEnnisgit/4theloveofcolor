@@ -436,24 +436,24 @@ export default function HomePage() {
 
         {/* BEAT 5: Empathy & Guarantees */}
         <section className="px-4 lg:px-8 py-16 lg:py-24 max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-12 gap-12 items-start">
-            <div className="lg:col-span-5 space-y-6">
-              <div>
-                <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#c2592e] mb-2">
+          <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-stretch">
+            <div className="lg:col-span-5 flex flex-col justify-between space-y-6">
+              <div className="space-y-3">
+                <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#c2592e]">
                   The Family Difference
                 </p>
-                <h2 className="font-serif text-3xl md:text-4xl font-bold text-[#211711]">
+                <h2 className="font-serif text-3xl md:text-5xl font-bold text-[#211711] leading-tight">
                   Built for Florida homes & discerning owners.
                 </h2>
               </div>
 
-              <Accordion type="single" collapsible defaultValue="item-0" className="w-full">
+              <Accordion type="single" collapsible defaultValue="item-0" className="w-full border-t border-[#211711]/15 pt-2">
                 {whyUs.map((item, idx) => (
-                  <AccordionItem key={item.title} value={`item-${idx}`} className="border-b border-[#211711]/10">
-                    <AccordionTrigger className="font-serif text-lg font-bold text-[#211711] hover:text-[#c2592e]">
+                  <AccordionItem key={item.title} value={`item-${idx}`}>
+                    <AccordionTrigger>
                       {item.title}
                     </AccordionTrigger>
-                    <AccordionContent className="text-sm text-[#6a594c] leading-relaxed">
+                    <AccordionContent>
                       {item.text}
                     </AccordionContent>
                   </AccordionItem>
@@ -461,28 +461,34 @@ export default function HomePage() {
               </Accordion>
             </div>
 
-            <div className="lg:col-span-7 bg-[#211711] text-white p-8 md:p-12 rounded-sm shadow-2xl space-y-8">
-              <div>
-                <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#d9a460] mb-2">
-                  Ironclad Promises
-                </p>
-                <h3 className="font-serif text-2xl md:text-3xl font-bold text-white">
-                  What you can hold us to in writing.
-                </h3>
+            <div className="lg:col-span-7 bg-[#211711] text-white p-8 md:p-12 rounded-sm shadow-2xl flex flex-col justify-between space-y-10">
+              <div className="space-y-8">
+                <div className="space-y-2 border-b border-white/10 pb-6">
+                  <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#d9a460]">
+                    Ironclad Promises
+                  </p>
+                  <h3 className="font-serif text-2xl md:text-4xl font-bold text-white">
+                    What you can hold us to in writing.
+                  </h3>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  {guarantees.map((item, idx) => (
+                    <div key={item.title} className="space-y-2">
+                      <span className="font-serif text-2xl font-bold text-[#d9a460]">0{idx + 1}.</span>
+                      <h4 className="font-serif text-xl font-bold text-white">{item.title}</h4>
+                      <p className="text-sm text-white/85 leading-relaxed">{item.text}</p>
+                    </div>
+                  ))}
+                </div>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                {guarantees.map((item, idx) => (
-                  <div key={item.title} className="space-y-2">
-                    <span className="font-serif text-xl font-bold text-[#d9a460]">0{idx + 1}.</span>
-                    <h4 className="font-serif text-lg font-bold text-white">{item.title}</h4>
-                    <p className="text-xs text-white/70 leading-relaxed">{item.text}</p>
-                  </div>
-                ))}
-              </div>
-
-              <div className="p-4 bg-[#c2592e] text-white rounded-sm text-sm font-bold tracking-wide">
-                ✓ Workmanship Guarantee: We don't ask for final payment until you've inspected & approved every wall.
+              <div className="p-5 bg-[#c2592e] text-white rounded-sm text-sm font-bold tracking-wide flex items-center gap-4 shadow-md border border-white/10">
+                <span className="text-2xl font-bold text-white">✓</span>
+                <div>
+                  <p className="uppercase tracking-wider text-xs font-bold text-white/90">Workmanship Guarantee</p>
+                  <p className="font-normal text-sm text-white/95 mt-0.5">We don't ask for final payment until you've personally inspected & approved every wall.</p>
+                </div>
               </div>
             </div>
           </div>
