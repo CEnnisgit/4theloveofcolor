@@ -435,81 +435,56 @@ export default function HomePage() {
         </section>
 
         {/* BEAT 5: Empathy & Guarantees */}
-        <section className="px-4 lg:px-8 py-16 lg:py-32 max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-            <motion.div 
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.8 }}
-              className="lg:col-span-5 space-y-6 sm:space-y-8"
-            >
-              <div className="space-y-4">
-                <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#c2592e]">
-                  Why 4 The Love of Color
+        <section className="px-4 lg:px-8 py-16 lg:py-24 max-w-7xl mx-auto">
+          <div className="grid lg:grid-cols-12 gap-12 items-start">
+            <div className="lg:col-span-5 space-y-6">
+              <div>
+                <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#c2592e] mb-2">
+                  The Family Difference
                 </p>
-                <h2 className="font-serif text-2xl sm:text-4xl font-bold text-[#211711] leading-[1.1] tracking-tight">
-                  A more personal painting experience — built for the Gulf Coast.
+                <h2 className="font-serif text-3xl md:text-4xl font-bold text-[#211711]">
+                  Built for Florida homes & discerning owners.
                 </h2>
               </div>
-              <p className="text-base sm:text-lg text-[#6a594c] leading-relaxed font-medium">
-                Homeowners here compare multiple quotes. The difference isn't just in the paint; it's in how your home is treated every single day of the job.
-              </p>
-              <div className="space-y-4 sm:space-y-6 pt-4 sm:pt-6">
-                {whyUs.map((item) => (
-                  <div key={item.title} className="p-5 sm:p-6 rounded-2xl sm:rounded-3xl bg-[#fffaf3] border border-[#211711]/5 shadow-sm">
-                    <h3 className="font-serif text-xl sm:text-2xl font-bold text-[#211711]">
-                      {item.title}
-                    </h3>
-                    <p className="text-sm sm:text-base text-[#6a594c] mt-2 leading-relaxed">
-                      {item.text}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </motion.div>
 
-            <motion.div 
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="lg:col-span-7 bg-[#fffaf3] p-6 sm:p-12 lg:p-16 rounded-[2rem] sm:rounded-[3rem] border border-[#211711]/5 space-y-8 sm:space-y-12 shadow-xl relative overflow-hidden"
-            >
-              <div className="absolute top-0 right-0 text-[10rem] sm:text-[16rem] font-serif leading-none text-[#d9a460]/5 -translate-y-10 translate-x-10 pointer-events-none">
-                G
-              </div>
-              
-              <div className="relative z-10 space-y-3 sm:space-y-4">
-                <p className="text-[10px] sm:text-sm font-bold uppercase tracking-[0.2em] text-[#c2592e]">
-                  Our Promises
+              <Accordion type="single" collapsible defaultValue="item-0" className="w-full">
+                {whyUs.map((item, idx) => (
+                  <AccordionItem key={item.title} value={`item-${idx}`} className="border-b border-[#211711]/10">
+                    <AccordionTrigger className="font-serif text-lg font-bold text-[#211711] hover:text-[#c2592e]">
+                      {item.title}
+                    </AccordionTrigger>
+                    <AccordionContent className="text-sm text-[#6a594c] leading-relaxed">
+                      {item.text}
+                    </AccordionContent>
+                  </AccordionItem>
+                ))}
+              </Accordion>
+            </div>
+
+            <div className="lg:col-span-7 bg-[#211711] text-white p-8 md:p-12 rounded-sm shadow-2xl space-y-8">
+              <div>
+                <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#d9a460] mb-2">
+                  Ironclad Promises
                 </p>
-                <h3 className="font-serif text-xl sm:text-3xl font-bold text-[#211711] leading-[1.1] tracking-tight">
-                  What you can hold us to — in writing, on every job.
+                <h3 className="font-serif text-2xl md:text-3xl font-bold text-white">
+                  What you can hold us to in writing.
                 </h3>
               </div>
 
-              <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-8 sm:gap-x-10 sm:gap-y-12">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {guarantees.map((item, idx) => (
-                  <div key={item.title} className="space-y-2 sm:space-y-3">
-                    <span className="font-serif text-3xl sm:text-4xl font-bold text-[#d9a460]/40">
-                      0{idx + 1}.
-                    </span>
-                    <h4 className="font-serif text-lg sm:text-xl font-bold text-[#211711]">
-                      {item.title}
-                    </h4>
-                    <p className="text-sm sm:text-base text-[#6a594c] leading-relaxed">
-                      {item.text}
-                    </p>
+                  <div key={item.title} className="space-y-2">
+                    <span className="font-serif text-xl font-bold text-[#d9a460]">0{idx + 1}.</span>
+                    <h4 className="font-serif text-lg font-bold text-white">{item.title}</h4>
+                    <p className="text-xs text-white/70 leading-relaxed">{item.text}</p>
                   </div>
                 ))}
               </div>
 
-              <div className="relative z-10 p-5 sm:p-6 rounded-xl sm:rounded-2xl bg-[#c2592e] text-white space-y-2 shadow-lg shadow-[#c2592e]/20">
-                <p className="font-bold text-base sm:text-lg tracking-wide">✓ Workmanship Guarantee</p>
-                <p className="text-white/80 font-medium text-sm sm:text-base">We perform a thorough walkthrough with you before any final payment is requested. The job isn't done until you say it is.</p>
+              <div className="p-4 bg-[#c2592e] text-white rounded-sm text-sm font-bold tracking-wide">
+                ✓ Workmanship Guarantee: We don't ask for final payment until you've inspected & approved every wall.
               </div>
-            </motion.div>
+            </div>
           </div>
         </section>
 
