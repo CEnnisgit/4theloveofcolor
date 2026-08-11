@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { Paintbrush, Home, Droplets, Building2 } from "lucide-react";
 import {
   business,
   contact,
@@ -17,28 +18,28 @@ export default function HomePage() {
   return (
     <div className="min-h-screen flex flex-col selection:bg-[#c2592e] selection:text-white">
       {/* Header / Navigation */}
-      <header className="sticky top-0 z-50 backdrop-blur-md bg-[#faf3e9]/80 border-b border-[#211711]/10 px-4 lg:px-8 py-3 transition-all">
+      <header className="sticky top-0 z-50 backdrop-blur-md bg-[#faf3e9]/90 border-b border-[#211711]/5 px-4 lg:px-8 py-4 transition-all">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-3 group">
+          <Link href="/" className="flex items-center gap-4 group">
             <Image
               src="/images/logo-emblem.png"
               alt="4 The Love of Color Emblem"
-              width={44}
-              height={44}
-              className="w-10 h-10 object-contain group-hover:scale-105 transition-transform"
+              width={48}
+              height={48}
+              className="w-12 h-12 object-contain group-hover:scale-105 transition-transform"
             />
             <div className="flex flex-col">
-              <span className="font-serif font-bold text-lg leading-none text-[#211711]">
+              <span className="font-serif font-bold text-xl leading-none text-[#211711]">
                 4 The Love of Color
               </span>
-              <span className="text-xs text-[#6a594c] tracking-wide">
+              <span className="text-xs text-[#6a594c] tracking-widest mt-1 uppercase font-semibold">
                 Painting · Lakewood Ranch, FL
               </span>
             </div>
           </Link>
 
-          <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-[#211711]">
-            <Link href="/" className="text-[#c2592e] font-semibold">
+          <nav className="hidden md:flex items-center gap-10 text-sm font-bold text-[#211711] tracking-wide">
+            <Link href="/" className="text-[#c2592e]">
               Home
             </Link>
             <Link href="/services" className="hover:text-[#c2592e] transition-colors">
@@ -57,7 +58,7 @@ export default function HomePage() {
 
           <a
             href={contact.phoneHref}
-            className="inline-flex items-center justify-center px-5 py-2.5 rounded-full bg-[#c2592e] text-white text-sm font-medium shadow-md hover:bg-[#8e3d1c] hover:-translate-y-0.5 transition-all"
+            className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-[#c2592e] text-white text-sm font-bold tracking-wide shadow-lg hover:bg-[#8e3d1c] hover:-translate-y-0.5 transition-all"
           >
             Call {contact.phone}
           </a>
@@ -66,80 +67,79 @@ export default function HomePage() {
 
       <main className="flex-1">
         {/* BEAT 1: Hero Section */}
-        <section className="relative px-4 lg:px-8 py-16 lg:py-24 max-w-7xl mx-auto grid lg:grid-cols-12 gap-12 items-center">
-          {/* Subtle logo watermark background */}
-          <div className="absolute top-0 right-0 -z-10 opacity-5 pointer-events-none">
+        <section className="relative px-4 lg:px-8 py-20 lg:py-32 max-w-7xl mx-auto grid lg:grid-cols-12 gap-16 items-center">
+          <div className="absolute top-0 right-0 -z-10 opacity-[0.03] pointer-events-none">
             <Image
               src="/images/logo.png"
               alt=""
-              width={500}
-              height={500}
+              width={600}
+              height={600}
               aria-hidden="true"
             />
           </div>
 
-          <div className="lg:col-span-7 space-y-6">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#c2592e]/10 text-[#c2592e] text-xs font-semibold uppercase tracking-wider">
-              <span>Painters in Lakewood Ranch &amp; Sarasota, FL</span>
+          <div className="lg:col-span-7 space-y-8">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#c2592e]/10 text-[#c2592e] text-xs font-bold uppercase tracking-[0.2em]">
+              <span>Painters in Lakewood Ranch &amp; Sarasota</span>
             </div>
             
-            {/* SOLE H1 TAG ON THE PAGE */}
-            <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-[#211711] leading-[1.15] tracking-tight">
+            {/* SOLE H1 TAG ON THE PAGE - Massively scaled up for hierarchy */}
+            <h1 className="font-serif text-5xl sm:text-6xl lg:text-7xl font-bold text-[#211711] leading-[1.05] tracking-tight">
               Color, finish, and detail work that make a home feel{" "}
               <span className="italic text-[#c2592e] underline decoration-[#d9a460]/40 underline-offset-8">
                 intentionally renewed.
               </span>
             </h1>
 
-            <p className="text-base sm:text-lg text-[#6a594c] leading-relaxed max-w-2xl">
+            {/* Increased body text size and contrast */}
+            <p className="text-lg sm:text-xl text-[#6a594c] leading-relaxed max-w-2xl font-medium">
               Family-owned interior and exterior painting for homes and businesses across the Suncoast — designed to sharpen every space, protect against the Florida sun, and deliver a cleaner result from the first walkthrough to the last detail.
             </p>
 
-            <div className="flex flex-wrap gap-4 pt-2">
+            <div className="flex flex-wrap gap-4 pt-4">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center px-7 py-3.5 rounded-full bg-[#c2592e] text-white text-base font-semibold shadow-lg shadow-[#c2592e]/20 hover:bg-[#8e3d1c] hover:-translate-y-0.5 transition-all"
+                className="inline-flex items-center justify-center px-8 py-4 rounded-full bg-[#c2592e] text-white text-base font-bold shadow-xl shadow-[#c2592e]/20 hover:bg-[#8e3d1c] hover:-translate-y-1 transition-all"
               >
                 Get a Free Estimate
               </Link>
               <a
                 href={contact.phoneHref}
-                className="inline-flex items-center justify-center px-7 py-3.5 rounded-full bg-white border border-[#211711]/15 text-[#211711] text-base font-semibold shadow-sm hover:border-[#c2592e] hover:text-[#c2592e] transition-all"
+                className="inline-flex items-center justify-center px-8 py-4 rounded-full bg-white border-2 border-[#211711]/10 text-[#211711] text-base font-bold shadow-sm hover:border-[#c2592e] hover:text-[#c2592e] transition-all"
               >
                 Call {contact.phone}
               </a>
             </div>
 
             {/* Proof Badges */}
-            <div className="pt-6 border-t border-[#211711]/10 flex flex-wrap items-center gap-6 text-xs sm:text-sm font-medium text-[#6a594c]">
-              <span className="flex items-center gap-1.5">
-                <span className="text-[#d9a460]">★</span> 5.0 Google Reviews
+            <div className="pt-8 border-t border-[#211711]/10 flex flex-wrap items-center gap-8 text-sm font-bold tracking-wide text-[#6a594c]">
+              <span className="flex items-center gap-2">
+                <span className="text-[#d9a460] text-lg">★</span> 5.0 Google Reviews
               </span>
-              <span className="flex items-center gap-1.5">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#c2592e]" /> Free Estimates
+              <span className="flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-[#c2592e]" /> Free Estimates
               </span>
-              <span className="flex items-center gap-1.5">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#c2592e]" /> Family-Owned &amp; Operated
+              <span className="flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-[#c2592e]" /> Family-Owned
               </span>
             </div>
           </div>
 
           <div className="lg:col-span-5 relative">
-            <div className="relative rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white bg-white">
+            <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl border-[6px] border-white bg-white">
               <Image
                 src="/images/proj-exterior-white-2story.jpg"
                 alt="Freshly painted two-story white home in Florida"
                 width={640}
                 height={520}
                 priority
-                className="w-full h-[420px] object-cover hover:scale-105 transition-transform duration-700"
+                className="w-full h-[500px] object-cover hover:scale-105 transition-transform duration-700"
               />
-              {/* Glassmorphism Floating Badge */}
-              <div className="absolute bottom-6 left-6 right-6 p-4 rounded-2xl backdrop-blur-md bg-white/85 border border-white/50 shadow-lg">
-                <p className="text-xs uppercase tracking-wider font-semibold text-[#c2592e]">
+              <div className="absolute bottom-8 left-8 right-8 p-5 rounded-3xl backdrop-blur-xl bg-white/90 border border-white/50 shadow-xl">
+                <p className="text-xs uppercase tracking-[0.2em] font-bold text-[#c2592e]">
                   Primary Service Area
                 </p>
-                <p className="text-sm font-medium text-[#211711] mt-0.5">
+                <p className="text-base font-bold text-[#211711] mt-1">
                   {contact.serviceArea}
                 </p>
               </div>
@@ -148,82 +148,225 @@ export default function HomePage() {
         </section>
 
         {/* BEAT 2: Trust Strip */}
-        <section className="bg-[#fffaf3] border-y border-[#211711]/10 py-8 px-4 lg:px-8">
-          <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-            <div className="space-y-1">
-              <p className="font-serif text-xl font-bold text-[#c2592e]">Family-Owned</p>
-              <p className="text-xs text-[#6a594c]">Direct communication, no subcontractors</p>
+        <section className="bg-[#fffaf3] border-y border-[#211711]/5 py-12 px-4 lg:px-8">
+          <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div className="space-y-2">
+              <p className="font-serif text-2xl font-bold text-[#c2592e]">Family-Owned</p>
+              <p className="text-sm font-medium text-[#6a594c]">Direct communication</p>
             </div>
-            <div className="space-y-1">
-              <p className="font-serif text-xl font-bold text-[#c2592e]">Careful Prep</p>
-              <p className="text-xs text-[#6a594c]">Pressure wash, patch, sand &amp; mask</p>
+            <div className="space-y-2">
+              <p className="font-serif text-2xl font-bold text-[#c2592e]">Careful Prep</p>
+              <p className="text-sm font-medium text-[#6a594c]">Patch, sand &amp; mask</p>
             </div>
-            <div className="space-y-1">
-              <p className="font-serif text-xl font-bold text-[#c2592e]">Eco-Friendly</p>
-              <p className="text-xs text-[#6a594c]">Low-VOC weather-rated coatings</p>
+            <div className="space-y-2">
+              <p className="font-serif text-2xl font-bold text-[#c2592e]">Eco-Friendly</p>
+              <p className="text-sm font-medium text-[#6a594c]">Low-VOC coatings</p>
             </div>
-            <div className="space-y-1">
-              <p className="font-serif text-xl font-bold text-[#c2592e]">Clean Crews</p>
-              <p className="text-xs text-[#6a594c]">Site tidied at the end of every day</p>
+            <div className="space-y-2">
+              <p className="font-serif text-2xl font-bold text-[#c2592e]">Clean Crews</p>
+              <p className="text-sm font-medium text-[#6a594c]">Site tidied every day</p>
             </div>
           </div>
         </section>
 
-        {/* BEAT 3: Services Overview (Macro Categories Only for SEO Hierarchy) */}
-        <section className="px-4 lg:px-8 py-20 max-w-7xl mx-auto">
-          <div className="text-center max-w-2xl mx-auto mb-14 space-y-3">
-            <p className="text-xs font-semibold uppercase tracking-widest text-[#c2592e]">
-              Services
+        {/* ========================================================= */}
+        {/* SERVICES OPTION 1: HIGH-CONTRAST BENTO GRID */}
+        {/* ========================================================= */}
+        <section className="px-4 lg:px-8 pt-32 pb-16 max-w-7xl mx-auto border-b-8 border-dashed border-red-500/20">
+          <div className="text-center max-w-3xl mx-auto mb-20 space-y-6">
+            <div className="inline-block bg-red-100 text-red-800 px-3 py-1 rounded-full text-xs font-bold tracking-widest mb-4">
+              PROTOTYPE: OPTION 1
+            </div>
+            <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#c2592e]">
+              High-Contrast Bento Grid
             </p>
-            <h2 className="font-serif text-3xl sm:text-4xl font-bold text-[#211711]">
+            <h2 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-[#211711] leading-[1.1] tracking-tight">
               Painting that improves how your home and business live.
             </h2>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {macroServices.map((service) => (
-              <div
-                key={service.slug}
-                className="bg-[#fffaf3] rounded-3xl p-8 border border-[#211711]/10 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between"
-              >
-                <div className="space-y-4">
-                  <h3 className="font-serif text-2xl font-bold text-[#211711]">
+          <div className="grid md:grid-cols-3 gap-6">
+            {/* Large Dark Block */}
+            <div className="md:col-span-2 bg-[#211711] text-white rounded-[2.5rem] p-10 sm:p-14 flex flex-col justify-between shadow-2xl">
+              <div className="space-y-6">
+                <h3 className="font-serif text-3xl sm:text-4xl font-bold">
+                  {macroServices[0].title}
+                </h3>
+                <p className="text-lg text-white/70 leading-relaxed max-w-md">
+                  {macroServices[0].description}
+                </p>
+              </div>
+              <div className="pt-10 mt-10 border-t border-white/10">
+                <Link href="/services" className="inline-flex items-center text-sm font-bold text-[#d9a460] hover:text-white group tracking-wide uppercase">
+                  Learn more <span className="ml-2 group-hover:translate-x-2 transition-transform">→</span>
+                </Link>
+              </div>
+            </div>
+
+            {/* Small Light Block */}
+            <div className="md:col-span-1 bg-[#fffaf3] text-[#211711] rounded-[2.5rem] p-10 border border-[#211711]/10 flex flex-col justify-between shadow-sm hover:shadow-xl transition-all">
+              <div className="space-y-4">
+                <h3 className="font-serif text-3xl font-bold">
+                  {macroServices[1].title}
+                </h3>
+                <p className="text-base text-[#6a594c] leading-relaxed">
+                  {macroServices[1].description}
+                </p>
+              </div>
+              <div className="pt-8 mt-8 border-t border-[#211711]/10">
+                <Link href="/services" className="inline-flex items-center text-sm font-bold text-[#c2592e] group tracking-wide uppercase">
+                  Learn more <span className="ml-2 group-hover:translate-x-2 transition-transform">→</span>
+                </Link>
+              </div>
+            </div>
+
+            {/* Small Light Block */}
+            <div className="md:col-span-1 bg-[#fffaf3] text-[#211711] rounded-[2.5rem] p-10 border border-[#211711]/10 flex flex-col justify-between shadow-sm hover:shadow-xl transition-all">
+              <div className="space-y-4">
+                <h3 className="font-serif text-3xl font-bold">
+                  {macroServices[2].title}
+                </h3>
+                <p className="text-base text-[#6a594c] leading-relaxed">
+                  {macroServices[2].description}
+                </p>
+              </div>
+              <div className="pt-8 mt-8 border-t border-[#211711]/10">
+                <Link href="/services" className="inline-flex items-center text-sm font-bold text-[#c2592e] group tracking-wide uppercase">
+                  Learn more <span className="ml-2 group-hover:translate-x-2 transition-transform">→</span>
+                </Link>
+              </div>
+            </div>
+
+            {/* Large Dark Block */}
+            <div className="md:col-span-2 bg-[#211711] text-white rounded-[2.5rem] p-10 sm:p-14 flex flex-col justify-between shadow-2xl">
+              <div className="space-y-6">
+                <h3 className="font-serif text-3xl sm:text-4xl font-bold">
+                  {macroServices[3].title}
+                </h3>
+                <p className="text-lg text-white/70 leading-relaxed max-w-md">
+                  {macroServices[3].description}
+                </p>
+              </div>
+              <div className="pt-10 mt-10 border-t border-white/10">
+                <Link href="/services" className="inline-flex items-center text-sm font-bold text-[#d9a460] hover:text-white group tracking-wide uppercase">
+                  Learn more <span className="ml-2 group-hover:translate-x-2 transition-transform">→</span>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ========================================================= */}
+        {/* SERVICES OPTION 2: EDITORIAL TYPOGRAPHIC STYLE */}
+        {/* ========================================================= */}
+        <section className="px-4 lg:px-8 py-16 max-w-7xl mx-auto border-b-8 border-dashed border-blue-500/20">
+          <div className="text-center max-w-3xl mx-auto mb-20 space-y-6">
+            <div className="inline-block bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-xs font-bold tracking-widest mb-4">
+              PROTOTYPE: OPTION 2
+            </div>
+            <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#c2592e]">
+              Editorial Typographic Style
+            </p>
+            <h2 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-[#211711] leading-[1.1] tracking-tight">
+              Painting that improves how your home and business live.
+            </h2>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-y-16 gap-x-12">
+            {macroServices.map((service, idx) => (
+              <div key={service.slug} className="relative group p-6">
+                {/* Massive Background Numeral */}
+                <div className="absolute top-0 right-0 text-[12rem] leading-none font-serif text-[#d9a460]/10 -translate-y-8 translate-x-4 select-none group-hover:text-[#c2592e]/10 transition-colors duration-500">
+                  0{idx + 1}
+                </div>
+                
+                <div className="relative z-10">
+                  <h3 className="font-serif text-4xl font-bold text-[#211711]">
                     {service.title}
                   </h3>
-                  <p className="text-sm text-[#6a594c] leading-relaxed">
+                  <div className="w-16 h-1.5 bg-[#c2592e] my-8 group-hover:w-32 transition-all duration-500 ease-out" />
+                  <p className="text-lg text-[#6a594c] leading-relaxed max-w-md">
                     {service.description}
                   </p>
-                </div>
-                <div className="pt-6 mt-6 border-t border-[#211711]/5">
-                  <Link
-                    href="/services"
-                    className="inline-flex items-center text-sm font-semibold text-[#c2592e] hover:text-[#8e3d1c] group"
-                  >
-                    Learn more <span className="ml-1 group-hover:translate-x-1 transition-transform">→</span>
-                  </Link>
+                  <div className="pt-8 mt-8">
+                    <Link href="/services" className="inline-flex items-center text-sm font-bold text-[#211711] hover:text-[#c2592e] group tracking-wide uppercase">
+                      Explore Service <span className="ml-2 group-hover:translate-x-2 transition-transform">→</span>
+                    </Link>
+                  </div>
                 </div>
               </div>
             ))}
           </div>
         </section>
 
+        {/* ========================================================= */}
+        {/* SERVICES OPTION 3: MINIMALIST LINE-ART & HOVER STATES */}
+        {/* ========================================================= */}
+        <section className="px-4 lg:px-8 py-16 max-w-7xl mx-auto">
+          <div className="text-center max-w-3xl mx-auto mb-20 space-y-6">
+            <div className="inline-block bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs font-bold tracking-widest mb-4">
+              PROTOTYPE: OPTION 3
+            </div>
+            <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#c2592e]">
+              Minimalist Line-Art
+            </p>
+            <h2 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-[#211711] leading-[1.1] tracking-tight">
+              Painting that improves how your home and business live.
+            </h2>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {macroServices.map((service, idx) => {
+              // Map an icon to each service for the prototype
+              const Icon = idx === 0 ? Home : idx === 1 ? Paintbrush : idx === 2 ? Droplets : Building2;
+              
+              return (
+                <div
+                  key={service.slug}
+                  className="group p-10 rounded-[2.5rem] bg-transparent border-2 border-transparent hover:bg-white hover:border-[#211711]/5 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 flex flex-col justify-between"
+                >
+                  <div className="space-y-8">
+                    <div className="w-16 h-16 rounded-2xl bg-[#fffaf3] flex items-center justify-center border border-[#211711]/5 group-hover:bg-[#c2592e] transition-colors duration-500">
+                      <Icon className="w-8 h-8 text-[#d9a460] group-hover:text-white stroke-[1.5]" />
+                    </div>
+                    <div>
+                      <h3 className="font-serif text-2xl font-bold text-[#211711] mb-4">
+                        {service.title}
+                      </h3>
+                      <p className="text-base text-[#6a594c] leading-relaxed">
+                        {service.description}
+                      </p>
+                    </div>
+                  </div>
+                  <div className="pt-8 mt-8 border-t border-[#211711]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    <Link href="/services" className="inline-flex items-center text-sm font-bold text-[#c2592e] group tracking-wide uppercase">
+                      Learn more <span className="ml-2 group-hover:translate-x-2 transition-transform">→</span>
+                    </Link>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </section>
+
+
         {/* BEAT 4: Visual Proof / Showcase */}
-        <section className="bg-[#fffaf3] py-20 px-4 lg:px-8 border-y border-[#211711]/10">
+        <section className="bg-[#fffaf3] py-32 px-4 lg:px-8 border-y border-[#211711]/5">
           <div className="max-w-7xl mx-auto">
-            <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
-              <div>
-                <p className="text-xs font-semibold uppercase tracking-widest text-[#c2592e]">
+            <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+              <div className="max-w-2xl space-y-4">
+                <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#c2592e]">
                   Selected Work
                 </p>
-                <h2 className="font-serif text-3xl sm:text-4xl font-bold text-[#211711] mt-2">
+                <h2 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-[#211711] leading-[1.1] tracking-tight">
                   Homes and spaces painted with care, skill, and a family's pride.
                 </h2>
               </div>
               <Link
                 href="/projects"
-                className="inline-flex items-center text-sm font-semibold text-[#c2592e] hover:underline"
+                className="inline-flex items-center text-sm font-bold text-[#c2592e] uppercase tracking-wide hover:text-[#8e3d1c] transition-colors whitespace-nowrap mb-2"
               >
-                View all project photos →
+                View all projects →
               </Link>
             </div>
 
@@ -231,11 +374,11 @@ export default function HomePage() {
               {homeFeatures.map((project, idx) => (
                 <div
                   key={project.title}
-                  className={`group rounded-3xl overflow-hidden bg-[#faf3e9] border border-[#211711]/10 shadow-md ${
+                  className={`group rounded-[2.5rem] overflow-hidden bg-[#faf3e9] border border-[#211711]/5 shadow-lg ${
                     idx === 0 ? "md:col-span-2 md:row-span-2" : ""
                   }`}
                 >
-                  <div className="relative overflow-hidden aspect-[4/3]">
+                  <div className={`relative overflow-hidden ${idx === 0 ? "aspect-[16/9]" : "aspect-[4/3]"}`}>
                     <Image
                       src={project.image}
                       alt={project.alt}
@@ -243,14 +386,14 @@ export default function HomePage() {
                       className="object-cover group-hover:scale-105 transition-transform duration-700"
                     />
                   </div>
-                  <div className="p-6 space-y-2">
-                    <span className="text-xs font-bold uppercase tracking-wider text-[#c2592e]">
+                  <div className="p-8 sm:p-10 space-y-3">
+                    <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#d9a460]">
                       {project.category}
                     </span>
-                    <h3 className="font-serif text-2xl font-bold text-[#211711]">
+                    <h3 className="font-serif text-3xl font-bold text-[#211711]">
                       {project.title}
                     </h3>
-                    <p className="text-sm text-[#6a594c] leading-relaxed">
+                    <p className="text-lg text-[#6a594c] leading-relaxed">
                       {project.summary}
                     </p>
                   </div>
@@ -261,25 +404,27 @@ export default function HomePage() {
         </section>
 
         {/* BEAT 5: Empathy & Guarantees */}
-        <section className="px-4 lg:px-8 py-20 max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-12 gap-12 items-start">
-            <div className="lg:col-span-5 space-y-6">
-              <p className="text-xs font-semibold uppercase tracking-widest text-[#c2592e]">
-                Why 4 The Love of Color
-              </p>
-              <h2 className="font-serif text-3xl sm:text-4xl font-bold text-[#211711]">
-                A more personal painting experience — built for the Gulf Coast.
-              </h2>
-              <p className="text-base text-[#6a594c] leading-relaxed">
+        <section className="px-4 lg:px-8 py-32 max-w-7xl mx-auto">
+          <div className="grid lg:grid-cols-12 gap-16 items-start">
+            <div className="lg:col-span-5 space-y-8">
+              <div className="space-y-4">
+                <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#c2592e]">
+                  Why 4 The Love of Color
+                </p>
+                <h2 className="font-serif text-4xl sm:text-5xl font-bold text-[#211711] leading-[1.1] tracking-tight">
+                  A more personal painting experience — built for the Gulf Coast.
+                </h2>
+              </div>
+              <p className="text-lg text-[#6a594c] leading-relaxed font-medium">
                 Homeowners here compare multiple quotes. The difference isn't just in the paint; it's in how your home is treated every single day of the job.
               </p>
-              <div className="space-y-4 pt-4">
+              <div className="space-y-6 pt-6">
                 {whyUs.map((item) => (
-                  <div key={item.title} className="p-4 rounded-2xl bg-[#fffaf3] border border-[#211711]/5">
-                    <h3 className="font-serif text-lg font-bold text-[#211711]">
+                  <div key={item.title} className="p-6 rounded-3xl bg-[#fffaf3] border border-[#211711]/5 shadow-sm">
+                    <h3 className="font-serif text-2xl font-bold text-[#211711]">
                       {item.title}
                     </h3>
-                    <p className="text-xs text-[#6a594c] mt-1">
+                    <p className="text-base text-[#6a594c] mt-2 leading-relaxed">
                       {item.text}
                     </p>
                   </div>
@@ -287,64 +432,68 @@ export default function HomePage() {
               </div>
             </div>
 
-            <div className="lg:col-span-7 bg-[#fffaf3] p-8 lg:p-10 rounded-3xl border border-[#211711]/10 space-y-8 shadow-sm">
-              <div>
-                <p className="text-xs font-semibold uppercase tracking-widest text-[#c2592e]">
+            <div className="lg:col-span-7 bg-[#fffaf3] p-10 sm:p-16 rounded-[3rem] border border-[#211711]/5 space-y-12 shadow-xl relative overflow-hidden">
+              <div className="absolute top-0 right-0 text-[16rem] font-serif leading-none text-[#d9a460]/5 -translate-y-10 translate-x-10 pointer-events-none">
+                G
+              </div>
+              
+              <div className="relative z-10 space-y-4">
+                <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#c2592e]">
                   Our Promises
                 </p>
-                <h3 className="font-serif text-2xl sm:text-3xl font-bold text-[#211711] mt-1">
+                <h3 className="font-serif text-3xl sm:text-4xl font-bold text-[#211711] leading-[1.1] tracking-tight">
                   What you can hold us to — in writing, on every job.
                 </h3>
               </div>
 
-              <div className="grid sm:grid-cols-2 gap-6">
+              <div className="relative z-10 grid sm:grid-cols-2 gap-x-10 gap-y-12">
                 {guarantees.map((item, idx) => (
-                  <div key={item.title} className="space-y-2">
-                    <span className="font-serif text-2xl font-bold text-[#c2592e]/40">
-                      0{idx + 1}
+                  <div key={item.title} className="space-y-3">
+                    <span className="font-serif text-4xl font-bold text-[#d9a460]/40">
+                      0{idx + 1}.
                     </span>
-                    <h4 className="font-serif text-xl font-bold text-[#211711]">
+                    <h4 className="font-serif text-2xl font-bold text-[#211711]">
                       {item.title}
                     </h4>
-                    <p className="text-sm text-[#6a594c] leading-relaxed">
+                    <p className="text-base text-[#6a594c] leading-relaxed">
                       {item.text}
                     </p>
                   </div>
                 ))}
               </div>
 
-              <div className="p-4 rounded-xl bg-[#c2592e]/5 border border-[#c2592e]/20 text-xs text-[#6a594c] space-y-1">
-                <p className="font-semibold text-[#c2592e]">✓ Workmanship Guarantee</p>
-                <p>We perform a thorough walkthrough with you before any final payment is requested.</p>
+              <div className="relative z-10 p-6 rounded-2xl bg-[#c2592e] text-white space-y-2 shadow-lg shadow-[#c2592e]/20">
+                <p className="font-bold text-lg tracking-wide">✓ Workmanship Guarantee</p>
+                <p className="text-white/80 font-medium">We perform a thorough walkthrough with you before any final payment is requested. The job isn't done until you say it is.</p>
               </div>
             </div>
           </div>
         </section>
 
         {/* BEAT 6: Our Process */}
-        <section className="bg-[#fffaf3] py-20 px-4 lg:px-8 border-y border-[#211711]/10">
-          <div className="max-w-7xl mx-auto text-center max-w-2xl mb-14 space-y-3">
-            <p className="text-xs font-semibold uppercase tracking-widest text-[#c2592e]">
+        <section className="bg-[#fffaf3] py-32 px-4 lg:px-8 border-y border-[#211711]/5">
+          <div className="max-w-7xl mx-auto text-center max-w-3xl mb-20 space-y-6">
+            <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#c2592e]">
               Our Process
             </p>
-            <h2 className="font-serif text-3xl sm:text-4xl font-bold text-[#211711]">
+            <h2 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-[#211711] leading-[1.1] tracking-tight">
               From first call to final walkthrough.
             </h2>
           </div>
 
-          <div className="max-w-7xl mx-auto grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="max-w-7xl mx-auto grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {processSteps.map((step, idx) => (
               <div
                 key={step.title}
-                className="bg-[#faf3e9] p-8 rounded-3xl border border-[#211711]/10 relative space-y-4"
+                className="bg-[#faf3e9] p-10 rounded-[2.5rem] border border-[#211711]/5 relative space-y-6 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-500"
               >
-                <span className="inline-block text-3xl font-serif font-bold text-[#c2592e]">
+                <span className="inline-block text-5xl font-serif font-bold text-[#d9a460]">
                   0{idx + 1}
                 </span>
-                <h3 className="font-serif text-xl font-bold text-[#211711]">
+                <h3 className="font-serif text-2xl font-bold text-[#211711]">
                   {step.title}
                 </h3>
-                <p className="text-xs sm:text-sm text-[#6a594c] leading-relaxed">
+                <p className="text-base text-[#6a594c] leading-relaxed">
                   {step.text}
                 </p>
               </div>
@@ -353,28 +502,30 @@ export default function HomePage() {
         </section>
 
         {/* BEAT 7: Service Area (Local SEO Optimization) */}
-        <section className="px-4 lg:px-8 py-20 max-w-7xl mx-auto">
-          <div className="bg-[#211711] text-white p-8 sm:p-12 lg:p-16 rounded-[2.5rem] shadow-2xl relative overflow-hidden">
-            <div className="relative z-10 max-w-3xl space-y-6">
-              <p className="text-xs font-semibold uppercase tracking-widest text-[#d9a460]">
+        <section className="px-4 lg:px-8 py-32 max-w-7xl mx-auto">
+          <div className="bg-[#211711] text-white p-10 sm:p-16 lg:p-24 rounded-[3rem] shadow-2xl relative overflow-hidden">
+            <div className="absolute top-0 right-0 -translate-y-1/4 translate-x-1/4 w-[800px] h-[800px] bg-gradient-to-br from-[#c2592e]/20 to-transparent rounded-full blur-3xl pointer-events-none" />
+            
+            <div className="relative z-10 max-w-4xl space-y-8">
+              <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#d9a460]">
                 Service Area
               </p>
-              <h2 className="font-serif text-3xl sm:text-4xl font-bold leading-tight">
+              <h2 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.1] tracking-tight">
                 Proudly serving Lakewood Ranch, Sarasota, and the Suncoast.
               </h2>
-              <p className="text-sm sm:text-base text-gray-300 leading-relaxed">
+              <p className="text-lg sm:text-xl text-gray-300 leading-relaxed font-medium">
                 Based in Lakewood Ranch, we paint homes and commercial properties throughout Manatee and Sarasota County.
               </p>
 
-              <div className="pt-4 space-y-3">
-                <p className="text-xs uppercase tracking-wider font-semibold text-[#d9a460]">
+              <div className="pt-8 space-y-4">
+                <p className="text-sm uppercase tracking-[0.2em] font-bold text-[#d9a460]">
                   Cities Covered:
                 </p>
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-3">
                   {serviceCities.map((city) => (
                     <span
                       key={city}
-                      className="px-3.5 py-1.5 rounded-full bg-white/10 text-xs font-medium border border-white/10"
+                      className="px-5 py-2.5 rounded-full bg-white/5 text-sm font-bold border border-white/10 hover:bg-white/10 transition-colors"
                     >
                       {city}
                     </span>
@@ -382,11 +533,11 @@ export default function HomePage() {
                 </div>
               </div>
 
-              <div className="pt-4 space-y-3">
-                <p className="text-xs uppercase tracking-wider font-semibold text-[#d9a460]">
+              <div className="pt-8 space-y-4">
+                <p className="text-sm uppercase tracking-[0.2em] font-bold text-[#d9a460]">
                   Lakewood Ranch Villages:
                 </p>
-                <p className="text-xs text-gray-400 leading-relaxed">
+                <p className="text-base text-gray-400 leading-relaxed font-medium">
                   {lakewoodRanchNeighborhoods.join(" · ")}
                 </p>
               </div>
@@ -395,13 +546,13 @@ export default function HomePage() {
         </section>
 
         {/* BEAT 8: Social Proof / Testimonials */}
-        <section className="bg-[#fffaf3] py-20 px-4 lg:px-8 border-t border-[#211711]/10">
+        <section className="bg-[#fffaf3] py-32 px-4 lg:px-8 border-t border-[#211711]/5">
           <div className="max-w-7xl mx-auto">
-            <div className="text-center max-w-2xl mx-auto mb-14 space-y-3">
-              <p className="text-xs font-semibold uppercase tracking-widest text-[#c2592e]">
+            <div className="text-center max-w-3xl mx-auto mb-20 space-y-6">
+              <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#c2592e]">
                 What Clients Say
               </p>
-              <h2 className="font-serif text-3xl sm:text-4xl font-bold text-[#211711]">
+              <h2 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-[#211711] leading-[1.1] tracking-tight">
                 Real care, on every job.
               </h2>
             </div>
@@ -410,17 +561,17 @@ export default function HomePage() {
               {testimonials.map((item, idx) => (
                 <div
                   key={idx}
-                  className="bg-[#faf3e9] p-8 rounded-3xl border border-[#211711]/10 flex flex-col justify-between space-y-6"
+                  className="bg-[#faf3e9] p-10 rounded-[2.5rem] border border-[#211711]/5 flex flex-col justify-between space-y-8 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-500"
                 >
-                  <div className="space-y-4">
-                    <div className="text-[#d9a460] text-lg">★★★★★</div>
-                    <p className="text-sm text-[#211711] italic leading-relaxed">
+                  <div className="space-y-6">
+                    <div className="text-[#d9a460] text-2xl tracking-widest">★★★★★</div>
+                    <p className="text-lg text-[#211711] italic leading-relaxed font-medium">
                       "{item.quote}"
                     </p>
                   </div>
-                  <div className="pt-4 border-t border-[#211711]/10">
-                    <p className="text-xs font-bold text-[#211711]">{item.author}</p>
-                    <p className="text-xs text-[#6a594c]">{item.location}</p>
+                  <div className="pt-6 border-t border-[#211711]/10">
+                    <p className="text-sm font-bold text-[#211711] uppercase tracking-wide">{item.author}</p>
+                    <p className="text-sm text-[#6a594c] mt-1">{item.location}</p>
                   </div>
                 </div>
               ))}
@@ -429,27 +580,32 @@ export default function HomePage() {
         </section>
 
         {/* BEAT 9: Final Call to Action */}
-        <section className="px-4 lg:px-8 py-20 max-w-7xl mx-auto text-center">
-          <div className="bg-[#c2592e] text-white p-10 sm:p-16 rounded-[2.5rem] shadow-xl space-y-6 max-w-4xl mx-auto">
-            <p className="text-xs font-semibold uppercase tracking-widest text-[#faf3e9]/80">
-              Ready to Start
-            </p>
-            <h2 className="font-serif text-3xl sm:text-5xl font-bold leading-tight">
-              Get a free estimate for your next painting project.
-            </h2>
-            <p className="text-sm sm:text-base text-white/90 max-w-xl mx-auto">
-              Tell us about your space and we'll get back to you with a clear, no-pressure written quote.
-            </p>
-            <div className="flex flex-wrap justify-center gap-4 pt-4">
+        <section className="px-4 lg:px-8 py-32 max-w-7xl mx-auto text-center">
+          <div className="bg-[#c2592e] text-white p-12 sm:p-20 rounded-[3rem] shadow-2xl space-y-10 max-w-5xl mx-auto relative overflow-hidden">
+            <div className="absolute inset-0 bg-[linear-gradient(45deg,rgba(0,0,0,0.1)_0%,transparent_100%)] pointer-events-none" />
+            
+            <div className="relative z-10 space-y-6">
+              <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#d9a460]">
+                Ready to Start
+              </p>
+              <h2 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.1] tracking-tight">
+                Get a free estimate for your next painting project.
+              </h2>
+              <p className="text-lg sm:text-xl text-white/90 max-w-2xl mx-auto font-medium">
+                Tell us about your space and we'll get back to you with a clear, no-pressure written quote.
+              </p>
+            </div>
+            
+            <div className="relative z-10 flex flex-wrap justify-center gap-6 pt-4">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center px-8 py-4 rounded-full bg-[#faf3e9] text-[#c2592e] text-base font-bold shadow-lg hover:bg-white transition-all"
+                className="inline-flex items-center justify-center px-10 py-5 rounded-full bg-[#faf3e9] text-[#c2592e] text-lg font-bold shadow-2xl hover:bg-white hover:scale-105 transition-all duration-300"
               >
                 Request a Quote
               </Link>
               <a
                 href={contact.phoneHref}
-                className="inline-flex items-center justify-center px-8 py-4 rounded-full bg-transparent border-2 border-white text-white text-base font-bold hover:bg-white/10 transition-all"
+                className="inline-flex items-center justify-center px-10 py-5 rounded-full bg-transparent border-[3px] border-white text-white text-lg font-bold hover:bg-white hover:text-[#c2592e] hover:scale-105 transition-all duration-300"
               >
                 Call {contact.phone}
               </a>
@@ -459,69 +615,59 @@ export default function HomePage() {
       </main>
 
       {/* Footer */}
-      <footer className="bg-[#211711] text-gray-300 border-t border-white/10 px-4 lg:px-8 py-14">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10">
-          <div className="space-y-4">
-            <p className="font-serif text-xl font-bold text-white">
-              4 The Love of Color Painting
+      <footer className="bg-[#211711] text-gray-300 border-t border-white/10 px-4 lg:px-8 py-20">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
+          <div className="space-y-6">
+            <p className="font-serif text-3xl font-bold text-white">
+              4 The Love of Color
             </p>
-            <p className="text-xs leading-relaxed text-gray-400">
+            <p className="text-sm leading-relaxed text-gray-400 font-medium">
               Family-owned interior &amp; exterior painters serving Lakewood Ranch, Sarasota, Bradenton &amp; the surrounding Suncoast of Florida.
             </p>
-            <p className="text-xs text-gray-500 pt-2">
-              © {new Date().getFullYear()} 4 The Love of Color Painting. All rights reserved.
+            <p className="text-sm text-gray-500 pt-4">
+              © {new Date().getFullYear()} 4 The Love of Color LLC. All rights reserved.
             </p>
           </div>
 
-          <div className="space-y-3">
-            <p className="text-xs font-semibold uppercase tracking-wider text-[#d9a460]">
+          <div className="space-y-6">
+            <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#d9a460]">
               Explore
             </p>
-            <ul className="space-y-2 text-xs">
+            <ul className="space-y-4 text-sm font-medium">
               <li>
-                <Link href="/" className="hover:text-white transition-colors">
-                  Home
-                </Link>
+                <Link href="/" className="hover:text-white transition-colors">Home</Link>
               </li>
               <li>
-                <Link href="/services" className="hover:text-white transition-colors">
-                  Services
-                </Link>
+                <Link href="/services" className="hover:text-white transition-colors">Services</Link>
               </li>
               <li>
-                <Link href="/projects" className="hover:text-white transition-colors">
-                  Projects
-                </Link>
+                <Link href="/projects" className="hover:text-white transition-colors">Projects</Link>
               </li>
               <li>
-                <Link href="/about" className="hover:text-white transition-colors">
-                  About
-                </Link>
+                <Link href="/about" className="hover:text-white transition-colors">About</Link>
               </li>
               <li>
-                <Link href="/contact" className="hover:text-white transition-colors">
-                  Contact
-                </Link>
+                <Link href="/contact" className="hover:text-white transition-colors">Contact</Link>
               </li>
             </ul>
           </div>
 
-          <div className="space-y-3">
-            <p className="text-xs font-semibold uppercase tracking-wider text-[#d9a460]">
+          <div className="space-y-6">
+            <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#d9a460]">
               Areas Served
             </p>
-            <ul className="space-y-1.5 text-xs text-gray-400">
+            <ul className="space-y-3 text-sm text-gray-400 font-medium">
               {serviceCities.slice(0, 6).map((city) => (
                 <li key={city}>{city} painters</li>
               ))}
             </ul>
           </div>
 
-          <div className="space-y-3">
-            <p className="text-xs font-semibold uppercase tracking-wider text-[#d9a460]">
+          <div className="space-y-6">
+            <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#d9a460]">
               Get In Touch
             </p>
-            <div className="space-y-2 text-xs">
+            <div className="space-y-3 text-sm font-medium">
               <p>
                 <a href={contact.phoneHref} className="hover:text-white transition-colors">
                   {contact.phone}
@@ -532,7 +678,7 @@ export default function HomePage() {
                   {contact.email}
                 </a>
               </p>
-              <p className="text-gray-400">{business.hours}</p>
+              <p className="text-gray-400 pt-4">{business.hours}</p>
             </div>
           </div>
         </div>
