@@ -6,7 +6,7 @@ export function TestimonialsSection() {
   return (
     <section className="pt-10 pb-0 px-4 lg:px-8 bg-warm-bg border-t border-ink/10">
       <div className="max-w-7xl mx-auto">
-        <div className="w-full flex justify-start mb-6">
+        <div className="w-full flex justify-center mb-6">
           <div className="w-48 sm:w-56 h-8 flex items-center justify-center rounded-[var(--radius)] bg-ink text-white text-[10px] sm:text-xs font-bold uppercase tracking-[0.2em] text-center">
             What Clients Say
           </div>

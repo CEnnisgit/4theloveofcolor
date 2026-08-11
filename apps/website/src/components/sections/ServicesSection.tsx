@@ -72,7 +72,7 @@ export function ServicesSection() {
       >
         <div className="w-full flex justify-start mb-6">
           <div className="w-48 sm:w-56 h-8 flex items-center justify-center rounded-[var(--radius)] bg-terracotta text-white text-[10px] sm:text-xs font-bold uppercase tracking-[0.2em] text-center">
-            What We Do
+            Our Services
           </div>
         </div>
         <div className="mb-8 lg:mb-12">

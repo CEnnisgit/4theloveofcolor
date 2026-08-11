@@ -32,12 +32,6 @@ export function SelectedWorkSection() {
               Homes we&apos;ve painted across the Suncoast.
             </h2>
           </div>
-          <Link
-            href="/projects"
-            className="inline-flex items-center justify-center px-6 py-3 bg-ink text-white text-sm font-bold uppercase tracking-widest hover:bg-terracotta transition-colors rounded-sm shadow-md whitespace-nowrap mb-1"
-          >
-            View all projects →
-          </Link>
         </div>
 
         <div className="mt-8">
@@ -85,6 +79,15 @@ export function SelectedWorkSection() {
               <CarouselNext className="static transform-none bg-black/40 text-white hover:bg-terracotta hover:text-white border-none rounded-sm shadow-sm transition-colors backdrop-blur-md w-10 h-10 md:w-12 md:h-12" />
             </div>
           </Carousel>
+        </div>
+
+        <div className="mt-10 lg:mt-12 flex justify-center w-full">
+          <Link
+            href="/projects"
+            className="inline-flex items-center justify-center px-8 py-4 bg-ink text-white text-sm font-bold uppercase tracking-widest hover:bg-terracotta transition-colors rounded-[var(--radius)] shadow-md whitespace-nowrap"
+          >
+            View all projects →
+          </Link>
         </div>
       </motion.div>
     </section>
