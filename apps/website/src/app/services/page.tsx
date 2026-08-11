@@ -35,7 +35,7 @@ export default function ServicesPage() {
   const serviceSchemas = macroServices.map((service) =>
     getServiceSchema({
       name: service.title,
-      description: service.summary,
+      description: service.description,
       url: `/services#${service.slug}`,
       image: service.image,
     })
@@ -95,14 +95,7 @@ export default function ServicesPage() {
                   Macro Service
                 </span>
                 <h2 className="font-serif text-2xl font-bold text-ink">{service.title}</h2>
-                <p className="text-sm text-ink-muted leading-relaxed">{service.summary}</p>
-                <ul className="space-y-2 pt-2 border-t border-ink/5 text-xs font-semibold text-ink/80">
-                  {service.details.map((detail, idx) => (
-                    <li key={idx} className="flex items-center gap-2">
-                      <span className="text-terracotta">✓</span> {detail}
-                    </li>
-                  ))}
-                </ul>
+                <p className="text-sm text-ink-muted leading-relaxed">{service.description}</p>
               </div>
             ))}
           </div>
