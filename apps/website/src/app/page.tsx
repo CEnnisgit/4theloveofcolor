@@ -85,7 +85,7 @@ export default function HomePage() {
 
       <main className="flex-1">
         {/* BEAT 1: Hero Section */}
-        <section className="relative px-6 lg:px-8 py-8 sm:py-16 lg:py-28 max-w-7xl mx-auto grid lg:grid-cols-12 gap-8 lg:gap-16 items-center">
+        <section className="relative px-6 lg:px-8 pt-4 sm:pt-8 lg:pt-12 pb-2 lg:pb-6 max-w-7xl mx-auto grid lg:grid-cols-12 gap-8 lg:gap-16 items-center">
           <div className="absolute top-0 right-0 lg:top-8 lg:right-auto lg:-left-48 -z-10 opacity-[0.07] pointer-events-none">
             <Image
               src="/images/logo.png"
@@ -134,15 +134,15 @@ export default function HomePage() {
             </div>
 
             {/* Proof Badges Strip */}
-            <div className="pt-2 sm:pt-4 flex flex-row items-center gap-2 sm:gap-4 text-[10px] sm:text-xs text-[#6a594c] tracking-wide w-full max-w-[400px]">
-              <div className="flex items-center gap-1 sm:gap-1.5 justify-center flex-1 whitespace-nowrap">
-                <Star className="w-3.5 h-3.5 text-[#d9a460] fill-[#d9a460]" />
+            <div className="pt-4 sm:pt-6 flex flex-row flex-wrap items-center gap-3 sm:gap-4 text-xs sm:text-sm font-medium text-[#6a594c] tracking-wide w-full">
+              <div className="flex items-center gap-1.5 justify-center whitespace-nowrap">
+                <span className="text-[#d9a460] text-sm sm:text-base">★</span>
                 <span className="text-[#211711] font-bold">5.0 Google Reviews</span>
               </div>
-              <div className="hidden sm:block w-1 h-1 rounded-full bg-[#211711]/20" />
-              <span>No Subcontractors</span>
-              <div className="hidden sm:block w-1 h-1 rounded-full bg-[#211711]/20" />
-              <span>Free Estimates</span>
+              <div className="w-1 h-1 rounded-full bg-[#211711]/20" />
+              <span className="whitespace-nowrap">No Subcontractors</span>
+              <div className="w-1 h-1 rounded-full bg-[#211711]/20" />
+              <span className="whitespace-nowrap">Free Estimates</span>
             </div>
           </motion.div>
 
@@ -174,7 +174,7 @@ export default function HomePage() {
         </section>
 
         {/* BEAT 2: Trust Strip (Editorial Hairline Border Bar) */}
-        <section className="border-y border-[#211711]/10 py-6 sm:py-8 mt-4 lg:mt-6 mb-16 lg:mb-24">
+        <section className="pt-2 pb-8 sm:pb-12 mb-12 lg:mb-20">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -189,7 +189,7 @@ export default function HomePage() {
               { title: "Clean Crews" },
             ].map((item) => (
               <div key={item.title} className="flex flex-col items-center justify-center text-center">
-                <span className="font-serif text-lg sm:text-xl md:text-2xl font-bold text-[#211711] border-b border-[#211711]/20 pb-1 sm:pb-2 px-2 sm:px-4">
+                <span className="font-serif text-lg sm:text-xl md:text-2xl font-bold text-[#211711] underline decoration-[#211711]/30 underline-offset-[6px] decoration-1">
                   {item.title}
                 </span>
               </div>

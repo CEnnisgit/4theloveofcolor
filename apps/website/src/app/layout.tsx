@@ -1,15 +1,15 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Manrope } from "next/font/google";
+import { Playfair_Display, Libre_Franklin } from "next/font/google";
 import "./globals.css";
 
-const cormorant = Cormorant_Garamond({
+const playfair = Playfair_Display({
   subsets: ["latin"],
-  weight: ["400", "600", "700"],
   variable: "--font-heading",
 });
 
-const manrope = Manrope({
+const libreFranklin = Libre_Franklin({
   subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
   variable: "--font-sans",
 });
 
@@ -72,7 +72,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${cormorant.variable} ${manrope.variable} h-full antialiased`}
+      className={`${playfair.variable} ${libreFranklin.variable} h-full antialiased`}
     >
       <head>
         <script
