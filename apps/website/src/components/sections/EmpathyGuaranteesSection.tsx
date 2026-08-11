@@ -5,7 +5,10 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 
 export function EmpathyGuaranteesSection() {
   return (
-    <section className="px-4 lg:px-8 pt-10 pb-16 lg:pt-14 lg:pb-24 max-w-7xl mx-auto flex flex-col items-start">
+    <section className="pt-10 pb-16 lg:pt-14 lg:pb-24 px-4 lg:px-8 relative">
+      {/* Dark Divider */}
+      <div className="absolute top-0 left-0 w-full h-0.5 bg-ink/30"></div>
+      <div className="max-w-7xl mx-auto flex flex-col items-start">
       <div className="w-52 sm:w-60 h-9 mb-8 lg:mb-10 flex items-center justify-center rounded-[var(--radius)] bg-ink text-white text-[11px] sm:text-[13px] font-bold uppercase tracking-[0.2em] text-center">
         The Family Difference
       </div>
@@ -69,6 +72,7 @@ export function EmpathyGuaranteesSection() {
             </div>
           </div>
         </div>
+      </div>
       </div>
     </section>
   );

@@ -6,7 +6,9 @@ import { processSteps } from "@/lib/data/content";
 
 export function ProcessSection() {
   return (
-    <section className="bg-warm-bg pt-10 pb-16 lg:pt-14 lg:pb-24 px-4 lg:px-8 border-t border-ink/5">
+    <section className="bg-warm-bg pt-10 pb-16 lg:pt-14 lg:pb-24 px-4 lg:px-8 relative">
+      {/* Dark Divider */}
+      <div className="absolute top-0 left-0 w-full h-0.5 bg-ink/30"></div>
       <div className="max-w-7xl mx-auto">
         <div className="w-full flex justify-start mb-8">
           <div className="w-52 sm:w-60 h-9 flex items-center justify-center rounded-[var(--radius)] bg-ink text-white text-[11px] sm:text-[13px] font-bold uppercase tracking-[0.2em] text-center">
