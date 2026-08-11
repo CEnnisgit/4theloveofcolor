@@ -10,7 +10,7 @@ export function ProcessSection() {
       <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-12 gap-12 items-start">
           <div className="lg:col-span-6 space-y-4 lg:sticky lg:top-24">
-            <p className="text-xs font-bold uppercase tracking-[0.2em] text-terracotta">Our Process</p>
+            <div className="w-fit inline-block px-3.5 py-1.5 rounded-full bg-ink text-white text-[10px] sm:text-xs font-bold uppercase tracking-[0.2em] mb-2">Our Process</div>
             <h2 className="font-serif text-3xl md:text-5xl font-bold text-ink leading-tight">
               From first call to final walkthrough.
             </h2>

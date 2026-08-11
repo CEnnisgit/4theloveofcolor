@@ -71,9 +71,9 @@ export function ServicesSection() {
         className="max-w-7xl mx-auto px-4 lg:px-8 relative z-10"
       >
         <div className="mb-8 lg:mb-12">
-          <p className="text-[10px] sm:text-sm font-bold uppercase tracking-[0.2em] text-gold mb-3">
-            Our Services
-          </p>
+          <div className="w-fit inline-block px-3.5 py-1.5 rounded-full bg-terracotta text-white text-[10px] sm:text-xs font-bold uppercase tracking-[0.2em] mb-4">
+            What We Do
+          </div>
           
           <h2 className="font-serif text-2xl sm:text-4xl lg:text-5xl font-bold text-white leading-[1.1] tracking-tight max-w-2xl">
             Painting that improves how your home and business live.

@@ -23,9 +23,9 @@ export function SelectedWorkSection() {
       >
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-6">
           <div className="max-w-2xl space-y-3">
-            <p className="text-sm font-bold uppercase tracking-[0.2em] text-terracotta">
+            <div className="w-fit inline-block px-3.5 py-1.5 rounded-full bg-ink text-white text-[10px] sm:text-xs font-bold uppercase tracking-[0.2em] mb-2">
               Our Project Portfolio
-            </p>
+            </div>
             <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-ink leading-[1.1] tracking-tight">
               Homes we&apos;ve painted across the Suncoast.
             </h2>

@@ -9,9 +9,9 @@ export function EmpathyGuaranteesSection() {
       <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
         <div className="lg:col-span-5 space-y-6">
           <div className="space-y-3">
-            <p className="text-xs font-bold uppercase tracking-[0.2em] text-terracotta">
+            <div className="w-fit inline-block px-3.5 py-1.5 rounded-full bg-ink text-white text-[10px] sm:text-xs font-bold uppercase tracking-[0.2em]">
               The Family Difference
-            </p>
+            </div>
             <h2 className="font-serif text-2xl md:text-4xl font-bold text-ink leading-tight">
               Built for Florida homes & discerning owners.
             </h2>

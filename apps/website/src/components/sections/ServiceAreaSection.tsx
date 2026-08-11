@@ -10,7 +10,7 @@ export function ServiceAreaSection() {
           
           {/* Left Side: Typography */}
           <div className="space-y-6 lg:sticky lg:top-24">
-            <p className="text-xs font-bold uppercase tracking-[0.2em] text-terracotta">Service Area</p>
+            <div className="w-fit inline-block px-3.5 py-1.5 rounded-full bg-terracotta text-white text-[10px] sm:text-xs font-bold uppercase tracking-[0.2em] mb-2">Service Area</div>
             <h2 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.1]">
               Proudly serving Lakewood Ranch & Sarasota.
             </h2>
