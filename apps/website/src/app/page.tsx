@@ -86,7 +86,7 @@ export default function HomePage() {
       <main className="flex-1">
         {/* BEAT 1: Hero Section */}
         <section className="relative px-6 lg:px-8 py-8 sm:py-16 lg:py-28 max-w-7xl mx-auto grid lg:grid-cols-12 gap-8 lg:gap-16 items-center">
-          <div className="absolute top-0 right-0 -z-10 opacity-[0.03] pointer-events-none">
+          <div className="absolute top-0 right-0 lg:top-8 lg:right-auto lg:-left-48 -z-10 opacity-[0.07] pointer-events-none">
             <Image
               src="/images/logo.png"
               alt=""
@@ -107,7 +107,7 @@ export default function HomePage() {
             </div>
             
             {/* SOLE H1 TAG ON THE PAGE */}
-            <h1 className="font-serif text-3xl sm:text-5xl lg:text-7xl font-bold text-[#211711] leading-[1.1] sm:leading-[1.05] tracking-tight">
+            <h1 className="font-serif text-3xl sm:text-4xl lg:text-6xl font-bold text-[#211711] leading-[1.1] sm:leading-[1.05] tracking-tight">
               Color, finish, and detail work that make a home feel{" "}
               <span className="italic text-[#c2592e] underline decoration-[#d9a460]/40 underline-offset-8">
                 intentionally renewed.
@@ -115,7 +115,7 @@ export default function HomePage() {
             </h1>
 
             <p className="text-sm sm:text-lg lg:text-xl text-[#6a594c] leading-relaxed max-w-2xl font-medium">
-              Family-owned interior and exterior painting for homes and businesses across the Suncoast — designed to sharpen every space, protect against the Florida sun, and deliver a cleaner result from the first walkthrough to the last detail.
+              Interior and exterior painting for homes and businesses across the Suncoast — designed to sharpen every space, protect against the Florida sun, and deliver a cleaner result from the first walkthrough to the last detail.
             </p>
 
             <div className="flex flex-row w-full gap-3 pt-1 sm:pt-3">
@@ -134,21 +134,15 @@ export default function HomePage() {
             </div>
 
             {/* Proof Badges Strip */}
-            <div className="mt-3 p-3 sm:p-4 rounded-2xl bg-[#211711]/[0.03] border border-[#211711]/5 flex flex-row items-center justify-between gap-1.5 text-[10px] sm:text-xs font-semibold text-[#6a594c]">
+            <div className="pt-2 sm:pt-4 flex flex-row items-center gap-2 sm:gap-4 text-[10px] sm:text-xs text-[#6a594c] tracking-wide w-full max-w-[400px]">
               <div className="flex items-center gap-1 sm:gap-1.5 justify-center flex-1 whitespace-nowrap">
-                <span className="text-[#d9a460] text-xs sm:text-sm">★</span>
-                <span className="text-[#211711] font-bold">5.0 Reviews</span>
+                <Star className="w-3.5 h-3.5 text-[#d9a460] fill-[#d9a460]" />
+                <span className="text-[#211711] font-bold">5.0 Google Reviews</span>
               </div>
-              <div className="w-[1px] h-3.5 bg-[#211711]/15 shrink-0" />
-              <div className="flex items-center gap-1 sm:gap-1.5 justify-center flex-1 whitespace-nowrap">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#c2592e] shrink-0" />
-                <span>Free Estimates</span>
-              </div>
-              <div className="w-[1px] h-3.5 bg-[#211711]/15 shrink-0" />
-              <div className="flex items-center gap-1 sm:gap-1.5 justify-center flex-1 whitespace-nowrap">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#c2592e] shrink-0" />
-                <span>Family-Owned</span>
-              </div>
+              <div className="hidden sm:block w-1 h-1 rounded-full bg-[#211711]/20" />
+              <span>No Subcontractors</span>
+              <div className="hidden sm:block w-1 h-1 rounded-full bg-[#211711]/20" />
+              <span>Free Estimates</span>
             </div>
           </motion.div>
 
@@ -179,31 +173,27 @@ export default function HomePage() {
           </motion.div>
         </section>
 
-        {/* BEAT 2: Trust Strip */}
-        <section className="bg-[#fffaf3] border-y border-[#211711]/5 py-10 sm:py-12 px-4 lg:px-8">
+        {/* BEAT 2: Trust Strip (Editorial Hairline Border Bar) */}
+        <section className="border-y border-[#211711]/10 py-6 sm:py-8 mt-4 lg:mt-6 mb-16 lg:mb-24">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.6 }}
-            className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 text-center"
+            className="max-w-7xl mx-auto flex flex-wrap justify-center gap-x-8 gap-y-4 sm:gap-x-12 md:gap-x-16 px-4"
           >
-            <div className="space-y-1 sm:space-y-2">
-              <p className="font-serif text-xl sm:text-2xl font-bold text-[#c2592e]">Family-Owned</p>
-              <p className="text-xs sm:text-sm font-medium text-[#6a594c]">Direct communication</p>
-            </div>
-            <div className="space-y-1 sm:space-y-2">
-              <p className="font-serif text-xl sm:text-2xl font-bold text-[#c2592e]">Careful Prep</p>
-              <p className="text-xs sm:text-sm font-medium text-[#6a594c]">Patch, sand &amp; mask</p>
-            </div>
-            <div className="space-y-1 sm:space-y-2">
-              <p className="font-serif text-xl sm:text-2xl font-bold text-[#c2592e]">Eco-Friendly</p>
-              <p className="text-xs sm:text-sm font-medium text-[#6a594c]">Low-VOC coatings</p>
-            </div>
-            <div className="space-y-1 sm:space-y-2">
-              <p className="font-serif text-xl sm:text-2xl font-bold text-[#c2592e]">Clean Crews</p>
-              <p className="text-xs sm:text-sm font-medium text-[#6a594c]">Site tidied every day</p>
-            </div>
+            {[
+              { title: "Family-Owned" },
+              { title: "Careful Prep" },
+              { title: "Eco-Friendly" },
+              { title: "Clean Crews" },
+            ].map((item) => (
+              <div key={item.title} className="flex flex-col items-center justify-center text-center">
+                <span className="font-serif text-lg sm:text-xl md:text-2xl font-bold text-[#211711] border-b border-[#211711]/20 pb-1 sm:pb-2 px-2 sm:px-4">
+                  {item.title}
+                </span>
+              </div>
+            ))}
           </motion.div>
         </section>
 
@@ -222,7 +212,7 @@ export default function HomePage() {
             className="max-w-7xl mx-auto px-4 lg:px-8 relative z-10"
           >
             <div className="mb-8 lg:mb-12">
-              <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-[1.1] tracking-tight max-w-2xl">
+              <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-white leading-[1.1] tracking-tight max-w-2xl">
                 Painting that improves how your home and business live.
               </h2>
             </div>
@@ -238,7 +228,7 @@ export default function HomePage() {
                       onMouseEnter={() => setHoveredService(service)}
                       onClick={() => setHoveredService(service)}
                     >
-                      <h3 className="font-serif text-2xl sm:text-3xl font-bold text-white mb-1">
+                      <h3 className="font-serif text-xl sm:text-2xl font-bold text-white mb-1">
                         {service.title}
                       </h3>
                       
@@ -310,7 +300,7 @@ export default function HomePage() {
                 <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#c2592e]">
                   Selected Work
                 </p>
-                <h2 className="font-serif text-3xl sm:text-4xl lg:text-6xl font-bold text-[#211711] leading-[1.1] tracking-tight">
+                <h2 className="font-serif text-2xl sm:text-3xl lg:text-5xl font-bold text-[#211711] leading-[1.1] tracking-tight">
                   Homes and spaces painted with care, skill, and a family's pride.
                 </h2>
               </div>
@@ -342,7 +332,7 @@ export default function HomePage() {
                     <span className="text-[10px] sm:text-xs font-bold uppercase tracking-[0.2em] text-[#d9a460]">
                       {project.category}
                     </span>
-                    <h3 className="font-serif text-2xl sm:text-3xl font-bold text-[#211711]">
+                    <h3 className="font-serif text-lg sm:text-xl font-bold text-[#211711]">
                       {project.title}
                     </h3>
                     <p className="text-base sm:text-lg text-[#6a594c] leading-relaxed">
@@ -369,7 +359,7 @@ export default function HomePage() {
                 <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#c2592e]">
                   Why 4 The Love of Color
                 </p>
-                <h2 className="font-serif text-3xl sm:text-5xl font-bold text-[#211711] leading-[1.1] tracking-tight">
+                <h2 className="font-serif text-2xl sm:text-4xl font-bold text-[#211711] leading-[1.1] tracking-tight">
                   A more personal painting experience — built for the Gulf Coast.
                 </h2>
               </div>
@@ -405,7 +395,7 @@ export default function HomePage() {
                 <p className="text-[10px] sm:text-sm font-bold uppercase tracking-[0.2em] text-[#c2592e]">
                   Our Promises
                 </p>
-                <h3 className="font-serif text-2xl sm:text-4xl font-bold text-[#211711] leading-[1.1] tracking-tight">
+                <h3 className="font-serif text-xl sm:text-3xl font-bold text-[#211711] leading-[1.1] tracking-tight">
                   What you can hold us to — in writing, on every job.
                 </h3>
               </div>
@@ -416,7 +406,7 @@ export default function HomePage() {
                     <span className="font-serif text-3xl sm:text-4xl font-bold text-[#d9a460]/40">
                       0{idx + 1}.
                     </span>
-                    <h4 className="font-serif text-xl sm:text-2xl font-bold text-[#211711]">
+                    <h4 className="font-serif text-lg sm:text-xl font-bold text-[#211711]">
                       {item.title}
                     </h4>
                     <p className="text-sm sm:text-base text-[#6a594c] leading-relaxed">
@@ -440,7 +430,7 @@ export default function HomePage() {
             <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#c2592e]">
               Our Process
             </p>
-            <h2 className="font-serif text-3xl sm:text-5xl lg:text-6xl font-bold text-[#211711] leading-[1.1] tracking-tight">
+            <h2 className="font-serif text-2xl sm:text-4xl lg:text-5xl font-bold text-[#211711] leading-[1.1] tracking-tight">
               From first call to final walkthrough.
             </h2>
           </div>
@@ -486,7 +476,7 @@ export default function HomePage() {
               <p className="text-[10px] sm:text-sm font-bold uppercase tracking-[0.2em] text-[#d9a460]">
                 Service Area
               </p>
-              <h2 className="font-serif text-3xl sm:text-5xl lg:text-6xl font-bold leading-[1.1] tracking-tight">
+              <h2 className="font-serif text-2xl sm:text-4xl lg:text-5xl font-bold leading-[1.1] tracking-tight">
                 Proudly serving Lakewood Ranch, Sarasota, and the Suncoast.
               </h2>
               <p className="text-base sm:text-xl text-gray-300 leading-relaxed font-medium">
@@ -528,7 +518,7 @@ export default function HomePage() {
               <p className="text-[10px] sm:text-sm font-bold uppercase tracking-[0.2em] text-[#c2592e]">
                 What Clients Say
               </p>
-              <h2 className="font-serif text-3xl sm:text-5xl lg:text-6xl font-bold text-[#211711] leading-[1.1] tracking-tight">
+              <h2 className="font-serif text-2xl sm:text-4xl lg:text-5xl font-bold text-[#211711] leading-[1.1] tracking-tight">
                 Real care, on every job.
               </h2>
             </div>
@@ -576,7 +566,7 @@ export default function HomePage() {
               <p className="text-[10px] sm:text-sm font-bold uppercase tracking-[0.2em] text-[#d9a460]">
                 Ready to Start
               </p>
-              <h2 className="font-serif text-3xl sm:text-5xl lg:text-6xl font-bold leading-[1.1] tracking-tight">
+              <h2 className="font-serif text-2xl sm:text-4xl lg:text-5xl font-bold leading-[1.1] tracking-tight">
                 Get a free estimate for your next painting project.
               </h2>
               <p className="text-base sm:text-xl text-white/90 max-w-2xl mx-auto font-medium">
