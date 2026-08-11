@@ -22,7 +22,7 @@ import {
 
 export function CallToActionSection() {
   return (
-    <div className="flex flex-col py-24">
+    <div className="flex flex-col pt-12 pb-24 bg-warm-bg">
       <section className="max-w-7xl mx-auto px-4 lg:px-8 w-full">
         <div className="grid lg:grid-cols-2 shadow-2xl border border-ink/10 bg-warm-card">
           
