@@ -1,6 +1,8 @@
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Paintbrush, Home, Droplets, Building2 } from "lucide-react";
 import {
   business,
   contact,
@@ -15,6 +17,8 @@ import {
 } from "@/lib/data/content";
 
 export default function HomePage() {
+  const [activeTab, setActiveTab] = useState(0);
+
   return (
     <div className="min-h-screen flex flex-col selection:bg-[#c2592e] selection:text-white">
       {/* Header / Navigation */}
@@ -83,7 +87,7 @@ export default function HomePage() {
               <span>Painters in Lakewood Ranch &amp; Sarasota</span>
             </div>
             
-            {/* SOLE H1 TAG ON THE PAGE - Massively scaled up for hierarchy */}
+            {/* SOLE H1 TAG ON THE PAGE */}
             <h1 className="font-serif text-5xl sm:text-6xl lg:text-7xl font-bold text-[#211711] leading-[1.05] tracking-tight">
               Color, finish, and detail work that make a home feel{" "}
               <span className="italic text-[#c2592e] underline decoration-[#d9a460]/40 underline-offset-8">
@@ -91,7 +95,6 @@ export default function HomePage() {
               </span>
             </h1>
 
-            {/* Increased body text size and contrast */}
             <p className="text-lg sm:text-xl text-[#6a594c] leading-relaxed max-w-2xl font-medium">
               Family-owned interior and exterior painting for homes and businesses across the Suncoast — designed to sharpen every space, protect against the Florida sun, and deliver a cleaner result from the first walkthrough to the last detail.
             </p>
@@ -169,87 +172,85 @@ export default function HomePage() {
           </div>
         </section>
 
+
+
         {/* ========================================================= */}
-        {/* SERVICES OPTION 1: HIGH-CONTRAST BENTO GRID */}
+        {/* OPTION 2: INTERACTIVE TABS SHOWCASE */}
         {/* ========================================================= */}
-        <section className="px-4 lg:px-8 pt-32 pb-16 max-w-7xl mx-auto border-b-8 border-dashed border-red-500/20">
-          <div className="text-center max-w-3xl mx-auto mb-20 space-y-6">
-            <div className="inline-block bg-red-100 text-red-800 px-3 py-1 rounded-full text-xs font-bold tracking-widest mb-4">
-              PROTOTYPE: OPTION 1
+        <section className="px-4 lg:px-8 py-24 max-w-7xl mx-auto border-b-8 border-dashed border-blue-500/20">
+          <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
+            <div className="inline-block bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-xs font-bold tracking-widest">
+              PROTOTYPE: OPTION 2 (MOST COMPACT)
             </div>
             <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#c2592e]">
-              High-Contrast Bento Grid
+              Interactive Tabs Showcase
             </p>
-            <h2 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-[#211711] leading-[1.1] tracking-tight">
+            <h2 className="font-serif text-4xl sm:text-5xl font-bold text-[#211711] leading-[1.1] tracking-tight">
               Painting that improves how your home and business live.
             </h2>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6">
-            {/* Large Dark Block */}
-            <div className="md:col-span-2 bg-[#211711] text-white rounded-[2.5rem] p-10 sm:p-14 flex flex-col justify-between shadow-2xl">
-              <div className="space-y-6">
-                <h3 className="font-serif text-3xl sm:text-4xl font-bold">
-                  {macroServices[0].title}
-                </h3>
-                <p className="text-lg text-white/70 leading-relaxed max-w-md">
-                  {macroServices[0].description}
-                </p>
-              </div>
-              <div className="pt-10 mt-10 border-t border-white/10">
-                <Link href="/services" className="inline-flex items-center text-sm font-bold text-[#d9a460] hover:text-white group tracking-wide uppercase">
-                  Learn more <span className="ml-2 group-hover:translate-x-2 transition-transform">→</span>
-                </Link>
-              </div>
+          <div className="grid lg:grid-cols-12 gap-12 items-center bg-[#fffaf3] p-8 sm:p-12 rounded-[3rem] border border-[#211711]/5 shadow-xl">
+            {/* Left Menu Column */}
+            <div className="lg:col-span-5 space-y-4">
+              {macroServices.map((service, idx) => {
+                const isActive = activeTab === idx;
+                return (
+                  <button
+                    key={service.slug}
+                    onClick={() => setActiveTab(idx)}
+                    onMouseEnter={() => setActiveTab(idx)}
+                    className={`w-full text-left p-6 rounded-2xl transition-all duration-300 flex items-center justify-between border ${
+                      isActive
+                        ? "bg-white shadow-lg border-[#c2592e]/20 translate-x-2"
+                        : "bg-transparent border-transparent hover:bg-white/50"
+                    }`}
+                  >
+                    <div>
+                      <span className={`text-xs font-bold uppercase tracking-[0.2em] ${isActive ? "text-[#c2592e]" : "text-[#6a594c]"}`}>
+                        0{idx + 1}
+                      </span>
+                      <h3 className={`font-serif text-2xl font-bold mt-1 ${isActive ? "text-[#211711]" : "text-[#6a594c]"}`}>
+                        {service.title}
+                      </h3>
+                    </div>
+                    <span className={`text-xl transition-transform ${isActive ? "text-[#c2592e] translate-x-1" : "text-[#6a594c]/40"}`}>
+                      →
+                    </span>
+                  </button>
+                );
+              })}
             </div>
 
-            {/* Small Light Block */}
-            <div className="md:col-span-1 bg-[#fffaf3] text-[#211711] rounded-[2.5rem] p-10 border border-[#211711]/10 flex flex-col justify-between shadow-sm hover:shadow-xl transition-all">
-              <div className="space-y-4">
-                <h3 className="font-serif text-3xl font-bold">
-                  {macroServices[1].title}
-                </h3>
-                <p className="text-base text-[#6a594c] leading-relaxed">
-                  {macroServices[1].description}
-                </p>
+            {/* Right Showcase Display */}
+            <div className="lg:col-span-7 space-y-6">
+              <div className="relative aspect-[16/10] rounded-3xl overflow-hidden shadow-2xl">
+                <Image
+                  src={macroServices[activeTab].image}
+                  alt={macroServices[activeTab].title}
+                  fill
+                  className="object-cover transition-all duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                <div className="absolute bottom-6 left-6 right-6 text-white space-y-2">
+                  <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#d9a460]">
+                    Featured Service
+                  </span>
+                  <h4 className="font-serif text-3xl font-bold">
+                    {macroServices[activeTab].title}
+                  </h4>
+                </div>
               </div>
-              <div className="pt-8 mt-8 border-t border-[#211711]/10">
-                <Link href="/services" className="inline-flex items-center text-sm font-bold text-[#c2592e] group tracking-wide uppercase">
-                  Learn more <span className="ml-2 group-hover:translate-x-2 transition-transform">→</span>
-                </Link>
-              </div>
-            </div>
 
-            {/* Small Light Block */}
-            <div className="md:col-span-1 bg-[#fffaf3] text-[#211711] rounded-[2.5rem] p-10 border border-[#211711]/10 flex flex-col justify-between shadow-sm hover:shadow-xl transition-all">
-              <div className="space-y-4">
-                <h3 className="font-serif text-3xl font-bold">
-                  {macroServices[2].title}
-                </h3>
-                <p className="text-base text-[#6a594c] leading-relaxed">
-                  {macroServices[2].description}
+              <div className="space-y-4 p-2">
+                <p className="text-lg text-[#6a594c] leading-relaxed font-medium">
+                  {macroServices[activeTab].description}
                 </p>
-              </div>
-              <div className="pt-8 mt-8 border-t border-[#211711]/10">
-                <Link href="/services" className="inline-flex items-center text-sm font-bold text-[#c2592e] group tracking-wide uppercase">
-                  Learn more <span className="ml-2 group-hover:translate-x-2 transition-transform">→</span>
-                </Link>
-              </div>
-            </div>
-
-            {/* Large Dark Block */}
-            <div className="md:col-span-2 bg-[#211711] text-white rounded-[2.5rem] p-10 sm:p-14 flex flex-col justify-between shadow-2xl">
-              <div className="space-y-6">
-                <h3 className="font-serif text-3xl sm:text-4xl font-bold">
-                  {macroServices[3].title}
-                </h3>
-                <p className="text-lg text-white/70 leading-relaxed max-w-md">
-                  {macroServices[3].description}
-                </p>
-              </div>
-              <div className="pt-10 mt-10 border-t border-white/10">
-                <Link href="/services" className="inline-flex items-center text-sm font-bold text-[#d9a460] hover:text-white group tracking-wide uppercase">
-                  Learn more <span className="ml-2 group-hover:translate-x-2 transition-transform">→</span>
+                <Link
+                  href="/services"
+                  className="inline-flex items-center gap-2 text-sm font-bold text-[#c2592e] uppercase tracking-wide hover:text-[#8e3d1c] transition-colors"
+                >
+                  Explore {macroServices[activeTab].title} details →
                 </Link>
               </div>
             </div>
@@ -257,98 +258,65 @@ export default function HomePage() {
         </section>
 
         {/* ========================================================= */}
-        {/* SERVICES OPTION 2: EDITORIAL TYPOGRAPHIC STYLE */}
+        {/* OPTION 3: HORIZONTAL CAROUSEL / SLIDER */}
         {/* ========================================================= */}
-        <section className="px-4 lg:px-8 py-16 max-w-7xl mx-auto border-b-8 border-dashed border-blue-500/20">
-          <div className="text-center max-w-3xl mx-auto mb-20 space-y-6">
-            <div className="inline-block bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-xs font-bold tracking-widest mb-4">
-              PROTOTYPE: OPTION 2
-            </div>
-            <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#c2592e]">
-              Editorial Typographic Style
-            </p>
-            <h2 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-[#211711] leading-[1.1] tracking-tight">
-              Painting that improves how your home and business live.
-            </h2>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-y-16 gap-x-12">
-            {macroServices.map((service, idx) => (
-              <div key={service.slug} className="relative group p-6">
-                {/* Massive Background Numeral */}
-                <div className="absolute top-0 right-0 text-[12rem] leading-none font-serif text-[#d9a460]/10 -translate-y-8 translate-x-4 select-none group-hover:text-[#c2592e]/10 transition-colors duration-500">
-                  0{idx + 1}
-                </div>
-                
-                <div className="relative z-10">
-                  <h3 className="font-serif text-4xl font-bold text-[#211711]">
-                    {service.title}
-                  </h3>
-                  <div className="w-16 h-1.5 bg-[#c2592e] my-8 group-hover:w-32 transition-all duration-500 ease-out" />
-                  <p className="text-lg text-[#6a594c] leading-relaxed max-w-md">
-                    {service.description}
-                  </p>
-                  <div className="pt-8 mt-8">
-                    <Link href="/services" className="inline-flex items-center text-sm font-bold text-[#211711] hover:text-[#c2592e] group tracking-wide uppercase">
-                      Explore Service <span className="ml-2 group-hover:translate-x-2 transition-transform">→</span>
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* ========================================================= */}
-        {/* SERVICES OPTION 3: MINIMALIST LINE-ART & HOVER STATES */}
-        {/* ========================================================= */}
-        <section className="px-4 lg:px-8 py-16 max-w-7xl mx-auto">
-          <div className="text-center max-w-3xl mx-auto mb-20 space-y-6">
-            <div className="inline-block bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs font-bold tracking-widest mb-4">
+        <section className="px-4 lg:px-8 py-24 max-w-7xl mx-auto">
+          <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
+            <div className="inline-block bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs font-bold tracking-widest">
               PROTOTYPE: OPTION 3
             </div>
             <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#c2592e]">
-              Minimalist Line-Art
+              Horizontal Carousel Slider
             </p>
-            <h2 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-[#211711] leading-[1.1] tracking-tight">
+            <h2 className="font-serif text-4xl sm:text-5xl font-bold text-[#211711] leading-[1.1] tracking-tight">
               Painting that improves how your home and business live.
             </h2>
+            <p className="text-sm text-[#6a594c] font-medium">
+              Swipe or scroll horizontally to view all services →
+            </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {macroServices.map((service, idx) => {
-              // Map an icon to each service for the prototype
-              const Icon = idx === 0 ? Home : idx === 1 ? Paintbrush : idx === 2 ? Droplets : Building2;
-              
-              return (
-                <div
-                  key={service.slug}
-                  className="group p-10 rounded-[2.5rem] bg-transparent border-2 border-transparent hover:bg-white hover:border-[#211711]/5 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 flex flex-col justify-between"
-                >
-                  <div className="space-y-8">
-                    <div className="w-16 h-16 rounded-2xl bg-[#fffaf3] flex items-center justify-center border border-[#211711]/5 group-hover:bg-[#c2592e] transition-colors duration-500">
-                      <Icon className="w-8 h-8 text-[#d9a460] group-hover:text-white stroke-[1.5]" />
-                    </div>
-                    <div>
-                      <h3 className="font-serif text-2xl font-bold text-[#211711] mb-4">
-                        {service.title}
-                      </h3>
-                      <p className="text-base text-[#6a594c] leading-relaxed">
-                        {service.description}
-                      </p>
-                    </div>
+          <div className="flex gap-6 overflow-x-auto pb-8 snap-x snap-mandatory scrollbar-thin scrollbar-thumb-[#c2592e]/20">
+            {macroServices.map((service, idx) => (
+              <Link
+                key={service.slug}
+                href="/services"
+                className="min-w-[320px] sm:min-w-[380px] max-w-[400px] flex-shrink-0 snap-start group bg-[#fffaf3] p-6 rounded-[2.5rem] border border-[#211711]/5 hover:shadow-2xl transition-all duration-500 flex flex-col justify-between"
+              >
+                <div className="space-y-6">
+                  <div className="relative aspect-[16/10] rounded-2xl overflow-hidden shadow-md">
+                    <Image
+                      src={service.image}
+                      alt={service.title}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-700"
+                    />
                   </div>
-                  <div className="pt-8 mt-8 border-t border-[#211711]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                    <Link href="/services" className="inline-flex items-center text-sm font-bold text-[#c2592e] group tracking-wide uppercase">
-                      Learn more <span className="ml-2 group-hover:translate-x-2 transition-transform">→</span>
-                    </Link>
+                  <div>
+                    <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#d9a460]">
+                      0{idx + 1}
+                    </span>
+                    <h3 className="font-serif text-2xl font-bold text-[#211711] mt-1 mb-3 group-hover:text-[#c2592e] transition-colors">
+                      {service.title}
+                    </h3>
+                    <p className="text-base text-[#6a594c] leading-relaxed font-medium">
+                      {service.description}
+                    </p>
                   </div>
                 </div>
-              );
-            })}
+
+                <div className="pt-6 mt-6 border-t border-[#211711]/10 flex items-center justify-between">
+                  <span className="text-xs font-bold uppercase tracking-wider text-[#c2592e]">
+                    Learn More
+                  </span>
+                  <span className="text-lg text-[#211711] group-hover:translate-x-2 transition-transform">
+                    →
+                  </span>
+                </div>
+              </Link>
+            ))}
           </div>
         </section>
-
 
         {/* BEAT 4: Visual Proof / Showcase */}
         <section className="bg-[#fffaf3] py-32 px-4 lg:px-8 border-y border-[#211711]/5">

@@ -54,6 +54,7 @@ export interface MacroService {
   title: string;
   slug: string;
   description: string;
+  image: string;
 }
 
 export const macroServices: MacroService[] = [
@@ -62,24 +63,28 @@ export const macroServices: MacroService[] = [
     slug: "interior-painting",
     description:
       "Refresh the rooms you actually live in — walls, ceilings, trim, and doors finished with clean lines and a smooth, even coat that holds up to Florida humidity.",
+    image: "/images/proj-interior-bedroom.jpg",
   },
   {
     title: "Exterior Painting",
     slug: "exterior-painting",
     description:
       "Boost curb appeal and protect your home from sun, salt air, and humidity with durable, weather-rated coatings and prep built to last on the Gulf Coast.",
+    image: "/images/proj-exterior-modern.jpg",
   },
   {
     title: "Cabinet Refinishing",
     slug: "cabinet-refinishing",
     description:
       "Keep the kitchen you have and change how it looks — degreased, deglossed, properly primed and sprayed to a finish that survives daily use.",
+    image: "/images/proj-interior-room.jpg",
   },
   {
     title: "Commercial Painting",
     slug: "commercial-painting",
     description:
       "Offices, storefronts, HOA common areas, and rental turnovers — scoped in writing and scheduled around your trading hours, tenants, or handover date.",
+    image: "/images/proj-exterior-mediterranean.jpg",
   },
 ];
 
