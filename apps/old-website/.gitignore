@@ -21,36 +21,8 @@ vite.out.log
 .vscode/
 .idea/
 
-# dependencies
-node_modules/
-
-# build output
-dist/
-dist-ssr/
-*.tsbuildinfo
-
-# env / secrets
-.env
-.env.local
-.env.*.local
-
-# logs
-*.log
-vite.err.log
-vite.out.log
-
-# editor / OS
-.DS_Store
-.vscode/
-.idea/
-
 # old Wix site scrape (reference junk, not part of the build)
 _old-wix-scrape/
 
 # raw photo dump from Google Drive (HEIC originals; only curated web copies live in public/images)
 _incoming-photos/
-
-
-
-# sensitive local business data
-business-secrets.json
