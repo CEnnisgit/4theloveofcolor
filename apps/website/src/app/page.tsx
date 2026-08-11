@@ -212,7 +212,10 @@ export default function HomePage() {
             className="max-w-7xl mx-auto px-4 lg:px-8 relative z-10"
           >
             <div className="mb-8 lg:mb-12">
-              <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-white leading-[1.1] tracking-tight max-w-2xl">
+              <p className="text-[10px] sm:text-sm font-bold uppercase tracking-[0.2em] text-[#d9a460] mb-3 sm:mb-4">
+                Our Services
+              </p>
+              <h2 className="font-serif text-2xl sm:text-4xl lg:text-5xl font-bold text-white leading-[1.1] tracking-tight max-w-2xl">
                 Painting that improves how your home and business live.
               </h2>
             </div>
