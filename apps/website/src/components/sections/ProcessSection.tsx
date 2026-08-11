@@ -6,7 +6,7 @@ import { processSteps } from "@/lib/data/content";
 
 export function ProcessSection() {
   return (
-    <section className="bg-warm-bg pt-10 pb-16 lg:pt-14 lg:pb-24 px-4 lg:px-8 border-y border-ink/5">
+    <section className="bg-warm-bg pt-10 pb-16 lg:pt-14 lg:pb-24 px-4 lg:px-8 border-t border-ink/5">
       <div className="max-w-7xl mx-auto">
         <div className="w-full flex justify-start mb-8">
           <div className="w-52 sm:w-60 h-9 flex items-center justify-center rounded-[var(--radius)] bg-ink text-white text-[11px] sm:text-[13px] font-bold uppercase tracking-[0.2em] text-center">
@@ -32,17 +32,7 @@ export function ProcessSection() {
             </div>
           </div>
 
-          <div className="lg:col-span-6 flex flex-col relative pl-5 md:pl-6">
-            {/* Retro Macintosh Rainbow Divider (Vertical) */}
-            <div className="absolute top-4 bottom-4 left-0 w-1.5 sm:w-2 flex flex-col opacity-90 shadow-sm">
-              <div className="flex-1 bg-[#61bb46]" /> {/* Green */}
-              <div className="flex-1 bg-[#fdb827]" /> {/* Yellow */}
-              <div className="flex-1 bg-[#f5821f]" /> {/* Orange */}
-              <div className="flex-1 bg-[#e03a3e]" /> {/* Red */}
-              <div className="flex-1 bg-[#963d97]" /> {/* Purple */}
-              <div className="flex-1 bg-[#009dcf]" /> {/* Blue */}
-            </div>
-
+          <div className="lg:col-span-6 flex flex-col relative lg:pl-12">
             {processSteps.map((step, idx) => (
               <motion.div
                 key={step.title}
@@ -53,7 +43,7 @@ export function ProcessSection() {
                 className="flex group"
               >
                 {/* Content Box */}
-                <div className="flex-grow py-8 md:py-12 border-b border-ink/10 group-last:border-b-0 pl-2">
+                <div className="flex-grow py-8 md:py-12 border-b border-ink/10 group-last:border-b-0">
                   <div className="flex items-baseline gap-3 mb-3">
                     <span className="font-serif text-2xl md:text-3xl font-black text-ink/30">
                       0{idx + 1}

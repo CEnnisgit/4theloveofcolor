@@ -4,7 +4,17 @@ import { serviceCities, lakewoodRanchNeighborhoods } from "@/lib/data/content";
 
 export function ServiceAreaSection() {
   return (
-    <section className="bg-ink text-white pt-16 pb-20 lg:pt-20 lg:pb-32 border-y border-white/5">
+    <section className="bg-ink text-white pt-16 pb-20 lg:pt-20 lg:pb-32 border-b border-white/5 relative overflow-hidden">
+      {/* Retro Macintosh Rainbow Divider */}
+      <div className="absolute top-0 left-0 w-full flex h-2 sm:h-3 z-30">
+        <div className="flex-1 bg-[#61bb46]" /> {/* Green */}
+        <div className="flex-1 bg-[#fdb827]" /> {/* Yellow */}
+        <div className="flex-1 bg-[#f5821f]" /> {/* Orange */}
+        <div className="flex-1 bg-[#e03a3e]" /> {/* Red */}
+        <div className="flex-1 bg-[#963d97]" /> {/* Purple */}
+        <div className="flex-1 bg-[#009dcf]" /> {/* Blue */}
+      </div>
+
       <div className="max-w-7xl mx-auto px-4 lg:px-8">
         <div className="w-full flex justify-start mb-8">
           <div className="w-52 sm:w-60 h-9 flex items-center justify-center rounded-[var(--radius)] bg-terracotta text-white text-[11px] sm:text-[13px] font-bold uppercase tracking-[0.2em] text-center">
