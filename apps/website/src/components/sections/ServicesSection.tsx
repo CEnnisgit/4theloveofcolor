@@ -52,7 +52,7 @@ export function ServicesSection() {
   return (
     <section className="bg-ink pt-12 lg:pt-16 pb-0 border-b border-white/5 relative overflow-hidden">
       {/* Retro Macintosh Rainbow Divider */}
-      <div className="absolute top-0 left-0 w-full flex h-2 sm:h-3 z-30">
+      <div className="absolute top-0 left-0 w-full flex h-2 sm:h-2.5 z-30">
         <div className="flex-1 bg-[#61bb46]" /> {/* Green */}
         <div className="flex-1 bg-[#fdb827]" /> {/* Yellow */}
         <div className="flex-1 bg-[#f5821f]" /> {/* Orange */}

@@ -13,7 +13,7 @@ import {
 
 export function SelectedWorkSection() {
   return (
-    <section className="bg-warm-bg pt-10 pb-12 lg:pt-14 lg:pb-16 px-4 lg:px-8 border-y border-ink/5">
+    <section className="bg-warm-bg pt-10 pb-12 lg:pt-14 lg:pb-16 px-4 lg:px-8">
       <motion.div 
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
