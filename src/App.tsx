@@ -1288,6 +1288,10 @@ function GuideDetailBody({ page }: { page: GuidePageData }) {
 
       <section className="section page-body">
         <p className="lead">{page.closing}</p>
+        <RelatedGuides
+          slugs={guidePages.map((g) => g.slug)}
+          exclude={page.slug}
+        />
       </section>
 
       <ServiceLinks />
@@ -1492,13 +1496,7 @@ function ServiceDetailBody({ page }: { page: ServicePageData }) {
 
       <section className="section page-body">
         <p className="lead">{page.closing}</p>
-        <p className="guide-crosslink">
-          Working out what this should cost?{" "}
-          <NavLink to="/guides/house-painting-cost-lakewood-ranch-sarasota">
-            What drives the price of a repaint here
-          </NavLink>{" "}
-          covers what moves the number and how to compare three quotes.
-        </p>
+        <RelatedGuides slugs={page.relatedGuides} />
       </section>
 
       <ServiceCityLinks serviceSlug={page.slug} />
@@ -1507,6 +1505,35 @@ function ServiceDetailBody({ page }: { page: ServicePageData }) {
 
       <CtaBanner />
     </>
+  );
+}
+
+/**
+ * Contextual links to guides that genuinely bear on the current page.
+ *
+ * Guides sit outside the main menu, so these links and the footer are most of
+ * what makes them discoverable — to readers and to Google. Renders nothing
+ * when a page has no relevant guide rather than padding out a list.
+ */
+function RelatedGuides({ slugs, exclude }: { slugs: string[]; exclude?: string }) {
+  const guides = slugs
+    .filter((slug) => slug !== exclude)
+    .map((slug) => guidePageBySlug(slug))
+    .filter((g): g is GuidePageData => Boolean(g));
+
+  if (guides.length === 0) return null;
+
+  return (
+    <div className="guide-crosslink">
+      <p>Worth a read before you decide:</p>
+      <ul>
+        {guides.map((guide) => (
+          <li key={guide.slug}>
+            <NavLink to={`/guides/${guide.slug}`}>{guide.h1}</NavLink>
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 }
 

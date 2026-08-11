@@ -49,6 +49,15 @@ export type ServicePage = {
   image: string | null;
   imageAlt: string;
   closing: string;
+  /**
+   * Slugs from guidePages.ts to link at the foot of this page.
+   *
+   * Contextual links, not a related-posts widget: a link from the exterior
+   * page to the stucco-peeling guide is useful to the reader and tells Google
+   * the two pages are about the same thing. Guides are out of the main menu,
+   * so these links plus the footer are most of what keeps them discoverable.
+   */
+  relatedGuides: string[];
 };
 
 export const servicePages: ServicePage[] = [
@@ -156,6 +165,7 @@ export const servicePages: ServicePage[] = [
     imageAlt: "",
     closing:
       "If you are weighing refinishing against replacement, the walkthrough is the fastest way to settle it. We will look at the boxes, the doors and the current finish and tell you plainly which one your kitchen justifies — including when the answer is replacement.",
+    relatedGuides: ["refinishing-cabinets-vs-replacing", "house-painting-cost-lakewood-ranch-sarasota"],
   },
   {
     slug: "interior-painting",
@@ -252,6 +262,7 @@ export const servicePages: ServicePage[] = [
       "Bedroom interior with warm greige walls, bright white crown molding and a smooth tray ceiling, freshly painted",
     closing:
       "Whether it is one room or the whole house, the walkthrough is free and we will be straight with you about what the surfaces need — including where you can spend less.",
+    relatedGuides: ["house-painting-cost-lakewood-ranch-sarasota"],
   },
   {
     slug: "exterior-painting",
@@ -344,6 +355,7 @@ export const servicePages: ServicePage[] = [
       "Large two-story white Florida home with a three-car garage, tile roof and paver driveway, freshly repainted",
     closing:
       "Exterior quotes are hard to compare because the preparation is where they differ and it is the part nobody itemizes. Ask us what we would do to your walls before any color goes on — the answer is the quote.",
+    relatedGuides: ["why-paint-peels-off-stucco", "how-often-to-repaint-a-florida-house", "house-painting-cost-lakewood-ranch-sarasota"],
   },
   {
     slug: "commercial-painting",
@@ -440,6 +452,7 @@ export const servicePages: ServicePage[] = [
       "Freshly painted single-story Florida property with soft gray stucco, white trim and a barrel-tile roof",
     closing:
       "Tell us the constraint — the trading hours, the handover date, the areas that cannot close — and we will build the scope and the schedule around it before quoting.",
+    relatedGuides: ["house-painting-cost-lakewood-ranch-sarasota"],
   },
 ];
 
