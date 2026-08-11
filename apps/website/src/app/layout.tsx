@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Playfair_Display, Libre_Franklin } from "next/font/google";
+import { getOrganizationSchema } from "@/lib/seo/schema";
 import "./globals.css";
 
 const playfair = Playfair_Display({
@@ -14,54 +15,48 @@ const libreFranklin = Libre_Franklin({
 });
 
 export const metadata: Metadata = {
-  title: "4 The Love of Color Painting | Lakewood Ranch & Sarasota, FL",
+  metadataBase: new URL("https://www.fortheloveofcolor.com"),
+  title: {
+    default: "4 The Love of Color Painting | Lakewood Ranch & Sarasota, FL",
+    template: "%s | 4 The Love of Color Painting",
+  },
   description:
     "Family-owned interior and exterior painting for homes and businesses across Lakewood Ranch, Sarasota, and the Suncoast of Florida. Color, finish, and detail work.",
-};
-
-const sabSchema = {
-  "@context": "https://schema.org",
-  "@type": "HomeAndConstructionBusiness",
-  "name": "4 THE LOVE OF COLOR LLC",
-  "alternateName": "4 The Love of Color Painting",
-  "url": "https://www.fortheloveofcolor.com",
-  "telephone": "+19175840069",
-  "email": "4theloveofcolorpainting@gmail.com",
-  "image": "https://www.fortheloveofcolor.com/images/logo.png",
-  "areaServed": [
-    {
-      "@type": "City",
-      "name": "Lakewood Ranch",
-      "containedInPlace": {
-        "@type": "State",
-        "name": "Florida"
-      }
-    },
-    {
-      "@type": "City",
-      "name": "Sarasota",
-      "containedInPlace": {
-        "@type": "State",
-        "name": "Florida"
-      }
-    },
-    {
-      "@type": "City",
-      "name": "Bradenton",
-      "containedInPlace": {
-        "@type": "State",
-        "name": "Florida"
-      }
-    }
+  keywords: [
+    "Lakewood Ranch painters",
+    "Sarasota house painting",
+    "interior painting Florida",
+    "exterior painting Sarasota",
+    "cabinet refinishing Lakewood Ranch",
+    "commercial painting Suncoast",
   ],
-  "openingHoursSpecification": {
-    "@type": "OpeningHoursSpecification",
-    "dayOfWeek": [
-      "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: "4 The Love of Color Painting | Lakewood Ranch & Sarasota, FL",
+    description:
+      "Family-owned interior and exterior painting for homes and businesses across Lakewood Ranch, Sarasota, and the Suncoast of Florida.",
+    url: "https://www.fortheloveofcolor.com",
+    siteName: "4 The Love of Color Painting",
+    images: [
+      {
+        url: "/images/logo.png",
+        width: 1200,
+        height: 630,
+        alt: "4 The Love of Color Painting Logo",
+      },
     ],
-    "opens": "08:00",
-    "closes": "18:00"
-  }
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "4 The Love of Color Painting | Lakewood Ranch & Sarasota, FL",
+    description:
+      "Family-owned interior and exterior painting for homes and businesses across Lakewood Ranch, Sarasota, and the Suncoast of Florida.",
+    images: ["/images/logo.png"],
+  },
 };
 
 export default function RootLayout({
@@ -69,6 +64,8 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const orgSchema = getOrganizationSchema();
+
   return (
     <html
       lang="en"
@@ -78,7 +75,7 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify(sabSchema).replace(/</g, "\\u003c"),
+            __html: JSON.stringify(orgSchema).replace(/</g, "\\u003c"),
           }}
         />
       </head>
