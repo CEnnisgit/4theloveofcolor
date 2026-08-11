@@ -227,7 +227,7 @@ export default function HomePage() {
                   return (
                     <div 
                       key={service.slug}
-                      className={`cursor-pointer transition-all duration-500 border-l-4 pl-4 sm:pl-6 py-2 ${isActive ? 'border-[#d9a460] opacity-100' : 'border-transparent opacity-40 hover:opacity-70'}`}
+                      className={`cursor-pointer transition-all duration-500 border-l-4 pl-4 sm:pl-6 py-2 ${isActive ? 'border-[#d9a460] opacity-100' : 'border-transparent opacity-60 hover:opacity-100'}`}
                       onMouseEnter={() => setHoveredService(service)}
                       onClick={() => setHoveredService(service)}
                     >
@@ -237,12 +237,12 @@ export default function HomePage() {
                       
                       <div className={`grid transition-all duration-500 ease-in-out ${isActive ? 'grid-rows-[1fr] opacity-100 mt-3 sm:mt-4' : 'grid-rows-[0fr] opacity-0 mt-0'}`}>
                         <div className="overflow-hidden">
-                          <p className="text-gray-300 text-sm sm:text-base mb-4 sm:mb-6 leading-relaxed">
+                          <p className="text-white/90 text-sm sm:text-base mb-4 sm:mb-6 leading-relaxed">
                             {service.description}
                           </p>
                           <div className="flex flex-wrap gap-2 mb-4 sm:mb-6">
                             {serviceBadges[service.slug]?.map(tag => (
-                              <span key={tag} className="text-[9px] sm:text-[10px] uppercase tracking-wider px-2 sm:px-3 py-1 sm:py-1.5 border border-white/20 rounded-full text-white/90 bg-white/5">
+                              <span key={tag} className="text-[10px] sm:text-xs font-bold uppercase tracking-wider px-2 sm:px-3 py-1 sm:py-1.5 border border-white/20 rounded-full text-white/90 bg-white/5">
                                 {tag}
                               </span>
                             ))}
@@ -278,10 +278,10 @@ export default function HomePage() {
                       src={service.image}
                       alt={service.title}
                       fill
-                      className={`object-cover transition-opacity duration-1000 ${hoveredService.slug === service.slug ? 'opacity-100 z-10' : 'opacity-0 z-0'}`}
+                      className={`object-cover brightness-105 contrast-105 transition-opacity duration-1000 ${hoveredService.slug === service.slug ? 'opacity-100 z-10' : 'opacity-0 z-0'}`}
                     />
                   ))}
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#211711]/90 via-[#211711]/20 to-transparent z-20 pointer-events-none" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#211711]/40 via-transparent to-transparent z-20 pointer-events-none" />
                 </div>
               </div>
             </div>
