@@ -50,79 +50,56 @@ export const lakewoodRanchNeighborhoods = [
   "Indigo",
 ];
 
-export interface MacroService {
+export interface ServiceCategory {
+  id: string;
   title: string;
-  slug: string;
   description: string;
   image: string;
   persona: "residential" | "commercial";
+  services: string[]; // Slugs of services in this category
 }
 
-export const macroServices: MacroService[] = [
+export const serviceCategories: ServiceCategory[] = [
   {
-    title: "Interior Painting",
-    slug: "interior-painting",
-    description:
-      "Refresh the rooms you actually live in — walls, ceilings, trim, and doors finished with clean lines and a smooth, even coat that holds up to Florida humidity.",
+    id: "residential-interior",
+    title: "Interior Solutions",
+    description: "Refresh the rooms you actually live in — walls, ceilings, trim, and doors finished with clean lines and a smooth, even coat that holds up to Florida humidity.",
     image: "/images/proj-interior-bedroom.jpg",
     persona: "residential",
+    services: ["interior-painting", "cabinet-refinishing", "popcorn-ceiling-removal", "wallpaper-removal", "color-consultation"],
   },
   {
-    title: "Exterior Painting",
-    slug: "exterior-painting",
-    description:
-      "Boost curb appeal and protect your home from sun, salt air, and humidity with durable, weather-rated coatings and prep built to last on the Gulf Coast.",
+    id: "residential-exterior",
+    title: "Exterior Solutions",
+    description: "Boost curb appeal and protect your home from sun, salt air, and humidity with durable, weather-rated coatings and prep built to last on the Gulf Coast.",
     image: "/images/proj-exterior-modern.jpg",
     persona: "residential",
+    services: ["exterior-painting", "stucco-repair", "paver-sealing", "pressure-washing"],
   },
   {
-    title: "Cabinet Refinishing",
-    slug: "cabinet-refinishing",
-    description:
-      "Keep the kitchen you have and change how it looks — degreased, deglossed, properly primed and sprayed to a finish that survives daily use.",
+    id: "residential-prep",
+    title: "Prep & Maintenance",
+    description: "The difference between a 1-year and 10-year finish is the prep. We fix the underlying flaws before a brush ever touches the wall.",
     image: "/images/proj-interior-room.jpg",
     persona: "residential",
+    services: ["drywall-repair", "stucco-repair", "pressure-washing", "paver-sealing"],
   },
   {
-    title: "Commercial Interior",
-    slug: "commercial-interior-painting",
-    description:
-      "Offices, retail, and restaurants. Scoped in writing and scheduled around your trading hours, tenants, or handover date with minimal disruption.",
-    image: "/images/proj-interior-bedroom.jpg",
-    persona: "commercial",
-  },
-  {
-    title: "Commercial Exterior",
-    slug: "commercial-exterior-painting",
-    description:
-      "Standout retail plazas, warehouses, and strip malls. Heavy-duty washing, waterproofing, and elastomeric coatings that survive Florida weather.",
-    image: "/images/proj-exterior-modern.jpg",
-    persona: "commercial",
-  },
-  {
-    title: "HOA & Multi-Family",
-    slug: "hoa-multi-family-painting",
-    description:
-      "Condos, townhomes, and community amenities. We handle board approvals, phased scheduling, and resident communications for property managers.",
+    id: "commercial-core",
+    title: "Core Commercial Painting",
+    description: "Offices, storefronts, and HOAs — scoped in writing and scheduled around your trading hours, tenants, or handover date with minimal disruption.",
     image: "/images/proj-exterior-mediterranean.jpg",
     persona: "commercial",
+    services: ["commercial-interior-painting", "commercial-exterior-painting", "hoa-multi-family-painting"],
   },
   {
-    title: "Stucco & Exterior Repair",
-    slug: "stucco-repair",
-    description:
-      "Maintain the structural integrity of your commercial buildings with professional crack repair, pressure washing, and UV-resistant elastomerics.",
+    id: "commercial-prep",
+    title: "Commercial Prep & Repair",
+    description: "Turnovers require speed. We fix underlying wall flaws, patch holes, and prepare surfaces rapidly before laying down fresh, washable paint.",
     image: "/images/proj-exterior-arched.jpg",
     persona: "commercial",
-  },
-  {
-    title: "Drywall & Prep",
-    slug: "drywall-repair",
-    description:
-      "Turnovers require speed. We fix the underlying wall flaws, patch holes, and prepare surfaces rapidly before laying down fresh, washable paint.",
-    image: "/images/proj-interior-bedroom.jpg",
-    persona: "commercial",
-  },
+    services: ["drywall-repair", "stucco-repair", "pressure-washing", "paver-sealing"],
+  }
 ];
 
 export const homeFeatures = [

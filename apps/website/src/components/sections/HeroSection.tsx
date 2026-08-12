@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { contact } from "@/lib/data/content";
+import { StockPhotoWatermark } from "@/components/ui/StockPhotoWatermark";
 
 export function HeroSection() {
   return (
@@ -84,6 +85,7 @@ export function HeroSection() {
               priority
               className="object-cover hover:scale-105 transition-transform duration-700"
             />
+            <StockPhotoWatermark />
           </div>
           
           {/* Secondary Overlap (Landscape Detail) */}
@@ -94,6 +96,7 @@ export function HeroSection() {
               fill
               className="object-cover hover:scale-105 transition-transform duration-700"
             />
+            <StockPhotoWatermark />
           </div>
         </div>
       </motion.div>

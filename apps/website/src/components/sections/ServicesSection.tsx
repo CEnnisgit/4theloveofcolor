@@ -4,30 +4,23 @@ import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import { macroServices } from "@/lib/data/content";
-
-const serviceBadges: Record<string, string[]> = {
-  "interior-painting": ["Walls & Ceilings", "Crown & Trim", "Low-VOC / Zero-Odor", "Precision Masking"],
-  "exterior-painting": ["Stucco & Trim", "UV-Resistant", "High-Pressure Wash", "5-Year Guarantee"],
-  "cabinet-refinishing": ["HVLP Spray Finish", "Degrease & Degloss", "Factory-Smooth", "Durable Polyurethane"],
-  "commercial-painting": ["Offices & Retail", "HOA Common Areas", "Flexible Hours", "Written Scope"],
-  "stucco-repair": ["Crack Repair", "Elastomeric Coating", "Waterproofing", "Pressure Wash"],
-  "drywall-repair": ["Patching", "Texture Matching", "Smooth Finish", "Fast Turnover"],
-};
+import { serviceCategories } from "@/lib/data/content";
+import { servicePageBySlug } from "@/lib/data/servicePages";
+import { StockPhotoWatermark } from "@/components/ui/StockPhotoWatermark";
 
 export function ServicesSection() {
   const [activeTab, setActiveTab] = useState<"residential" | "commercial">("residential");
   
-  // Filter services based on active tab
-  const filteredServices = macroServices.filter(s => s.persona === activeTab);
-  const [hoveredService, setHoveredService] = useState(filteredServices[0]);
+  // Filter categories based on active tab
+  const filteredCategories = serviceCategories.filter(c => c.persona === activeTab);
+  const [hoveredCategory, setHoveredCategory] = useState(filteredCategories[0]);
   
   const wheelContainerRef = useRef<HTMLDivElement>(null);
   const scrollTimeout = useRef<NodeJS.Timeout | null>(null);
 
-  // Reset hovered service when tab changes
+  // Reset hovered category when tab changes
   useEffect(() => {
-    setHoveredService(macroServices.filter(s => s.persona === activeTab)[0]);
+    setHoveredCategory(serviceCategories.filter(c => c.persona === activeTab)[0]);
   }, [activeTab]);
 
   useEffect(() => {
@@ -43,9 +36,9 @@ export function ServicesSection() {
         scrollTimeout.current = null;
       }, 400);
 
-      setHoveredService((current) => {
-        const currentFiltered = macroServices.filter(s => s.persona === activeTab);
-        const currentIndex = currentFiltered.findIndex(s => s.slug === current.slug);
+      setHoveredCategory((current) => {
+        const currentFiltered = serviceCategories.filter(c => c.persona === activeTab);
+        const currentIndex = currentFiltered.findIndex(c => c.id === current.id);
         
         if (e.deltaY > 0) {
           const nextIndex = Math.min(currentIndex + 1, currentFiltered.length - 1);
@@ -121,39 +114,44 @@ export function ServicesSection() {
                 transition={{ duration: 0.3 }}
                 className="flex flex-col space-y-4"
               >
-                {filteredServices.map((service) => {
-                  const isActive = hoveredService?.slug === service.slug;
+                {filteredCategories.map((category) => {
+                  const isActive = hoveredCategory?.id === category.id;
                   return (
                     <div 
-                      key={service.slug}
+                      key={category.id}
                       className={`cursor-pointer transition-all duration-500 border-l-4 pl-4 sm:pl-6 py-2 ${isActive ? 'border-gold opacity-100' : 'border-transparent opacity-60 hover:opacity-100'}`}
-                      onMouseEnter={() => setHoveredService(service)}
-                      onClick={() => setHoveredService(service)}
+                      onMouseEnter={() => setHoveredCategory(category)}
+                      onClick={() => setHoveredCategory(category)}
                     >
                       <h3 className="font-serif text-2xl sm:text-3xl lg:text-3xl font-bold text-white mb-2 sm:mb-3 transition-colors">
-                        {service.title}
+                        {category.title}
                       </h3>
                       
                       <div className={`grid transition-all duration-500 ease-in-out ${isActive ? 'grid-rows-[1fr] opacity-100 mt-3 sm:mt-4' : 'grid-rows-[0fr] opacity-0 mt-0'}`}>
                         <div className="overflow-hidden">
                           <p className="text-white/90 text-sm sm:text-base mb-4 sm:mb-6 leading-relaxed">
-                            {service.description}
+                            {category.description}
                           </p>
                           <div className="flex flex-wrap gap-2 mb-4 sm:mb-6">
-                            {serviceBadges[service.slug]?.map(tag => (
-                              <span key={tag} className="text-[10px] sm:text-xs font-bold uppercase tracking-wider px-2 sm:px-3 py-1 sm:py-1.5 border border-white/20 rounded-full text-white/90 bg-white/5">
-                                {tag}
-                              </span>
-                            ))}
+                            {category.services.map(slug => {
+                              const page = servicePageBySlug(slug);
+                              if (!page) return null;
+                              return (
+                                <span key={slug} className="text-[10px] sm:text-xs font-bold uppercase tracking-wider px-2 sm:px-3 py-1 sm:py-1.5 border border-white/20 rounded-full text-white/90 bg-white/5 whitespace-nowrap">
+                                  {page.name}
+                                </span>
+                              );
+                            })}
                           </div>
 
                           <div className="block lg:hidden mb-6 relative aspect-[16/10] rounded-sm overflow-hidden shadow-lg border border-white/10">
                             <Image
-                              src={service.image}
-                              alt={service.title}
+                              src={category.image}
+                              alt={category.title}
                               fill
                               className="object-cover"
                             />
+                            <StockPhotoWatermark />
                           </div>
 
                           <Link href={`/${activeTab}`} className="inline-flex items-center text-gold font-bold uppercase tracking-widest text-[10px] sm:text-xs hover:text-white transition-colors group">
@@ -171,15 +169,17 @@ export function ServicesSection() {
           
           <div className="hidden lg:block lg:col-span-7 sticky top-32">
             <div className="relative aspect-[4/3] lg:aspect-[16/10] rounded-sm overflow-hidden shadow-2xl border border-white/10 bg-black/50">
-              {filteredServices.map((service) => (
-                <Image
-                  key={service.slug}
-                  src={service.image}
-                  alt={service.title}
-                  fill
-                  priority={hoveredService?.slug === service.slug}
-                  className={`object-cover brightness-105 contrast-105 transition-opacity duration-1000 ${hoveredService?.slug === service.slug ? 'opacity-100 z-10' : 'opacity-0 z-0'}`}
-                />
+              {filteredCategories.map((category) => (
+                <div key={category.id} className={`absolute inset-0 transition-opacity duration-1000 ${hoveredCategory?.id === category.id ? 'opacity-100 z-10' : 'opacity-0 z-0'}`}>
+                  <Image
+                    src={category.image}
+                    alt={category.title}
+                    fill
+                    priority={hoveredCategory?.id === category.id}
+                    className="object-cover brightness-105 contrast-105"
+                  />
+                  <StockPhotoWatermark />
+                </div>
               ))}
               <div className="absolute inset-0 bg-gradient-to-t from-ink/40 via-transparent to-transparent z-20 pointer-events-none" />
             </div>
