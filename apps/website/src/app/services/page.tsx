@@ -42,8 +42,6 @@ interface ServiceDetail {
   image: string;
   alt: string;
   prepSteps: string[];
-  paintGrades: string;
-  idealFor: string;
 }
 
 const macroServicesDetailed: ServiceDetail[] = [
@@ -62,8 +60,6 @@ const macroServicesDetailed: ServiceDetail[] = [
       "Hand-caulking baseboard, crown molding, and door trim joints",
       "Two full finish coats for even coverage, rich color depth, and washable durability",
     ],
-    paintGrades: "Sherwin-Williams Emerald® Interior Latex & Emerald® Urethane Trim Enamel",
-    idealFor: "Bedrooms, kitchens, open living areas, tray ceilings, hallways, trim, and doors.",
   },
   {
     title: "Exterior Painting",
@@ -80,8 +76,6 @@ const macroServicesDetailed: ServiceDetail[] = [
       "Loxon® masonry primer sealing raw stucco and patch repairs",
       "Two coats of SW Duration® Exterior providing a flexible UV and rain barrier",
     ],
-    paintGrades: "Sherwin-Williams Duration® Exterior Acrylic / Loxon® High-Build Primer",
-    idealFor: "Single and multi-story stucco homes, coastal residences, soffits, fascia, lanais, front doors, and garage doors.",
   },
   {
     title: "Cabinet Refinishing",
@@ -98,8 +92,6 @@ const macroServicesDetailed: ServiceDetail[] = [
       "High-bond stain-blocking primer coats with intermediate fine sanding",
       "HVLP spray application in controlled containment for a brushmark-free finish",
     ],
-    paintGrades: "Sherwin-Williams Gallery Series™ Waterborne Topcoat or Emerald® Urethane Enamel",
-    idealFor: "Kitchen cabinets, bathroom vanities, island accents, and built-in entertainment units.",
   },
   {
     title: "Commercial Painting",
@@ -116,8 +108,6 @@ const macroServicesDetailed: ServiceDetail[] = [
       "Safety barricades, drop-cloth containment, and dust management during work",
       "Flexible evening or weekend scheduling for zero disruption to your customers, tenants, or staff",
     ],
-    paintGrades: "Sherwin-Williams SuperPaint® Commercial Latex & Loxon® Sealer",
-    idealFor: "HOA clubhouses, perimeter walls, retail storefronts, office suites, and rental turnovers.",
   },
 ];
 
@@ -238,15 +228,8 @@ export default function ServicesPage() {
                     </ul>
                   </div>
 
-                  {/* Specifications Footer */}
-                  <div className="pt-6 border-t border-ink/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 text-xs">
-                    <div className="space-y-1">
-                      <span className="text-xs uppercase font-bold tracking-widest text-gold block">
-                        Specified System
-                      </span>
-                      <span className="text-ink font-semibold">{service.paintGrades}</span>
-                    </div>
-
+                  {/* Action Footer */}
+                  <div className="pt-6 border-t border-ink/10 flex flex-col sm:flex-row items-start sm:items-center justify-end gap-6 text-xs">
                     <Link
                       href={`/contact?service=${service.slug}`}
                       className="bg-terracotta text-white font-bold uppercase tracking-widest text-xs h-11 px-7 rounded-[var(--radius)] hover:bg-[var(--color-terracotta-dark)] active:scale-[0.99] transition-all inline-flex items-center justify-center shrink-0 w-full sm:w-auto shadow-md"
