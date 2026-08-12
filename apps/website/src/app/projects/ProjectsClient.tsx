@@ -105,10 +105,6 @@ export function ProjectsClient() {
                       <p className="text-sm text-ink-muted font-medium leading-relaxed">
                         {project.summary}
                       </p>
-                      <div className="pt-3 border-t border-ink/10 flex items-center justify-between text-xs text-ink/80 font-semibold">
-                        <span>{project.paintSpec}</span>
-                        <span className="text-ink-muted font-normal">{project.timeline}</span>
-                      </div>
                     </CardContent>
                   </div>
                 </Card>
@@ -118,7 +114,7 @@ export function ProjectsClient() {
         </Tabs>
       </section>
 
-      {/* Clean Full-Res Photo Lightbox Modal */}
+      {/* Clean Full-Res Photo Lightbox Modal with Smooth Center Fade & Zoom */}
       <Dialog open={!!selectedProject} onOpenChange={(open) => !open && setSelectedProject(null)}>
         {selectedProject && (
           <DialogContent className="max-w-4xl bg-warm-card border-ink/20 p-6 sm:p-8 rounded-[var(--radius)] shadow-2xl">
@@ -144,15 +140,11 @@ export function ProjectsClient() {
                 />
               </div>
 
-              {/* Concise Summary & Specs */}
-              <div className="p-5 bg-white border border-ink/15 rounded-[var(--radius)] space-y-3 text-sm shadow-xs">
+              {/* Concise Summary */}
+              <div className="p-5 bg-white border border-ink/15 rounded-[var(--radius)] text-sm shadow-xs">
                 <p className="text-ink font-medium leading-relaxed">
                   {selectedProject.summary}
                 </p>
-                <div className="pt-3 border-t border-ink/10 flex flex-wrap items-center justify-between gap-2 text-xs font-bold text-ink/80">
-                  <span>Specification: {selectedProject.paintSpec}</span>
-                  <span>Timeline: {selectedProject.timeline}</span>
-                </div>
               </div>
             </div>
 
