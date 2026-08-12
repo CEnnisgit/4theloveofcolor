@@ -74,75 +74,80 @@ export default function ContactPage() {
           </p>
         </section>
 
-        {/* Main Contact Section */}
+        {/* Main Contact Section - Split Espresso & Warm Editorial Card */}
         <section className="px-4 lg:px-8 pb-16 lg:pb-24 max-w-7xl mx-auto w-full">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
-            {/* Left Column: Direct Info & Callouts */}
-            <div className="lg:col-span-5 space-y-6">
-              {/* Contact Direct Box */}
-              <div className="bg-white border border-ink/10 rounded-[var(--radius)] p-6 sm:p-8 space-y-6 shadow-sm">
-                <h2 className="font-serif text-2xl font-bold text-ink border-b border-ink/10 pb-4">
+          <div className="grid lg:grid-cols-12 shadow-2xl border border-ink/10 bg-warm-card rounded-[var(--radius)] overflow-hidden">
+            
+            {/* Left Column: Rich Dark Espresso Brown Anchor */}
+            <div className="lg:col-span-5 bg-ink text-white p-8 sm:p-12 lg:p-14 flex flex-col justify-between space-y-8">
+              <div className="space-y-6">
+                <span className="text-xs font-bold uppercase tracking-[0.2em] text-terracotta block">
                   Get In Touch
+                </span>
+                <h2 className="font-serif text-3xl sm:text-4xl font-bold leading-tight text-white">
+                  Let&apos;s talk about your space.
                 </h2>
+                <p className="text-sm text-gray-300 font-medium leading-relaxed">
+                  Have a question or ready to schedule your walkthrough? Reach out directly to Edwin and our family team.
+                </p>
+              </div>
 
-                <div className="space-y-4 text-sm font-medium">
-                  <div>
-                    <span className="text-xs uppercase font-bold text-ink-muted tracking-wider block mb-1">
-                      Phone
-                    </span>
-                    <a
-                      href={contact.phoneHref}
-                      className="font-serif text-xl sm:text-2xl font-bold text-ink hover:text-terracotta transition-colors"
-                    >
-                      {contact.phone}
-                    </a>
-                    <p className="text-xs text-ink-muted mt-1">{business.hours}</p>
-                  </div>
+              <div className="space-y-6 pt-6 border-t border-white/10 text-sm">
+                <div>
+                  <span className="text-xs uppercase tracking-[0.2em] font-bold text-gold block mb-1">
+                    Call Direct
+                  </span>
+                  <a
+                    href={contact.phoneHref}
+                    className="font-serif text-2xl font-bold text-white hover:text-terracotta transition-colors"
+                  >
+                    {contact.phone}
+                  </a>
+                  <p className="text-xs text-gray-400 mt-0.5">{business.hours}</p>
+                </div>
 
-                  <div className="pt-3 border-t border-ink/5">
-                    <span className="text-xs uppercase font-bold text-ink-muted tracking-wider block mb-1">
-                      Email
-                    </span>
-                    <a
-                      href={contact.emailHref}
-                      className="font-medium text-ink hover:text-terracotta transition-colors break-all"
-                    >
-                      {contact.email}
-                    </a>
-                  </div>
+                <div className="pt-3 border-t border-white/10">
+                  <span className="text-xs uppercase tracking-[0.2em] font-bold text-gold block mb-1">
+                    Email
+                  </span>
+                  <a
+                    href={contact.emailHref}
+                    className="font-medium text-white hover:text-terracotta transition-colors break-all"
+                  >
+                    {contact.email}
+                  </a>
+                </div>
 
-                  <div className="pt-3 border-t border-ink/5">
-                    <span className="text-xs uppercase font-bold text-ink-muted tracking-wider block mb-1">
-                      Service Area
-                    </span>
-                    <p className="text-ink font-semibold">
-                      Lakewood Ranch, Sarasota, Bradenton
-                    </p>
-                    <p className="text-xs text-ink-muted mt-0.5">
-                      Palmetto, Parrish, Venice, Osprey &amp; Florida Suncoast
-                    </p>
-                  </div>
+                <div className="pt-3 border-t border-white/10">
+                  <span className="text-xs uppercase tracking-[0.2em] font-bold text-gold block mb-1">
+                    Service Area
+                  </span>
+                  <p className="text-white font-semibold">
+                    Lakewood Ranch, Sarasota, Bradenton
+                  </p>
+                  <p className="text-xs text-gray-400 mt-0.5">
+                    Parrish, Palmetto, Venice, Osprey &amp; Suncoast
+                  </p>
                 </div>
               </div>
 
-              {/* Family Promise Box */}
-              <div className="p-6 bg-white border border-ink/10 rounded-[var(--radius)] space-y-2 shadow-sm">
-                <h3 className="font-serif text-lg font-bold text-ink">
-                  Our Family Promise
+              <div className="pt-6 border-t border-white/10 space-y-1.5">
+                <h3 className="font-serif text-base font-bold text-white">
+                  Our Family Guarantee
                 </h3>
-                <p className="text-sm text-ink-muted leading-relaxed font-medium">
-                  Edwin and his sons handle your walkthrough and stand behind the quote. No rotating subcontractors and no unexpected price changes.
+                <p className="text-xs text-gray-300 leading-relaxed font-medium">
+                  Edwin and his sons handle your walkthrough and stand behind the estimate. No subcontractors, no surprise fees.
                 </p>
               </div>
             </div>
 
-            {/* Right Column: Hero Estimate Request Form Container */}
-            <div className="lg:col-span-7 bg-white border border-ink/10 border-t-4 border-t-terracotta rounded-[var(--radius)] p-6 sm:p-10 shadow-md">
-              <div className="mb-6 pb-4 border-b border-ink/10">
+            {/* Right Column: Warm Editorial Form Container */}
+            <div className="lg:col-span-7 p-8 sm:p-12 lg:p-14 bg-warm-card flex flex-col justify-center space-y-6">
+              <div className="border-b border-ink/10 pb-4">
                 <h2 className="font-serif text-2xl sm:text-3xl font-bold text-ink">
                   Request Your Free Estimate
                 </h2>
-                <p className="text-xs sm:text-sm text-ink-muted mt-1">
+                <p className="text-xs sm:text-sm text-ink-muted mt-1 font-medium">
                   Fill out your details below and we will respond within 24 hours.
                 </p>
               </div>
@@ -173,7 +178,7 @@ export default function ContactPage() {
                       type="text"
                       required
                       placeholder="e.g. Sarah Jenkins"
-                      className="w-full bg-warm-bg border border-ink/20 focus:border-terracotta focus:ring-2 focus:ring-terracotta/20 focus:bg-white text-sm rounded-[var(--radius)] h-11 px-3.5 text-ink outline-none transition-all"
+                      className="w-full bg-white border border-ink/20 focus:border-terracotta focus:ring-2 focus:ring-terracotta/20 text-sm rounded-[var(--radius)] h-11 px-3.5 text-ink placeholder:text-ink/40 outline-none transition-all"
                     />
                   </div>
 
@@ -187,7 +192,7 @@ export default function ContactPage() {
                       type="tel"
                       required
                       placeholder="(941) 555-0199"
-                      className="w-full bg-warm-bg border border-ink/20 focus:border-terracotta focus:ring-2 focus:ring-terracotta/20 focus:bg-white text-sm rounded-[var(--radius)] h-11 px-3.5 text-ink outline-none transition-all"
+                      className="w-full bg-white border border-ink/20 focus:border-terracotta focus:ring-2 focus:ring-terracotta/20 text-sm rounded-[var(--radius)] h-11 px-3.5 text-ink placeholder:text-ink/40 outline-none transition-all"
                     />
                   </div>
                 </div>
@@ -203,7 +208,7 @@ export default function ContactPage() {
                       type="email"
                       required
                       placeholder="name@example.com"
-                      className="w-full bg-warm-bg border border-ink/20 focus:border-terracotta focus:ring-2 focus:ring-terracotta/20 focus:bg-white text-sm rounded-[var(--radius)] h-11 px-3.5 text-ink outline-none transition-all"
+                      className="w-full bg-white border border-ink/20 focus:border-terracotta focus:ring-2 focus:ring-terracotta/20 text-sm rounded-[var(--radius)] h-11 px-3.5 text-ink placeholder:text-ink/40 outline-none transition-all"
                     />
                   </div>
 
@@ -216,7 +221,7 @@ export default function ContactPage() {
                       name="location"
                       type="text"
                       placeholder="e.g. Lakewood Ranch"
-                      className="w-full bg-warm-bg border border-ink/20 focus:border-terracotta focus:ring-2 focus:ring-terracotta/20 focus:bg-white text-sm rounded-[var(--radius)] h-11 px-3.5 text-ink outline-none transition-all"
+                      className="w-full bg-white border border-ink/20 focus:border-terracotta focus:ring-2 focus:ring-terracotta/20 text-sm rounded-[var(--radius)] h-11 px-3.5 text-ink placeholder:text-ink/40 outline-none transition-all"
                     />
                   </div>
                 </div>
@@ -228,7 +233,7 @@ export default function ContactPage() {
                   <select
                     id="serviceType"
                     name="serviceType"
-                    className="w-full bg-warm-bg border border-ink/20 focus:border-terracotta focus:ring-2 focus:ring-terracotta/20 focus:bg-white text-sm rounded-[var(--radius)] h-11 px-3.5 text-ink outline-none transition-all appearance-none cursor-pointer"
+                    className="w-full bg-white border border-ink/20 focus:border-terracotta focus:ring-2 focus:ring-terracotta/20 text-sm rounded-[var(--radius)] h-11 px-3.5 text-ink outline-none transition-all cursor-pointer"
                   >
                     <option value="Interior Painting">Interior Painting</option>
                     <option value="Exterior Painting">Exterior Painting</option>
@@ -247,18 +252,18 @@ export default function ContactPage() {
                     name="message"
                     rows={4}
                     placeholder="Tell us about the project — rooms to paint, exterior condition, cabinet count, or preferred timeline..."
-                    className="w-full bg-warm-bg border border-ink/20 focus:border-terracotta focus:ring-2 focus:ring-terracotta/20 focus:bg-white text-sm rounded-[var(--radius)] p-3.5 text-ink outline-none transition-all resize-y min-h-[100px]"
+                    className="w-full bg-white border border-ink/20 focus:border-terracotta focus:ring-2 focus:ring-terracotta/20 text-sm rounded-[var(--radius)] p-3.5 text-ink placeholder:text-ink/40 outline-none transition-all resize-y min-h-[100px]"
                   />
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full bg-terracotta text-white font-bold text-xs uppercase tracking-widest h-12 px-6 rounded-[var(--radius)] hover:bg-[var(--color-terracotta-dark)] active:scale-[0.99] transition-all shadow-sm cursor-pointer"
+                  className="w-full bg-terracotta text-white font-bold text-xs uppercase tracking-widest h-12 px-6 rounded-[var(--radius)] hover:bg-[var(--color-terracotta-dark)] active:scale-[0.99] transition-all shadow-md cursor-pointer"
                 >
                   Send Estimate Request
                 </button>
 
-                <p className="text-xs text-ink-muted text-center pt-2">
+                <p className="text-xs text-ink-muted text-center pt-1 font-medium">
                   Zero obligation • Your information is private and never shared.
                 </p>
               </form>
