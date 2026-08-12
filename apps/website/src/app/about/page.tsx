@@ -108,95 +108,96 @@ export default function AboutPage() {
           </p>
         </section>
 
-        {/* 2px Dark Ink Section Divider */}
-        <div className="max-w-7xl mx-auto px-4 lg:px-8 w-full mb-12">
-          <div className="h-0.5 bg-ink/30 w-full" />
-        </div>
-
-        {/* Origin Story Section */}
+        {/* Origin Story Split Section */}
         <section className="px-4 lg:px-8 pb-16 lg:pb-24 max-w-7xl mx-auto w-full">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
-            {/* Narrative Column */}
-            <div className="lg:col-span-7 space-y-6">
-              <h2 className="font-serif text-2xl sm:text-4xl font-bold text-ink leading-tight">
-                Built on Family Pride and Doing the Job Right
-              </h2>
+          <div className="grid lg:grid-cols-12 shadow-2xl border border-ink/10 bg-warm-card rounded-[var(--radius)] overflow-hidden">
+            {/* Left Narrative Column */}
+            <div className="lg:col-span-7 p-8 sm:p-12 lg:p-14 space-y-6 flex flex-col justify-between">
+              <div className="space-y-4">
+                <span className="text-xs uppercase font-bold tracking-[0.2em] text-terracotta block">
+                  The Family Story
+                </span>
+                <h2 className="font-serif text-2xl sm:text-4xl font-bold text-ink leading-tight">
+                  Built on Family Pride and Doing the Job Right
+                </h2>
 
-              <p className="text-base text-ink-muted leading-relaxed font-medium">
-                Edwin started <strong className="text-ink font-semibold">4 The Love of Color</strong> with a simple standard: treat every home like our own, never rush prep work, and deliver clean, lasting results.
-              </p>
+                <p className="text-base text-ink-muted leading-relaxed font-medium">
+                  Edwin started <strong className="text-ink font-semibold">4 The Love of Color</strong> with a simple standard: treat every home like our own, never rush prep work, and deliver clean, lasting results.
+                </p>
 
-              <p className="text-sm sm:text-base text-ink-muted leading-relaxed">
-                As his sons grew into the business, Edwin taught them the trade from the ground up—from thorough pressure washing to clear away salt air and mildew, to careful masking that protects your floors and trim. Today, Edwin and his sons work side-by-side on every Suncoast project.
-              </p>
+                <p className="text-sm sm:text-base text-ink-muted leading-relaxed">
+                  As his sons grew into the business, Edwin taught them the trade from the ground up—from thorough pressure washing to clear away salt air and mildew, to careful masking that protects your floors and trim. Today, Edwin and his sons work side-by-side on every Suncoast project.
+                </p>
+              </div>
 
-              {/* No Subcontractors Callout */}
-              <div className="p-6 bg-white border border-ink/10 rounded-[var(--radius)] space-y-2 shadow-sm">
-                <h3 className="font-serif text-lg font-bold text-ink">
+              {/* Espresso No-Subcontractor Callout Card */}
+              <div className="p-6 bg-ink text-white rounded-[var(--radius)] space-y-2 border border-white/10 shadow-md">
+                <span className="text-xs uppercase font-bold tracking-wider text-gold block">
+                  Family Direct
+                </span>
+                <h3 className="font-serif text-lg font-bold text-white">
                   No Subcontractors—Ever
                 </h3>
-                <p className="text-sm text-ink-muted leading-relaxed">
+                <p className="text-xs sm:text-sm text-gray-300 leading-relaxed font-medium">
                   We never hand your job off to third-party subcontractors. The family you meet during your estimate is the exact team on the ladders and walking the finished job with you.
                 </p>
               </div>
             </div>
 
-            {/* Photo Column */}
-            <div className="lg:col-span-5">
-              <div className="border border-ink/10 rounded-[var(--radius)] bg-white overflow-hidden shadow-sm">
-                <div className="aspect-[4/3] relative">
-                  <Image
-                    src="/images/proj-exterior-white-2story.jpg"
-                    alt="Florida Suncoast home painted by 4 The Love of Color"
-                    fill
-                    sizes="(max-width: 1024px) 100vw, 40vw"
-                    className="object-cover"
-                    priority
-                  />
-                </div>
-                <div className="p-6 bg-ink text-white space-y-2">
-                  <p className="font-serif text-base font-bold italic text-white leading-snug">
-                    &ldquo;Every house we paint carries our family name. That&apos;s why we never rush prep or compromise on finish quality.&rdquo;
-                  </p>
-                  <p className="text-xs text-gold uppercase tracking-wider font-bold">
-                    — Edwin, Founder
-                  </p>
-                </div>
+            {/* Right Photo Column */}
+            <div className="lg:col-span-5 relative bg-ink flex flex-col justify-between">
+              <div className="relative aspect-[4/3] lg:aspect-auto lg:h-full w-full min-h-[300px]">
+                <Image
+                  src="/images/proj-exterior-white-2story.jpg"
+                  alt="Florida Suncoast home painted by 4 The Love of Color"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 40vw"
+                  className="object-cover"
+                  priority
+                />
+              </div>
+              <div className="p-6 sm:p-8 bg-ink text-white space-y-2 border-t border-white/10">
+                <p className="font-serif text-base sm:text-lg font-bold italic text-white leading-snug">
+                  &ldquo;Every house we paint carries our family name. That&apos;s why we never rush prep or compromise on finish quality.&rdquo;
+                </p>
+                <p className="text-xs text-gold uppercase tracking-wider font-bold">
+                  — Edwin, Founder
+                </p>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Guarantees Section */}
-        <section className="px-4 lg:px-8 py-12 lg:py-16 bg-white border-t border-b border-ink/10 w-full">
-          <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+        {/* Guarantees Accordion Section */}
+        <section className="px-4 lg:px-8 py-16 lg:py-24 bg-warm-bg border-t border-b border-ink/10 w-full">
+          <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
             <div className="lg:col-span-5 space-y-4">
-              <span className="text-xs uppercase font-bold tracking-[0.2em] text-terracotta">
+              <span className="text-xs uppercase font-bold tracking-[0.2em] text-terracotta block">
                 Ironclad Promises
               </span>
               <h2 className="font-serif text-2xl sm:text-4xl font-bold text-ink leading-tight">
                 What You Can Hold Us To in Writing
               </h2>
-              <p className="text-sm sm:text-base text-ink-muted leading-relaxed">
+              <p className="text-sm sm:text-base text-ink-muted leading-relaxed font-medium">
                 Trust is earned by making clear promises and keeping them. Here is what we guarantee in writing on every job across Lakewood Ranch, Sarasota, and Bradenton.
               </p>
             </div>
 
             <div className="lg:col-span-7">
-              <Accordion type="single" collapsible defaultValue="item-0" className="w-full space-y-3">
+              <Accordion type="single" collapsible defaultValue="item-0" className="w-full space-y-4">
                 {guarantees.map((item, index) => (
                   <AccordionItem
                     key={index}
                     value={`item-${index}`}
-                    className="border border-ink/10 rounded-[var(--radius)] bg-warm-card px-5 py-1"
+                    className="border border-ink/15 rounded-[var(--radius)] bg-warm-card px-6 py-1 shadow-sm hover:border-ink/30 transition-colors"
                   >
-                    <AccordionTrigger className="text-base sm:text-lg font-bold text-ink hover:no-underline text-left">
+                    <AccordionTrigger className="text-base sm:text-lg font-bold text-ink hover:no-underline text-left py-4">
                       <div className="flex items-center gap-3">
                         <span className="font-serif text-terracotta">0{index + 1}.</span>
                         <span>{item.title}</span>
                       </div>
                     </AccordionTrigger>
-                    <AccordionContent className="text-sm text-ink-muted leading-relaxed pt-1 pb-3 pl-8 font-medium">
+                    <AccordionContent className="text-sm text-ink-muted leading-relaxed pt-1 pb-4 pl-8 font-medium">
                       {item.description}
                     </AccordionContent>
                   </AccordionItem>
@@ -206,14 +207,17 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* Direct CTA */}
+        {/* Direct CTA Section */}
         <section className="px-4 lg:px-8 py-16 lg:py-24 max-w-7xl mx-auto w-full">
-          <div className="bg-ink text-white p-8 sm:p-12 rounded-[var(--radius)] shadow-lg flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
-            <div className="space-y-2 max-w-xl">
-              <h2 className="font-serif text-2xl sm:text-4xl font-bold text-white">
+          <div className="bg-ink text-white p-8 sm:p-12 lg:p-16 rounded-[var(--radius)] shadow-2xl flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+            <div className="space-y-3 max-w-xl">
+              <span className="text-xs font-bold uppercase tracking-[0.2em] text-terracotta block">
+                Direct Owner Involvement
+              </span>
+              <h2 className="font-serif text-2xl sm:text-4xl font-bold text-white leading-tight">
                 Work Directly With Our Family
               </h2>
-              <p className="text-sm text-white/80">
+              <p className="text-sm sm:text-base text-gray-300 font-medium leading-relaxed">
                 Ready for a clear written estimate and direct family service? Contact Edwin today to schedule your free home walkthrough.
               </p>
             </div>
@@ -221,7 +225,7 @@ export default function AboutPage() {
             <div className="flex flex-col sm:flex-row gap-4 shrink-0 w-full md:w-auto">
               <Link
                 href="/contact"
-                className="bg-terracotta text-white font-bold text-xs uppercase tracking-widest h-12 px-7 hover:bg-white hover:text-ink transition-colors rounded-[var(--radius)] inline-flex items-center justify-center text-center"
+                className="bg-terracotta text-white font-bold text-xs uppercase tracking-widest h-12 px-7 hover:bg-[var(--color-terracotta-dark)] active:scale-[0.99] transition-all rounded-[var(--radius)] shadow-md inline-flex items-center justify-center text-center"
               >
                 Request Free Estimate
               </Link>
