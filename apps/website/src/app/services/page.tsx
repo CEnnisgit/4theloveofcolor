@@ -17,7 +17,8 @@ import {
   getWebPageSchema,
 } from "@/lib/seo/schema";
 import { contact } from "@/lib/data/content";
-import { Phone } from "lucide-react";
+import { servicePages } from "@/lib/data/servicePages";
+import { Phone, ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Painting Services | Interior, Exterior & Cabinet Refinishing in Sarasota",
@@ -34,83 +35,6 @@ export const metadata: Metadata = {
   },
 };
 
-interface ServiceDetail {
-  title: string;
-  slug: string;
-  tagline: string;
-  description: string;
-  image: string;
-  alt: string;
-  prepSteps: string[];
-}
-
-const macroServicesDetailed: ServiceDetail[] = [
-  {
-    title: "Interior Painting",
-    slug: "interior-painting",
-    tagline: "Smooth walls, crisp trim & low-VOC interior paints built for Florida living.",
-    description:
-      "Refresh your living spaces with rich color, clean cut-lines, and thorough wall preparation. We use low-VOC, washable paints that protect indoor air quality while standing up to daily family life.",
-    image: "/images/proj-interior-bedroom.jpg",
-    alt: "Master bedroom featuring warm greige walls, white crown molding, and tray ceiling",
-    prepSteps: [
-      "Floor and furniture masking with heavy-duty drop cloths and plastic sheeting",
-      "Drywall nail hole filling, tape seam repairs, and light pole-sanding across all walls",
-      "Stain-blocking bonding primer over water spots and repaired drywall",
-      "Hand-caulking baseboard, crown molding, and door trim joints",
-      "Two full finish coats for even coverage, rich color depth, and washable durability",
-    ],
-  },
-  {
-    title: "Exterior Painting",
-    slug: "exterior-painting",
-    tagline: "Suncoast climate protection against intense UV, tropical salt air & summer storms.",
-    description:
-      "Florida exteriors face harsh conditions: relentless UV rays, humidity, sea salt air, and heavy summer rains. We protect your home's exterior stucco and trim using high-pressure washing, elastomeric crack sealing, and 100% acrylic coatings.",
-    image: "/images/proj-exterior-modern.jpg",
-    alt: "Single-story Florida home with crisp gray stucco finish and white trim",
-    prepSteps: [
-      "High-pressure power washing with eco-friendly cleaner to strip mildew, chalk, and salt residue",
-      "Hand-scraping loose paint down to clean, solid stucco or wood and feather-sanding edges",
-      "Elastomeric caulking applied to hairline stucco cracks and window/door perimeters",
-      "Loxon® masonry primer sealing raw stucco and patch repairs",
-      "Two coats of SW Duration® Exterior providing a flexible UV and rain barrier",
-    ],
-  },
-  {
-    title: "Cabinet Refinishing",
-    slug: "cabinet-refinishing",
-    tagline: "A factory-smooth, hard-cured enamel spray finish without complete replacement.",
-    description:
-      "Refinish your existing wood or MDF cabinetry instead of tearing it out. We remove doors and drawer fronts, strip cooking oils, sand down to clean wood, and spray-apply multi-coat waterborne urethanes for a smooth, durable, non-yellowing finish.",
-    image: "/images/proj-interior-room.jpg",
-    alt: "Refinished custom kitchen cabinets showcasing a smooth white enamel spray finish",
-    prepSteps: [
-      "Careful door and drawer removal, labeling all hardware, and transport setup",
-      "Deep degreasing and deglossing to remove kitchen oils, wax, and surface residue",
-      "Thorough sanding down to clean bare wood so primer and topcoats bond permanently",
-      "High-bond stain-blocking primer coats with intermediate fine sanding",
-      "HVLP spray application in controlled containment for a brushmark-free finish",
-    ],
-  },
-  {
-    title: "Commercial Painting",
-    slug: "commercial-painting",
-    tagline: "Professional interior & exterior coatings scheduled around your business hours.",
-    description:
-      "Maintain a clean, professional look for your store, office, or HOA community without interrupting daily business. We offer flexible off-hours scheduling, clear written scopes, and commercial-grade coatings built for high foot traffic.",
-    image: "/images/proj-exterior-mediterranean.jpg",
-    alt: "Stately Mediterranean commercial property painted with durable exterior coatings",
-    prepSteps: [
-      "Commercial pressure washing, surface degreasing, and metal rust treatment",
-      "Structural caulking for expansion joints, masonry cracks, and metal seams",
-      "Rust-inhibitive primer and protective topcoats on railings and metal doors",
-      "Safety barricades, drop-cloth containment, and dust management during work",
-      "Flexible evening or weekend scheduling for zero disruption to your customers, tenants, or staff",
-    ],
-  },
-];
-
 export default function ServicesPage() {
   const breadcrumbSchema = getBreadcrumbSchema([
     { name: "Services", item: "/services" },
@@ -122,12 +46,12 @@ export default function ServicesPage() {
     "/services"
   );
 
-  const serviceSchemas = macroServicesDetailed.map((service) =>
+  const serviceSchemas = servicePages.map((service) =>
     getServiceSchema({
-      name: service.title,
-      description: service.description,
-      url: `/services#${service.slug}`,
-      image: service.image,
+      name: service.name,
+      description: service.metaDescription,
+      url: `/services/${service.slug}`,
+      image: service.image || "/images/logo.png",
     })
   );
 
@@ -170,76 +94,43 @@ export default function ServicesPage() {
           </p>
         </section>
 
-        {/* Warm Editorial Service Cards Section */}
-        <section className="px-4 lg:px-8 pb-16 lg:pb-24 max-w-7xl mx-auto w-full space-y-12 lg:space-y-16">
-          {macroServicesDetailed.map((service, index) => (
-            <div
+        {/* Elegant Hub Menu */}
+        <section className="px-4 lg:px-8 pb-16 lg:pb-24 max-w-7xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+          {servicePages.map((service) => (
+            <Link
               key={service.slug}
-              id={service.slug}
-              className="scroll-mt-24 bg-warm-card border border-ink/15 rounded-[var(--radius)] overflow-hidden shadow-xl"
+              href={`/services/${service.slug}`}
+              className="group flex flex-col bg-warm-card border border-ink/10 rounded-[var(--radius)] overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300"
             >
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-0">
-                {/* Media Column (Alternating) */}
-                <div
-                  className={`lg:col-span-5 relative bg-ink ${
-                    index % 2 === 1 ? "lg:order-2 border-l border-ink/15" : "border-r border-ink/15"
-                  }`}
-                >
-                  <div className="h-full w-full relative min-h-[300px] lg:min-h-[440px]">
-                    <Image
-                      src={service.image}
-                      alt={service.alt}
-                      fill
-                      sizes="(max-width: 1024px) 100vw, 40vw"
-                      className="object-cover opacity-95"
-                    />
-                  </div>
+              {service.image && (
+                <div className="relative h-64 w-full overflow-hidden bg-ink">
+                  <Image
+                    src={service.image}
+                    alt={service.imageAlt}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className="object-cover transition-transform duration-700 group-hover:scale-105 opacity-90 group-hover:opacity-100"
+                  />
                 </div>
-
-                {/* Content Column */}
-                <div className="lg:col-span-7 p-8 sm:p-12 lg:p-16 flex flex-col justify-between space-y-8">
-                  <div className="space-y-4">
-                    <span className="text-xs uppercase font-bold tracking-[0.2em] text-terracotta block">
-                      {service.title}
-                    </span>
-                    <h2 className="font-serif text-2xl sm:text-4xl font-bold text-ink leading-tight">
-                      {service.tagline}
-                    </h2>
-                    <p className="text-sm sm:text-base text-ink-muted leading-relaxed font-medium pt-2">
-                      {service.description}
-                    </p>
-                  </div>
-
-                  {/* Surface Prep Process */}
-                  <div className="space-y-4 pt-6 border-t border-ink/10">
-                    <span className="text-xs uppercase font-bold tracking-widest text-ink block">
-                      Prep &amp; Application Process:
-                    </span>
-                    <ul className="space-y-2">
-                      {service.prepSteps.map((step, i) => (
-                        <li
-                          key={i}
-                          className="text-sm text-ink-muted flex items-start gap-2.5 font-medium"
-                        >
-                          <span className="text-terracotta font-bold">•</span>
-                          <span className="leading-relaxed">{step}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  {/* Action Footer */}
-                  <div className="pt-6 border-t border-ink/10 flex flex-col sm:flex-row items-start sm:items-center justify-end gap-6 text-xs">
-                    <Link
-                      href={`/contact?service=${service.slug}`}
-                      className="bg-terracotta text-white font-bold uppercase tracking-widest text-xs h-11 px-7 rounded-[var(--radius)] hover:bg-[var(--color-terracotta-dark)] active:scale-[0.99] transition-all inline-flex items-center justify-center shrink-0 w-full sm:w-auto shadow-md"
-                    >
-                      Request Free Estimate
-                    </Link>
-                  </div>
+              )}
+              
+              <div className="p-8 lg:p-10 flex flex-col flex-1">
+                <span className="text-xs font-bold uppercase tracking-widest text-terracotta mb-3 block">
+                  {service.name}
+                </span>
+                <h2 className="font-serif text-2xl lg:text-3xl font-bold text-ink mb-4 leading-tight">
+                  {service.h1.replace(" in Lakewood Ranch & Sarasota.", "")}
+                </h2>
+                <p className="text-ink-muted leading-relaxed text-sm mb-8 flex-1">
+                  {service.intro[0]}
+                </p>
+                
+                <div className="flex items-center text-ink font-bold text-xs uppercase tracking-widest group-hover:text-terracotta transition-colors mt-auto">
+                  <span>Explore Service Details</span>
+                  <ArrowRight className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform" />
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </section>
 
