@@ -17,6 +17,7 @@ import {
   getWebPageSchema,
 } from "@/lib/seo/schema";
 import { contact } from "@/lib/data/content";
+import { Phone } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Painting Services | Interior, Exterior & Cabinet Refinishing in Sarasota",
@@ -179,74 +180,76 @@ export default function ServicesPage() {
           </p>
         </section>
 
-        {/* Service Cards Section */}
-        <section className="px-4 lg:px-8 pb-16 lg:pb-24 max-w-7xl mx-auto w-full space-y-12">
+        {/* Warm Editorial Service Cards Section */}
+        <section className="px-4 lg:px-8 pb-16 lg:pb-24 max-w-7xl mx-auto w-full space-y-12 lg:space-y-16">
           {macroServicesDetailed.map((service, index) => (
             <div
               key={service.slug}
               id={service.slug}
-              className="scroll-mt-24 bg-white border border-ink/10 rounded-[var(--radius)] overflow-hidden shadow-sm"
+              className="scroll-mt-24 bg-warm-card border border-ink/15 rounded-[var(--radius)] overflow-hidden shadow-xl"
             >
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-0">
-                {/* Media Column */}
+                {/* Media Column (Alternating) */}
                 <div
-                  className={`lg:col-span-5 relative bg-warm-bg ${
-                    index % 2 === 1 ? "lg:order-2" : ""
+                  className={`lg:col-span-5 relative bg-ink ${
+                    index % 2 === 1 ? "lg:order-2 border-l border-ink/15" : "border-r border-ink/15"
                   }`}
                 >
-                  <div className="h-full w-full relative min-h-[260px] lg:min-h-[380px]">
+                  <div className="h-full w-full relative min-h-[300px] lg:min-h-[440px]">
                     <Image
                       src={service.image}
                       alt={service.alt}
                       fill
                       sizes="(max-width: 1024px) 100vw, 40vw"
-                      className="object-cover"
+                      className="object-cover opacity-95"
                     />
                   </div>
                 </div>
 
                 {/* Content Column */}
-                <div className="lg:col-span-7 p-6 sm:p-8 lg:p-10 flex flex-col justify-between space-y-6">
-                  <div className="space-y-3">
-                    <h2 className="font-serif text-2xl sm:text-3xl font-bold text-ink">
+                <div className="lg:col-span-7 p-8 sm:p-12 lg:p-16 flex flex-col justify-between space-y-8">
+                  <div className="space-y-4">
+                    <span className="text-xs uppercase font-bold tracking-[0.2em] text-terracotta block">
                       {service.title}
-                    </h2>
-                    <p className="text-xs font-bold uppercase tracking-wider text-terracotta">
+                    </span>
+                    <h2 className="font-serif text-2xl sm:text-4xl font-bold text-ink leading-tight">
                       {service.tagline}
-                    </p>
-                    <p className="text-sm text-ink-muted leading-relaxed">
+                    </h2>
+                    <p className="text-sm sm:text-base text-ink-muted leading-relaxed font-medium pt-2">
                       {service.description}
                     </p>
                   </div>
 
                   {/* Surface Prep Process */}
-                  <div className="space-y-2 pt-4 border-t border-ink/10">
-                    <span className="text-xs uppercase font-bold tracking-wider text-ink block">
-                      Surface Prep &amp; Application Process:
+                  <div className="space-y-4 pt-6 border-t border-ink/10">
+                    <span className="text-xs uppercase font-bold tracking-widest text-ink block">
+                      Prep &amp; Application Process:
                     </span>
-                    <ul className="space-y-1.5">
+                    <ul className="space-y-2">
                       {service.prepSteps.map((step, i) => (
                         <li
                           key={i}
-                          className="text-xs sm:text-sm text-ink-muted flex items-start gap-2"
+                          className="text-sm text-ink-muted flex items-start gap-2.5 font-medium"
                         >
                           <span className="text-terracotta font-bold">•</span>
-                          <span>{step}</span>
+                          <span className="leading-relaxed">{step}</span>
                         </li>
                       ))}
                     </ul>
                   </div>
 
                   {/* Specifications Footer */}
-                  <div className="pt-3 border-t border-ink/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-xs">
-                    <div>
-                      <span className="font-bold text-ink">Specified System: </span>
-                      <span className="text-ink-muted">{service.paintGrades}</span>
+                  <div className="pt-6 border-t border-ink/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 text-xs">
+                    <div className="space-y-1">
+                      <span className="text-xs uppercase font-bold tracking-widest text-gold block">
+                        Specified System
+                      </span>
+                      <span className="text-ink font-semibold">{service.paintGrades}</span>
                     </div>
 
                     <Link
                       href={`/contact?service=${service.slug}`}
-                      className="bg-terracotta text-white font-bold uppercase tracking-widest text-[11px] h-10 px-5 rounded-[var(--radius)] hover:bg-[var(--color-terracotta-dark)] transition-colors inline-flex items-center justify-center shrink-0 w-full sm:w-auto"
+                      className="bg-terracotta text-white font-bold uppercase tracking-widest text-xs h-11 px-7 rounded-[var(--radius)] hover:bg-[var(--color-terracotta-dark)] active:scale-[0.99] transition-all inline-flex items-center justify-center shrink-0 w-full sm:w-auto shadow-md"
                     >
                       Request Free Estimate
                     </Link>
@@ -257,30 +260,34 @@ export default function ServicesPage() {
           ))}
         </section>
 
-        {/* Clean Call To Action Section */}
+        {/* Rich Dark Espresso CTA Section */}
         <section className="px-4 lg:px-8 pb-16 lg:pb-24 max-w-7xl mx-auto w-full">
-          <div className="bg-ink text-white p-8 sm:p-12 rounded-[var(--radius)] shadow-lg flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
-            <div className="space-y-2 max-w-xl">
-              <h2 className="font-serif text-2xl sm:text-3xl font-bold text-white">
+          <div className="bg-ink text-white p-8 sm:p-12 lg:p-16 rounded-[var(--radius)] shadow-2xl flex flex-col md:flex-row items-start md:items-center justify-between gap-6 border border-white/10">
+            <div className="space-y-3 max-w-xl">
+              <span className="text-xs font-bold uppercase tracking-[0.2em] text-gold block">
+                Direct Family Service
+              </span>
+              <h2 className="font-serif text-2xl sm:text-4xl font-bold text-white leading-tight">
                 Ready to transform your home or commercial space?
               </h2>
-              <p className="text-sm text-white/80 font-medium">
-                Schedule a free on-site walkthrough with Edwin and our family crew for a clear, written estimate.
+              <p className="text-sm sm:text-base text-gray-300 font-medium leading-relaxed">
+                Schedule a free on-site walkthrough with Edwin and our family crew for a clear, written estimate with zero pressure.
               </p>
             </div>
 
             <div className="flex flex-col sm:flex-row gap-3 shrink-0 w-full md:w-auto">
               <Link
                 href="/contact"
-                className="bg-terracotta text-white font-bold text-xs uppercase tracking-widest h-11 px-7 hover:bg-white hover:text-ink transition-colors rounded-[var(--radius)] inline-flex items-center justify-center text-center"
+                className="bg-terracotta text-white font-bold text-xs uppercase tracking-widest h-12 px-7 hover:bg-[var(--color-terracotta-dark)] active:scale-[0.99] transition-all rounded-[var(--radius)] shadow-md inline-flex items-center justify-center text-center"
               >
                 Request Free Estimate
               </Link>
               <a
                 href={contact.phoneHref}
-                className="border border-white/30 text-white hover:bg-white/10 font-bold text-xs uppercase tracking-widest h-11 px-5 rounded-[var(--radius)] inline-flex items-center justify-center text-center"
+                className="border-2 border-white/40 text-white hover:bg-white/10 font-bold text-xs uppercase tracking-widest h-12 px-6 rounded-[var(--radius)] inline-flex items-center justify-center text-center flex items-center gap-2"
               >
-                Call {contact.phone}
+                <Phone className="w-3.5 h-3.5" />
+                <span>Call {contact.phone}</span>
               </a>
             </div>
           </div>
