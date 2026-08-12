@@ -57,7 +57,11 @@ export function Footer() {
             </p>
             <ul className="space-y-3 text-sm text-gray-400 font-medium">
               {serviceCities.slice(0, 6).map((city) => (
-                <li key={city}>{city} painters</li>
+                <li key={city}>
+                  <Link href={`/locations/${city.toLowerCase().replace(/\s+/g, '-')}`} className="hover:text-white transition-colors">
+                    {city} painters
+                  </Link>
+                </li>
               ))}
             </ul>
           </div>

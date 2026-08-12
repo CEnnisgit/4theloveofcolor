@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 import { serviceCities, lakewoodRanchNeighborhoods } from "@/lib/data/content";
 
 export function ServiceAreaSection() {
@@ -31,6 +33,11 @@ export function ServiceAreaSection() {
             <p className="text-lg text-gray-400 font-medium max-w-md leading-relaxed">
               We bring our meticulous craftsmanship and premium eco-friendly coatings directly to your neighborhood across the Suncoast.
             </p>
+            <div className="pt-4">
+              <Link href="/locations" className="inline-flex items-center gap-2 bg-terracotta text-white px-8 py-4 rounded-[var(--radius)] font-bold tracking-wide hover:bg-terracotta/90 transition-all hover:gap-3 group">
+                View All Service Areas <ArrowRight className="w-5 h-5 transition-all group-hover:translate-x-1" />
+              </Link>
+            </div>
           </div>
           
           {/* Right Side: Structured Pills */}
@@ -38,9 +45,13 @@ export function ServiceAreaSection() {
             <h3 className="text-sm uppercase tracking-[0.2em] font-bold text-gold mb-6">Cities Covered</h3>
             <div className="flex flex-wrap gap-3 mb-16">
               {serviceCities.map((city) => (
-                <span key={city} className="px-4 py-2 bg-white/5 text-white text-sm font-bold border border-white/10 rounded-sm hover:bg-white/10 transition-colors">
+                <Link 
+                  href={`/locations/${city.toLowerCase().replace(/\s+/g, '-')}`} 
+                  key={city} 
+                  className="px-4 py-2 bg-white/5 text-white text-sm font-bold border border-white/10 rounded-[var(--radius)] hover:bg-white/10 hover:border-terracotta/50 transition-colors"
+                >
                   {city}
-                </span>
+                </Link>
               ))}
             </div>
             

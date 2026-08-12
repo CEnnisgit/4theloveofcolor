@@ -178,50 +178,7 @@ export function Header() {
             )}
           </div>
 
-          {/* Locations Dropdown */}
-          <div
-            className="relative"
-            onMouseEnter={() => setActiveDropdown("locations")}
-            onMouseLeave={() => setActiveDropdown(null)}
-          >
-            <Link
-              href="/locations"
-              className={`flex items-center gap-1 py-2 ${
-                pathname.includes("/locations")
-                  ? "text-terracotta"
-                  : "text-ink hover:text-terracotta transition-colors"
-              }`}
-            >
-              <span>Locations</span>
-              <ChevronDown className="w-4 h-4" />
-            </Link>
 
-            {activeDropdown === "locations" && (
-              <div className="absolute top-full left-0 w-64 bg-warm-bg border border-ink/10 rounded-[var(--radius)] shadow-xl p-3 flex flex-col gap-1 animate-in fade-in slide-in-from-top-2 duration-200">
-                <span className="px-3 py-1 text-[10px] uppercase font-bold tracking-widest text-ink-muted border-b border-ink/5 mb-1">
-                  Primary Hubs
-                </span>
-                {locationsList.map((item) => (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    className="px-3 py-2 rounded-[var(--radius)] text-xs font-semibold text-ink hover:bg-warm-card hover:text-terracotta transition-colors flex items-center gap-2"
-                  >
-                    <MapPin className="w-3.5 h-3.5 text-terracotta" />
-                    <span>{item.name}</span>
-                  </Link>
-                ))}
-                
-                <div className="w-full h-px bg-ink/5 my-1"></div>
-                <Link
-                  href="/locations"
-                  className="px-3 py-2 rounded-[var(--radius)] text-xs font-bold text-white bg-ink hover:bg-terracotta transition-colors flex items-center justify-center gap-2 mt-1"
-                >
-                  View All 50+ Service Areas
-                </Link>
-              </div>
-            )}
-          </div>
 
           {/* Guides */}
           <Link
