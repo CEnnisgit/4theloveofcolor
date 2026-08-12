@@ -23,7 +23,7 @@ import { contact } from "@/lib/data/content";
 export const metadata: Metadata = {
   title: "About Us | Family-Owned Painters in Lakewood Ranch & Sarasota",
   description:
-    "Learn about 4 The Love of Color, a family-owned painting company serving Florida's Suncoast. Founded by Edwin and run with his sons—no subcontractors, ironclad guarantees, and weather-rated coatings.",
+    "Learn about 4 The Love of Color, a family-owned painting company serving Florida's Suncoast. Founded by Edwin and run with his sons—no subcontractors, ironclad guarantees, and weather-tested paints.",
   alternates: {
     canonical: "/about",
   },
@@ -48,24 +48,24 @@ export default function AboutPage() {
 
   const guarantees = [
     {
-      title: "Written Price Held (No Hidden Add-Ons)",
+      title: "Written Fixed Price (No Hidden Fees)",
       description:
-        "You receive a complete, detailed written quote after our initial on-site walkthrough. That agreed price is the final price. Scope modifications are only ever made with your explicit prior consent in writing.",
+        "You receive a detailed written estimate after our walkthrough, and that exact number is what you pay. We never add surprise charges, and any scope changes must be approved by you first.",
     },
     {
-      title: "Daily Site Tidying & Floor Protection",
+      title: "Clean & Tidy Job Site Every Day",
       description:
-        "We protect floors, furniture, and landscaping with heavy-duty drop cloths and plastic sheeting. At the end of every work day, tools are organized, trash is removed, and your home is left clean and accessible.",
+        "We cover your floors, furniture, and landscaping before work starts. At the end of every workday, tools are organized, trash is removed, and your home is left clean and liveable.",
     },
     {
-      title: "Walkthrough Before Final Payment",
+      title: "Final Walkthrough Before You Pay",
       description:
-        "We conduct a detailed room-by-room or exterior walkthrough together upon project completion. We touch up any detail you flag, and we do not request final payment until you are 100% satisfied.",
+        "We inspect every room or exterior surface together when the work is finished. We touch up any detail you point out, and we never ask for final payment until you are 100% satisfied.",
     },
     {
-      title: "Weather-Rated Gulf Coast Coatings",
+      title: "Florida Climate-Tested Paints",
       description:
-        "Florida sun and sea salt humidity demand superior paint engineering. We strictly specify top-tier 100% acrylic paints (Sherwin-Williams Emerald® / Duration®) and elastomeric sealants selected specifically for Suncoast durability.",
+        "Intense Suncoast sun, humidity, and salt air require proven materials. We strictly use top-tier 100% acrylic paints (Sherwin-Williams Emerald® and Duration®) and elastomeric sealants built to endure Florida weather.",
     },
   ];
 
@@ -85,7 +85,7 @@ export default function AboutPage() {
 
       <main className="flex-1">
         {/* Subpage Hero Section */}
-        <section className="px-4 lg:px-8 pt-10 pb-8 lg:pt-14 lg:pb-12 max-w-7xl mx-auto flex flex-col items-start w-full">
+        <section className="px-4 lg:px-8 pt-10 pb-8 lg:pt-14 lg:pb-10 max-w-7xl mx-auto flex flex-col items-start w-full">
           <div className="mb-6">
             <Breadcrumb>
               <BreadcrumbList>
@@ -104,9 +104,14 @@ export default function AboutPage() {
             Built on Family, Care &amp; Craftsmanship
           </h1>
           <p className="text-base sm:text-lg text-ink-muted leading-relaxed max-w-2xl font-medium">
-            A more personal painting experience—built specifically for Florida&apos;s Suncoast. Founded by Edwin and operated alongside his sons with direct owner accountability on every job.
+            A family-owned painting company serving Florida&apos;s Suncoast. Founded by Edwin and operated with his sons, delivering honest craftsmanship and owner involvement on every job.
           </p>
         </section>
+
+        {/* 2px Dark Ink Section Divider */}
+        <div className="max-w-7xl mx-auto px-4 lg:px-8 w-full mb-12">
+          <div className="h-0.5 bg-ink/30 w-full" />
+        </div>
 
         {/* Origin Story Section */}
         <section className="px-4 lg:px-8 pb-16 lg:pb-24 max-w-7xl mx-auto w-full">
@@ -114,24 +119,24 @@ export default function AboutPage() {
             {/* Narrative Column */}
             <div className="lg:col-span-7 space-y-6">
               <h2 className="font-serif text-2xl sm:text-4xl font-bold text-ink leading-tight">
-                Founded on Pride, Care &amp; Uncompromising Discipline
+                Built on Family Pride and Doing the Job Right
               </h2>
 
               <p className="text-base text-ink-muted leading-relaxed font-medium">
-                Edwin founded <strong className="text-ink font-semibold">4 The Love of Color</strong> with a straightforward belief: homeowners deserve a transparent, personal painting service where craftsmanship and respect come first.
+                Edwin started <strong className="text-ink font-semibold">4 The Love of Color</strong> with a simple standard: treat every home like our own, never rush prep work, and deliver clean, lasting results.
               </p>
 
               <p className="text-sm sm:text-base text-ink-muted leading-relaxed">
-                As his sons grew into the trade, Edwin passed down every standard he established—from the pressure washing required for Florida&apos;s salt air to the double-masking discipline that protects floors and hardware. Today, father and sons work side-by-side on Suncoast job sites.
+                As his sons grew into the business, Edwin taught them the trade from the ground up—from thorough pressure washing to clear away salt air and mildew, to careful masking that protects your floors and trim. Today, Edwin and his sons work side-by-side on every Suncoast project.
               </p>
 
-              {/* Zero-Subcontractor Callout */}
+              {/* No Subcontractors Callout */}
               <div className="p-6 bg-white border border-ink/10 rounded-[var(--radius)] space-y-2 shadow-sm">
                 <h3 className="font-serif text-lg font-bold text-ink">
-                  Our Zero-Subcontractor Policy
+                  No Subcontractors—Ever
                 </h3>
                 <p className="text-sm text-ink-muted leading-relaxed">
-                  We never subcontract your project to third-party crews. The family you talk to during your free estimate is the exact crew standing on the ladders and completing the walkthrough with you.
+                  We never hand your job off to third-party subcontractors. The family you meet during your estimate is the exact team on the ladders and walking the finished job with you.
                 </p>
               </div>
             </div>
@@ -173,7 +178,7 @@ export default function AboutPage() {
                 What You Can Hold Us To in Writing
               </h2>
               <p className="text-sm sm:text-base text-ink-muted leading-relaxed">
-                We believe trust is earned through explicit standards. These four core commitments apply to every single job we perform across Lakewood Ranch, Sarasota, and Bradenton.
+                Trust is earned by making clear promises and keeping them. Here is what we guarantee in writing on every job across Lakewood Ranch, Sarasota, and Bradenton.
               </p>
             </div>
 
@@ -183,7 +188,7 @@ export default function AboutPage() {
                   <AccordionItem
                     key={index}
                     value={`item-${index}`}
-                    className="border border-ink/10 rounded-[var(--radius)] bg-warm-bg px-5 py-1"
+                    className="border border-ink/10 rounded-[var(--radius)] bg-warm-card px-5 py-1"
                   >
                     <AccordionTrigger className="text-base sm:text-lg font-bold text-ink hover:no-underline text-left">
                       <div className="flex items-center gap-3">
@@ -208,8 +213,8 @@ export default function AboutPage() {
               <h2 className="font-serif text-2xl sm:text-4xl font-bold text-white">
                 Work Directly With Our Family
               </h2>
-              <p className="text-sm text-gray-300">
-                Ready for a painting consultation built on clear communication and lasting quality? Contact Edwin and the crew today.
+              <p className="text-sm text-white/80">
+                Ready for a clear written estimate and direct family service? Contact Edwin today to schedule your free home walkthrough.
               </p>
             </div>
 
@@ -222,7 +227,7 @@ export default function AboutPage() {
               </Link>
               <a
                 href={contact.phoneHref}
-                className="border border-white/30 text-white hover:bg-white/10 font-bold text-xs uppercase tracking-widest h-12 px-6 rounded-[var(--radius)] inline-flex items-center justify-center text-center"
+                className="border-2 border-white/40 text-white hover:bg-white/10 font-bold text-xs uppercase tracking-widest h-12 px-6 rounded-[var(--radius)] inline-flex items-center justify-center text-center"
               >
                 Call {contact.phone}
               </a>

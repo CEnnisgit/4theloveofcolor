@@ -13,7 +13,7 @@ import { getBreadcrumbSchema, getWebPageSchema } from "@/lib/seo/schema";
 import { contact, business } from "@/lib/data/content";
 
 export const metadata: Metadata = {
-  title: "Contact Us | Get an Estimate | 4 The Love of Color Painting",
+  title: "Contact Us | Request a Free Estimate | 4 The Love of Color Painting",
   description:
     "Request a free, transparent estimate for interior, exterior, cabinet refinishing, or commercial painting in Lakewood Ranch, Sarasota, and Bradenton, FL.",
   alternates: {
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Contact 4 The Love of Color Painting",
     description:
-      "Get a fast, transparent written quote for interior or exterior painting in Lakewood Ranch and Sarasota, FL.",
+      "Get a fast, transparent written estimate for interior or exterior painting in Lakewood Ranch and Sarasota, FL.",
     url: "https://www.fortheloveofcolor.com/contact",
   },
 };
@@ -67,10 +67,10 @@ export default function ContactPage() {
           </div>
 
           <h1 className="font-serif text-3xl sm:text-5xl font-bold text-ink leading-tight mb-4">
-            Request an Estimate or Consult
+            Request a Free Estimate
           </h1>
           <p className="text-base sm:text-lg text-ink-muted leading-relaxed max-w-2xl font-medium">
-            Reach out by phone, email, or complete the form below. We will talk through your project and provide a clear, written quote with zero pressure.
+            Call, email, or complete the form below. We&apos;ll discuss your project and provide a clear, written estimate with zero obligation.
           </p>
         </section>
 
@@ -87,8 +87,8 @@ export default function ContactPage() {
 
                 <div className="space-y-4 text-sm font-medium">
                   <div>
-                    <span className="text-xs uppercase font-bold text-terracotta tracking-wider block mb-1">
-                      Direct Phone
+                    <span className="text-xs uppercase font-bold text-ink-muted tracking-wider block mb-1">
+                      Phone
                     </span>
                     <a
                       href={contact.phoneHref}
@@ -100,7 +100,7 @@ export default function ContactPage() {
                   </div>
 
                   <div className="pt-3 border-t border-ink/5">
-                    <span className="text-xs uppercase font-bold text-terracotta tracking-wider block mb-1">
+                    <span className="text-xs uppercase font-bold text-ink-muted tracking-wider block mb-1">
                       Email
                     </span>
                     <a
@@ -112,8 +112,8 @@ export default function ContactPage() {
                   </div>
 
                   <div className="pt-3 border-t border-ink/5">
-                    <span className="text-xs uppercase font-bold text-terracotta tracking-wider block mb-1">
-                      Service Region
+                    <span className="text-xs uppercase font-bold text-ink-muted tracking-wider block mb-1">
+                      Service Area
                     </span>
                     <p className="text-ink font-semibold">
                       Lakewood Ranch, Sarasota, Bradenton
@@ -125,10 +125,10 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              {/* Owner Promise Box */}
-              <div className="p-6 bg-white border border-ink/10 rounded-[var(--radius)] space-y-3 shadow-sm">
+              {/* Family Promise Box */}
+              <div className="p-6 bg-white border border-ink/10 rounded-[var(--radius)] space-y-2 shadow-sm">
                 <h3 className="font-serif text-lg font-bold text-ink">
-                  Direct Owner Involvement
+                  Our Family Promise
                 </h3>
                 <p className="text-sm text-ink-muted leading-relaxed font-medium">
                   Edwin and his sons handle your walkthrough and stand behind the quote. No rotating subcontractors and no unexpected price changes.
@@ -136,14 +136,14 @@ export default function ContactPage() {
               </div>
             </div>
 
-            {/* Right Column: Clean Estimate Request Form */}
-            <div className="lg:col-span-7 bg-white border border-ink/10 rounded-[var(--radius)] p-6 sm:p-10 shadow-sm">
+            {/* Right Column: Hero Estimate Request Form Container */}
+            <div className="lg:col-span-7 bg-white border border-ink/10 border-t-4 border-t-terracotta rounded-[var(--radius)] p-6 sm:p-10 shadow-md">
               <div className="mb-6 pb-4 border-b border-ink/10">
                 <h2 className="font-serif text-2xl sm:text-3xl font-bold text-ink">
-                  Request Your Free Quote
+                  Request Your Free Estimate
                 </h2>
                 <p className="text-xs sm:text-sm text-ink-muted mt-1">
-                  Fill out your details and we will respond within 24 hours.
+                  Fill out your details below and we will respond within 24 hours.
                 </p>
               </div>
 
@@ -173,7 +173,7 @@ export default function ContactPage() {
                       type="text"
                       required
                       placeholder="e.g. Sarah Jenkins"
-                      className="w-full bg-warm-bg border border-ink/15 focus:border-terracotta focus:bg-white text-sm rounded-[var(--radius)] h-11 px-3.5 text-ink outline-none transition-colors"
+                      className="w-full bg-warm-bg border border-ink/20 focus:border-terracotta focus:ring-2 focus:ring-terracotta/20 focus:bg-white text-sm rounded-[var(--radius)] h-11 px-3.5 text-ink outline-none transition-all"
                     />
                   </div>
 
@@ -187,7 +187,7 @@ export default function ContactPage() {
                       type="tel"
                       required
                       placeholder="(941) 555-0199"
-                      className="w-full bg-warm-bg border border-ink/15 focus:border-terracotta focus:bg-white text-sm rounded-[var(--radius)] h-11 px-3.5 text-ink outline-none transition-colors"
+                      className="w-full bg-warm-bg border border-ink/20 focus:border-terracotta focus:ring-2 focus:ring-terracotta/20 focus:bg-white text-sm rounded-[var(--radius)] h-11 px-3.5 text-ink outline-none transition-all"
                     />
                   </div>
                 </div>
@@ -202,21 +202,21 @@ export default function ContactPage() {
                       name="email"
                       type="email"
                       required
-                      placeholder="sarah@example.com"
-                      className="w-full bg-warm-bg border border-ink/15 focus:border-terracotta focus:bg-white text-sm rounded-[var(--radius)] h-11 px-3.5 text-ink outline-none transition-colors"
+                      placeholder="name@example.com"
+                      className="w-full bg-warm-bg border border-ink/20 focus:border-terracotta focus:ring-2 focus:ring-terracotta/20 focus:bg-white text-sm rounded-[var(--radius)] h-11 px-3.5 text-ink outline-none transition-all"
                     />
                   </div>
 
                   <div className="space-y-1.5">
                     <label htmlFor="location" className="text-xs font-bold uppercase tracking-wider text-ink block">
-                      Property Location / City
+                      City or Neighborhood
                     </label>
                     <input
                       id="location"
                       name="location"
                       type="text"
-                      placeholder="e.g. Lakewood Ranch, Sarasota"
-                      className="w-full bg-warm-bg border border-ink/15 focus:border-terracotta focus:bg-white text-sm rounded-[var(--radius)] h-11 px-3.5 text-ink outline-none transition-colors"
+                      placeholder="e.g. Lakewood Ranch"
+                      className="w-full bg-warm-bg border border-ink/20 focus:border-terracotta focus:ring-2 focus:ring-terracotta/20 focus:bg-white text-sm rounded-[var(--radius)] h-11 px-3.5 text-ink outline-none transition-all"
                     />
                   </div>
                 </div>
@@ -228,7 +228,7 @@ export default function ContactPage() {
                   <select
                     id="serviceType"
                     name="serviceType"
-                    className="w-full bg-warm-bg border border-ink/15 focus:border-terracotta focus:bg-white text-sm rounded-[var(--radius)] h-11 px-3.5 text-ink outline-none transition-colors"
+                    className="w-full bg-warm-bg border border-ink/20 focus:border-terracotta focus:ring-2 focus:ring-terracotta/20 focus:bg-white text-sm rounded-[var(--radius)] h-11 px-3.5 text-ink outline-none transition-all appearance-none cursor-pointer"
                   >
                     <option value="Interior Painting">Interior Painting</option>
                     <option value="Exterior Painting">Exterior Painting</option>
@@ -240,26 +240,26 @@ export default function ContactPage() {
 
                 <div className="space-y-1.5">
                   <label htmlFor="message" className="text-xs font-bold uppercase tracking-wider text-ink block">
-                    Project Details &amp; Notes
+                    Project Details
                   </label>
                   <textarea
                     id="message"
                     name="message"
                     rows={4}
                     placeholder="Tell us about the project — rooms to paint, exterior condition, cabinet count, or preferred timeline..."
-                    className="w-full bg-warm-bg border border-ink/15 focus:border-terracotta focus:bg-white text-sm rounded-[var(--radius)] p-3.5 text-ink outline-none transition-colors resize-y min-h-[100px]"
+                    className="w-full bg-warm-bg border border-ink/20 focus:border-terracotta focus:ring-2 focus:ring-terracotta/20 focus:bg-white text-sm rounded-[var(--radius)] p-3.5 text-ink outline-none transition-all resize-y min-h-[100px]"
                   />
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full bg-terracotta text-white font-bold text-xs uppercase tracking-widest h-12 px-6 rounded-[var(--radius)] hover:bg-[var(--color-terracotta-dark)] transition-colors shadow-sm cursor-pointer"
+                  className="w-full bg-terracotta text-white font-bold text-xs uppercase tracking-widest h-12 px-6 rounded-[var(--radius)] hover:bg-[var(--color-terracotta-dark)] active:scale-[0.99] transition-all shadow-sm cursor-pointer"
                 >
                   Send Estimate Request
                 </button>
 
                 <p className="text-xs text-ink-muted text-center pt-2">
-                  Zero obligation • Your information stays private and is only used to contact you.
+                  Zero obligation • Your information is private and never shared.
                 </p>
               </form>
             </div>

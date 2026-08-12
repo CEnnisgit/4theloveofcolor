@@ -105,7 +105,7 @@ export function ProjectsClient() {
                       <p className="text-sm text-ink-muted font-medium leading-relaxed">
                         {project.summary}
                       </p>
-                      <div className="pt-3 border-t border-ink/5 flex items-center justify-between text-xs text-ink/70 font-semibold">
+                      <div className="pt-3 border-t border-ink/10 flex items-center justify-between text-xs text-ink/70 font-semibold">
                         <span>{project.paintSpec}</span>
                         <span className="text-ink-muted font-normal">{project.timeline}</span>
                       </div>
@@ -162,9 +162,9 @@ export function ProjectsClient() {
               </span>
               <Link
                 href="/contact"
-                className="w-full sm:w-auto bg-terracotta text-white font-bold text-xs uppercase tracking-widest h-11 px-6 hover:bg-ink transition-colors rounded-[var(--radius)] inline-flex items-center justify-center gap-2"
+                className="w-full sm:w-auto bg-terracotta text-white font-bold text-xs uppercase tracking-widest h-11 px-6 hover:bg-[var(--color-terracotta-dark)] transition-colors rounded-[var(--radius)] inline-flex items-center justify-center gap-2"
               >
-                <span>Request Estimate</span>
+                <span>Request Free Estimate</span>
                 <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
@@ -179,7 +179,7 @@ export function ProjectsClient() {
             <h2 className="font-serif text-2xl sm:text-3xl font-bold text-white">
               Have a project like these in mind?
             </h2>
-            <p className="text-sm text-gray-300 font-medium">
+            <p className="text-sm text-white/80 font-medium">
               Talk directly with Edwin and our family crew for a clear, written estimate with zero pressure.
             </p>
           </div>
@@ -187,7 +187,7 @@ export function ProjectsClient() {
           <div className="flex flex-col sm:flex-row gap-3 shrink-0 w-full md:w-auto">
             <Link
               href="/contact"
-              className="bg-terracotta text-white font-bold text-xs uppercase tracking-widest h-11 px-7 hover:bg-white hover:text-ink transition-colors rounded-[var(--radius)] inline-flex items-center justify-center text-center"
+              className="bg-terracotta text-white font-bold text-xs uppercase tracking-widest h-11 px-7 hover:bg-[var(--color-terracotta-dark)] transition-colors rounded-[var(--radius)] inline-flex items-center justify-center text-center"
             >
               Request Free Estimate
             </Link>
