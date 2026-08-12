@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Per-service landing pages at /services/<slug>.
  *
  * The `/services` page covers all four services in a paragraph each, which is
@@ -12,7 +12,7 @@
  * the same query, which helps neither.
  *
  * NOTHING HERE MAY ASSERT A FACT ABOUT THE BUSINESS THAT ISN'T VERIFIED.
- * The process detail below describes how this kind of work is properly done —
+ * The process detail below describes how this kind of work is properly done â€”
  * scope, sequence, what goes wrong when steps are skipped. Warranty lengths,
 
  * paint brands, prices, turnaround promises and crew sizes are business
@@ -73,11 +73,11 @@ export const servicePages: ServicePage[] = [
     name: "Cabinet refinishing",
     serviceType: "Kitchen cabinet refinishing",
     title: "Cabinet Refinishing, Lakewood Ranch FL | 4 The Love of Color",
-    metaDescription: "Cabinet refinishing for Lakewood Ranch and Sarasota kitchens — properly cleaned, primed and sprayed to a finish that survives daily use.",
+    metaDescription: "Cabinet refinishing for Lakewood Ranch and Sarasota kitchens â€” properly cleaned, primed and sprayed to a finish that survives daily use.",
     h1: "Kitchen cabinet refinishing in Lakewood Ranch & Sarasota.",
     intro: [
-      "Refinishing the cabinets you already have costs a fraction of replacing them, and in most kitchens around here the boxes are in much better shape than the finish makes them look. If they're solid and the layout works for you, what you don't like is usually the color and the wear — and that's something we can fix.",
-      "It's also the job where doing it right matters most. Cabinets get touched, wiped and knocked more than anything else in the house, so a finish that wasn't prepped properly starts chipping at the door edges within months. There's no patching that — it has to come back off and start over."
+      "Refinishing the cabinets you already have costs a fraction of replacing them, and in most kitchens around here the boxes are in much better shape than the finish makes them look. If they're solid and the layout works for you, what you don't like is usually the color and the wear â€” and that's something we can fix.",
+      "It's also the job where doing it right matters most. Cabinets get touched, wiped and knocked more than anything else in the house, so a finish that wasn't prepped properly starts chipping at the door edges within months. There's no patching that â€” it has to come back off and start over."
     ],
     includes: [
       "Doors, drawer fronts, face frames and cabinet boxes",
@@ -93,7 +93,7 @@ export const servicePages: ServicePage[] = [
       },
       {
         title: "Cleaning off the grease",
-        text: "Every kitchen has a film of cooking grease on the cabinets, worst around the stove — you usually can't see it, but paint won't stick to it. We degrease everything, then sand off the shine so the primer has something to grab."
+        text: "Every kitchen has a film of cooking grease on the cabinets, worst around the stove â€” you usually can't see it, but paint won't stick to it. We degrease everything, then sand off the shine so the primer has something to grab."
       },
       {
         title: "The right primer for your cabinets",
@@ -101,21 +101,21 @@ export const servicePages: ServicePage[] = [
       },
       {
         title: "Filling and sanding",
-        text: "Dings and old handle holes get filled. If you have oak, the grain will show through the paint unless we fill and sand it flat first — some folks like that texture and some don't expect it, so it's worth deciding together up front."
+        text: "Dings and old handle holes get filled. If you have oak, the grain will show through the paint unless we fill and sand it flat first â€” some folks like that texture and some don't expect it, so it's worth deciding together up front."
       },
       {
         title: "Sprayed, not brushed",
-        text: "We spray the doors and drawer fronts rather than brushing them in place, and sand lightly between coats. You can spot a brushed cabinet door from across the room — sprayed, it looks new."
+        text: "We spray the doors and drawer fronts rather than brushing them in place, and sand lightly between coats. You can spot a brushed cabinet door from across the room â€” sprayed, it looks new."
       },
       {
         title: "Letting it harden before we hang them",
-        text: "Cabinet finishes can be handled fairly quickly but keep hardening for a while after that. We'll hang the doors once they're safe to handle and tell you when you can go back to normal — stacking dishes against a finish that hasn't hardened is how the first chips happen."
+        text: "Cabinet finishes can be handled fairly quickly but keep hardening for a while after that. We'll hang the doors once they're safe to handle and tell you when you can go back to normal â€” stacking dishes against a finish that hasn't hardened is how the first chips happen."
       }
     ],
     problems: [
       {
         title: "Peeling at the door edges and around handles",
-        text: "Almost always means the last coat went on over grease or a shiny factory finish without proper cleaning and priming. Touching it up won't hold — those spots need taking back and building up again."
+        text: "Almost always means the last coat went on over grease or a shiny factory finish without proper cleaning and priming. Touching it up won't hold â€” those spots need taking back and building up again."
       },
       {
         title: "Yellowed or ambered white cabinets",
@@ -123,31 +123,31 @@ export const servicePages: ServicePage[] = [
       },
       {
         title: "Sticky or tacky surfaces long after painting",
-        text: "Usually wall paint that got used on cabinets. Wall paint is made to stay a little soft so it can flex — cabinets need something that actually hardens."
+        text: "Usually wall paint that got used on cabinets. Wall paint is made to stay a little soft so it can flex â€” cabinets need something that actually hardens."
       },
       {
         title: "Doors that stick or no longer close flush",
         text: "Usually paint built up around the hinges from a previous job done without taking the doors off. Easy to put right while everything is off anyway."
       }
     ],
-    timeline: "A typical kitchen runs several days to a couple of weeks depending on door count, substrate and how much filling is needed — the drying and curing between coats sets the pace more than the painting does. You get a realistic range in the written estimate, based on your kitchen rather than an average.",
+    timeline: "A typical kitchen runs several days to a couple of weeks depending on door count, substrate and how much filling is needed â€” the drying and curing between coats sets the pace more than the painting does. You get a realistic range in the written estimate, based on your kitchen rather than an average.",
     occupied: "The kitchen stays usable for most of the job. Doors and drawer fronts leave for finishing, so you have open shelving and working drawers in the meantime; boxes and face frames are done in place with the surrounding area masked and protected. The disruptive stretch is short, and we will tell you which days it falls on before we start.",
     faqs: [
       {
         question: "Is refinishing cheaper than replacing cabinets?",
-        answer: "Substantially, in most kitchens — you are paying for labor and materials rather than new casework, countertop removal and installation. It only stops making sense when the boxes themselves are failing, the layout needs changing, or water damage has gone into the carcass. We will say so at the walkthrough if that is what we find."
+        answer: "Substantially, in most kitchens â€” you are paying for labor and materials rather than new casework, countertop removal and installation. It only stops making sense when the boxes themselves are failing, the layout needs changing, or water damage has gone into the carcass. We will say so at the walkthrough if that is what we find."
       },
       {
         question: "Can you refinish thermofoil or laminate cabinets?",
-        answer: "Usually yes, with the right bonding primer — these surfaces are non-porous, so adhesion depends entirely on preparation and primer choice. Where thermofoil has already lifted or peeled away from the substrate, that door needs replacing rather than refinishing; a lifted edge cannot be painted back down."
+        answer: "Usually yes, with the right bonding primer â€” these surfaces are non-porous, so adhesion depends entirely on preparation and primer choice. Where thermofoil has already lifted or peeled away from the substrate, that door needs replacing rather than refinishing; a lifted edge cannot be painted back down."
       },
       {
         question: "Will the grain still show through on oak cabinets?",
-        answer: "Only if you want it to. Open-grain oak shows its texture through paint unless the grain is filled and sanded flat first. That is extra work, so it is a decision worth making up front — some people like the character, others expect a modern flat finish and are disappointed to see grain in it."
+        answer: "Only if you want it to. Open-grain oak shows its texture through paint unless the grain is filled and sanded flat first. That is extra work, so it is a decision worth making up front â€” some people like the character, others expect a modern flat finish and are disappointed to see grain in it."
       },
       {
         question: "How soon can we use the kitchen normally again?",
-        answer: "Doors go back on once the finish can be handled safely, but cabinet coatings keep hardening for a while after that. We will tell you when yours is ready for normal use, including stacking things against the interiors — early heavy use is the most common cause of first-year chipping."
+        answer: "Doors go back on once the finish can be handled safely, but cabinet coatings keep hardening for a while after that. We will tell you when yours is ready for normal use, including stacking things against the interiors â€” early heavy use is the most common cause of first-year chipping."
       },
       {
         question: "Do you spray or brush cabinets?",
@@ -156,7 +156,7 @@ export const servicePages: ServicePage[] = [
     ],
     image: null,
     imageAlt: "",
-    closing: "If you are weighing refinishing against replacement, the walkthrough is the fastest way to settle it. We will look at the boxes, the doors and the current finish and tell you plainly which one your kitchen justifies — including when the answer is replacement.",
+    closing: "If you are weighing refinishing against replacement, the walkthrough is the fastest way to settle it. We will look at the boxes, the doors and the current finish and tell you plainly which one your kitchen justifies â€” including when the answer is replacement.",
     relatedGuides: ["refinishing-cabinets-vs-replacing", "house-painting-cost-lakewood-ranch-sarasota"]
   },
   {
@@ -166,10 +166,10 @@ export const servicePages: ServicePage[] = [
     name: "Interior painting",
     serviceType: "Interior residential painting",
     title: "Interior House Painters, Lakewood Ranch | 4 The Love of Color",
-    metaDescription: "Interior painters for Lakewood Ranch and Sarasota homes — walls, ceilings, trim and doors, with low-odor paint and careful protection.",
+    metaDescription: "Interior painters for Lakewood Ranch and Sarasota homes â€” walls, ceilings, trim and doors, with low-odor paint and careful protection.",
     h1: "Interior house painting in Lakewood Ranch & Sarasota.",
     intro: [
-      "Interior painting gets looked at up close, in daylight, by the people who live there. The line where the wall meets the ceiling, the edge along the baseboard, whether a long wall looks even — that's what you notice a week later, and it comes from the prep and the hand doing it more than from the paint.",
+      "Interior painting gets looked at up close, in daylight, by the people who live there. The line where the wall meets the ceiling, the edge along the baseboard, whether a long wall looks even â€” that's what you notice a week later, and it comes from the prep and the hand doing it more than from the paint.",
       "There's one job we do more than any other around here: the first repaint of a newer home. Builders spray one thin coat of flat paint that marks easily and can't be wiped clean. Swapping that for a proper washable finish is the biggest improvement most newer houses can get."
     ],
     includes: [
@@ -186,7 +186,7 @@ export const servicePages: ServicePage[] = [
       },
       {
         title: "Fix what fresh paint would show up",
-        text: "Nail pops, screw holes, little cracks and knocked corners get filled and sanded flat. New paint doesn't hide a flaw, it shows it off — something you'd stopped noticing on a tired wall jumps out on a fresh one."
+        text: "Nail pops, screw holes, little cracks and knocked corners get filled and sanded flat. New paint doesn't hide a flaw, it shows it off â€” something you'd stopped noticing on a tired wall jumps out on a fresh one."
       },
       {
         title: "Caulk the gaps that have opened up",
@@ -202,7 +202,7 @@ export const servicePages: ServicePage[] = [
       },
       {
         title: "Put the room back together",
-        text: "Hardware back on, furniture back where it was, floors clear and everything tidied up — at the end of every day, not just the last one."
+        text: "Hardware back on, furniture back where it was, floors clear and everything tidied up â€” at the end of every day, not just the last one."
       }
     ],
     problems: [
@@ -223,7 +223,7 @@ export const servicePages: ServicePage[] = [
         text: "Patches that got filled but never primed soak up paint differently from the wall around them, so they show as dull spots when the light comes across. That's a prep problem, not the paint."
       }
     ],
-    timeline: "Single rooms are usually a day or two. Whole-home interiors typically run one to two weeks depending on square footage, ceiling height, how much trim there is, and the amount of repair work. Color changes across a wide gap — dark to white especially — add coats and therefore days.",
+    timeline: "Single rooms are usually a day or two. Whole-home interiors typically run one to two weeks depending on square footage, ceiling height, how much trim there is, and the amount of repair work. Color changes across a wide gap â€” dark to white especially â€” add coats and therefore days.",
     occupied: "Most of our interior work happens in homes people are living in. We work room by room where that suits you, keep low-VOC and low-odor products as the default so rooms stay usable, and protect and restore each space rather than treating the whole house as a site. Pets and working-from-home schedules are worth mentioning at the walkthrough so the sequence can be planned around them.",
     faqs: [
       {
@@ -232,7 +232,7 @@ export const servicePages: ServicePage[] = [
       },
       {
         question: "Do you move furniture?",
-        answer: "We move what is reasonable — furniture to the centre of the room and covered. Very heavy, fragile or high-value items are worth discussing at the walkthrough so it is clear in advance who is moving what."
+        answer: "We move what is reasonable â€” furniture to the centre of the room and covered. Very heavy, fragile or high-value items are worth discussing at the walkthrough so it is clear in advance who is moving what."
       },
       {
         question: "How many coats will my walls need?",
@@ -245,7 +245,7 @@ export const servicePages: ServicePage[] = [
     ],
     image: null,
     imageAlt: "",
-    closing: "Whether it is one room or the whole house, the walkthrough is free and we will be straight with you about what the surfaces need — including where you can spend less.",
+    closing: "Whether it is one room or the whole house, the walkthrough is free and we will be straight with you about what the surfaces need â€” including where you can spend less.",
     relatedGuides: ["house-painting-cost-lakewood-ranch-sarasota"]
   },
   {
@@ -259,7 +259,7 @@ export const servicePages: ServicePage[] = [
     h1: "Exterior house painting in Lakewood Ranch & Sarasota.",
     intro: [
       "Out here an exterior repaint is protection first and looks second. Sun, summer rain, humidity and salt air are working on your walls year round, and the paint is most of what stands between them and the block underneath.",
-      "That means the prep matters more than anything. Washing, filling cracks, sealing and priming are what decide whether a finish lasts — and they're the parts you can't see once the job is done."
+      "That means the prep matters more than anything. Washing, filling cracks, sealing and priming are what decide whether a finish lasts â€” and they're the parts you can't see once the job is done."
     ],
     includes: [
       "Stucco, block and siding",
@@ -271,7 +271,7 @@ export const servicePages: ServicePage[] = [
     process: [
       {
         title: "Wash it down and let it dry",
-        text: "Dirt, mildew and chalky old paint all stop new paint sticking. We wash the house and give it time to dry — putting paint on a damp wall is how you end up with blisters."
+        text: "Dirt, mildew and chalky old paint all stop new paint sticking. We wash the house and give it time to dry â€” putting paint on a damp wall is how you end up with blisters."
       },
       {
         title: "Fill the cracks",
@@ -283,7 +283,7 @@ export const servicePages: ServicePage[] = [
       },
       {
         title: "Prime where it's needed",
-        text: "Bare stucco, patched spots and any stains get primed first. Not the whole house out of habit — just where the wall actually needs it."
+        text: "Bare stucco, patched spots and any stains get primed first. Not the whole house out of habit â€” just where the wall actually needs it."
       },
       {
         title: "Paint, with the sun in mind",
@@ -308,16 +308,16 @@ export const servicePages: ServicePage[] = [
         text: "More common closer to the water, where salt gets at screws and railings. It needs treating and priming, or it bleeds straight back through the new paint."
       }
     ],
-    timeline: "Most houses run a few days to a couple of weeks, depending on size, how many stories, and what shape the walls are in. Weather sets the real pace — we'd rather lose an afternoon to a storm than put paint on a wet wall.",
+    timeline: "Most houses run a few days to a couple of weeks, depending on size, how many stories, and what shape the walls are in. Weather sets the real pace â€” we'd rather lose an afternoon to a storm than put paint on a wet wall.",
     occupied: "Exterior work hardly affects you at all. We need to get around the house, the driveway clear where we're working, and the sprinklers off on whichever side we're on. Keep the windows shut on that side for the day and otherwise carry on as normal.",
     faqs: [
       {
         question: "How often should a Florida house be repainted?",
-        answer: "It varies more than people expect — sun exposure, how close you are to the water, the color, and mostly how well the last paint job was prepped. Two houses on the same street can be years apart. We'd rather look at yours than give you a number: chalking, cracks in the stucco and fading on the west side are the things to watch for."
+        answer: "It varies more than people expect â€” sun exposure, how close you are to the water, the color, and mostly how well the last paint job was prepped. Two houses on the same street can be years apart. We'd rather look at yours than give you a number: chalking, cracks in the stucco and fading on the west side are the things to watch for."
       },
       {
         question: "Do you pressure wash before painting?",
-        answer: "Always, and then we let it dry properly. Washing isn't just to make it look nice — it takes off the chalk, mildew and salt that stop paint from sticking. Skipping it is the most common reason a repaint doesn't last."
+        answer: "Always, and then we let it dry properly. Washing isn't just to make it look nice â€” it takes off the chalk, mildew and salt that stop paint from sticking. Skipping it is the most common reason a repaint doesn't last."
       },
       {
         question: "Can you paint during the summer rainy season?",
@@ -330,7 +330,7 @@ export const servicePages: ServicePage[] = [
     ],
     image: null,
     imageAlt: "",
-    closing: "Exterior quotes are hard to compare because the preparation is where they differ and it is the part nobody itemizes. Ask us what we would do to your walls before any color goes on — the answer is the quote.",
+    closing: "Exterior quotes are hard to compare because the preparation is where they differ and it is the part nobody itemizes. Ask us what we would do to your walls before any color goes on â€” the answer is the quote.",
     relatedGuides: ["why-paint-peels-off-stucco", "how-often-to-repaint-a-florida-house", "house-painting-cost-lakewood-ranch-sarasota"]
   },
   {
@@ -744,95 +744,202 @@ export const servicePages: ServicePage[] = [
     relatedGuides: ["how-often-to-repaint-a-florida-house"]
   },
   {
-    slug: "commercial-painting",
+    slug: "commercial-interior-painting",
     persona: "commercial",
     category: "core",
-    name: "Commercial painting",
-    serviceType: "Commercial painting",
-    title: "Commercial Painters, Sarasota & Bradenton | 4 The Love of Color",
-    metaDescription: "Commercial painters for Suncoast offices, storefronts, HOA communities and rental turnovers, scheduled around your hours.",
-    h1: "Commercial painting across the Suncoast.",
+    name: "Commercial interior painting",
+    serviceType: "Commercial Interior Painting",
+    title: "Commercial Interior Painters, Sarasota & Bradenton | 4 The Love of Color",
+    metaDescription: "Commercial interior painters for Suncoast offices, storefronts, and restaurants. Scheduled around trading hours with minimal disruption.",
+    h1: "Commercial interior painting in Lakewood Ranch & Sarasota.",
     intro: [
-      "Commercial painting is judged on disruption as much as on finish. The surfaces are often simpler than a house; the constraint is that the work has to happen around trading hours, tenants, residents or a handover date that will not move.",
-      "So the scope and the schedule matter more than anything else. What gets painted, when access is available, what has to be usable the next morning — agreed in writing before anyone starts, because on a commercial job the expensive mistake is almost never the paint."
+      "Interior commercial painting is judged on disruption as much as on the finish. The constraint is that the work has to happen around trading hours, tenants, or a handover date that will not move.",
+      "We scope the job in writing, work off-hours if required, and use low-odor, fast-drying coatings so your business never misses a beat."
     ],
     includes: [
-      "Offices, retail units and storefronts",
-      "HOA and community association buildings, and common areas",
-      "Property-management repaints and rental turnovers",
-      "Restaurants and hospitality interiors, scheduled around service",
-      "Corridors, stairwells, lobbies and other shared spaces"
+      "Offices, medical suites and retail storefronts",
+      "Restaurants and hospitality interiors",
+      "Property-management rental turnovers",
+      "Corridors, stairwells and shared public spaces",
+      "Drywall patching and scuff-resistant coatings"
     ],
     process: [
       {
         title: "Walk it and write the scope",
-        text: "Every surface in and out of scope listed explicitly, along with access windows and any areas that must stay in use. Ambiguity in a commercial scope always surfaces later as a dispute about what was included."
+        text: "Every surface in and out of scope is listed explicitly. Ambiguity in a commercial scope always surfaces later as a dispute about what was included."
       },
       {
-        title: "Schedule around the operation",
-        text: "Evenings, weekends, phased sections, or between tenancies — whatever keeps the business running. On occupied buildings the sequence gets planned so no area is out of use for longer than agreed."
+        title: "Schedule around your operation",
+        text: "Evenings, weekends, phased sections, or between tenancies — whatever keeps the business running. We plan the sequence so no area is out of use longer than agreed."
       },
       {
         title: "Contain and protect",
-        text: "Work areas separated from areas in use, floors and fittings protected, and clear routes kept safe for staff, customers and residents. On a live site this is a safety requirement, not just a courtesy."
-      },
-      {
-        title: "Prepare to the same standard as residential",
-        text: "Wash, repair, caulk, prime. High-traffic commercial surfaces take more abuse than domestic ones, so skipped preparation shows up faster here, not slower."
+        text: "Work areas separated from areas in use, floors protected, and routes kept safe for staff and customers. On a live site, this is a safety requirement, not just a courtesy."
       },
       {
         title: "Coat with durability weighted first",
-        text: "Corridors, stairwells and public areas need finishes that clean up and survive contact. Appearance matters, but a surface that cannot be wiped down looks worse within a year than one chosen for wear."
-      },
-      {
-        title: "Hand back clean and on the agreed date",
-        text: "Areas returned to use as they complete, and a walkthrough at the end against the written scope so sign-off is against something specific."
+        text: "Corridors and public areas need finishes that clean up and survive contact. A surface that cannot be wiped down looks worse within a year than one chosen for wear."
       }
     ],
     problems: [
       {
         title: "Turnover windows that are too short",
-        text: "Rental and tenancy turnarounds run to fixed dates. The honest conversation is about what is genuinely achievable in the window rather than agreeing to it and then missing it."
+        text: "Rental turnarounds run to fixed dates. The honest conversation is about what is genuinely achievable in the window rather than agreeing to it and then missing it."
       },
       {
-        title: "Corridors and stairwells that scuff instantly",
-        text: "Usually the wrong product for the traffic. High-contact shared areas need a washable, harder-wearing finish or they look tired within months of a repaint."
-      },
-      {
-        title: "Community buildings with mismatched previous work",
-        text: "Common areas repainted piecemeal over years end up with visible variation in color and sheen. Worth resolving as one scope rather than adding another patch to it."
-      },
-      {
-        title: "Scope creep on occupied sites",
-        text: "Requests accumulate once work is visible on site. Handled with written variations, so the price at the end is the price that was agreed plus what was actually authorised."
+        title: "Corridors that scuff instantly",
+        text: "Usually the wrong product for the traffic. High-contact shared areas need a washable, harder-wearing scuff-resistant finish."
       }
     ],
-    timeline: "Entirely dependent on size, access and how much work can run concurrently. A single retail unit or turnover may be a few days; a phased community or multi-building programme runs to a schedule agreed in advance. The estimate sets out the sequence, not just the total.",
-    occupied: "Most commercial work happens in buildings that stay open. Out-of-hours and phased working are normal, and the scope states which areas are unavailable and when — so staff, tenants or residents can be told in advance rather than finding out on the day.",
+    timeline: "Determined by square footage and availability. We offer accelerated schedules and off-hours crews for critical path handovers.",
+    occupied: "We specialize in phased, occupied interior painting. Zero-VOC paints mean tenants can return the next morning without lingering paint fumes.",
     faqs: [
       {
-        question: "Can you work outside business hours?",
-        answer: "Yes — evenings, weekends and phased schedules are routine on occupied commercial sites. It is usually the difference between a repaint that disrupts trading and one that nobody notices happening."
+        question: "Can you paint after business hours?",
+        answer: "Yes. Night and weekend schedules are standard for our retail and restaurant clients who cannot close their doors during the day."
       },
       {
-        question: "Do you handle HOA and community association work?",
-        answer: "Yes, including common areas and community buildings. These jobs generally need the schedule and the scope agreed with a board or manager rather than a single owner, and we will work to that process."
-      },
-      {
-        question: "Can you turn around a rental between tenants?",
-        answer: "That is a common job for us. Tell us the handover date at the walkthrough and we will tell you honestly whether the scope fits the window — a missed turnover date costs a landlord more than the paint."
-      },
-      {
-        question: "How do you handle changes once work has started?",
-        answer: "In writing, before the work happens. Additions get priced and authorised as variations so the final invoice matches what was agreed rather than arriving as a surprise."
+        question: "Do you offer scuff-resistant paints?",
+        answer: "Yes, we exclusively use premium scuff-resistant architectural coatings for high-traffic corridors, lobbies, and medical facilities."
       }
     ],
     image: null,
     imageAlt: "",
-    closing: "Tell us the constraint — the trading hours, the handover date, the areas that cannot close — and we will build the scope and the schedule around it before quoting.",
+    closing: "Don`'t let painting disrupt your cash flow. Ask us about our off-hours painting schedule.",
     relatedGuides: ["house-painting-cost-lakewood-ranch-sarasota"]
+  },
+  {
+    slug: "commercial-exterior-painting",
+    persona: "commercial",
+    category: "core",
+    name: "Commercial exterior painting",
+    serviceType: "Commercial Exterior Painting",
+    title: "Commercial Exterior Painters, Sarasota & Bradenton | 4 The Love of Color",
+    metaDescription: "Commercial exterior painting and waterproofing for retail plazas, warehouses, and standalone businesses across the Suncoast.",
+    h1: "Commercial exterior painting & waterproofing.",
+    intro: [
+      "A deteriorating exterior sends the wrong message to your customers before they even walk through the door. In Florida, commercial buildings are under constant assault from UV rays, salt air, and driving rain.",
+      "We provide heavy-duty exterior washing, rust-inhibition, masonry sealing, and high-performance elastomeric coatings that protect your building`'s structural integrity and curb appeal."
+    ],
+    includes: [
+      "Standalone retail and strip malls",
+      "Warehouses, tilt-wall, and industrial buildings",
+      "Stucco repair and elastomeric waterproofing",
+      "Metal roof and corrugated siding coatings",
+      "Safety line striping and curb painting"
+    ],
+    process: [
+      {
+        title: "Deep cleaning and degreasing",
+        text: "Commercial exteriors collect heavy exhaust soot and grease. We use industrial-grade detergents and hot water pressure washing to prep the surface."
+      },
+      {
+        title: "Rust treatment and masonry sealing",
+        text: "Exposed rebar, failing lintels, and rust bleeds are treated with rust inhibitors. Stucco cracks are routed and sealed with elastomeric compounds."
+      },
+      {
+        title: "High-build waterproofing",
+        text: "We apply thick, weather-rated architectural coatings designed to stretch with thermal expansion and bridge hairline cracks over time."
+      },
+      {
+        title: "Traffic and safety management",
+        text: "We coordinate with property managers to block off parking zones, protect vehicles from overspray, and manage boom lift safety perimeters."
+      }
+    ],
+    problems: [
+      {
+        title: "Failing tilt-wall joints and caulk",
+        text: "Failed expansion joints let water into the building envelope. We cut out the old material and apply 50-year commercial urethane sealants."
+      },
+      {
+        title: "Rust bleeding through block",
+        text: "Requires grinding down to the rebar, treating with rust converter, and patching with high-strength mortar before painting."
+      }
+    ],
+    timeline: "Weather and scale dictate commercial exterior timelines. We provide a detailed Gantt chart for multi-week projects.",
+    occupied: "All work is exterior. We communicate daily with site managers to ensure tenant parking and entrances remain accessible.",
+    faqs: [
+      {
+        question: "Do you use boom lifts for high buildings?",
+        answer: "Yes, our crews are trained and certified to operate articulating boom lifts and scissor lifts for multi-story commercial exteriors."
+      },
+      {
+        question: "Do you offer warranties on commercial exteriors?",
+        answer: "Yes, we offer extended written warranties backed by both our company and the paint manufacturer for approved high-performance coating systems."
+      }
+    ],
+    image: null,
+    imageAlt: "",
+    closing: "Protect your commercial asset from the Florida elements with a coating system built to last.",
+    relatedGuides: ["how-often-to-repaint-a-florida-house"]
+  },
+  {
+    slug: "hoa-multi-family-painting",
+    persona: "commercial",
+    category: "core",
+    name: "HOA & multi-family painting",
+    serviceType: "HOA Painting",
+    title: "HOA & Multi-Family Painters, Sarasota & Bradenton | 4 The Love of Color",
+    metaDescription: "Specialized painters for HOAs, condos, and multi-family communities. Board-approved palettes, resident notices, and phased scheduling.",
+    h1: "HOA, condo & multi-family painters in Sarasota & Bradenton.",
+    intro: [
+      "Painting a multi-family community isn`'t just a logistics challenge; it`'s a communications challenge. You aren`'t just dealing with a building, you are dealing with dozens of residents, board members, and community rules.",
+      "We partner with property managers to execute phased community repaints smoothly. From color selection boards to resident door hangers, we handle the friction so the property manager doesn`'t have to."
+    ],
+    includes: [
+      "Condominium buildings and townhome complexes",
+      "HOA community walls, gates, and guardhouses",
+      "Clubhouses, pool decks, and amenity centers",
+      "Shared corridors, breezeways, and stairwells",
+      "Annual maintenance painting contracts"
+    ],
+    process: [
+      {
+        title: "Board presentation and color mockups",
+        text: "We provide large-scale drawdowns and digital renderings to help HOA boards and architectural review committees reach a consensus."
+      },
+      {
+        title: "Resident communication",
+        text: "We provide printed notices and door hangers detailing the schedule, so residents know exactly when their building, lanai, or parking spot is affected."
+      },
+      {
+        title: "Phased execution",
+        text: "We move through communities systematically, completing one building or block entirely before moving to the next to minimize community-wide disruption."
+      },
+      {
+        title: "Daily site walks",
+        text: "A dedicated project manager walks the site daily to ensure containment is maintained and residents`' property is protected from overspray."
+      }
+    ],
+    problems: [
+      {
+        title: "Inconsistent colors across a community",
+        text: "As communities age and homeowners touch up their own units, the colors drift. A community-wide repaint restores a cohesive, high-value aesthetic."
+      },
+      {
+        title: "Resident complaints about mess",
+        text: "Our strict daily clean-up policy means no ladders, trash, or equipment are left in common areas overnight."
+      }
+    ],
+    timeline: "Depends entirely on community size. We provide a phased schedule broken down by building or block.",
+    occupied: "Residents remain in their homes. We coordinate directly regarding lanai access, screen removal, and temporary parking shifts.",
+    faqs: [
+      {
+        question: "Can you help our board select new community colors?",
+        answer: "Absolutely. We offer professional color consultation services and can present modernized, cohesive palettes for board approval."
+      },
+      {
+        question: "Do you handle the notices to residents?",
+        answer: "Yes, we supply the property manager with digital schedules and physical door hangers to distribute prior to our arrival at each building."
+      }
+    ],
+    image: null,
+    imageAlt: "",
+    closing: "We make large-scale community painting projects easy for property managers and HOA boards.",
+    relatedGuides: []
   }
 ];
 
 export const servicePageBySlug = (slug: string) =>
   servicePages.find((page) => page.slug === slug);
+

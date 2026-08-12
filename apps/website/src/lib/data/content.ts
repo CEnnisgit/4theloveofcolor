@@ -84,10 +84,26 @@ export const macroServices: MacroService[] = [
     persona: "residential",
   },
   {
-    title: "Commercial Painting",
-    slug: "commercial-painting",
+    title: "Commercial Interior",
+    slug: "commercial-interior-painting",
     description:
-      "Offices, storefronts, HOA common areas, and rental turnovers — scoped in writing and scheduled around your trading hours, tenants, or handover date.",
+      "Offices, retail, and restaurants. Scoped in writing and scheduled around your trading hours, tenants, or handover date with minimal disruption.",
+    image: "/images/proj-interior-bedroom.jpg",
+    persona: "commercial",
+  },
+  {
+    title: "Commercial Exterior",
+    slug: "commercial-exterior-painting",
+    description:
+      "Standout retail plazas, warehouses, and strip malls. Heavy-duty washing, waterproofing, and elastomeric coatings that survive Florida weather.",
+    image: "/images/proj-exterior-modern.jpg",
+    persona: "commercial",
+  },
+  {
+    title: "HOA & Multi-Family",
+    slug: "hoa-multi-family-painting",
+    description:
+      "Condos, townhomes, and community amenities. We handle board approvals, phased scheduling, and resident communications for property managers.",
     image: "/images/proj-exterior-mediterranean.jpg",
     persona: "commercial",
   },

@@ -80,7 +80,7 @@ export function Header() {
                 <div className="flex flex-col h-full">
                   <div className="flex items-center justify-between border-b border-ink/10 pb-2 mb-3">
                     <span className="text-sm font-bold text-ink">
-                      For Homeowners
+                      Homeowners
                     </span>
                   </div>
                   
@@ -129,7 +129,7 @@ export function Header() {
                 <div className="flex flex-col h-full">
                   <div className="flex items-center justify-between border-b border-ink/10 pb-2 mb-3">
                     <span className="text-sm font-bold text-ink">
-                      For Businesses
+                      Commercial & HOAs
                     </span>
                   </div>
                   
