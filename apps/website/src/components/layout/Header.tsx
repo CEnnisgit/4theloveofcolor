@@ -23,7 +23,7 @@ export function Header() {
   ];
 
   return (
-    <header className="sticky top-0 z-50 backdrop-blur-md bg-warm-bg/90 border-b border-ink/5 px-6 lg:px-8 py-4 transition-all">
+    <header className="sticky top-0 z-50 bg-warm-bg border-b border-ink/5 px-6 lg:px-8 py-4 transition-all">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         
         {/* Brand Logo */}
@@ -74,7 +74,7 @@ export function Header() {
             </button>
 
             {activeDropdown === "services" && (
-              <div className="absolute top-full left-0 w-[550px] bg-white border border-ink/10 rounded-[var(--radius)] shadow-xl p-5 grid grid-cols-2 gap-8 animate-in fade-in slide-in-from-top-2 duration-200">
+              <div className="absolute top-full left-0 w-[550px] bg-warm-bg border border-ink/10 rounded-[var(--radius)] shadow-xl p-5 grid grid-cols-2 gap-8 animate-in fade-in slide-in-from-top-2 duration-200">
                 
                 {/* Residential Silo */}
                 <div className="flex flex-col h-full">
@@ -197,7 +197,7 @@ export function Header() {
             </Link>
 
             {activeDropdown === "locations" && (
-              <div className="absolute top-full left-0 w-64 bg-white border border-ink/10 rounded-[var(--radius)] shadow-xl p-3 flex flex-col gap-1 animate-in fade-in slide-in-from-top-2 duration-200">
+              <div className="absolute top-full left-0 w-64 bg-warm-bg border border-ink/10 rounded-[var(--radius)] shadow-xl p-3 flex flex-col gap-1 animate-in fade-in slide-in-from-top-2 duration-200">
                 <span className="px-3 py-1 text-[10px] uppercase font-bold tracking-widest text-ink-muted border-b border-ink/5 mb-1">
                   Primary Hubs
                 </span>

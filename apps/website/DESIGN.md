@@ -56,7 +56,7 @@ This document serves as the **single source of truth** for the visual design, ty
 - **Key Brand Section Transitions**: Retro Macintosh 6-stripe rainbow bar (`#61bb46`, `#fdb827`, `#f5821f`, `#e03a3e`, `#963d97`, `#009dcf`) at `h-2 sm:h-2.5` (or `h-2 sm:h-3`).
 
 ### Cards & Containers
-- Testimonial cards, project portfolio items, service cards, and info boxes use `bg-transparent` or `bg-white` with `border border-ink/10` and `rounded-[var(--radius)]` (2px).
+- Testimonial cards, project portfolio items, service cards, and info boxes use `bg-transparent` or `bg-warm-bg` with `border border-ink/10` and `rounded-[var(--radius)]` (2px). We DO NOT use pure stark white (`bg-white`) for containers as it clashes with the earthy, warm aesthetic.
 - Testimonials on `warm-bg` use `bg-transparent` to blend seamlessly into the warm background.
 
 ### Buttons & Call-to-Actions

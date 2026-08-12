@@ -12,7 +12,7 @@
  * the same query, which helps neither.
  *
  * NOTHING HERE MAY ASSERT A FACT ABOUT THE BUSINESS THAT ISN'T VERIFIED.
- * The process detail below describes how this kind of work is properly done â€”
+ * The process detail below describes how this kind of work is properly done —
  * scope, sequence, what goes wrong when steps are skipped. Warranty lengths,
 
  * paint brands, prices, turnaround promises and crew sizes are business
@@ -73,11 +73,11 @@ export const servicePages: ServicePage[] = [
     name: "Cabinet refinishing",
     serviceType: "Kitchen cabinet refinishing",
     title: "Cabinet Refinishing, Lakewood Ranch FL | 4 The Love of Color",
-    metaDescription: "Cabinet refinishing for Lakewood Ranch and Sarasota kitchens â€” properly cleaned, primed and sprayed to a finish that survives daily use.",
+    metaDescription: "Cabinet refinishing for Lakewood Ranch and Sarasota kitchens — properly cleaned, primed and sprayed to a finish that survives daily use.",
     h1: "Kitchen cabinet refinishing in Lakewood Ranch & Sarasota.",
     intro: [
-      "Refinishing the cabinets you already have costs a fraction of replacing them, and in most kitchens around here the boxes are in much better shape than the finish makes them look. If they're solid and the layout works for you, what you don't like is usually the color and the wear â€” and that's something we can fix.",
-      "It's also the job where doing it right matters most. Cabinets get touched, wiped and knocked more than anything else in the house, so a finish that wasn't prepped properly starts chipping at the door edges within months. There's no patching that â€” it has to come back off and start over."
+      "Refinishing the cabinets you already have costs a fraction of replacing them, and in most kitchens around here the boxes are in much better shape than the finish makes them look. If they're solid and the layout works for you, what you don't like is usually the color and the wear — and that's something we can fix.",
+      "It's also the job where doing it right matters most. Cabinets get touched, wiped and knocked more than anything else in the house, so a finish that wasn't prepped properly starts chipping at the door edges within months. There's no patching that — it has to come back off and start over."
     ],
     includes: [
       "Doors, drawer fronts, face frames and cabinet boxes",
@@ -93,7 +93,7 @@ export const servicePages: ServicePage[] = [
       },
       {
         title: "Cleaning off the grease",
-        text: "Every kitchen has a film of cooking grease on the cabinets, worst around the stove â€” you usually can't see it, but paint won't stick to it. We degrease everything, then sand off the shine so the primer has something to grab."
+        text: "Every kitchen has a film of cooking grease on the cabinets, worst around the stove — you usually can't see it, but paint won't stick to it. We degrease everything, then sand off the shine so the primer has something to grab."
       },
       {
         title: "The right primer for your cabinets",
@@ -101,21 +101,21 @@ export const servicePages: ServicePage[] = [
       },
       {
         title: "Filling and sanding",
-        text: "Dings and old handle holes get filled. If you have oak, the grain will show through the paint unless we fill and sand it flat first â€” some folks like that texture and some don't expect it, so it's worth deciding together up front."
+        text: "Dings and old handle holes get filled. If you have oak, the grain will show through the paint unless we fill and sand it flat first — some folks like that texture and some don't expect it, so it's worth deciding together up front."
       },
       {
         title: "Sprayed, not brushed",
-        text: "We spray the doors and drawer fronts rather than brushing them in place, and sand lightly between coats. You can spot a brushed cabinet door from across the room â€” sprayed, it looks new."
+        text: "We spray the doors and drawer fronts rather than brushing them in place, and sand lightly between coats. You can spot a brushed cabinet door from across the room — sprayed, it looks new."
       },
       {
         title: "Letting it harden before we hang them",
-        text: "Cabinet finishes can be handled fairly quickly but keep hardening for a while after that. We'll hang the doors once they're safe to handle and tell you when you can go back to normal â€” stacking dishes against a finish that hasn't hardened is how the first chips happen."
+        text: "Cabinet finishes can be handled fairly quickly but keep hardening for a while after that. We'll hang the doors once they're safe to handle and tell you when you can go back to normal — stacking dishes against a finish that hasn't hardened is how the first chips happen."
       }
     ],
     problems: [
       {
         title: "Peeling at the door edges and around handles",
-        text: "Almost always means the last coat went on over grease or a shiny factory finish without proper cleaning and priming. Touching it up won't hold â€” those spots need taking back and building up again."
+        text: "Almost always means the last coat went on over grease or a shiny factory finish without proper cleaning and priming. Touching it up won't hold — those spots need taking back and building up again."
       },
       {
         title: "Yellowed or ambered white cabinets",
@@ -123,31 +123,31 @@ export const servicePages: ServicePage[] = [
       },
       {
         title: "Sticky or tacky surfaces long after painting",
-        text: "Usually wall paint that got used on cabinets. Wall paint is made to stay a little soft so it can flex â€” cabinets need something that actually hardens."
+        text: "Usually wall paint that got used on cabinets. Wall paint is made to stay a little soft so it can flex — cabinets need something that actually hardens."
       },
       {
         title: "Doors that stick or no longer close flush",
         text: "Usually paint built up around the hinges from a previous job done without taking the doors off. Easy to put right while everything is off anyway."
       }
     ],
-    timeline: "A typical kitchen runs several days to a couple of weeks depending on door count, substrate and how much filling is needed â€” the drying and curing between coats sets the pace more than the painting does. You get a realistic range in the written estimate, based on your kitchen rather than an average.",
+    timeline: "A typical kitchen runs several days to a couple of weeks depending on door count, substrate and how much filling is needed — the drying and curing between coats sets the pace more than the painting does. You get a realistic range in the written estimate, based on your kitchen rather than an average.",
     occupied: "The kitchen stays usable for most of the job. Doors and drawer fronts leave for finishing, so you have open shelving and working drawers in the meantime; boxes and face frames are done in place with the surrounding area masked and protected. The disruptive stretch is short, and we will tell you which days it falls on before we start.",
     faqs: [
       {
         question: "Is refinishing cheaper than replacing cabinets?",
-        answer: "Substantially, in most kitchens â€” you are paying for labor and materials rather than new casework, countertop removal and installation. It only stops making sense when the boxes themselves are failing, the layout needs changing, or water damage has gone into the carcass. We will say so at the walkthrough if that is what we find."
+        answer: "Substantially, in most kitchens — you are paying for labor and materials rather than new casework, countertop removal and installation. It only stops making sense when the boxes themselves are failing, the layout needs changing, or water damage has gone into the carcass. We will say so at the walkthrough if that is what we find."
       },
       {
         question: "Can you refinish thermofoil or laminate cabinets?",
-        answer: "Usually yes, with the right bonding primer â€” these surfaces are non-porous, so adhesion depends entirely on preparation and primer choice. Where thermofoil has already lifted or peeled away from the substrate, that door needs replacing rather than refinishing; a lifted edge cannot be painted back down."
+        answer: "Usually yes, with the right bonding primer — these surfaces are non-porous, so adhesion depends entirely on preparation and primer choice. Where thermofoil has already lifted or peeled away from the substrate, that door needs replacing rather than refinishing; a lifted edge cannot be painted back down."
       },
       {
         question: "Will the grain still show through on oak cabinets?",
-        answer: "Only if you want it to. Open-grain oak shows its texture through paint unless the grain is filled and sanded flat first. That is extra work, so it is a decision worth making up front â€” some people like the character, others expect a modern flat finish and are disappointed to see grain in it."
+        answer: "Only if you want it to. Open-grain oak shows its texture through paint unless the grain is filled and sanded flat first. That is extra work, so it is a decision worth making up front — some people like the character, others expect a modern flat finish and are disappointed to see grain in it."
       },
       {
         question: "How soon can we use the kitchen normally again?",
-        answer: "Doors go back on once the finish can be handled safely, but cabinet coatings keep hardening for a while after that. We will tell you when yours is ready for normal use, including stacking things against the interiors â€” early heavy use is the most common cause of first-year chipping."
+        answer: "Doors go back on once the finish can be handled safely, but cabinet coatings keep hardening for a while after that. We will tell you when yours is ready for normal use, including stacking things against the interiors — early heavy use is the most common cause of first-year chipping."
       },
       {
         question: "Do you spray or brush cabinets?",
@@ -156,7 +156,7 @@ export const servicePages: ServicePage[] = [
     ],
     image: null,
     imageAlt: "",
-    closing: "If you are weighing refinishing against replacement, the walkthrough is the fastest way to settle it. We will look at the boxes, the doors and the current finish and tell you plainly which one your kitchen justifies â€” including when the answer is replacement.",
+    closing: "If you are weighing refinishing against replacement, the walkthrough is the fastest way to settle it. We will look at the boxes, the doors and the current finish and tell you plainly which one your kitchen justifies — including when the answer is replacement.",
     relatedGuides: ["refinishing-cabinets-vs-replacing", "house-painting-cost-lakewood-ranch-sarasota"]
   },
   {
@@ -166,10 +166,10 @@ export const servicePages: ServicePage[] = [
     name: "Interior painting",
     serviceType: "Interior residential painting",
     title: "Interior House Painters, Lakewood Ranch | 4 The Love of Color",
-    metaDescription: "Interior painters for Lakewood Ranch and Sarasota homes â€” walls, ceilings, trim and doors, with low-odor paint and careful protection.",
+    metaDescription: "Interior painters for Lakewood Ranch and Sarasota homes — walls, ceilings, trim and doors, with low-odor paint and careful protection.",
     h1: "Interior house painting in Lakewood Ranch & Sarasota.",
     intro: [
-      "Interior painting gets looked at up close, in daylight, by the people who live there. The line where the wall meets the ceiling, the edge along the baseboard, whether a long wall looks even â€” that's what you notice a week later, and it comes from the prep and the hand doing it more than from the paint.",
+      "Interior painting gets looked at up close, in daylight, by the people who live there. The line where the wall meets the ceiling, the edge along the baseboard, whether a long wall looks even — that's what you notice a week later, and it comes from the prep and the hand doing it more than from the paint.",
       "There's one job we do more than any other around here: the first repaint of a newer home. Builders spray one thin coat of flat paint that marks easily and can't be wiped clean. Swapping that for a proper washable finish is the biggest improvement most newer houses can get."
     ],
     includes: [
@@ -186,7 +186,7 @@ export const servicePages: ServicePage[] = [
       },
       {
         title: "Fix what fresh paint would show up",
-        text: "Nail pops, screw holes, little cracks and knocked corners get filled and sanded flat. New paint doesn't hide a flaw, it shows it off â€” something you'd stopped noticing on a tired wall jumps out on a fresh one."
+        text: "Nail pops, screw holes, little cracks and knocked corners get filled and sanded flat. New paint doesn't hide a flaw, it shows it off — something you'd stopped noticing on a tired wall jumps out on a fresh one."
       },
       {
         title: "Caulk the gaps that have opened up",
@@ -202,7 +202,7 @@ export const servicePages: ServicePage[] = [
       },
       {
         title: "Put the room back together",
-        text: "Hardware back on, furniture back where it was, floors clear and everything tidied up â€” at the end of every day, not just the last one."
+        text: "Hardware back on, furniture back where it was, floors clear and everything tidied up — at the end of every day, not just the last one."
       }
     ],
     problems: [
@@ -223,7 +223,7 @@ export const servicePages: ServicePage[] = [
         text: "Patches that got filled but never primed soak up paint differently from the wall around them, so they show as dull spots when the light comes across. That's a prep problem, not the paint."
       }
     ],
-    timeline: "Single rooms are usually a day or two. Whole-home interiors typically run one to two weeks depending on square footage, ceiling height, how much trim there is, and the amount of repair work. Color changes across a wide gap â€” dark to white especially â€” add coats and therefore days.",
+    timeline: "Single rooms are usually a day or two. Whole-home interiors typically run one to two weeks depending on square footage, ceiling height, how much trim there is, and the amount of repair work. Color changes across a wide gap — dark to white especially — add coats and therefore days.",
     occupied: "Most of our interior work happens in homes people are living in. We work room by room where that suits you, keep low-VOC and low-odor products as the default so rooms stay usable, and protect and restore each space rather than treating the whole house as a site. Pets and working-from-home schedules are worth mentioning at the walkthrough so the sequence can be planned around them.",
     faqs: [
       {
@@ -232,7 +232,7 @@ export const servicePages: ServicePage[] = [
       },
       {
         question: "Do you move furniture?",
-        answer: "We move what is reasonable â€” furniture to the centre of the room and covered. Very heavy, fragile or high-value items are worth discussing at the walkthrough so it is clear in advance who is moving what."
+        answer: "We move what is reasonable — furniture to the centre of the room and covered. Very heavy, fragile or high-value items are worth discussing at the walkthrough so it is clear in advance who is moving what."
       },
       {
         question: "How many coats will my walls need?",
@@ -245,7 +245,7 @@ export const servicePages: ServicePage[] = [
     ],
     image: null,
     imageAlt: "",
-    closing: "Whether it is one room or the whole house, the walkthrough is free and we will be straight with you about what the surfaces need â€” including where you can spend less.",
+    closing: "Whether it is one room or the whole house, the walkthrough is free and we will be straight with you about what the surfaces need — including where you can spend less.",
     relatedGuides: ["house-painting-cost-lakewood-ranch-sarasota"]
   },
   {
@@ -259,7 +259,7 @@ export const servicePages: ServicePage[] = [
     h1: "Exterior house painting in Lakewood Ranch & Sarasota.",
     intro: [
       "Out here an exterior repaint is protection first and looks second. Sun, summer rain, humidity and salt air are working on your walls year round, and the paint is most of what stands between them and the block underneath.",
-      "That means the prep matters more than anything. Washing, filling cracks, sealing and priming are what decide whether a finish lasts â€” and they're the parts you can't see once the job is done."
+      "That means the prep matters more than anything. Washing, filling cracks, sealing and priming are what decide whether a finish lasts — and they're the parts you can't see once the job is done."
     ],
     includes: [
       "Stucco, block and siding",
@@ -271,7 +271,7 @@ export const servicePages: ServicePage[] = [
     process: [
       {
         title: "Wash it down and let it dry",
-        text: "Dirt, mildew and chalky old paint all stop new paint sticking. We wash the house and give it time to dry â€” putting paint on a damp wall is how you end up with blisters."
+        text: "Dirt, mildew and chalky old paint all stop new paint sticking. We wash the house and give it time to dry — putting paint on a damp wall is how you end up with blisters."
       },
       {
         title: "Fill the cracks",
@@ -283,7 +283,7 @@ export const servicePages: ServicePage[] = [
       },
       {
         title: "Prime where it's needed",
-        text: "Bare stucco, patched spots and any stains get primed first. Not the whole house out of habit â€” just where the wall actually needs it."
+        text: "Bare stucco, patched spots and any stains get primed first. Not the whole house out of habit — just where the wall actually needs it."
       },
       {
         title: "Paint, with the sun in mind",
@@ -308,16 +308,16 @@ export const servicePages: ServicePage[] = [
         text: "More common closer to the water, where salt gets at screws and railings. It needs treating and priming, or it bleeds straight back through the new paint."
       }
     ],
-    timeline: "Most houses run a few days to a couple of weeks, depending on size, how many stories, and what shape the walls are in. Weather sets the real pace â€” we'd rather lose an afternoon to a storm than put paint on a wet wall.",
+    timeline: "Most houses run a few days to a couple of weeks, depending on size, how many stories, and what shape the walls are in. Weather sets the real pace — we'd rather lose an afternoon to a storm than put paint on a wet wall.",
     occupied: "Exterior work hardly affects you at all. We need to get around the house, the driveway clear where we're working, and the sprinklers off on whichever side we're on. Keep the windows shut on that side for the day and otherwise carry on as normal.",
     faqs: [
       {
         question: "How often should a Florida house be repainted?",
-        answer: "It varies more than people expect â€” sun exposure, how close you are to the water, the color, and mostly how well the last paint job was prepped. Two houses on the same street can be years apart. We'd rather look at yours than give you a number: chalking, cracks in the stucco and fading on the west side are the things to watch for."
+        answer: "It varies more than people expect — sun exposure, how close you are to the water, the color, and mostly how well the last paint job was prepped. Two houses on the same street can be years apart. We'd rather look at yours than give you a number: chalking, cracks in the stucco and fading on the west side are the things to watch for."
       },
       {
         question: "Do you pressure wash before painting?",
-        answer: "Always, and then we let it dry properly. Washing isn't just to make it look nice â€” it takes off the chalk, mildew and salt that stop paint from sticking. Skipping it is the most common reason a repaint doesn't last."
+        answer: "Always, and then we let it dry properly. Washing isn't just to make it look nice — it takes off the chalk, mildew and salt that stop paint from sticking. Skipping it is the most common reason a repaint doesn't last."
       },
       {
         question: "Can you paint during the summer rainy season?",
@@ -330,7 +330,7 @@ export const servicePages: ServicePage[] = [
     ],
     image: null,
     imageAlt: "",
-    closing: "Exterior quotes are hard to compare because the preparation is where they differ and it is the part nobody itemizes. Ask us what we would do to your walls before any color goes on â€” the answer is the quote.",
+    closing: "Exterior quotes are hard to compare because the preparation is where they differ and it is the part nobody itemizes. Ask us what we would do to your walls before any color goes on — the answer is the quote.",
     relatedGuides: ["why-paint-peels-off-stucco", "how-often-to-repaint-a-florida-house", "house-painting-cost-lakewood-ranch-sarasota"]
   },
   {
