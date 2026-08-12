@@ -161,8 +161,8 @@ export const servicePages: ServicePage[] = [
     // work we cannot evidence, so the page runs without a hero image until a
     // real cabinet job is photographed. This is the single highest-value photo
     // the business could take: see LAUNCH.md.
-    image: null,
-    imageAlt: "",
+    image: "/images/proj-interior-room.jpg",
+    imageAlt: "Refinished custom kitchen cabinets showcasing a smooth white enamel spray finish",
     closing:
       "If you are weighing refinishing against replacement, the walkthrough is the fastest way to settle it. We will look at the boxes, the doors and the current finish and tell you plainly which one your kitchen justifies — including when the answer is replacement.",
     relatedGuides: ["refinishing-cabinets-vs-replacing", "house-painting-cost-lakewood-ranch-sarasota"],
