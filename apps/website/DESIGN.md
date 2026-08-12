@@ -1,61 +1,70 @@
 ---
 colors:
   primary: "#c2592e" # Terracotta / Warm Orange (main brand accent)
-  primaryDeep: "#8e3d1c" # Darker terracotta for hover states
-  secondary: "#d9a460" # Gold (for trust badges, stars, accents)
-  background: "#faf3e9" # Warm off-white
-  surface: "#fffaf3" # Paper-like surface for cards
-  textPrimary: "#211711" # Deep warm ink
-  textSecondary: "#6a594c" # Muted warm gray/brown
-  border: "rgba(74, 47, 26, 0.12)" # Soft warm border
+  primaryDark: "#a34521" # Darker terracotta for hover states
+  secondary: "#c5a059" # Gold (for trust badges, stars, accents)
+  background: "#faf7f2" # Warm off-white canvas (bg-warm-bg)
+  ink: "#211711" # Deep warm ink black (bg-ink / text-ink)
+  inkMuted: "#6a594c" # Muted warm brown/gray text (text-ink-muted)
+  border: "rgba(33, 23, 17, 0.10)" # Crisp border (border-ink/10)
+  rainbowStripe:
+    green: "#61bb46"
+    yellow: "#fdb827"
+    orange: "#f5821f"
+    red: "#e03a3e"
+    purple: "#963d97"
+    blue: "#009dcf"
 typography:
   fontFamily:
-    sans: ["Manrope", "system-ui", "sans-serif"]
-    heading: ["Cormorant Garamond", "serif"]
+    sans: ["Libre Franklin", "system-ui", "sans-serif"] # --font-sans
+    heading: ["Playfair Display", "serif"] # --font-heading
   baseFontSize: "16px"
-spacing:
-  base: "4px"
-  sm: "8px"
-  md: "16px"
-  lg: "24px"
-  xl: "32px"
-  xxl: "64px"
 radii:
-  sm: "8px"
-  md: "16px"
-  lg: "22px"
-  xl: "30px"
-  full: "9999px"
-shadows:
-  sm: "0 6px 20px rgba(85, 46, 20, 0.08)"
-  md: "0 22px 60px rgba(85, 46, 20, 0.14)"
-  lg: "0 32px 80px rgba(85, 46, 20, 0.20)"
+  default: "0.125rem" # 2px sharp corners (--radius: 0.125rem)
+  button: "0.125rem" # 2px sharp buttons (rounded-sm)
+  card: "0.125rem" # 2px sharp card containers (rounded-[var(--radius)])
 ---
 
-# Design System Specification
+# Sharp Editorial Design System Specification
 
-This document serves as the single source of truth for the visual design and UX principles of the **4theloveofcolor** painting business website. 
+This document serves as the **single source of truth** for the visual design, typography, color rules, component guidelines, and UX principles of the **4 The Love of Color Painting** web application.
 
 > [!IMPORTANT]
-> As an AI agent, you must strictly adhere to the tokens defined in the YAML frontmatter and the principles outlined below when generating any UI code. Do not use generic arbitrary values.
+> All AI subagents and UI developers MUST strictly adhere to the tokens and rules defined in this specification. Do not introduce arbitrary rounded corners, non-standard colors, or ad-hoc button shapes.
 
-## 1. Brand Identity & Vibe
-- **Warm & Trustworthy:** The brand uses a very warm, earthy palette (terracotta, gold, off-whites) to evoke the feeling of a premium, friendly, and reliable home service.
-- **Classic Meets Modern:** The use of a serif font (`Cormorant Garamond`) for headings brings a classic, upscale feel, while the highly rounded corners (`radii: lg/xl`) and `Manrope` body font keep it approachable and modern.
-- **Depth & Lighting:** The design relies on warm, tinted shadows to lift cards (`surface`) off the slightly darker background (`background`).
+---
 
-## 2. Component Guidelines
-- **Buttons:** Primary calls to action should utilize a gradient or solid fill of `primary` to `primaryDeep` with a pill shape (`radius: full`) and a pronounced warm shadow.
-- **Cards & Surfaces:** Testimonials, project showcases, and service lists should be housed in cards using the `surface` color, `lg` border radius (22px), and a subtle `sm` shadow.
-- **Typography Hierarchy:** 
-  - Main Hero / Section Headings: `Cormorant Garamond` (large, tight tracking).
-  - Eyebrows / Labels: `Manrope` (uppercase, wide letter-spacing, small font size, `primary` color).
-  - Body: `Manrope` with a comfortable line-height (1.6) and `textSecondary` color.
+## 1. Brand Identity & Aesthetic: "Sharp Editorial"
+- **High-Contrast Minimal & Clean**: High contrast between rich deep warm ink (`#211711`), warm bone canvas (`#FAF7F2`), and terracotta accents (`#C2592E`).
+- **Sharp Geometry (2px Radius Discipline)**: We do **NOT** use heavy bubble rounded corners (`rounded-2xl`, `rounded-full` on cards/buttons). All cards, modals, buttons, badges, and containers use crisp 2px corners (`--radius: 0.125rem` / `rounded-sm`).
+- **Typography Hierarchy**:
+  - Headings & Display: `Playfair Display` serif (`font-serif`, tight tracking, bold).
+  - Body & Micro-copy: `Libre Franklin` sans (`font-sans`, readable, clean).
 
-## 3. Micro-Animations & Interaction
-- **Hover States:** Interactive elements must respond physically (e.g., slight negative Y translation `transform: translateY(-4px)`) and increase shadow depth.
-- **Scroll Reveals:** Content should gently fade and slide up (`translateY(20px)` to `0`) as the user scrolls down the page.
+---
 
-## 4. Implementation Rules
-- Always map these design tokens to Tailwind CSS utility classes by configuring `tailwind.config.ts`. 
-- Ensure `shadcn/ui` components are heavily customized to match the high border radii and warm colors defined here (the default shadcn look is too "SaaS/Dashboard" for this brand).
+## 2. Component & Layout Rules
+
+### Section Headers & Navigation
+- **Homepage Section Tags**: `w-52 sm:w-60 h-9`, `bg-ink text-white`, `text-[11px] sm:text-[13px]`, `font-bold uppercase tracking-[0.2em]`, `rounded-[var(--radius)]`.
+- **Subpage Heroes**: Subpages do **NOT** use section tags. Subpage heroes flow directly from the breadcrumb trail -> `H1` title -> lead paragraph.
+- **Header Navigation**: Clean and uncluttered with macro links only (`Home`, `Services`, `Projects`, `About`, `Contact`). Active link highlighted in `text-terracotta`.
+- **Breadcrumbs**: Standard Shadcn UI Breadcrumbs (`Breadcrumb`, `BreadcrumbList`, `BreadcrumbItem`, `BreadcrumbLink`, `BreadcrumbPage`) paired with dynamic `BreadcrumbList` JSON-LD schema.
+
+### Dividers & Section Borders
+- **Warm-to-Warm Section Dividers**: Thin 2px dark ink lines (`h-0.5 bg-ink/30`).
+- **Key Brand Section Transitions**: Retro Macintosh 6-stripe rainbow bar (`#61bb46`, `#fdb827`, `#f5821f`, `#e03a3e`, `#963d97`, `#009dcf`) at `h-2 sm:h-2.5` (or `h-2 sm:h-3`).
+
+### Cards & Containers
+- Testimonial cards, project portfolio items, service cards, and info boxes use `bg-transparent` or `bg-white` with `border border-ink/10` and `rounded-[var(--radius)]` (2px).
+- Testimonials on `warm-bg` use `bg-transparent` to blend seamlessly into the warm background.
+
+### Buttons & Call-to-Actions
+- Primary CTA: `bg-terracotta text-white font-bold rounded-sm shadow-md hover:bg-[var(--color-terracotta-dark)]`.
+- Secondary CTA / Ghost Button: `bg-transparent text-ink border-2 border-ink font-bold rounded-sm hover:bg-ink hover:text-white`.
+
+---
+
+## 3. SEO & Structured Data Guidelines
+- Every subpage must include dynamic JSON-LD scripts generated via `@/lib/seo/schema.ts` (`getBreadcrumbSchema`, `getServiceSchema`, etc.).
+- Every subpage must declare complete Next.js `metadata` (title, description, canonical URL, openGraph).
