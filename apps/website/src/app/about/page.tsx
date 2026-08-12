@@ -10,12 +10,7 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
-import {
-  Accordion,
-  AccordionItem,
-  AccordionTrigger,
-  AccordionContent,
-} from "@/components/ui/accordion";
+import { EmpathyGuaranteesSection } from "@/components/sections/EmpathyGuaranteesSection";
 import { getBreadcrumbSchema, getWebPageSchema } from "@/lib/seo/schema";
 import { contact } from "@/lib/data/content";
 
@@ -44,29 +39,6 @@ export default function AboutPage() {
     "Learn about 4 The Love of Color, a family-owned painting company serving Florida's Suncoast. Built on empathy, clean job sites, clear communication, and uncompromised quality.",
     "/about"
   );
-
-  const guarantees = [
-    {
-      title: "Written Fixed Price (No Hidden Fees)",
-      description:
-        "You receive a detailed written estimate after our walkthrough, and that exact number is what you pay. We never add surprise charges, and any scope changes must be approved by you first.",
-    },
-    {
-      title: "Clean & Tidy Job Site Every Day",
-      description:
-        "We cover your floors, furniture, and landscaping before work starts. At the end of every workday, tools are organized, trash is removed, and your home is left clean and liveable.",
-    },
-    {
-      title: "Final Walkthrough Before You Pay",
-      description:
-        "We inspect every room or exterior surface together when the work is finished. We touch up any detail you point out, and we never ask for final payment until you are 100% satisfied.",
-    },
-    {
-      title: "Florida Climate-Tested Paints",
-      description:
-        "Intense Suncoast sun, humidity, and salt air require proven materials. We strictly use top-tier 100% acrylic paints (Sherwin-Williams Emerald® and Duration®) and elastomeric sealants built to endure Florida weather.",
-    },
-  ];
 
   return (
     <div className="min-h-screen flex flex-col selection:bg-terracotta selection:text-white overflow-x-hidden bg-warm-bg">
@@ -170,44 +142,8 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* Guarantees Accordion Section */}
-        <section className="px-4 lg:px-8 py-16 lg:py-24 bg-warm-bg border-t border-b border-ink/10 w-full">
-          <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
-            <div className="lg:col-span-5 space-y-4">
-              <span className="text-xs uppercase font-bold tracking-[0.2em] text-terracotta block">
-                Ironclad Promises
-              </span>
-              <h2 className="font-serif text-2xl sm:text-4xl font-bold text-ink leading-tight">
-                What You Can Hold Us To in Writing
-              </h2>
-              <p className="text-sm sm:text-base text-ink-muted leading-relaxed font-medium">
-                Trust is earned by making clear promises and keeping them. Here is what we guarantee in writing on every job across Lakewood Ranch, Sarasota, and Bradenton.
-              </p>
-            </div>
-
-            <div className="lg:col-span-7">
-              <Accordion type="single" collapsible defaultValue="item-0" className="w-full space-y-4">
-                {guarantees.map((item, index) => (
-                  <AccordionItem
-                    key={index}
-                    value={`item-${index}`}
-                    className="border border-ink/15 rounded-[var(--radius)] bg-warm-card px-6 py-1 shadow-sm hover:border-ink/30 transition-colors"
-                  >
-                    <AccordionTrigger className="text-base sm:text-lg font-bold text-ink hover:no-underline text-left py-4">
-                      <div className="flex items-center gap-3">
-                        <span className="font-serif text-terracotta">0{index + 1}.</span>
-                        <span>{item.title}</span>
-                      </div>
-                    </AccordionTrigger>
-                    <AccordionContent className="text-sm text-ink-muted leading-relaxed pt-1 pb-4 pl-8 font-medium">
-                      {item.description}
-                    </AccordionContent>
-                  </AccordionItem>
-                ))}
-              </Accordion>
-            </div>
-          </div>
-        </section>
+        {/* Recycled Homepage Empathy & Guarantees Section */}
+        <EmpathyGuaranteesSection />
 
         {/* Direct CTA Section */}
         <section className="px-4 lg:px-8 py-16 lg:py-24 max-w-7xl mx-auto w-full">
