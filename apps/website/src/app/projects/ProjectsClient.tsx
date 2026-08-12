@@ -31,35 +31,35 @@ export function ProjectsClient() {
         <Tabs defaultValue="all" value={activeTab} onValueChange={setActiveTab} className="w-full">
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-6 border-b border-ink/10">
             <div>
+              <span className="text-xs uppercase font-bold tracking-[0.2em] text-terracotta block mb-1">
+                Portfolio Showcase
+              </span>
               <h2 className="font-serif text-2xl sm:text-3xl font-bold text-ink">
-                Selected Work
+                Selected Work Across the Suncoast
               </h2>
-              <p className="text-sm text-ink-muted mt-1 font-medium">
-                Explore recent painting projects completed across Lakewood Ranch, Sarasota, and Bradenton.
-              </p>
             </div>
-            <TabsList className="bg-white border border-ink/10 p-1 rounded-[var(--radius)]">
+            <TabsList className="bg-warm-card border border-ink/15 p-1 rounded-[var(--radius)] shadow-xs">
               <TabsTrigger
                 value="all"
-                className="data-[state=active]:bg-terracotta data-[state=active]:text-white text-xs font-bold rounded-[var(--radius)] px-3.5 py-1.5 transition-colors"
+                className="data-[state=active]:bg-terracotta data-[state=active]:text-white text-xs font-bold rounded-[var(--radius)] px-3.5 py-1.5 transition-colors cursor-pointer"
               >
                 All Work ({projectsData.length})
               </TabsTrigger>
               <TabsTrigger
                 value="exterior"
-                className="data-[state=active]:bg-terracotta data-[state=active]:text-white text-xs font-bold rounded-[var(--radius)] px-3.5 py-1.5 transition-colors"
+                className="data-[state=active]:bg-terracotta data-[state=active]:text-white text-xs font-bold rounded-[var(--radius)] px-3.5 py-1.5 transition-colors cursor-pointer"
               >
                 Exterior ({projectsData.filter((p) => p.category === "exterior").length})
               </TabsTrigger>
               <TabsTrigger
                 value="interior"
-                className="data-[state=active]:bg-terracotta data-[state=active]:text-white text-xs font-bold rounded-[var(--radius)] px-3.5 py-1.5 transition-colors"
+                className="data-[state=active]:bg-terracotta data-[state=active]:text-white text-xs font-bold rounded-[var(--radius)] px-3.5 py-1.5 transition-colors cursor-pointer"
               >
                 Interior ({projectsData.filter((p) => p.category === "interior").length})
               </TabsTrigger>
               <TabsTrigger
                 value="cabinetry"
-                className="data-[state=active]:bg-terracotta data-[state=active]:text-white text-xs font-bold rounded-[var(--radius)] px-3.5 py-1.5 transition-colors"
+                className="data-[state=active]:bg-terracotta data-[state=active]:text-white text-xs font-bold rounded-[var(--radius)] px-3.5 py-1.5 transition-colors cursor-pointer"
               >
                 Cabinetry ({projectsData.filter((p) => p.category === "cabinetry").length})
               </TabsTrigger>
@@ -72,21 +72,21 @@ export function ProjectsClient() {
                 <Card
                   key={project.id}
                   onClick={() => setSelectedProject(project)}
-                  className="group cursor-pointer bg-white border border-ink/10 rounded-[var(--radius)] overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between"
+                  className="group cursor-pointer bg-warm-card border border-ink/15 rounded-[var(--radius)] overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
                 >
                   <div>
                     {/* High-Res Photo Container */}
-                    <div className="relative aspect-[16/10] overflow-hidden bg-warm-bg">
+                    <div className="relative aspect-[16/10] overflow-hidden bg-ink">
                       <Image
                         src={project.image}
                         alt={project.alt}
                         fill
                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                        className="object-cover group-hover:scale-105 transition-transform duration-500"
+                        className="object-cover opacity-95 group-hover:scale-105 transition-transform duration-500"
                       />
-                      <div className="absolute inset-0 bg-ink/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                        <span className="bg-white/90 text-ink font-bold text-xs uppercase tracking-widest px-3 py-1.5 rounded-[var(--radius)] shadow-sm flex items-center gap-1.5">
-                          <Maximize2 className="w-3.5 h-3.5 text-terracotta" /> View High-Res
+                      <div className="absolute inset-0 bg-ink/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <span className="bg-ink text-white font-bold text-xs uppercase tracking-widest px-3 py-1.5 rounded-[var(--radius)] shadow-md border border-white/10 flex items-center gap-1.5">
+                          <Maximize2 className="w-3.5 h-3.5 text-gold" /> View High-Res
                         </span>
                       </div>
                     </div>
@@ -105,7 +105,7 @@ export function ProjectsClient() {
                       <p className="text-sm text-ink-muted font-medium leading-relaxed">
                         {project.summary}
                       </p>
-                      <div className="pt-3 border-t border-ink/10 flex items-center justify-between text-xs text-ink/70 font-semibold">
+                      <div className="pt-3 border-t border-ink/10 flex items-center justify-between text-xs text-ink/80 font-semibold">
                         <span>{project.paintSpec}</span>
                         <span className="text-ink-muted font-normal">{project.timeline}</span>
                       </div>
@@ -121,7 +121,7 @@ export function ProjectsClient() {
       {/* Clean Full-Res Photo Lightbox Modal */}
       <Dialog open={!!selectedProject} onOpenChange={(open) => !open && setSelectedProject(null)}>
         {selectedProject && (
-          <DialogContent className="max-w-4xl bg-white border-ink/20 p-6 sm:p-8">
+          <DialogContent className="max-w-4xl bg-warm-card border-ink/20 p-6 sm:p-8 rounded-[var(--radius)] shadow-2xl">
             <DialogHeader className="space-y-2 pr-6">
               <div className="flex items-center gap-2 text-xs font-bold text-terracotta uppercase tracking-wider">
                 <MapPin className="w-3.5 h-3.5" />
@@ -134,7 +134,7 @@ export function ProjectsClient() {
 
             <div className="space-y-4 my-2">
               {/* Full Image Display */}
-              <div className="relative aspect-[16/9] overflow-hidden rounded-[var(--radius)] border border-ink/10 bg-warm-bg shadow-sm">
+              <div className="relative aspect-[16/9] overflow-hidden rounded-[var(--radius)] border border-ink/10 bg-ink shadow-md">
                 <Image
                   src={selectedProject.image}
                   alt={selectedProject.alt}
@@ -145,11 +145,11 @@ export function ProjectsClient() {
               </div>
 
               {/* Concise Summary & Specs */}
-              <div className="p-4 bg-warm-bg border border-ink/10 rounded-[var(--radius)] space-y-2 text-sm">
+              <div className="p-5 bg-white border border-ink/15 rounded-[var(--radius)] space-y-3 text-sm shadow-xs">
                 <p className="text-ink font-medium leading-relaxed">
                   {selectedProject.summary}
                 </p>
-                <div className="pt-2 border-t border-ink/10 flex flex-wrap items-center justify-between gap-2 text-xs font-bold text-ink/80">
+                <div className="pt-3 border-t border-ink/10 flex flex-wrap items-center justify-between gap-2 text-xs font-bold text-ink/80">
                   <span>Specification: {selectedProject.paintSpec}</span>
                   <span>Timeline: {selectedProject.timeline}</span>
                 </div>
@@ -162,7 +162,7 @@ export function ProjectsClient() {
               </span>
               <Link
                 href="/contact"
-                className="w-full sm:w-auto bg-terracotta text-white font-bold text-xs uppercase tracking-widest h-11 px-6 hover:bg-[var(--color-terracotta-dark)] transition-colors rounded-[var(--radius)] inline-flex items-center justify-center gap-2"
+                className="w-full sm:w-auto bg-terracotta text-white font-bold text-xs uppercase tracking-widest h-11 px-6 hover:bg-[var(--color-terracotta-dark)] active:scale-[0.99] transition-all rounded-[var(--radius)] inline-flex items-center justify-center gap-2 shadow-sm"
               >
                 <span>Request Free Estimate</span>
                 <ArrowRight className="w-4 h-4" />
@@ -172,14 +172,17 @@ export function ProjectsClient() {
         )}
       </Dialog>
 
-      {/* Clean Call To Action Section */}
-      <section className="px-4 lg:px-8 max-w-7xl mx-auto w-full pt-4">
-        <div className="bg-ink text-white p-8 sm:p-12 rounded-[var(--radius)] shadow-lg flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
-          <div className="space-y-2 max-w-xl">
-            <h2 className="font-serif text-2xl sm:text-3xl font-bold text-white">
+      {/* Rich Dark Espresso CTA Section */}
+      <section className="px-4 lg:px-8 max-w-7xl mx-auto w-full pt-4 pb-8">
+        <div className="bg-ink text-white p-8 sm:p-12 lg:p-16 rounded-[var(--radius)] shadow-2xl flex flex-col md:flex-row items-start md:items-center justify-between gap-6 border border-white/10">
+          <div className="space-y-3 max-w-xl">
+            <span className="text-xs font-bold uppercase tracking-[0.2em] text-gold block">
+              Direct Family Service
+            </span>
+            <h2 className="font-serif text-2xl sm:text-4xl font-bold text-white leading-tight">
               Have a project like these in mind?
             </h2>
-            <p className="text-sm text-white/80 font-medium">
+            <p className="text-sm sm:text-base text-gray-300 font-medium leading-relaxed">
               Talk directly with Edwin and our family crew for a clear, written estimate with zero pressure.
             </p>
           </div>
@@ -187,13 +190,13 @@ export function ProjectsClient() {
           <div className="flex flex-col sm:flex-row gap-3 shrink-0 w-full md:w-auto">
             <Link
               href="/contact"
-              className="bg-terracotta text-white font-bold text-xs uppercase tracking-widest h-11 px-7 hover:bg-[var(--color-terracotta-dark)] transition-colors rounded-[var(--radius)] inline-flex items-center justify-center text-center"
+              className="bg-terracotta text-white font-bold text-xs uppercase tracking-widest h-12 px-7 hover:bg-[var(--color-terracotta-dark)] active:scale-[0.99] transition-all rounded-[var(--radius)] shadow-md inline-flex items-center justify-center text-center"
             >
               Request Free Estimate
             </Link>
             <a
               href={contact.phoneHref}
-              className="border border-white/30 text-white hover:bg-white/10 font-bold text-xs uppercase tracking-widest h-11 px-5 rounded-[var(--radius)] inline-flex items-center justify-center text-center flex items-center gap-2"
+              className="border-2 border-white/40 text-white hover:bg-white/10 font-bold text-xs uppercase tracking-widest h-12 px-6 rounded-[var(--radius)] inline-flex items-center justify-center text-center flex items-center gap-2"
             >
               <Phone className="w-3.5 h-3.5" />
               <span>Call {contact.phone}</span>
