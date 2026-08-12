@@ -9,19 +9,20 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
-import { getBreadcrumbSchema } from "@/lib/seo/schema";
+import { getBreadcrumbSchema, getWebPageSchema } from "@/lib/seo/schema";
+import { ProjectsClient } from "./ProjectsClient";
 
 export const metadata: Metadata = {
   title: "Our Project Portfolio | Recent Painting Work in Sarasota & Lakewood Ranch",
   description:
-    "Explore our gallery of completed interior and exterior painting projects across Lakewood Ranch, Sarasota, and Bradenton, FL. Real craftsmanship, clean lines, and long-lasting finishes.",
+    "Explore our gallery of completed interior, exterior, and cabinet refinishing projects across Lakewood Ranch, Sarasota, and Bradenton, FL. Real craftsmanship, clean lines, and long-lasting finishes.",
   alternates: {
     canonical: "/projects",
   },
   openGraph: {
     title: "Our Project Portfolio | 4 The Love of Color Painting",
     description:
-      "Explore our gallery of completed interior and exterior painting projects across Lakewood Ranch and Sarasota, FL.",
+      "Explore our gallery of completed interior and exterior painting projects across Lakewood Ranch, Sarasota, and Bradenton, FL.",
     url: "https://www.fortheloveofcolor.com/projects",
   },
 };
@@ -31,19 +32,25 @@ export default function ProjectsPage() {
     { name: "Projects", item: "/projects" },
   ]);
 
+  const webPageSchema = getWebPageSchema(
+    "Our Project Portfolio | 4 The Love of Color Painting",
+    "Explore our gallery of completed interior, exterior, and cabinet refinishing projects across Lakewood Ranch, Sarasota, and Bradenton, FL.",
+    "/projects"
+  );
+
   return (
     <div className="min-h-screen flex flex-col selection:bg-terracotta selection:text-white overflow-x-hidden bg-warm-bg">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(breadcrumbSchema).replace(/</g, "\\u003c"),
+          __html: JSON.stringify([breadcrumbSchema, webPageSchema]).replace(/</g, "\\u003c"),
         }}
       />
       <Header />
 
-      <main className="flex-1">
-        {/* Subpage Hero Section */}
-        <section className="px-4 lg:px-8 pt-10 pb-12 lg:pt-14 lg:pb-16 max-w-7xl mx-auto flex flex-col items-start w-full">
+      <main className="flex-1 pb-16 lg:pb-24">
+        {/* Subpage Hero Section - Strictly Obeying DESIGN.md Rules (No Section Tags) */}
+        <section className="px-4 lg:px-8 pt-10 pb-10 lg:pt-14 lg:pb-12 max-w-7xl mx-auto flex flex-col items-start w-full">
           {/* Breadcrumbs */}
           <div className="mb-6">
             <Breadcrumb>
@@ -63,24 +70,12 @@ export default function ProjectsPage() {
             Our Projects &amp; Craftsmanship
           </h1>
           <p className="text-base sm:text-lg text-ink-muted leading-relaxed max-w-3xl font-medium">
-            Explore recent interior, exterior, and custom finish projects completed for homeowners and businesses across Lakewood Ranch, Sarasota, and the Suncoast.
+            Real Suncoast homes, finished with care, skill, and family pride. Explore recent interior transformations, weather-rated exterior paint systems, and custom cabinet refinishing across Lakewood Ranch, Sarasota, and Bradenton.
           </p>
         </section>
 
-        {/* Content Placeholder for Phase 1 Full Buildout */}
-        <section className="px-4 lg:px-8 pb-16 lg:pb-24 max-w-7xl mx-auto w-full">
-          <div className="p-8 sm:p-12 border border-ink/10 rounded-[var(--radius)] bg-warm-bg text-center space-y-4">
-            <p className="text-xs uppercase font-bold tracking-[0.2em] text-gold">
-              Portfolio Gallery
-            </p>
-            <h2 className="font-serif text-2xl sm:text-3xl font-bold text-ink">
-              Full Project Showcase Coming in Phase 1
-            </h2>
-            <p className="text-sm text-ink-muted max-w-xl mx-auto leading-relaxed">
-              We are assembling a filterable gallery featuring before-and-after transformations, exterior weather-coating case studies, and fine cabinet refinishing work.
-            </p>
-          </div>
-        </section>
+        {/* Interactive Client Portfolio Section */}
+        <ProjectsClient />
       </main>
 
       <Footer />
