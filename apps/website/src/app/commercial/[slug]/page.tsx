@@ -58,7 +58,7 @@ export default async function CommercialServiceDetailPage({ params }: { params: 
   }
 
   const breadcrumbSchema = getBreadcrumbSchema([
-    { name: "Commercial Services", item: "/services" },
+    { name: "Commercial Services", item: "/commercial" },
     { name: service.name, item: `/commercial/${service.slug}` },
   ]);
 
@@ -103,7 +103,7 @@ export default async function CommercialServiceDetailPage({ params }: { params: 
                   </BreadcrumbItem>
                   <BreadcrumbSeparator />
                   <BreadcrumbItem>
-                    <BreadcrumbLink href="/services">Services</BreadcrumbLink>
+                    <BreadcrumbLink href="/commercial">Commercial</BreadcrumbLink>
                   </BreadcrumbItem>
                   <BreadcrumbSeparator />
                   <BreadcrumbItem>

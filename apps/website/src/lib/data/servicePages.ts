@@ -68,6 +68,7 @@ export type ServicePage = {
 export const servicePages: ServicePage[] = [
   {
     slug: "cabinet-refinishing",
+    persona: "residential",
     category: "interior",
     name: "Cabinet refinishing",
     serviceType: "Kitchen cabinet refinishing",
@@ -160,6 +161,7 @@ export const servicePages: ServicePage[] = [
   },
   {
     slug: "interior-painting",
+    persona: "residential",
     category: "interior",
     name: "Interior painting",
     serviceType: "Interior residential painting",
@@ -248,6 +250,7 @@ export const servicePages: ServicePage[] = [
   },
   {
     slug: "exterior-painting",
+    persona: "residential",
     category: "exterior",
     name: "Exterior painting",
     serviceType: "Exterior residential painting",
@@ -742,6 +745,7 @@ export const servicePages: ServicePage[] = [
   },
   {
     slug: "commercial-painting",
+    persona: "commercial",
     category: "core",
     name: "Commercial painting",
     serviceType: "Commercial painting",

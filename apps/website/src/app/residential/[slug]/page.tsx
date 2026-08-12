@@ -58,7 +58,7 @@ export default async function ResidentialServiceDetailPage({ params }: { params:
   }
 
   const breadcrumbSchema = getBreadcrumbSchema([
-    { name: "Residential Services", item: "/services" },
+    { name: "Residential Services", item: "/residential" },
     { name: service.name, item: `/residential/${service.slug}` },
   ]);
 
@@ -104,7 +104,7 @@ export default async function ResidentialServiceDetailPage({ params }: { params:
                   </BreadcrumbItem>
                   <BreadcrumbSeparator />
                   <BreadcrumbItem>
-                    <BreadcrumbLink href="/services">Services</BreadcrumbLink>
+                    <BreadcrumbLink href="/residential">Residential</BreadcrumbLink>
                   </BreadcrumbItem>
                   <BreadcrumbSeparator />
                   <BreadcrumbItem>

@@ -55,6 +55,7 @@ export interface MacroService {
   slug: string;
   description: string;
   image: string;
+  persona: "residential" | "commercial";
 }
 
 export const macroServices: MacroService[] = [
@@ -64,6 +65,7 @@ export const macroServices: MacroService[] = [
     description:
       "Refresh the rooms you actually live in — walls, ceilings, trim, and doors finished with clean lines and a smooth, even coat that holds up to Florida humidity.",
     image: "/images/proj-interior-bedroom.jpg",
+    persona: "residential",
   },
   {
     title: "Exterior Painting",
@@ -71,6 +73,7 @@ export const macroServices: MacroService[] = [
     description:
       "Boost curb appeal and protect your home from sun, salt air, and humidity with durable, weather-rated coatings and prep built to last on the Gulf Coast.",
     image: "/images/proj-exterior-modern.jpg",
+    persona: "residential",
   },
   {
     title: "Cabinet Refinishing",
@@ -78,6 +81,7 @@ export const macroServices: MacroService[] = [
     description:
       "Keep the kitchen you have and change how it looks — degreased, deglossed, properly primed and sprayed to a finish that survives daily use.",
     image: "/images/proj-interior-room.jpg",
+    persona: "residential",
   },
   {
     title: "Commercial Painting",
@@ -85,6 +89,23 @@ export const macroServices: MacroService[] = [
     description:
       "Offices, storefronts, HOA common areas, and rental turnovers — scoped in writing and scheduled around your trading hours, tenants, or handover date.",
     image: "/images/proj-exterior-mediterranean.jpg",
+    persona: "commercial",
+  },
+  {
+    title: "Stucco & Exterior Repair",
+    slug: "stucco-repair",
+    description:
+      "Maintain the structural integrity of your commercial buildings with professional crack repair, pressure washing, and UV-resistant elastomerics.",
+    image: "/images/proj-exterior-arched.jpg",
+    persona: "commercial",
+  },
+  {
+    title: "Drywall & Prep",
+    slug: "drywall-repair",
+    description:
+      "Turnovers require speed. We fix the underlying wall flaws, patch holes, and prepare surfaces rapidly before laying down fresh, washable paint.",
+    image: "/images/proj-interior-bedroom.jpg",
+    persona: "commercial",
   },
 ];
 
