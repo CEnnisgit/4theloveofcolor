@@ -5,30 +5,15 @@ import Image from "next/image";
 import Link from "next/link";
 import { projectsData, type ProjectItem } from "@/lib/data/projects";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
-import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { AspectRatio } from "@/components/ui/aspect-ratio";
+import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import {
   Dialog,
   DialogContent,
   DialogHeader,
   DialogTitle,
-  DialogDescription,
-  DialogFooter,
 } from "@/components/ui/dialog";
-import {
-  MapPin,
-  Paintbrush,
-  Clock,
-  ShieldCheck,
-  CheckCircle2,
-  Sun,
-  Droplets,
-  ArrowRight,
-  Maximize2,
-  Sparkles,
-} from "lucide-react";
+import { MapPin, Maximize2, ArrowRight, Phone } from "lucide-react";
+import { contact } from "@/lib/data/content";
 
 export function ProjectsClient() {
   const [activeTab, setActiveTab] = useState<string>("all");
@@ -40,31 +25,43 @@ export function ProjectsClient() {
   });
 
   return (
-    <div className="w-full space-y-16 lg:space-y-24">
-      {/* Category Filter Tabs */}
+    <div className="w-full space-y-12 lg:space-y-16">
+      {/* Category Filter Bar */}
       <section className="px-4 lg:px-8 max-w-7xl mx-auto w-full">
         <Tabs defaultValue="all" value={activeTab} onValueChange={setActiveTab} className="w-full">
-          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-4 border-b border-ink/10">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-6 border-b border-ink/10">
             <div>
               <h2 className="font-serif text-2xl sm:text-3xl font-bold text-ink">
-                Selected Suncoast Transformations
+                Selected Work
               </h2>
               <p className="text-sm text-ink-muted mt-1 font-medium">
-                Filter by project type to view paint specs, surface prep, and timelines.
+                Explore recent painting projects completed across Lakewood Ranch, Sarasota, and Bradenton.
               </p>
             </div>
-            <TabsList className="bg-warm-card border border-ink/10 p-1.5 rounded-[var(--radius)]">
-              <TabsTrigger value="all" className="data-[state=active]:bg-terracotta data-[state=active]:text-white">
-                All Projects ({projectsData.length})
+            <TabsList className="bg-white border border-ink/10 p-1 rounded-[var(--radius)]">
+              <TabsTrigger
+                value="all"
+                className="data-[state=active]:bg-terracotta data-[state=active]:text-white text-xs font-bold rounded-[var(--radius)] px-3.5 py-1.5 transition-colors"
+              >
+                All Work ({projectsData.length})
               </TabsTrigger>
-              <TabsTrigger value="exterior" className="data-[state=active]:bg-terracotta data-[state=active]:text-white">
+              <TabsTrigger
+                value="exterior"
+                className="data-[state=active]:bg-terracotta data-[state=active]:text-white text-xs font-bold rounded-[var(--radius)] px-3.5 py-1.5 transition-colors"
+              >
                 Exterior ({projectsData.filter((p) => p.category === "exterior").length})
               </TabsTrigger>
-              <TabsTrigger value="interior" className="data-[state=active]:bg-terracotta data-[state=active]:text-white">
+              <TabsTrigger
+                value="interior"
+                className="data-[state=active]:bg-terracotta data-[state=active]:text-white text-xs font-bold rounded-[var(--radius)] px-3.5 py-1.5 transition-colors"
+              >
                 Interior ({projectsData.filter((p) => p.category === "interior").length})
               </TabsTrigger>
-              <TabsTrigger value="cabinetry" className="data-[state=active]:bg-terracotta data-[state=active]:text-white">
-                Cabinet Refinishing ({projectsData.filter((p) => p.category === "cabinetry").length})
+              <TabsTrigger
+                value="cabinetry"
+                className="data-[state=active]:bg-terracotta data-[state=active]:text-white text-xs font-bold rounded-[var(--radius)] px-3.5 py-1.5 transition-colors"
+              >
+                Cabinetry ({projectsData.filter((p) => p.category === "cabinetry").length})
               </TabsTrigger>
             </TabsList>
           </div>
@@ -74,84 +71,46 @@ export function ProjectsClient() {
               {filteredProjects.map((project) => (
                 <Card
                   key={project.id}
-                  className="group flex flex-col justify-between overflow-hidden bg-white border border-ink/10 rounded-[var(--radius)] shadow-sm hover:shadow-md transition-all duration-300"
+                  onClick={() => setSelectedProject(project)}
+                  className="group cursor-pointer bg-white border border-ink/10 rounded-[var(--radius)] overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between"
                 >
                   <div>
-                    {/* Aspect Ratio Image Container */}
-                    <div
-                      className="relative overflow-hidden cursor-pointer"
-                      onClick={() => setSelectedProject(project)}
-                    >
-                      <AspectRatio ratio={16 / 9} className="bg-warm-bg">
-                        <Image
-                          src={project.image}
-                          alt={project.alt}
-                          fill
-                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                          className="object-cover group-hover:scale-105 transition-transform duration-500"
-                        />
-                      </AspectRatio>
-                      
-                      {/* Image Overlay Hover Cue */}
-                      <div className="absolute inset-0 bg-ink/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                        <span className="bg-white/95 text-ink font-bold text-xs uppercase tracking-widest px-3 py-1.5 rounded-[var(--radius)] shadow-md flex items-center gap-1.5">
-                          <Maximize2 className="w-3.5 h-3.5 text-terracotta" /> Inspect Case Study
+                    {/* High-Res Photo Container */}
+                    <div className="relative aspect-[16/10] overflow-hidden bg-warm-bg">
+                      <Image
+                        src={project.image}
+                        alt={project.alt}
+                        fill
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        className="object-cover group-hover:scale-105 transition-transform duration-500"
+                      />
+                      <div className="absolute inset-0 bg-ink/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <span className="bg-white/90 text-ink font-bold text-xs uppercase tracking-widest px-3 py-1.5 rounded-[var(--radius)] shadow-sm flex items-center gap-1.5">
+                          <Maximize2 className="w-3.5 h-3.5 text-terracotta" /> View High-Res
                         </span>
-                      </div>
-
-                      {/* Top Badges */}
-                      <div className="absolute top-3 left-3 right-3 flex items-center justify-between pointer-events-none">
-                        <Badge variant="default" className="bg-ink text-white font-semibold text-[10px] tracking-wider uppercase border-none shadow">
-                          {project.categoryLabel}
-                        </Badge>
-                        <Badge variant="outline" className="bg-white/95 text-ink font-semibold text-[10px] tracking-wider uppercase backdrop-blur-xs border-ink/20 shadow-xs">
-                          <MapPin className="w-3 h-3 text-terracotta mr-1 inline" />
-                          {project.neighborhood}
-                        </Badge>
                       </div>
                     </div>
 
-                    <CardHeader className="p-6 pb-3 space-y-2">
-                      <div className="flex items-center gap-2 text-xs font-semibold text-terracotta uppercase tracking-wider">
+                    <CardHeader className="p-6 pb-2 space-y-1.5">
+                      <div className="flex items-center gap-1.5 text-xs font-bold text-terracotta uppercase tracking-wider">
                         <MapPin className="w-3.5 h-3.5 shrink-0" />
-                        <span>{project.location}</span>
+                        <span>{project.location} • {project.neighborhood}</span>
                       </div>
-                      <CardTitle
-                        className="font-serif text-xl font-bold text-ink hover:text-terracotta transition-colors cursor-pointer leading-tight"
-                        onClick={() => setSelectedProject(project)}
-                      >
+                      <CardTitle className="font-serif text-xl font-bold text-ink group-hover:text-terracotta transition-colors leading-snug">
                         {project.title}
                       </CardTitle>
                     </CardHeader>
 
-                    <CardContent className="p-6 pt-0 space-y-4">
-                      <p className="text-sm text-ink-muted leading-relaxed font-medium line-clamp-3">
+                    <CardContent className="p-6 pt-0 space-y-3">
+                      <p className="text-sm text-ink-muted font-medium leading-relaxed">
                         {project.summary}
                       </p>
-
-                      {/* Specs Chips */}
-                      <div className="space-y-2 pt-2 border-t border-ink/10 text-xs">
-                        <div className="flex items-center text-ink/80 font-medium">
-                          <Paintbrush className="w-3.5 h-3.5 text-terracotta mr-2 shrink-0" />
-                          <span className="truncate">{project.paintSpec}</span>
-                        </div>
-                        <div className="flex items-center text-ink/80 font-medium">
-                          <Clock className="w-3.5 h-3.5 text-gold mr-2 shrink-0" />
-                          <span>{project.timeline}</span>
-                        </div>
+                      <div className="pt-3 border-t border-ink/5 flex items-center justify-between text-xs text-ink/70 font-semibold">
+                        <span>{project.paintSpec}</span>
+                        <span className="text-ink-muted font-normal">{project.timeline}</span>
                       </div>
                     </CardContent>
                   </div>
-
-                  <CardFooter className="p-6 pt-0">
-                    <Button
-                      onClick={() => setSelectedProject(project)}
-                      className="w-full bg-warm-bg text-ink border border-ink/20 hover:bg-terracotta hover:text-white hover:border-terracotta font-bold text-xs uppercase tracking-widest h-10 transition-all rounded-[var(--radius)] cursor-pointer flex items-center justify-center gap-2"
-                    >
-                      <span>View Full Project Specs</span>
-                      <ArrowRight className="w-3.5 h-3.5" />
-                    </Button>
-                  </CardFooter>
                 </Card>
               ))}
             </div>
@@ -159,213 +118,85 @@ export function ProjectsClient() {
         </Tabs>
       </section>
 
-      {/* Interactive Project Detail Modal / Lightbox */}
+      {/* Clean Full-Res Photo Lightbox Modal */}
       <Dialog open={!!selectedProject} onOpenChange={(open) => !open && setSelectedProject(null)}>
         {selectedProject && (
-          <DialogContent className="max-w-3xl bg-warm-bg border-ink/20 p-6 sm:p-8">
-            <DialogHeader className="space-y-3 pr-6">
-              <div className="flex flex-wrap items-center gap-2">
-                <Badge className="bg-terracotta text-white font-bold text-[10px] uppercase tracking-wider rounded-[var(--radius)]">
-                  {selectedProject.categoryLabel}
-                </Badge>
-                <Badge variant="outline" className="bg-white text-ink border-ink/20 font-bold text-[10px] uppercase tracking-wider rounded-[var(--radius)]">
-                  <MapPin className="w-3 h-3 text-terracotta mr-1" />
-                  {selectedProject.location} ({selectedProject.neighborhood})
-                </Badge>
+          <DialogContent className="max-w-4xl bg-white border-ink/20 p-6 sm:p-8">
+            <DialogHeader className="space-y-2 pr-6">
+              <div className="flex items-center gap-2 text-xs font-bold text-terracotta uppercase tracking-wider">
+                <MapPin className="w-3.5 h-3.5" />
+                <span>{selectedProject.location} • {selectedProject.neighborhood}</span>
               </div>
               <DialogTitle className="font-serif text-2xl sm:text-3xl font-bold text-ink">
                 {selectedProject.title}
               </DialogTitle>
-              <DialogDescription className="text-sm text-ink-muted font-medium">
-                Detailed surface preparation, material specification, and execution summary.
-              </DialogDescription>
             </DialogHeader>
 
-            <div className="space-y-6 my-2">
-              {/* Full Image Preview */}
-              <div className="relative overflow-hidden border border-ink/10 rounded-[var(--radius)] bg-white shadow-sm">
-                <AspectRatio ratio={16 / 9}>
-                  <Image
-                    src={selectedProject.image}
-                    alt={selectedProject.alt}
-                    fill
-                    className="object-cover"
-                    priority
-                  />
-                </AspectRatio>
+            <div className="space-y-4 my-2">
+              {/* Full Image Display */}
+              <div className="relative aspect-[16/9] overflow-hidden rounded-[var(--radius)] border border-ink/10 bg-warm-bg shadow-sm">
+                <Image
+                  src={selectedProject.image}
+                  alt={selectedProject.alt}
+                  fill
+                  className="object-cover"
+                  priority
+                />
               </div>
 
-              {/* Summary Callout */}
-              <div className="p-4 bg-white border border-ink/10 rounded-[var(--radius)] space-y-1">
-                <h4 className="text-xs uppercase font-bold text-terracotta tracking-wider">Project Overview</h4>
-                <p className="text-sm text-ink font-medium leading-relaxed">
+              {/* Concise Summary & Specs */}
+              <div className="p-4 bg-warm-bg border border-ink/10 rounded-[var(--radius)] space-y-2 text-sm">
+                <p className="text-ink font-medium leading-relaxed">
                   {selectedProject.summary}
                 </p>
-              </div>
-
-              {/* Technical Specifications Matrix */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div className="p-4 bg-white border border-ink/10 rounded-[var(--radius)] space-y-1">
-                  <span className="text-xs font-bold uppercase tracking-wider text-ink-muted flex items-center gap-1.5">
-                    <Paintbrush className="w-3.5 h-3.5 text-terracotta" /> Coating Specification
-                  </span>
-                  <p className="text-sm font-bold text-ink">{selectedProject.paintSpec}</p>
-                </div>
-                <div className="p-4 bg-white border border-ink/10 rounded-[var(--radius)] space-y-1">
-                  <span className="text-xs font-bold uppercase tracking-wider text-ink-muted flex items-center gap-1.5">
-                    <Clock className="w-3.5 h-3.5 text-gold" /> Turnaround Time
-                  </span>
-                  <p className="text-sm font-bold text-ink">{selectedProject.timeline}</p>
-                </div>
-              </div>
-
-              {/* Deep-Dive Execution Breakdown */}
-              <div className="border border-ink/10 bg-white rounded-[var(--radius)] p-5 space-y-4">
-                <h4 className="font-serif text-lg font-bold text-ink flex items-center gap-2 border-b border-ink/10 pb-2">
-                  <ShieldCheck className="w-5 h-5 text-terracotta" /> Execution &amp; Craftsmanship Standards
-                </h4>
-
-                <div className="grid grid-cols-1 gap-3 text-xs sm:text-sm">
-                  <div className="flex items-start gap-2.5">
-                    <CheckCircle2 className="w-4 h-4 text-terracotta shrink-0 mt-0.5" />
-                    <div>
-                      <span className="font-bold text-ink">Surface Prep: </span>
-                      <span className="text-ink-muted">{selectedProject.details.prep}</span>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-2.5">
-                    <CheckCircle2 className="w-4 h-4 text-terracotta shrink-0 mt-0.5" />
-                    <div>
-                      <span className="font-bold text-ink">Primer &amp; Sealant: </span>
-                      <span className="text-ink-muted">{selectedProject.details.primer}</span>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-2.5">
-                    <CheckCircle2 className="w-4 h-4 text-terracotta shrink-0 mt-0.5" />
-                    <div>
-                      <span className="font-bold text-ink">Topcoat System: </span>
-                      <span className="text-ink-muted">{selectedProject.details.topcoat}</span>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-2.5">
-                    <Sparkles className="w-4 h-4 text-gold shrink-0 mt-0.5" />
-                    <div>
-                      <span className="font-bold text-ink">Final Outcome: </span>
-                      <span className="text-ink-muted">{selectedProject.details.outcome}</span>
-                    </div>
-                  </div>
+                <div className="pt-2 border-t border-ink/10 flex flex-wrap items-center justify-between gap-2 text-xs font-bold text-ink/80">
+                  <span>Specification: {selectedProject.paintSpec}</span>
+                  <span>Timeline: {selectedProject.timeline}</span>
                 </div>
               </div>
             </div>
 
-            <DialogFooter className="flex-col sm:flex-row gap-3 pt-2">
-              <Button
-                variant="outline"
-                onClick={() => setSelectedProject(null)}
-                className="w-full sm:w-auto border-ink/20 text-ink font-bold text-xs uppercase tracking-wider h-11 rounded-[var(--radius)]"
-              >
-                Close Case Study
-              </Button>
+            <div className="pt-4 border-t border-ink/10 flex flex-col sm:flex-row items-center justify-between gap-4">
+              <span className="text-xs text-ink-muted font-medium">
+                Interested in a similar finish for your home?
+              </span>
               <Link
-                href={`/contact?project=${encodeURIComponent(selectedProject.title)}`}
-                className="w-full sm:w-auto bg-terracotta text-white font-bold text-xs uppercase tracking-wider h-11 hover:bg-ink transition-colors rounded-[var(--radius)] inline-flex items-center justify-center px-5 text-center"
+                href="/contact"
+                className="w-full sm:w-auto bg-terracotta text-white font-bold text-xs uppercase tracking-widest h-11 px-6 hover:bg-ink transition-colors rounded-[var(--radius)] inline-flex items-center justify-center gap-2"
               >
-                Request Similar Project Estimate
+                <span>Request Estimate</span>
+                <ArrowRight className="w-4 h-4" />
               </Link>
-            </DialogFooter>
+            </div>
           </DialogContent>
         )}
       </Dialog>
 
-      {/* Craftsmanship Proof Banner */}
-      <section className="px-4 lg:px-8 max-w-7xl mx-auto w-full">
-        <div className="border border-ink/10 bg-white p-8 lg:p-12 rounded-[var(--radius)] shadow-sm space-y-8">
-          <div className="max-w-3xl space-y-3">
-            <span className="text-xs uppercase font-bold tracking-[0.2em] text-terracotta flex items-center gap-1.5">
-              <Sun className="w-4 h-4" /> Florida Sun &amp; Salt Air Resistance
-            </span>
-            <h2 className="font-serif text-2xl sm:text-4xl font-bold text-ink leading-tight">
-              Engineered for the Suncoast Climate
-            </h2>
-            <p className="text-sm sm:text-base text-ink-muted leading-relaxed font-medium">
-              Florida sun, sea salt humidity, and sudden summer downpours break down cheap paint in under two years. Every home shown above was prepped, sealed, and painted by our family team using proven, climate-rated systems.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 pt-4 border-t border-ink/10">
-            <div className="space-y-2">
-              <div className="w-9 h-9 rounded-[var(--radius)] bg-warm-bg border border-ink/10 flex items-center justify-center text-terracotta">
-                <Droplets className="w-5 h-5" />
-              </div>
-              <h3 className="font-serif text-base font-bold text-ink">2,500 PSI Prep Wash</h3>
-              <p className="text-xs text-ink-muted leading-relaxed font-medium">
-                We remove salt deposits, chalking, mold spores, and loose coatings before applying a single drop of primer.
-              </p>
-            </div>
-
-            <div className="space-y-2">
-              <div className="w-9 h-9 rounded-[var(--radius)] bg-warm-bg border border-ink/10 flex items-center justify-center text-terracotta">
-                <ShieldCheck className="w-5 h-5" />
-              </div>
-              <h3 className="font-serif text-base font-bold text-ink">Elastomeric Caulking</h3>
-              <p className="text-xs text-ink-muted leading-relaxed font-medium">
-                High-flex polyurethane caulking seals window casings and stucco hairline cracks against wind-driven rain.
-              </p>
-            </div>
-
-            <div className="space-y-2">
-              <div className="w-9 h-9 rounded-[var(--radius)] bg-warm-bg border border-ink/10 flex items-center justify-center text-terracotta">
-                <Paintbrush className="w-5 h-5" />
-              </div>
-              <h3 className="font-serif text-base font-bold text-ink">100% Acrylic Coatings</h3>
-              <p className="text-xs text-ink-muted leading-relaxed font-medium">
-                Sherwin-Williams Emerald® &amp; Duration® formulas offer maximum UV reflection and mildew resistance.
-              </p>
-            </div>
-
-            <div className="space-y-2">
-              <div className="w-9 h-9 rounded-[var(--radius)] bg-warm-bg border border-ink/10 flex items-center justify-center text-terracotta">
-                <Sparkles className="w-5 h-5" />
-              </div>
-              <h3 className="font-serif text-base font-bold text-ink">Family-Owned Crew</h3>
-              <p className="text-xs text-ink-muted leading-relaxed font-medium">
-                Edwin and family manage the jobsite daily. No subcontractors rushing through prep to get to the next job.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Call To Action Banner */}
-      <section className="px-4 lg:px-8 max-w-7xl mx-auto w-full pb-8">
-        <div className="bg-ink text-white p-8 sm:p-12 lg:p-16 rounded-[var(--radius)] shadow-xl flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
-          <div className="space-y-3 max-w-2xl">
-            <span className="text-xs font-bold uppercase tracking-[0.2em] text-terracotta">
-              Ready To Transform Your Home?
-            </span>
-            <h2 className="font-serif text-3xl sm:text-4xl font-bold leading-tight">
+      {/* Clean Call To Action Section */}
+      <section className="px-4 lg:px-8 max-w-7xl mx-auto w-full pt-4">
+        <div className="bg-ink text-white p-8 sm:p-12 rounded-[var(--radius)] shadow-lg flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+          <div className="space-y-2 max-w-xl">
+            <h2 className="font-serif text-2xl sm:text-3xl font-bold text-white">
               Have a project like these in mind?
             </h2>
-            <p className="text-sm sm:text-base text-gray-300 font-medium leading-relaxed">
-              Contact our family team for a free on-site consultation and clear, written estimate. No pressure and no hidden fees.
+            <p className="text-sm text-gray-300 font-medium">
+              Talk directly with Edwin and our family crew for a clear, written estimate with zero pressure.
             </p>
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-4 shrink-0 w-full md:w-auto">
+          <div className="flex flex-col sm:flex-row gap-3 shrink-0 w-full md:w-auto">
             <Link
               href="/contact"
-              className="bg-terracotta text-white font-bold text-xs uppercase tracking-widest h-12 px-8 hover:bg-white hover:text-ink transition-colors rounded-[var(--radius)] shadow-md inline-flex items-center justify-center text-center"
+              className="bg-terracotta text-white font-bold text-xs uppercase tracking-widest h-11 px-7 hover:bg-white hover:text-ink transition-colors rounded-[var(--radius)] inline-flex items-center justify-center text-center"
             >
-              Request Estimate
+              Request Free Estimate
             </Link>
             <a
-              href="tel:+19175840069"
-              className="border border-white/30 text-white hover:bg-white/10 font-bold text-xs uppercase tracking-widest h-12 px-6 rounded-[var(--radius)] inline-flex items-center justify-center text-center"
+              href={contact.phoneHref}
+              className="border border-white/30 text-white hover:bg-white/10 font-bold text-xs uppercase tracking-widest h-11 px-5 rounded-[var(--radius)] inline-flex items-center justify-center text-center flex items-center gap-2"
             >
-              Call (917) 584-0069
+              <Phone className="w-3.5 h-3.5" />
+              <span>Call {contact.phone}</span>
             </a>
           </div>
         </div>
