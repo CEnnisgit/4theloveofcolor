@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
@@ -144,18 +143,21 @@ export default function AboutPage() {
               </div>
             </div>
 
-            {/* Right Photo Column */}
+            {/* Right Media Column - Photo Placeholder Box */}
             <div className="lg:col-span-5 relative bg-ink flex flex-col justify-between">
-              <div className="relative aspect-[4/3] lg:aspect-auto lg:h-full w-full min-h-[300px]">
-                <Image
-                  src="/images/proj-exterior-white-2story.jpg"
-                  alt="Florida Suncoast home painted by 4 The Love of Color"
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 40vw"
-                  className="object-cover"
-                  priority
-                />
+              {/* Image Placeholder Box */}
+              <div className="relative aspect-[4/3] lg:aspect-auto lg:h-full w-full min-h-[300px] bg-ink/90 border-b border-white/10 flex items-center justify-center p-8 text-center">
+                <div className="space-y-1">
+                  <p className="text-xs uppercase font-bold tracking-[0.2em] text-gold">
+                    Photo Placeholder
+                  </p>
+                  <p className="font-serif text-lg font-medium text-gray-300">
+                    Add family photo later
+                  </p>
+                </div>
               </div>
+
+              {/* Founder Quote Footer */}
               <div className="p-6 sm:p-8 bg-ink text-white space-y-2 border-t border-white/10">
                 <p className="font-serif text-base sm:text-lg font-bold italic text-white leading-snug">
                   &ldquo;Every house we paint carries our family name. That&apos;s why we never rush prep or compromise on finish quality.&rdquo;
