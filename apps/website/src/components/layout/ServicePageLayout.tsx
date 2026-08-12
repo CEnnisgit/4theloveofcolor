@@ -30,9 +30,10 @@ interface ServicePageLayoutProps {
 export function ServicePageLayout({ service, persona }: ServicePageLayoutProps) {
   // Trust badges change based on persona
   const trustBadges = persona === "residential" ? [
-    { icon: <Award className="w-6 h-6" />, label: "Family Does the Work" },
-    { icon: <CheckCircle2 className="w-6 h-6" />, label: "Daily Cleanup" },
-    { icon: <ShieldCheck className="w-6 h-6" />, label: "Low-VOC Paints" }
+    { icon: <Award className="w-6 h-6" />, label: "Family-Owned" },
+    { icon: <ShieldCheck className="w-6 h-6" />, label: "Eco-Friendly Paint" },
+    { icon: <CheckCircle2 className="w-6 h-6" />, label: "Clean On-Time Crews" },
+    { icon: <Clock className="w-6 h-6" />, label: "Careful Prep" }
   ] : [
     { icon: <ShieldCheck className="w-6 h-6" />, label: "Fully Licensed & Insured" },
     { icon: <CheckCircle2 className="w-6 h-6" />, label: "Zero Resident Disruption" },
