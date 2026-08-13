@@ -8,6 +8,17 @@ To understand the tech stack, the SEO strategies, the strict package manager rul
 👉 **[Read the Onboarding Walkthrough (`docs/onboarding_walkthrough.md`)](docs/onboarding_walkthrough.md)** 👈
 
 ## Quick Start
-* We strictly use `pnpm` workspace commands. **Never use `npm`.**
-* Core application code lives in `apps/website/`.
-* See `LAUNCH.md` for specific build and deployment validation rules.
+1. Navigate to the core application folder:
+   ```bash
+   cd apps/website
+   ```
+2. Install dependencies (we strictly use `pnpm`, **never use `npm`**):
+   ```bash
+   pnpm install
+   ```
+3. Boot the Next.js development server:
+   ```bash
+   pnpm dev
+   ```
+   
+> **Note:** See `LAUNCH.md` for specific build and deployment validation rules when preparing for production.
