@@ -1102,7 +1102,7 @@ export const servicePages: ServicePage[] = [
     relatedGuides: [],
   },
   {
-    slug: "stucco-repair",
+    slug: "commercial-stucco-repair",
     persona: "commercial",
     category: "exterior",
     name: "Commercial stucco repair",
@@ -1180,7 +1180,7 @@ export const servicePages: ServicePage[] = [
     relatedGuides: [],
   },
   {
-    slug: "color-consultation",
+    slug: "commercial-color-consultation",
     persona: "commercial",
     category: "prep",
     name: "Commercial color consultation",
@@ -1258,7 +1258,7 @@ export const servicePages: ServicePage[] = [
     relatedGuides: [],
   },
   {
-    slug: "pressure-washing",
+    slug: "commercial-pressure-washing",
     persona: "commercial",
     category: "exterior",
     name: "Commercial pressure washing",
@@ -1336,7 +1336,7 @@ export const servicePages: ServicePage[] = [
     relatedGuides: [],
   },
   {
-    slug: "paver-sealing",
+    slug: "commercial-paver-sealing",
     persona: "commercial",
     category: "exterior",
     name: "Commercial paver sealing",
@@ -1414,7 +1414,7 @@ export const servicePages: ServicePage[] = [
     relatedGuides: [],
   },
   {
-    slug: "drywall-repair",
+    slug: "commercial-drywall-repair",
     persona: "commercial",
     category: "interior",
     name: "Commercial drywall repair",

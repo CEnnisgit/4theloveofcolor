@@ -1,49 +1,13 @@
-# 4 The Love of Color Painting — Website
+# 4 The Love of Color - Digital Architecture
 
-Marketing website for 4 The Love of Color Painting, a family-owned interior &
-exterior painting company serving **Lakewood Ranch, Sarasota & the Suncoast (FL)**.
+> **⚠️ ATTENTION AI AGENTS AND DEVELOPERS:** 
+> Do not make assumptions based on standard repository layouts. This project has undergone a massive architectural and SEO migration from a legacy Vite SPA to a **Next.js (App Router) Monorepo** targeting Cloudflare Pages.
 
-Built with **React 18 + TypeScript + Vite**. Deployed to **Netlify**.
+To understand the tech stack, the SEO strategies, the strict package manager rules (`pnpm`), and the layout of the codebase, **you must read the onboarding walkthrough first.**
 
-## Develop
+👉 **[Read the Onboarding Walkthrough (`docs/onboarding_walkthrough.md`)](docs/onboarding_walkthrough.md)** 👈
 
-```bash
-npm install
-npm run dev        # http://localhost:5173
-```
-
-## Build
-
-```bash
-npm run build      # type-checks + builds to dist/
-npm run preview    # preview the production build
-```
-
-## Project layout
-
-- `src/App.tsx` — all marketing pages (Home, Services, Projects, About, Contact) + the reviews section
-- `src/data/siteContent.ts` — all copy, contact info, services, FAQs, curated reviews
-- `src/styles.css` — single stylesheet (warm terracotta design system)
-- `src/seo.ts` — per-page `<title>` / meta / canonical (SEO)
-- `src/useReviews.ts` — fetches live Google reviews from the backend (`/api/reviews`)
-- `src/useScrollReveal.ts` — scroll-in animations (progressive enhancement)
-- `src/Photo.tsx` — `<picture>` wrapper serving WebP with JPEG fallback
-- `src/admin/` — admin CRM dashboard (separate from the marketing site)
-- `public/images/` — optimized photos (+ `original/` backups; re-run `npm run optimize-images`)
-
-## Backend
-
-The contact form and live Google reviews talk to a separate Express API
-(`4theloveofcolorpainting-api`). Set `VITE_API_URL` to its URL in a `.env` file
-(or Netlify env vars). Without it, the contact form posts to a relative path and
-the reviews section falls back to curated reviews.
-
-## Images
-
-Source photos live in `public/images/original/`. Run `npm run optimize-images`
-to regenerate the web-sized JPEG + WebP variants.
-
-## SEO
-
-LocalBusiness + FAQ structured data in `index.html`, `public/sitemap.xml`,
-`public/robots.txt`, geo meta tags, and per-route titles/descriptions.
+## Quick Start
+* We strictly use `pnpm` workspace commands. **Never use `npm`.**
+* Core application code lives in `apps/website/`.
+* See `LAUNCH.md` for specific build and deployment validation rules.

@@ -98,7 +98,7 @@ export const serviceCategories: ServiceCategory[] = [
     description: "Turnovers require speed. We fix underlying wall flaws, patch holes, and prepare surfaces rapidly before laying down fresh, washable paint.",
     image: "/images/proj-exterior-arched.jpg",
     persona: "commercial",
-    services: ["drywall-repair", "stucco-repair", "pressure-washing", "paver-sealing"],
+    services: ["commercial-drywall-repair", "commercial-stucco-repair", "commercial-pressure-washing", "commercial-paver-sealing"],
   }
 ];
 
