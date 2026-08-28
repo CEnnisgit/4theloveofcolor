@@ -1,4 +1,45 @@
+# Everything here is crawlable. There is nothing on this site that shouldn't be.
 User-agent: *
+Allow: /
+
+# --- AI crawlers -----------------------------------------------------------
+# These are split into two jobs, and the distinction decides whether this
+# business shows up when someone asks an assistant "who paints houses in
+# Lakewood Ranch".
+#
+#   Retrieval bots fetch a page so an assistant can answer with it and cite it.
+#   Training bots collect text to train a future model.
+#
+# The retrieval bots are listed explicitly below because they are how we get
+# recommended in an AI answer. That is the same job as ranking in Google, and
+# we want it.
+#
+# Training bots (GPTBot, ClaudeBot, CCBot, Google-Extended) are covered by the
+# Allow above. That is a deliberate choice, not an oversight: there is no
+# customer-facing downside for a painting company, and being present in model
+# knowledge is mildly useful. To opt out of training while staying eligible for
+# AI citations, add a Disallow block for those four names and leave the ones
+# below alone.
+#
+# Note that robots.txt is a convention, not a control — a crawler only obeys it
+# if it chooses to, and a user-agent string can claim to be anything.
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
 Allow: /
 
 Sitemap: https://www.4theloveofcolorpainting.com/sitemap.xml

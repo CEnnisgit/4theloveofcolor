@@ -1588,7 +1588,9 @@ function CityPageBody({ page }: { page: CityPageData }) {
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
+    "@id": `${business.url}/painters/${page.slug}/#service`,
     serviceType: "House Painting",
+    url: `${business.url}/painters/${page.slug}`,
     provider: { "@id": `${business.url}/#business` },
     areaServed: {
       "@type": "City",
@@ -1598,9 +1600,36 @@ function CityPageBody({ page }: { page: CityPageData }) {
     description: page.metaDescription,
   };
 
+  // The city pages were the only template shipping without a breadcrumb, which
+  // mattered more here than anywhere else: these are the pages that have to win
+  // local queries, and BreadcrumbList is one of the few markup types that still
+  // changes how a result is drawn. Two levels, because there is no /painters
+  // hub — the trail must describe links that exist.
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: `${business.url}/` },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: `${page.city} painters`,
+        item: `${business.url}/painters/${page.slug}`,
+      },
+    ],
+  };
+
   return (
     <>
       <JsonLd data={serviceSchema} />
+      <JsonLd data={breadcrumbSchema} />
+
+      <nav className="breadcrumbs" aria-label="Breadcrumb">
+        <NavLink to="/">Home</NavLink>
+        <span aria-hidden="true">/</span>
+        <span aria-current="page">{page.city} painters</span>
+      </nav>
+
       <section className="page-hero section">
         <p className="eyebrow">
           Painting in {page.city}, {business.region}

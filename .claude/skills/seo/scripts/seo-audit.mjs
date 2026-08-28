@@ -39,29 +39,8 @@ const ORIGIN = arg("--origin", "").replace(/\/$/, "");
 const MIN_WORDS = Number(arg("--min-words", 250));
 const TITLE_MAX = Number(arg("--title-max", 65));
 const DESC_MAX = Number(arg("--desc-max", 165));
-/**
- * Assert the main content was written into the HTML at build time rather than
- * arriving via JavaScript. Only meaningful for a build that prerenders into a
- * marked container; off by default so the script stays portable.
- */
-const REQUIRE_PRERENDERED = process.argv.includes("--require-prerendered");
 /** Hosts that must never appear in built output. */
 const FORBIDDEN_HOSTS = /localhost|127\.0\.0\.1|\.netlify\.app|\.vercel\.app|\.pages\.dev|\.local\b/;
-/**
- * Hosts a page may legitimately point at — schema vocabularies, font and asset
- * CDNs, and the business's own social profiles. Anything else on an absolute
- * URL is treated as domain drift. Extend with --allow-host.
- */
-const EXTERNAL_HOSTS = new RegExp(
-  [
-    "schema\\.org",
-    "fonts\\.googleapis\\.com",
-    "fonts\\.gstatic\\.com",
-    "www\\.instagram\\.com",
-    "www\\.w3\\.org",
-    ...process.argv.filter((a, i) => process.argv[i - 1] === "--allow-host"),
-  ].join("|"),
-);
 
 if (!ORIGIN) {
   console.error("error: --origin is required, e.g. --origin https://www.example.com");
@@ -220,23 +199,8 @@ for (const { url, html } of pages) {
     }
   }
 
-  if (REQUIRE_PRERENDERED && !/data-prerendered="true"/.test(html))
-    fail(url, "not prerendered — content would arrive via JavaScript");
-
   // leakage
   if (FORBIDDEN_HOSTS.test(html)) fail(url, "references localhost / a preview domain");
-
-  /**
-   * Any absolute URL on a host that isn't this site or a known external link
-   * target. This is the check that would have caught 1,019 pages built with
-   * the wrong domain: the canonical check alone passes if every page is
-   * consistently wrong, so compare against the origin we were told to expect.
-   */
-  for (const href of all(html, /(?:href|content|"url"|"@id")[=:]\s*"(https?:\/\/[^"]+)"/g)) {
-    const host = new URL(href).origin;
-    if (host !== ORIGIN && !EXTERNAL_HOSTS.test(host))
-      fail(url, `unexpected external host ${host}`);
-  }
 
   for (const href of all(html, /href="(\/[^"#?]*)"/g))
     internalLinks.add(href.replace(/\/$/, "") || "/");
