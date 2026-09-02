@@ -599,6 +599,131 @@ export const guidePages: GuidePage[] = [
     closing:
       "Bring us in for a walkthrough and we will tell you which way your kitchen goes — including when the honest answer is that refinishing is not worth it.",
   },
+  {
+    slug: "hoa-paint-color-approval-lakewood-ranch",
+    name: "Getting HOA color approval",
+    title: "HOA Color Approval in Lakewood Ranch | 4 The Love of Color",
+    metaDescription:
+      "How ARC color approval actually works in Lakewood Ranch villages: when you need to apply, what goes in the packet, and how long the board has to answer.",
+    h1: "Getting your paint color approved in Lakewood Ranch.",
+    intro: [
+      "Almost every home we paint out here sits in a village with its own architectural committee, and the paperwork catches people out more often than the painting does. It is not difficult. It just has a clock on it, and the clock starts before the crew does.",
+      "Here is how the approval actually runs, so you can get the color you want without losing a month waiting on a form nobody told you about.",
+    ],
+    sections: [
+      {
+        heading: "It is your village's committee, not “Lakewood Ranch”",
+        body: [
+          "This is the part that trips people up first. Lakewood Ranch is not one association. It is a collection of villages, and each one has its own HOA, its own architectural review committee, and its own approved color palette. A scheme that is standard two streets over can be a straight refusal in yours.",
+          "So before you fall in love with a color, find your own village's palette. It lives in the resident portal along with the form you will need, and it is the only palette that governs your house.",
+        ],
+      },
+      {
+        heading: "When you need to apply",
+        body: [
+          "The rule of thumb is simple: if the color is changing, you apply and you wait for the answer before anyone opens a can.",
+        ],
+        points: [
+          {
+            title: "Changing color — always apply",
+            text: "A formal modification request, approved in writing, before work starts. Painting first and asking after is how people end up repainting at their own expense.",
+          },
+          {
+            title: "Same color — usually still a form",
+            text: "Most villages want an application even for an exact repaint, partly to confirm the pigment still matches the current standard. It is normally a quick approval, but it is rarely a skip.",
+          },
+          {
+            title: "Trim, doors and accents count",
+            text: "A front door in a new color is a color change. So is a different trim white. These are the ones people forget to put on the form.",
+          },
+        ],
+      },
+      {
+        heading: "What goes in the packet",
+        body: [
+          "Committees turn down more applications for being incomplete than for being the wrong color. Getting all of it in at once is the single biggest thing you can do to speed this up.",
+        ],
+        points: [
+          {
+            title: "The form from your resident portal",
+            text: "Use your village's current version. A form downloaded from a neighboring community, or one saved from a few years ago, gets sent back.",
+          },
+          {
+            title: "Paint codes, and usually physical swatches",
+            text: "Manufacturer name and code for every surface — body, trim, accents, door. Many committees want actual swatches rather than a screenshot, because color on a screen is not color.",
+          },
+          {
+            title: "A current photo of your house",
+            text: "As it stands today. Some villages also ask for photos of the homes either side, so they can see how your scheme sits in the street.",
+          },
+          {
+            title: "Your contractor's license and insurance",
+            text: "Commonly required as part of the submission. Worth asking your painter for these up front rather than mid-application — it is a normal request and any established crew will have them to hand.",
+          },
+        ],
+      },
+      {
+        heading: "The clock, and why it changes your scheduling",
+        body: [
+          "Boards typically have up to 30 days to respond, and plenty of them use a good part of it. Committees often meet monthly, so submitting the day after a meeting can quietly cost you several weeks.",
+          "The practical consequence: get the application in before you book the work, not after. We would much rather hold a date for you than have a crew arrive at a house that has not been cleared yet. If you are aiming to be painted before a particular season or event, count backwards from that date and add the review window.",
+        ],
+      },
+      {
+        heading: "What usually gets an application refused",
+        body: [
+          "None of these are mysterious, and all of them are avoidable.",
+        ],
+        points: [
+          {
+            title: "A color that is not on the palette",
+            text: "The most common one by far. Committees are generally strict about this, and “close to” an approved color is not the same as on the list.",
+          },
+          {
+            title: "An incomplete submission",
+            text: "A missing swatch, no photo, an unsigned form. This is the avoidable delay, and it usually costs you a whole review cycle rather than a day.",
+          },
+          {
+            title: "Repeating a near neighbor's scheme",
+            text: "Some communities restrict how close an identical scheme can sit to yours. Worth checking your own rules before you settle on something you have admired down the street.",
+          },
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: "Can I paint the same color without asking anyone?",
+        answer:
+          "Usually you still submit something, even though it is normally approved quickly. Check your village's portal rather than assuming — the requirement varies between communities inside Lakewood Ranch.",
+      },
+      {
+        question: "How long does approval take?",
+        answer:
+          "Boards typically have up to 30 days, and many committees meet monthly. Plan on a few weeks rather than a few days, and submit early in the cycle if you can.",
+      },
+      {
+        question: "What happens if I paint first and apply after?",
+        answer:
+          "You risk being told to repaint at your own cost, which is a genuinely expensive mistake. Get the written approval first — it costs you nothing but time.",
+      },
+      {
+        question: "Does my painter need to be licensed and insured for this?",
+        answer:
+          "Committees commonly ask for those documents as part of the application, so in practice you want a contractor who can produce them without fuss.",
+      },
+      {
+        question: "Can I pick a color that is not on my village's palette?",
+        answer:
+          "Some communities allow a variance request, but it is a longer road and it is often refused. If you want something outside the list, start that conversation early rather than treating it as a formality.",
+      },
+    ],
+    published: "2026-09-02",
+    updated: "2026-09-02",
+    image: null,
+    imageAlt: "",
+    closing:
+      "If you are weighing a couple of schemes, get us out for a walkthrough before you fill the form in. Seeing how a color actually behaves on your stucco, in this light, is worth more than any swatch on a kitchen counter.",
+  },
 ];
 
 export const guidePageBySlug = (slug: string) =>
