@@ -38,8 +38,18 @@ const attr = (value) =>
     .replace(/>/g, "&gt;")
     .replace(/"/g, "&quot;");
 
-/** Absolute URL for a route path. The canonical form carries no trailing slash. */
-const absolute = (path) => (path === "/" ? `${ORIGIN}/` : `${ORIGIN}${path}`);
+/**
+ * Absolute URL for a route path.
+ *
+ * The trailing slash is the canonical form here, and it is not a style choice.
+ * Every route is prerendered as `<path>/index.html`, and Netlify 301s a
+ * directory path to its trailing-slash form -- so `/services/pressure-washing`
+ * redirects to `/services/pressure-washing/`. Declaring the slashless URL as
+ * canonical therefore pointed every page's canonical at a URL that redirects,
+ * which is the weaker signal. Canonical and sitemap now both name the URL that
+ * is actually served.
+ */
+const absolute = (path) => (path === "/" ? `${ORIGIN}/` : `${ORIGIN}${path}/`);
 
 function headTagsFor(route) {
   const url = absolute(route.path);

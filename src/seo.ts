@@ -40,7 +40,8 @@ export function useSeo(path: string) {
   useEffect(() => {
     if (!route) return;
 
-    const url = business.url + (route.path === "/" ? "" : route.path);
+    // Trailing slash: the served URL. See the note in scripts/prerender.mjs.
+    const url = business.url + (route.path === "/" ? "/" : `${route.path}/`);
     const ogImage =
       business.url + (route.image ?? "/images/proj-exterior-white-2story.jpg");
 

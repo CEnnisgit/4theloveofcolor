@@ -92,7 +92,7 @@ for (const { url, html } of pages) {
   if (!canonical) fail(url, "no canonical");
   else {
     if (!canonical.startsWith("https://")) fail(url, "canonical is not absolute");
-    const expected = url === "/" ? `${ORIGIN}/` : ORIGIN + url;
+    const expected = url === "/" ? `${ORIGIN}/` : `${ORIGIN}${url}/`;
     if (canonical !== expected) fail(url, `canonical is ${canonical}, expected ${expected}`);
     if (!isNoIndex) {
       if (canonicals.has(canonical)) fail(url, `canonical collides with ${canonicals.get(canonical)}`);
@@ -151,7 +151,7 @@ const sitemapUrls = all(sitemap, /<loc>([^<]*)<\/loc>/g);
 const pageUrls = new Set(pages.map((p) => p.url));
 
 for (const loc of sitemapUrls) {
-  const rel = loc.replace(ORIGIN, "") || "/";
+  const rel = (loc.replace(ORIGIN, "").replace(/\/$/, "")) || "/";
   const normalized = rel === "/" ? "/" : rel.replace(/\/$/, "");
   if (!pageUrls.has(normalized)) fail("sitemap.xml", `lists ${loc} which has no prerendered page`);
   const page = pages.find((p) => p.url === normalized);
@@ -161,7 +161,7 @@ for (const loc of sitemapUrls) {
 
 for (const { url, html } of pages) {
   if (/<meta name="robots" content="noindex/.test(html)) continue;
-  const abs = url === "/" ? `${ORIGIN}/` : ORIGIN + url;
+  const abs = url === "/" ? `${ORIGIN}/` : `${ORIGIN}${url}/`;
   if (!sitemapUrls.includes(abs)) fail("sitemap.xml", `missing indexable page ${url}`);
 }
 
