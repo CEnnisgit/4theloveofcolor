@@ -56,6 +56,23 @@ export function useScrollReveal() {
     let lastParent: Element | null = null;
     let stagger = 0;
     for (const el of els) {
+      /**
+       * Never hide what is already on screen.
+       *
+       * `.hero-copy` and `.hero-media` are above the fold, so applying the
+       * hidden state to them produced: paint visible -> JS hides -> observer
+       * fires -> fade back in. That is a visible flash, and it delays Largest
+       * Contentful Paint, because an element at opacity 0 does not count as
+       * painted. LCP is a Core Web Vitals ranking signal, so the animation was
+       * costing exactly what the rest of this codebase works to protect.
+       *
+       * Elements already in the viewport at init are left alone entirely;
+       * everything below the fold still animates as before.
+       */
+      const box = el.getBoundingClientRect();
+      const alreadyVisible = box.top < window.innerHeight && box.bottom > 0;
+      if (alreadyVisible) continue;
+
       el.classList.add("reveal");
       const parent = el.parentElement;
       if (parent !== lastParent) {
