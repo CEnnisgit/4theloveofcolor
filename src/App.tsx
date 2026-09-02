@@ -247,14 +247,6 @@ function HomePage() {
   return (
     <>
       <section className="hero section" aria-labelledby="hero-title">
-        <img
-          className="hero-logo-bg"
-          src="/images/logo.png"
-          alt=""
-          aria-hidden="true"
-          width={640}
-          height={640}
-        />
         <div className="hero-copy">
           <p className="eyebrow">Painters in Lakewood Ranch &amp; Sarasota, FL</p>
           <h1 id="hero-title">
