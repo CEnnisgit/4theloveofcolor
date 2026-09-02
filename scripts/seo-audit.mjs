@@ -19,7 +19,7 @@ import { existsSync } from "node:fs";
 import path from "node:path";
 
 const DIST = path.resolve("dist");
-const ORIGIN = "https://www.4theloveofcolorpainting.com";
+const ORIGIN = "https://4theloveofcolor.com";
 
 const failures = [];
 const warnings = [];

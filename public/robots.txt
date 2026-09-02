@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.4theloveofcolorpainting.com/sitemap.xml
+Sitemap: https://4theloveofcolor.com/sitemap.xml

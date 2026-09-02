@@ -27,7 +27,7 @@ const { render, allRoutes, indexableRoutes } = await import(
   pathToFileURL(join(root, "dist-ssr", "entry-server.js")).href
 );
 
-const ORIGIN = "https://www.4theloveofcolorpainting.com";
+const ORIGIN = "https://4theloveofcolor.com";
 const DEFAULT_OG_IMAGE = "/images/proj-exterior-white-2story.jpg";
 
 /** Escape a string for use inside a double-quoted HTML attribute. */

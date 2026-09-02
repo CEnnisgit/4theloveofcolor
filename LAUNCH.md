@@ -8,7 +8,8 @@ impact, not by effort.
 ## 1. Deploy the site (blocks everything else)
 
 The site is finished and building clean, but `4theloveofcolorpainting.com`
-still serves the old Wix site. Until that changes, none of the work in this
+still serves the old Wix site, and `4theloveofcolor.com` — the domain the
+site is now built for — serves a Squarespace placeholder. Until that changes, none of the work in this
 repo is doing anything.
 
 1. **Connect Netlify** — netlify.com → *Add new site* → *Import from GitHub* →
@@ -29,54 +30,57 @@ repo is doing anything.
    Netlify dashboard and nobody is told a lead came in.
 3. **Test the form** on the temporary `*.netlify.app` URL and confirm the email
    arrives. Do this *before* touching DNS.
-4. **Point the domain** — read this whole step before touching anything.
-   Registration and DNS live in two different places, which is why earlier
-   versions of this file sent people to the wrong dashboard twice.
+4. **Point the domains — there are two, and both matter.**
+
+   The site's canonical domain is now **`4theloveofcolor.com`** (apex, no
+   `www`). Every canonical URL, the sitemap and the JSON-LD use that form.
+   The owner owns both domains, and both are registered at **Squarespace**.
 
    Verified live on 2026-09-02:
 
    ```
-   $ nslookup -type=NS 4theloveofcolorpainting.com 8.8.8.8
-   4theloveofcolorpainting.com  nameserver = ns10.wixdns.net
-   4theloveofcolorpainting.com  nameserver = ns11.wixdns.net
+   4theloveofcolor.com          NS -> ns-cloud-b1..b4.googledomains.com
+                                A  -> 198.185.159.144 / 198.49.23.144
+                                serves a Squarespace "Coming Soon" placeholder
 
-   $ nslookup -type=CNAME www.4theloveofcolorpainting.com 8.8.8.8
-   www.4theloveofcolorpainting.com  canonical name = cdn3.wixdns.net
+   4theloveofcolorpainting.com  NS -> ns10/ns11.wixdns.net
+                                A  -> 185.230.63.107 / .171   (Wix hosting)
+                                www CNAME -> cdn3.wixdns.net
+                                no MX, no TXT
    ```
 
-   - **Registrar: Squarespace.** This is where the domain is *owned* and where
-     the nameservers are *set*.
-   - **Authoritative DNS: Wix** (`ns10/ns11.wixdns.net`). This is where the
-     records currently *resolve*, because Squarespace delegates to Wix.
+   **Set it up like this, and not the other way round:**
 
-   **The domain carries nothing else — verified 2026-09-02.** There are no
-   MX records and no TXT records on it:
+   - `4theloveofcolor.com` → **primary domain** on the Netlify site.
+   - `4theloveofcolorpainting.com` → added as a **domain alias** on the same
+     site. Netlify automatically 301s an alias to the primary domain and
+     preserves the path, which is exactly the behaviour needed here.
+   - **Keep the painting domain registered.** Do not let it lapse. It is the
+     domain Google currently knows, it is almost certainly the URL on the
+     Google Business Profile and in any directory listings, and the 301 is
+     what carries that history onto the new name. Dropping it throws away
+     every inbound link the business has.
 
-   ```
-   $ nslookup -type=MX 4theloveofcolorpainting.com 8.8.8.8   -> no MX
-   $ nslookup -type=TXT 4theloveofcolorpainting.com 8.8.8.8  -> no TXT
-   ```
+   The path-level rules in `public/_redirects` (`/about-us` → `/about`,
+   `/privacy-policy` → `/privacy`) still apply on top of the domain
+   redirect, so an indexed Wix URL like
+   `4theloveofcolorpainting.com/about-us` lands on
+   `4theloveofcolor.com/about` in one hop.
 
-   That matters more than it looks. The usual danger in a nameserver move is
-   silently breaking email or dropping a verification record. Neither exists
-   here — the business runs on `4theloveofcolorpainting@gmail.com`, a plain
-   Gmail address that does not touch this domain's DNS. The only records doing
-   any work are the ones pointing at Wix's hosting (apex A ->
-   `185.230.63.107` / `185.230.63.171`, `www` CNAME -> `cdn3.wixdns.net`),
-   and those are exactly the ones being replaced.
+   **Why the shorter domain is worth the migration.** It is a better brand
+   asset and far easier to say on a phone or a truck. The cost is that
+   `4theloveofcolorpainting.com` contains the word "painting", a weak
+   relevance signal that the new one loses. For local service search that
+   factor is small next to the Business Profile and reviews, and the 301
+   carries the accumulated authority across — so this is a good trade,
+   provided the redirect is actually set up.
 
-   **So: repoint the nameservers at Squarespace to Netlify DNS.** It is the
-   clean option and, in this specific case, it carries none of the risk that
-   normally argues against it. Editing records at Wix instead also works, but
-   it leaves DNS authority sitting inside the account you are trying to stop
-   paying for.
+   **Afterwards, in Google Search Console:** add `4theloveofcolor.com` as a
+   property, submit `https://4theloveofcolor.com/sitemap.xml`, and use the
+   **Change of Address** tool on the old property to tell Google the move is
+   deliberate. Keep both properties — the old one is how you watch the
+   redirects being processed.
 
-   If MX or TXT records ever get added to this domain (a Google Workspace
-   mailbox, a Search Console TXT verification), re-check before repeating this
-   advice — the reasoning above depends on the domain being empty.
-
-   Whichever route: set `www.4theloveofcolorpainting.com` as the primary
-   domain in Netlify — every canonical URL in the code uses the `www.` form.
 5. **Keep Wix running** until DNS has propagated and the new site resolves.
    Cancel the subscription only after that.
 
@@ -101,7 +105,7 @@ auto-generated boilerplate rather than anything written for this business, and
 a 404 is honest where a redirect to an unrelated page is not.
 
 After DNS moves, submit the sitemap in Google Search Console
-(`https://www.4theloveofcolorpainting.com/sitemap.xml`) and use *URL
+(`https://4theloveofcolor.com/sitemap.xml`) and use *URL
 Inspection* on one city page to confirm Google sees its own canonical rather
 than the home page's.
 

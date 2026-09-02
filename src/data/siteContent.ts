@@ -38,7 +38,7 @@ export const business = {
   phoneHref: "tel:+19175840069",
   email: "4theloveofcolorpainting@gmail.com",
   emailHref: "mailto:4theloveofcolorpainting@gmail.com",
-  url: "https://www.4theloveofcolorpainting.com",
+  url: "https://4theloveofcolor.com",
   // Primary geography (Suncoast / Gulf Coast Florida)
   city: "Lakewood Ranch",
   region: "FL",
