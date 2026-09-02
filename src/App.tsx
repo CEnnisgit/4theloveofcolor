@@ -1059,6 +1059,16 @@ function CityServiceBody({
         </p>
       </section>
 
+      <CityServiceLinks
+        citySlug={page.citySlug}
+        cityName={city.city}
+        excludeServiceSlug={page.serviceSlug}
+      />
+      <ServiceCityLinks
+        serviceSlug={page.serviceSlug}
+        excludeCitySlug={page.citySlug}
+      />
+
       <CtaBanner />
     </>
   );
@@ -1669,11 +1679,16 @@ function CityPageBody({ page }: { page: CityPageData }) {
 function CityServiceLinks({
   citySlug,
   cityName,
+  excludeServiceSlug,
 }: {
   citySlug: string;
   cityName: string;
+  /** Set when rendered on one of these pages, so it cannot link to itself. */
+  excludeServiceSlug?: string;
 }) {
-  const pages = cityServicesForCity(citySlug);
+  const pages = cityServicesForCity(citySlug).filter(
+    (page) => page.serviceSlug !== excludeServiceSlug,
+  );
   if (pages.length === 0) return null;
 
   return (
@@ -1702,8 +1717,17 @@ function CityServiceLinks({
  * Links from a service page across to the cities where that service has its
  * own page. Same "render nothing if empty" rule.
  */
-function ServiceCityLinks({ serviceSlug }: { serviceSlug: string }) {
-  const pages = cityServicesForService(serviceSlug);
+function ServiceCityLinks({
+  serviceSlug,
+  excludeCitySlug,
+}: {
+  serviceSlug: string;
+  /** Set when rendered on one of these pages, so it cannot link to itself. */
+  excludeCitySlug?: string;
+}) {
+  const pages = cityServicesForService(serviceSlug).filter(
+    (page) => page.citySlug !== excludeCitySlug,
+  );
   if (pages.length === 0) return null;
 
   return (
