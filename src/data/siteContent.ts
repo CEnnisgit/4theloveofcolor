@@ -144,6 +144,39 @@ export const services: Service[] = [
       "Out-of-hours and phased schedules to keep you open",
     ],
   },
+  {
+    title: "Lanai & pool cage painting",
+    slug: "lanai-and-pool-cage-painting",
+    description:
+      "The back of the house takes the worst of the humidity and the salt air. Lanai ceilings, columns and cage framing cleaned back, rust treated, and primed so the finish actually holds.",
+    bullets: [
+      "Lanai ceilings, beams, and support columns",
+      "Screened enclosure and pool cage framing",
+      "Rust treatment and aluminum-bonding primer",
+    ],
+  },
+  {
+    title: "Pressure washing",
+    slug: "pressure-washing",
+    description:
+      "Soft washing where the surface needs it and pressure only where it can take it \u2014 so mildew and algae actually come off, and the stucco, paint, and screens survive the process.",
+    bullets: [
+      "House exteriors, lanais, and screened enclosures",
+      "Driveways, walkways, and pavers",
+      "Included as prep on every exterior repaint",
+    ],
+  },
+  {
+    title: "Popcorn ceiling removal",
+    slug: "popcorn-ceiling-removal",
+    description:
+      "Scraped, skimmed flat, primed, and painted \u2014 finished as a ceiling rather than just stripped. Older texture gets tested before anything is disturbed.",
+    bullets: [
+      "Testing before removal on pre-1980 texture",
+      "Full containment and dust protection",
+      "Skimmed smooth, primed, and painted",
+    ],
+  },
 ];
 
 export const homeFeatures: Project[] = [

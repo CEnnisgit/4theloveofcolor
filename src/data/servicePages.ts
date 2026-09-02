@@ -454,6 +454,298 @@ export const servicePages: ServicePage[] = [
       "Tell us the constraint — the trading hours, the handover date, the areas that cannot close — and we will build the scope and the schedule around it before quoting.",
     relatedGuides: ["house-painting-cost-lakewood-ranch-sarasota"],
   },
+  {
+    slug: "lanai-and-pool-cage-painting",
+    name: "Lanai & pool cage painting",
+    serviceType: "Lanai and pool enclosure painting",
+    title: "Lanai & Pool Cage Painting, Lakewood Ranch | 4 The Love of Color",
+    metaDescription:
+      "Lanai ceilings, columns and pool cage frames repainted for Lakewood Ranch and Sarasota homes. Mildew, chalking and rust bleed dealt with properly.",
+    h1: "Lanai and pool cage painting.",
+    intro: [
+      "The lanai is the room most people out here actually use, and it takes more punishment than anything else on the property. It sits in shade and humidity, which is what mildew wants, and the cage around it takes sun and salt air all year.",
+      "It also shows. A tired ceiling and a chalky white frame age the back of a house faster than anything, and both are straightforward to put right once the surfaces are properly cleaned and the right primer goes on the aluminum.",
+    ],
+    includes: [
+      "Lanai ceilings, beams and support columns",
+      "Screened enclosure and pool cage framing",
+      "Railings, screen doors and kick plates",
+      "Exterior walls under the lanai roof",
+      "Rust treatment at fasteners and joints",
+    ],
+    process: [
+      {
+        title: "Wash it, gently",
+        text: "Lanai ceilings are usually mildew rather than dirt, and mildew needs a cleaning solution and dwell time, not brute force. High pressure on a screened enclosure damages the screens and drives water where it should not go.",
+      },
+      {
+        title: "Deal with the rust before anything else",
+        text: "Cage frames rust at the screws and the joints first, closer to the water especially. Rust that gets painted over bleeds back through as brown streaks within a season, so it gets treated and spot primed first.",
+      },
+      {
+        title: "Prime the aluminum properly",
+        text: "This is the step that decides whether cage paint lasts. Bare or chalked aluminum needs a primer made to bond to it. Paint straight onto a chalky frame and it will peel off in sheets, which is why so many repainted cages look worse two years on than they did before.",
+      },
+      {
+        title: "Mask the screens, or plan around them",
+        text: "Spraying a frame with the screens in means careful masking and slower work. Sometimes it makes more sense to coordinate with a screen replacement if the mesh is due anyway. We will tell you which situation you are in.",
+      },
+      {
+        title: "Finish the ceiling and columns",
+        text: "Lanai ceilings want a coating that copes with constant humidity and shade. Columns and beams get the same treatment as the rest of the exterior so the whole back of the house reads as one job rather than two.",
+      },
+    ],
+    problems: [
+      {
+        title: "Black streaks across the lanai ceiling",
+        text: "Mildew, not dirt. It grows in shade and humidity, which describes every lanai in this county. Painting over it without killing and washing it off first just feeds it a fresh surface.",
+      },
+      {
+        title: "A cage frame that leaves white on your hand",
+        text: "Chalking. The old finish has broken down in the sun. Nothing sticks to a chalked frame until it has been washed back and primed for aluminum.",
+      },
+      {
+        title: "Brown streaks running down from screws",
+        text: "Rust bleeding through. It needs treating at the source. Recoating over it hides the problem for about one season.",
+      },
+      {
+        title: "Paint peeling off the cage in sheets",
+        text: "Almost always the wrong primer, or none. Aluminum is unforgiving about this in a way stucco is not.",
+      },
+    ],
+    timeline:
+      "A lanai on its own is usually a day or two. A full cage depends on the size of the enclosure and how much rust treatment it needs, and it runs longer when the screens stay in and everything has to be masked.",
+    occupied:
+      "You lose the use of the lanai and the pool deck while we are working and while things cure. We will tell you which days those are up front. Pets need to stay inside on the working side, and the sprinklers on that elevation should be off.",
+    faqs: [
+      {
+        question: "Do you paint pool cages on their own?",
+        answer:
+          "We do, though more often it comes along with a wider exterior repaint. Ask us either way and we will tell you honestly whether it is worth scheduling as a standalone visit or better bundled with other work.",
+      },
+      {
+        question: "Do the screens have to come out?",
+        answer:
+          "Not necessarily. It means more masking and slower going with them in. If your mesh is near the end of its life anyway, it is often worth doing the screens and the frame in the right order rather than working around them.",
+      },
+      {
+        question: "Why is my lanai ceiling black in patches?",
+        answer:
+          "Mildew. Shade plus humidity is ideal for it, and lanais have both year round. It cleans off, but it needs treating rather than just rinsing or it comes straight back.",
+      },
+      {
+        question: "How long does a repainted cage last?",
+        answer:
+          "It depends almost entirely on whether the aluminum was prepared and primed correctly, and on how close you are to salt air. Prep is the whole story on cages, far more than the coating that goes over it.",
+      },
+      {
+        question: "Do you coat pool decks and lanai floors?",
+        answer:
+          "Deck and floor coatings are a different trade with different products. Ask us when we are out and we will tell you straight whether it is something we would take on or whether you want a specialist.",
+      },
+    ],
+    image: null,
+    imageAlt: "",
+    closing:
+      "If the back of your house has started to look older than the front, this is usually why. Get us out and we will tell you what the ceiling and the cage actually need.",
+    relatedGuides: [
+      "why-paint-peels-off-stucco",
+      "how-often-to-repaint-a-florida-house",
+      "hoa-paint-color-approval-lakewood-ranch",
+    ],
+  },
+  {
+    slug: "pressure-washing",
+    name: "Pressure washing",
+    serviceType: "Exterior pressure washing and soft washing",
+    title: "Pressure Washing, Lakewood Ranch & Sarasota | 4 The Love of Color",
+    metaDescription:
+      "Soft washing and pressure washing for Lakewood Ranch and Sarasota homes. The right pressure for the surface, so stucco and paint are not damaged.",
+    h1: "Pressure washing, at the right pressure.",
+    intro: [
+      "Most of what people call pressure washing should barely use pressure at all. Mildew and algae are living growth, and the way to remove them is a cleaning solution and time to work, not force. Force is what damages the wall.",
+      "That distinction matters more here than almost anywhere. Stucco, painted surfaces and screened enclosures are all easy to wreck with a wand held too close, and the damage often does not show until the next time it rains.",
+    ],
+    includes: [
+      "House exteriors, stucco and painted surfaces",
+      "Lanais, screened enclosures and columns",
+      "Driveways, walkways and pavers",
+      "Soffits, fascia and gutter exteriors",
+      "Pre-paint washing as part of a repaint",
+    ],
+    process: [
+      {
+        title: "Work out what is actually on the wall",
+        text: "Green is usually algae, black streaking is usually mildew, and chalky white is broken-down paint. They do not come off the same way, and treating them as one problem is why a house is streaked again within months.",
+      },
+      {
+        title: "Pre-treat and let it dwell",
+        text: "The cleaning solution does the work. It needs time on the surface to kill the growth at the root. Skipping the dwell and blasting instead removes what you can see and leaves what brings it back.",
+      },
+      {
+        title: "Protect what is around it",
+        text: "Plants get wet down before and rinsed after. Light fixtures, outlets and open vents get covered. Windows and doors get checked shut, because water finds a gap you did not notice.",
+      },
+      {
+        title: "Match the pressure to the surface",
+        text: "A driveway takes pressure that would destroy stucco. Painted walls, soffits and screens get low pressure and volume instead. This is the whole job, and it is the part that separates a clean house from an expensive repair.",
+      },
+      {
+        title: "Rinse properly, top down",
+        text: "Working downward and rinsing thoroughly stops the dirty runoff drying into streaks on what you just cleaned.",
+      },
+    ],
+    problems: [
+      {
+        title: "Streaks that come back within weeks",
+        text: "The growth was blasted off rather than treated. What is left regrows from the surface it is still rooted in.",
+      },
+      {
+        title: "Stripes or lap marks on the driveway",
+        text: "Etching from too much pressure held too long in one place. Concrete records the path of the wand permanently.",
+      },
+      {
+        title: "Water inside after a wash",
+        text: "Pressure driven under siding, into a failed caulk joint or past a window seal. It is the most expensive mistake in this work and it is entirely avoidable.",
+      },
+      {
+        title: "Paint stripped off in patches",
+        text: "Sometimes the pressure. Often the paint was already failing and the wash simply found it, which is worth knowing before you repaint rather than after.",
+      },
+    ],
+    timeline:
+      "Most houses are a single day. Driveways and pavers can usually be done in the same visit. Washing that is prep for a repaint needs drying time built in afterwards before any coating goes on.",
+    occupied:
+      "You barely notice it beyond the noise. Windows shut on the side we are working, sprinklers off, pets and cars away from the working elevation. You can carry on as normal otherwise.",
+    faqs: [
+      {
+        question: "Is pressure washing safe on stucco?",
+        answer:
+          "At the right pressure, yes. At the wrong pressure it opens hairline cracks and drives water into the wall. Stucco should be soft washed with a cleaning solution rather than blasted.",
+      },
+      {
+        question: "Do I need washing before painting, or is it extra?",
+        answer:
+          "Washing is part of an exterior repaint, not an add-on to it. Paint will not bond to a dirty or chalky wall, and skipping it is the single most common reason a repaint fails early.",
+      },
+      {
+        question: "How long will the house stay clean?",
+        answer:
+          "It depends on shade, tree cover and how close you are to water. North-facing walls and anything under heavy canopy grow back fastest, because they stay damp longest.",
+      },
+      {
+        question: "Can you wash a screened enclosure?",
+        answer:
+          "Yes, at low pressure. Screens tear easily and the frame does not need force, just the right solution and a proper rinse.",
+      },
+    ],
+    image: null,
+    imageAlt: "",
+    closing:
+      "If the house looks tired rather than genuinely worn, a proper wash sometimes buys you a couple more years before a repaint. We will tell you which of the two you are looking at.",
+    relatedGuides: [
+      "why-paint-peels-off-stucco",
+      "how-often-to-repaint-a-florida-house",
+    ],
+  },
+  {
+    slug: "popcorn-ceiling-removal",
+    name: "Popcorn ceiling removal",
+    serviceType: "Popcorn ceiling removal and refinishing",
+    title: "Popcorn Ceiling Removal, Lakewood Ranch | 4 The Love of Color",
+    metaDescription:
+      "Popcorn ceiling removal for Lakewood Ranch and Sarasota homes, finished smooth and painted. Why pre-1980 texture must be tested first.",
+    h1: "Popcorn ceiling removal, done clean.",
+    intro: [
+      "Taking a popcorn ceiling off is not the hard part. Scraping is quick. What decides whether the room looks right afterwards is the finishing, because texture hides everything underneath it and removing it exposes every seam, screw and patch the builder never expected anyone to see.",
+      "There is also one thing that has to happen before any of it, and it is not optional.",
+    ],
+    includes: [
+      "Testing before removal on older ceilings",
+      "Containment and dust protection",
+      "Scraping, skimming and sanding to a smooth finish",
+      "Priming and painting the finished ceiling",
+      "Single rooms or a whole house",
+    ],
+    process: [
+      {
+        title: "Test first if the texture is old",
+        text: "Asbestos was used in ceiling texture into the late 1970s. If the texture predates about 1980, it gets tested before anyone disturbs it. If it comes back positive, that is licensed abatement work and not something we take on. We will say so and point you the right way rather than scraping it.",
+      },
+      {
+        title: "Seal the room off",
+        text: "This is a genuinely messy job. Floors, walls and anything staying in the room get covered, doorways get sealed, and vents get closed so the dust does not travel through the air handler into the rest of the house.",
+      },
+      {
+        title: "Mist and scrape",
+        text: "Damp texture comes off in sheets and keeps the dust down. Dry scraping fills the house with it and is harder work for a worse result.",
+      },
+      {
+        title: "Skim, and skim again",
+        text: "This is where the time goes and where the quality lives. The bare ceiling gets skimmed to hide seams, screws and scrape marks, then sanded flat. A ceiling catches side light across its whole width, so anything left proud shows up the moment the sun moves.",
+      },
+      {
+        title: "Prime, then paint",
+        text: "Fresh joint compound and bare board absorb differently from each other, so the ceiling gets primed before finish coats. Skip it and you get patchy sheen that only appears once the paint dries.",
+      },
+    ],
+    problems: [
+      {
+        title: "The texture has been painted over",
+        text: "Painted popcorn does not wet through properly and does not scrape cleanly. Sometimes the honest answer is to skim over it or board across it rather than fight it off, and that changes the scope enough that you want to know before you start.",
+      },
+      {
+        title: "Brown rings in the texture",
+        text: "A past or present leak. The stain will bleed straight through new paint unless it is sealed, and if the leak is still live then the ceiling is the symptom, not the problem.",
+      },
+      {
+        title: "Sagging or soft patches",
+        text: "Moisture has been in the board. That section needs replacing rather than refinishing, because compound over a soft ceiling will not hold.",
+      },
+      {
+        title: "Wavy ceilings once the texture is gone",
+        text: "The texture was hiding a poorly finished ceiling. It is fixable with skim work, but it is extra work, and anyone who quotes removal without looking at what is underneath is guessing.",
+      },
+    ],
+    timeline:
+      "A single room is usually a couple of days once you allow for skim coats drying and sanding between them. A whole house runs longer, and rushing the drying is what produces a ceiling that looks fine on the day and patchy a week later.",
+    occupied:
+      "We would rather you stayed out of the room being worked on, and ideally had it emptied. Dust is the main disruption and containment handles most of it, but this is the messiest work we do and it is worth planning around.",
+    faqs: [
+      {
+        question: "How do I know if my ceiling has asbestos?",
+        answer:
+          "By testing it, not by guessing. Texture from before roughly 1980 should be tested before it is disturbed. It is an inexpensive test and it is the right first step on any older ceiling.",
+      },
+      {
+        question: "What happens if the test is positive?",
+        answer:
+          "Then it is licensed abatement work and not a painting job. We will tell you plainly and stop there rather than take it on.",
+      },
+      {
+        question: "Can you do just one room?",
+        answer:
+          "Yes. Rooms are a normal way to do this, particularly if you are staying in the house. Bear in mind a new smooth ceiling next to an old textured one is a visible difference in an open plan.",
+      },
+      {
+        question: "Smooth, or a light texture?",
+        answer:
+          "Most people want smooth, and it is what suits current interiors. A light knockdown hides imperfections more forgivingly on a ceiling that has had a hard life. We will talk you through which makes sense for yours.",
+      },
+      {
+        question: "Does the ceiling have to be repainted afterwards?",
+        answer:
+          "Yes, and it should be in the same scope. Bare skim coat is not a finish, and priming and painting is what makes the new ceiling look uniform rather than patchy.",
+      },
+    ],
+    image: null,
+    imageAlt: "",
+    closing:
+      "If you are unsure what is above the texture, that is normal, and it is exactly what a walkthrough is for. We will tell you what the ceiling needs before anyone commits to scraping it.",
+    relatedGuides: [
+      "house-painting-cost-lakewood-ranch-sarasota",
+    ],
+  },
 ];
 
 export const servicePageBySlug = (slug: string) =>
