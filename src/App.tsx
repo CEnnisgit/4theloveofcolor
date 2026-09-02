@@ -272,7 +272,7 @@ function HomePage() {
             src="/images/proj-exterior-white-2story.jpg"
             alt="Freshly painted large two-story white Florida home with a three-car garage and paver driveway"
             width={720}
-            height={560}
+            height={584}
             sizes="(max-width: 900px) 100vw, 720px"
             priority
           />

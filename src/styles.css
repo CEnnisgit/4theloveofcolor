@@ -442,8 +442,11 @@ h3 {
 
 .hero-media img {
   width: 100%;
-  height: 100%;
-  min-height: clamp(420px, 64vh, 660px);
+  height: auto;
+  /* Matches the cropped source (1600x1298). Letting the photo keep its own
+     shape means the container never crops it a second time -- the earlier
+     tall box re-cropped the sides and cut the palms off the right edge. */
+  aspect-ratio: 1600 / 1298;
   object-fit: cover;
   border-radius: var(--radius-xl);
   box-shadow: var(--shadow-lg);
@@ -454,7 +457,10 @@ h3 {
 .hero-media::after {
   content: "";
   position: absolute;
-  inset: 0;
+  /* Bounded to the image box. The caption is now a sibling in normal flow, so
+     an inset:0 overlay washed grey over it as well as the photo. */
+  inset: 0 0 auto 0;
+  aspect-ratio: 1600 / 1298;
   border-radius: var(--radius-xl);
   box-shadow: inset 0 0 0 1px rgba(255, 253, 249, 0.22);
   background: linear-gradient(
@@ -466,22 +472,39 @@ h3 {
   pointer-events: none;
 }
 
+/* A caption, not an overlay. Floated over the photo it always covered some
+   of the house -- the thing the picture exists to show -- so it now sits
+   beneath the frame under a hairline rule, which reads as editorial credit
+   rather than a sticker dropped on the image. */
 .floating-panel {
-  position: absolute;
-  left: 1.1rem;
-  bottom: 1.1rem;
-  max-width: 240px;
-  padding: 1rem 1.1rem;
-  background: var(--paper);
-  border: 1px solid var(--line);
-  border-radius: var(--radius-lg);
-  backdrop-filter: blur(14px);
-  box-shadow: var(--shadow);
+  position: static;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.5rem 0.9rem;
+  max-width: none;
+  margin-top: 1rem;
+  padding: 0.9rem 0 0;
+  background: none;
+  border: 0;
+  border-top: 1px solid var(--line);
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.floating-panel .eyebrow {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent-deep);
 }
 
 .floating-panel p {
-  margin: 0.35rem 0 0;
-  font-weight: 600;
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--muted);
 }
 
 /* ---------------------------------------------------------------- trust strip */
@@ -1603,3 +1626,4 @@ h3 {
     border-top: 0;
   }
 }
+
