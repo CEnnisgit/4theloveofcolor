@@ -273,6 +273,9 @@ export const projects: Project[] = [
   },
 ];
 
+// UNVERIFIED: not confirmed as real customer quotes. Hidden on the site via
+// SHOW_CURATED_TESTIMONIALS in App.tsx. Replace with client-confirmed or real
+// Google reviews before re-enabling.
 export const testimonials = [
   {
     quote:
