@@ -467,9 +467,21 @@ function GoogleG() {
   );
 }
 
+/**
+ * The curated testimonials in siteContent.ts are unverified (not yet confirmed
+ * by the client as real customer quotes), so they are hidden to avoid FTC
+ * fake-review risk. Live Google reviews still render when configured. To
+ * restore curated quotes, replace them with client-confirmed or real Google
+ * reviews and set this back to true.
+ */
+const SHOW_CURATED_TESTIMONIALS = false;
+
 function ReviewsSection() {
   const { data } = useReviews();
   const live = data?.configured && data.reviews.length > 0;
+
+  // Without live Google reviews, hide the section instead of showing unverified quotes.
+  if (!live && !SHOW_CURATED_TESTIMONIALS) return null;
 
   const items = live
     ? data!.reviews.slice(0, 6).map((r) => ({
